@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/header.jpg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="莫比乌斯反演前言 不要把莫比乌斯反演和莫比乌斯变换当成一回事  莫比乌斯变换的范围要广的多，别一眼看上去：哇，傻逼分式线性函数嘛，so easy！然后后面你就不懂了 详细看维基百科：Möbius transformation 还有这一篇深度好文 Moebius.pdf 言归正传，回到topic。今天主要从数学角度去研究。 定义如果对数论函数$f(n)$和$g(n)$，有以下关系式: ${\disp">
+<meta name="keywords" content="数学,数论,高等数学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="莫比乌斯反演">
+<meta property="og:url" content="https://skyofwar.xyz/2018/08/18/莫比乌斯反演/index.html">
+<meta property="og:site_name" content="Flying fighter">
+<meta property="og:description" content="莫比乌斯反演前言 不要把莫比乌斯反演和莫比乌斯变换当成一回事  莫比乌斯变换的范围要广的多，别一眼看上去：哇，傻逼分式线性函数嘛，so easy！然后后面你就不懂了 详细看维基百科：Möbius transformation 还有这一篇深度好文 Moebius.pdf 言归正传，回到topic。今天主要从数学角度去研究。 定义如果对数论函数$f(n)$和$g(n)$，有以下关系式: ${\disp">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-19T09:03:45.372Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="莫比乌斯反演">
+<meta name="twitter:description" content="莫比乌斯反演前言 不要把莫比乌斯反演和莫比乌斯变换当成一回事  莫比乌斯变换的范围要广的多，别一眼看上去：哇，傻逼分式线性函数嘛，so easy！然后后面你就不懂了 详细看维基百科：Möbius transformation 还有这一篇深度好文 Moebius.pdf 言归正传，回到topic。今天主要从数学角度去研究。 定义如果对数论函数$f(n)$和$g(n)$，有以下关系式: ${\disp">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Flying fighter" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://skyofwar.xyz/2018/08/18/莫比乌斯反演/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>莫比乌斯反演 | Flying fighter</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/Leoleepz"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Flying fighter</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">A place where fighters soar</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/08/18/莫比乌斯反演/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">莫比乌斯反演
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-18 22:47:22" itemprop="dateCreated datePublished" datetime="2018-08-18T22:47:22+08:00">2018-08-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-19 17:03:45" itemprop="dateModified" datetime="2018-08-19T17:03:45+08:00">2018-08-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/总结/" itemprop="url" rel="index"><span itemprop="name">总结</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>不要把莫比乌斯反演和莫比乌斯变换当成一回事</li>
+</ul>
+<p>莫比乌斯变换的范围要广的多，别一眼看上去：哇，傻逼分式线性函数嘛，so easy！然后后面你就不懂了</p>
+<p>详细看维基百科：<a href="https://en.wikipedia.org/wiki/M%C3%B6bius_transformation" target="_blank" rel="noopener">Möbius transformation</a></p>
+<p>还有这一篇<del>深度好文</del> <a href="http://www.math.bas.bg/~rkovach/lectures/Moebius.pdf" target="_blank" rel="noopener">Moebius.pdf</a></p>
+<p>言归正传，回到topic。今天主要从数学角度去研究。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>如果对数论函数$f(n)$和$g(n)$，有以下关系式:</p>
+<p>${\displaystyle g(n)=\sum _{d\,\mid \,n}f(d)\quad {\text{对于每个整数}}n\geq 1} $</p>
+<p>那么有</p>
+<p>${\displaystyle f(n)=\sum _{d\,\mid \,n}\mu (d)g\left({\frac {n}{d}}\right)\quad {\text{对于每个整数}}n\geq 1}$</p>
+<p>其中$\mu$是莫比乌斯函数。实际上，原函数$f(n)$通过使用反演公式给定唯一的$g(n)$。$f$和$g$被称为对方的$莫比乌斯变换$</p>
+<p>如果f和g是从正整数到某个阿贝尔群的函数（被看作ℤ - 模块），则该公式也是正确的。</p>
+<p>用Dirichlet卷积描述，第一个公式可以写成${\displaystyle g = f * {\mathit {1}}}$</p>
+<p>其中星号表示Dirichlet卷积，$\mathit{1}$是常数函数$\mathit{1}(n)=1$。然后将第二个公式写成$f = \mu * g$</p>
+<p>因为卷乘是(可交换的)和关联的，并且$\mathit{1} * \mu=\varepsilon$，而$\varepsilon$是Dirichlet卷积中的单位函数</p>
+<p>所以我们有：</p>
+<script type="math/tex; mode=display">\mu * g = \mu *({\mathit{1}} * f)=(\mu * {\mathit{1}}) * f = \varepsilon * f = f</script><p>仅仅是数论函数？我们来看看它的一般形式：</p>
+<a id="more"></a>
+<h2 id="一般形式"><a href="#一般形式" class="headerlink" title="一般形式"></a>一般形式</h2><p>设 ${\displaystyle F(x)}$及 ${\displaystyle G(x)}$ 为定义在$ {\displaystyle [1,\infty )}$上的复值函数并且有${\displaystyle G(x)=\sum _{1\leqslant n\leqslant x}F\left({\frac {x}{n}}\right)} $</p>
+<p>那么有${\displaystyle F(x)=\sum _{1\leqslant n\leqslant x}\mu (n)G\left({\frac {x}{n}}\right)} $</p>
+<h2 id="级数关系"><a href="#级数关系" class="headerlink" title="级数关系"></a>级数关系</h2><p>令${\displaystyle a_{n}=\sum _{d\mid n}b_{d}} $</p>
+<p>那么${\displaystyle b_{n}=\sum _{d\mid n}\mu \left({\frac {n}{d}}\right)a_{d}} $</p>
+<p>就是它的莫比乌斯变换。</p>
+<ul>
+<li>与<strong>Lambert 级数</strong>的意义相关：</li>
+</ul>
+<p>${\displaystyle \sum _{n=1}^{\infty }a_{n}x^{n}=\sum _{n=1}^{\infty }b_{n}{\frac {x^{n}}{1-x^{n}}}} $</p>
+<ul>
+<li>还有<strong>Dirichlet级数</strong>：</li>
+</ul>
+<p>${\displaystyle \sum _{n=1}^{\infty }{\frac {a_{n}}{n^{s}}}=\zeta (s)\sum _{n=1}^{\infty }{\frac {b_{n}}{n^{s}}}} $，其中$\zeta(s)$是黎曼$\zeta$函数</p>
+<ul>
+<li>与<strong>分圆多项式</strong>的<strong>对数</strong>相关</li>
+</ul>
+<p>$\Phi_n(x)=\prod_\limits{d|n}(1-x^{\frac{n}{d}})^{\mu(d)}$</p>
+<h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><p>在组合学中更有用的相关反演公式如下：</p>
+<p>假设$F(x)$和$G(x)$都是定义在区间$[1,\infty)$上的复值函数，使得</p>
+<p>${\displaystyle G(x)=\sum _{1\leq n\leq x}F\left({\frac {x}{n}}\right)\quad {\mbox{ 对于所有}}x\geq 1} $</p>
+<p>于是就有</p>
+<p>${\displaystyle F(x)=\sum _{1\leq n\leq x}\mu (n)G\left({\frac {x}{n}}\right)\quad {\mbox{ 对于所有}}x\geq 1.} $</p>
+<p>这里，总和扩展到小于或等于x的所有正整数n。 </p>
+<p>反过来，我们得到了更为特殊的基本形式：</p>
+<p>如果$\alpha(n)$是一个算术函数，并且具有Dirichlet逆$\alpha^{-1}(n)$</p>
+<p>定义${\displaystyle G(x)=\sum _{1\leq n\leq x}\alpha (n)F\left({\frac {x}{n}}\right)\quad {\mbox{ 对于所有 }}x\geq 1} $</p>
+<p>那么有${\displaystyle F(x)=\sum _{1\leq n\leq x}\alpha ^{-1}(n)G\left({\frac {x}{n}}\right)\quad {\mbox{对于所有 }}x\geq 1.} $</p>
+<p>前面的公式若出现在常数函数$\alpha(n)=1$的特殊情况下，它的Dirichlet逆就是$\mu(n)$</p>
+<p>如果我们在正整数上定义了复值函数$f(n)$和$g(n)$，则会出现第一个扩展的特定应用：</p>
+<p>${\displaystyle g(n)=\sum _{1\leq m\leq n}f\left(\left\lfloor {\frac {n}{m}}\right\rfloor \right)\quad {\mbox{ 对于所有 }}n\geq 1.} $ </p>
+<p>定义$F(x)=f(\lfloor x\rfloor)$和$G(x)=g(\lfloor x\rfloor)$</p>
+<p>我们得到${\displaystyle f(n)=\sum _{1\leq m\leq n}\mu (m)g\left(\left\lfloor {\frac {n}{m}}\right\rfloor \right)\quad {\mbox{ 对于所有 }}n\geq 1.} $</p>
+<p>另外一个反转公式则是</p>
+<p>${\displaystyle g(x)=\sum _{m=1}^{\infty }{\frac {f(mx)}{m^{s}}}\quad {\mbox{ for all }}x\geq 1\quad \Longleftrightarrow \quad f(x)=\sum _{m=1}^{\infty }\mu (m){\frac {g(mx)}{m^{s}}}\quad {\mbox{ 对于所有 }}x\geq 1.} $</p>
+<p>和前面类似，推广到$\alpha(n)$是一个算术函数，并且具有Dirichlet逆$\alpha^{-1}(n)$的情况：</p>
+<p>${\displaystyle g(x)=\sum _{m=1}^{\infty }\alpha (m){\frac {f(mx)}{m^{s}}}\quad {\mbox{ for all }}x\geq 1\quad \Longleftrightarrow \quad f(x)=\sum _{m=1}^{\infty }\alpha ^{-1}(m){\frac {g(mx)}{m^{s}}}\quad {\mbox{ 对于所有 }}x\geq 1.} $</p>
+<h2 id="在偏序集上的反演"><a href="#在偏序集上的反演" class="headerlink" title="在偏序集上的反演"></a>在偏序集上的反演</h2><p>对于一个偏序集$P$(每个<strong>主序理想</strong>有限)，用${\displaystyle \mu (s,s)=1{\text{ for }}s\in P,\qquad \mu (s,u)=-\sum _{s\leq t&lt;u}\mu (s,t),\quad {\text{ for }}s&lt;u{\text{ in }}P.} $递归地定义莫比乌斯函数$\mu$</p>
+<p>对于$ {\displaystyle f,g:P\to K}$($K$为域) ，有${\displaystyle g(t)=\sum _{s\leq t}f(s)\qquad {\text{ for all }}t\in P} $当且仅当${\displaystyle f(t)=\sum _{s\leq t}g(s)\mu (s,t)\qquad {\text{ for all }}t\in P.} $</p>
+<h2 id="加法换成乘法？"><a href="#加法换成乘法？" class="headerlink" title="加法换成乘法？"></a>加法换成乘法？</h2><ul>
+<li>由于莫比乌斯反演适用于<strong>任何阿贝尔群</strong>，因此群作用是加法还是乘法没有区别。这产生了以下反演公式的符号变形：</li>
+<li>${\displaystyle {\mbox{若}}F(n)=\prod _{d|n}f(d),{\mbox{ 则 }}f(n)=\prod _{d|n}F\left({\frac {n}{d}}\right)^{\mu (d)}.} $</li>
+</ul>
+<h2 id="简要证明"><a href="#简要证明" class="headerlink" title="简要证明"></a>简要证明</h2><p>拿第一次推广为例：</p>
+<p>${\displaystyle {\begin{aligned}\sum _{1\leq n\leq x}\mu (n)g\left({\frac {x}{n}}\right)&amp;=\sum _{1\leq n\leq x}\mu (n)\sum _{1\leq m\leq {\frac {x}{n}}}f\left({\frac {x}{mn}}\right)\\&amp;=\sum _{1\leq n\leq x}\mu (n)\sum _{1\leq m\leq {\frac {x}{n}}}\sum _{1\leq r\leq x}[r=mn]f\left({\frac {x}{r}}\right)\\&amp;=\sum _{1\leq r\leq x}f\left({\frac {x}{r}}\right)\sum _{1\leq n\leq x}\mu (n)\sum _{1\leq m\leq {\frac {x}{n}}}\left[m={\frac {r}{n}}\right]\qquad {\text{重新排列和式的顺序}}\\&amp;=\sum _{1\leq r\leq x}f\left({\frac {x}{r}}\right)\sum _{n|r}\mu (n)\\&amp;=\sum _{1\leq r\leq x}f\left({\frac {x}{r}}\right)i(r)\\&amp;=f(x)\qquad {\text{当}}i(r)=0{\text{ ,除了 }}r=1{\text{ 的情况 }}\end{aligned}}} $</p>
+<p>$\alpha(n)$替换$\mathit{1}$的更一般情况下的证明基本相同，第二次推广也是如此。 </p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] Wikipedia, <a href="https://en.wikipedia.org/wiki/M%C3%B6bius_inversion_formula" target="_blank" rel="noopener">Möbius inversion formula</a></p>
+<p>[2] wolfram mathworld, <a href="http://mathworld.wolfram.com/MoebiusInversionFormula.html" target="_blank" rel="noopener">Möbius Inversion Formula</a></p>
+<p>[3] Mobius Inversion Formula, Zeta Functions, Lecture 14 Notes <a href="https://ocw.mit.edu/courses/mathematics/18-781-theory-of-numbers-spring-2012/lecture-notes/MIT18_781S12_lec14.pdf" target="_blank" rel="noopener">Here</a></p>
+<p>[4] Twisted One 151’s Weblog, <a href="https://twistedone151.wordpress.com/tag/mobius-inversion-formula/" target="_blank" rel="noopener">Möbius Inversion Formula</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束了哦<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
+          
+            <a href="/tags/数论/" rel="tag"><i class="fa fa-tag"></i> 数论</a>
+          
+            <a href="/tags/高等数学/" rel="tag"><i class="fa fa-tag"></i> 高等数学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/16/疯狂的馒头[并查集]/" rel="next" title="疯狂的馒头---并查集的妙用">
+                <i class="fa fa-chevron-left"></i> 疯狂的馒头---并查集的妙用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/19/二项式系数及其反演/" rel="prev" title="二项式系数及其反演">
+                二项式系数及其反演 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.jpg"
+                alt="Leoleepz" />
+            
+              <p class="site-author-name" itemprop="name">Leoleepz</p>
+              <p class="site-description motion-element" itemprop="description">My Blog</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Leoleepz" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:Leoleepaytser@hotmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/116229514260659689818" target="_blank" title="Google"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/Rand_By_Rand" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/paytser.nigel.5" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.youtube.com/channel/UCoTTIUv013ld0CmpAlZPgDg" target="_blank" title="YouTube"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#莫比乌斯反演"><span class="nav-number">1.</span> <span class="nav-text">莫比乌斯反演</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一般形式"><span class="nav-number">1.3.</span> <span class="nav-text">一般形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#级数关系"><span class="nav-number">1.4.</span> <span class="nav-text">级数关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推广"><span class="nav-number">1.5.</span> <span class="nav-text">推广</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在偏序集上的反演"><span class="nav-number">1.6.</span> <span class="nav-text">在偏序集上的反演</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加法换成乘法？"><span class="nav-number">1.7.</span> <span class="nav-text">加法换成乘法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简要证明"><span class="nav-number">1.8.</span> <span class="nav-text">简要证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">1.9.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leoleepz</span>
+
+  
+
+  
+</div>
+
+
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_pv"></span>
+  </span>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共29.8k字</span>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
