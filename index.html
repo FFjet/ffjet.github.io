@@ -341,6 +341,188 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/08/25/一道江苏数学高考压轴填空题的另类解法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/25/一道江苏数学高考压轴填空题的另类解法/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-25 12:25:57 / 修改时间：13:16:51" itemprop="dateCreated datePublished" datetime="2018-08-25T12:25:57+08:00">2018-08-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一道江苏数学高考压轴填空题的另类解法"><a href="#一道江苏数学高考压轴填空题的另类解法" class="headerlink" title="一道江苏数学高考压轴填空题的另类解法"></a>一道江苏数学高考压轴填空题的另类解法</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>锐角$\triangle ABC$中，$\sin A=2\sin B \sin C$</p>
+<p>求$\tan A \tan B \tan C$的最小值</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>如果是你，你会怎么做？</p>
+<p>如果是一个正常的学生，大概会…</p>
+<h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1"></a>Method 1</h3><p>当然是在三角形内用公式$\tan A \tan B \tan C = \tan A +\tan B +\tan C$啦…</p>
+<p>然后再根据题目条件推出来$\tan A \tan B \tan C \geq 2\sqrt{2\tan A \tan B \tan C}$</p>
+<p>然后就很愉快地得到了答案是$8$。。</p>
+<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2"></a>Method 2</h3><p>））作为一个<del>好</del>学生我们当然不应该这么做…</p>
+<p>考虑<strong>拉格朗日乘数法</strong></p>
+<p>我们先把$A$表示出来，因为该三角形是个锐角三角形，所以$\tan A&gt;0$,然后我们可以得到</p>
+<p>$\displaystyle \tan A=\frac{2 \sin (B) \sin (C)}{\sqrt{1-4 \sin ^2(B) \sin ^2(C)}}$</p>
+<p>我们知道，$\displaystyle \tan B = \frac{\sin B}{\sqrt{1-\sin^2 B}},\tan C = \frac{\sin C}{\sqrt{1-\sin^2 C}}$</p>
+<p>我们设$p=\sin B, p \in [0,1], q = \sin C, q \in [0,1]$，然后我们就需要最大化$\displaystyle \frac{2 p^2 q^2}{\sqrt{1-p^2} \sqrt{1-q^2} \sqrt{1-4 p^2 q^2}}$</p>
+<p>令$\displaystyle F(p,q)=\frac{2 p^2 q^2}{\sqrt{1-p^2} \sqrt{1-q^2} \sqrt{1-4 p^2 q^2}}$，然后有：</p>
+<script type="math/tex; mode=display">
+\displaystyle
+{
+\left\{ {\begin{array} {*{20} {c} }
+{\dfrac{ \partial F } { \partial p } = -\dfrac{2 p q^2 \left(p^2 \left(4 q^2+1\right)-2\right)}{\left(1-p^2\right)^{3/2} \sqrt{1-q^2} \left(1-4 p^2 q^2\right)^{3/2}}} \\
+{\dfrac{ \partial F} { \partial q } = -\dfrac{2 p^2 q \left(\left(4 p^2+1\right) q^2-2\right)}{\sqrt{1-p^2} \left(1-q^2\right)^{3/2} \left(1-4 p^2 q^2\right)^{3/2}}}\\
+\end{array} } \right.
+}</script><p>令</p>
+<script type="math/tex; mode=display">
+\displaystyle
+{
+\left\{ {\begin{array} {*{20} {c} }
+{\dfrac{ \partial F } { \partial p } = 0} \\
+{\dfrac{ \partial F} { \partial q } = 0}\\
+\end{array} } \right.
+}</script><p>，那么我们在实数范围内可以找到$5$组解，根据条件，我们得到了$1$组解，当然这个方程一看就不是给人解的，我们用Mathematica得到了答案：</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">In</span>[<span class="number">30</span>]:=<span class="keyword">Solve</span>[&#123;-((2 p^2 q (-2 + (1 + 4 p^2) q^2))/(</span><br><span class="line">    Sqrt[1 - p^2] (1 - q^2)^(3/2) (1 - 4 p^2 q^2)^(3/2))) == </span><br><span class="line">   0, -((2 p q^2 (-2 + p^2 (1 + 4 q^2)))/((1 - p^2)^(3/2) Sqrt[</span><br><span class="line">     1 - q^2] (1 - 4 p^2 q^2)^(3/2))) == 0, 0 &lt; p &lt; 1, 0 &lt; q &lt; 1&#125;, &#123;p,</span><br><span class="line">   q&#125;]</span><br><span class="line"><span class="keyword">Out</span>[<span class="number">30</span>]:=&#123;&#123;p -&gt; 1/2 Sqrt[1/2 (-1 + Sqrt[33])], </span><br><span class="line">  q -&gt; 1/2 Sqrt[1/2 (-1 + Sqrt[33])]&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>所以答案就是</p>
+<script type="math/tex; mode=display">
+\displaystyle
+{
+\left\{ {\begin{array} {*{20} {c} }
+{p=\dfrac{1}{2} \sqrt{\dfrac{1}{2} \left(\sqrt{33}-1\right)}} \\
+{q=\dfrac{1}{2} \sqrt{\dfrac{1}{2} \left(\sqrt{33}-1\right)}}\\
+\end{array} } \right.
+}</script><p>这是个唯一的驻点，</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/08/24/Schur不等式的学习感想/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -761,12 +943,24 @@
                 
               
 
-              <time title="创建时间：2018-08-19 20:53:46 / 修改时间：21:01:02" itemprop="dateCreated datePublished" datetime="2018-08-19T20:53:46+08:00">2018-08-19</time>
+              <time title="创建时间：2018-08-19 20:53:46" itemprop="dateCreated datePublished" datetime="2018-08-19T20:53:46+08:00">2018-08-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-27 20:32:13" itemprop="dateModified" datetime="2018-08-27T20:32:13+08:00">2018-08-27</time>
               
             
           </span>
@@ -820,7 +1014,7 @@
         
           <h1 id="由一道神奇的题目引发的思考"><a href="#由一道神奇的题目引发的思考" class="headerlink" title="由一道神奇的题目引发的思考"></a>由一道神奇的题目引发的思考</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>计算$\displaystyle \sum_\limits{i=1}^\limits{k}i*2^i$</p>
 <h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>观察恒等式：$\displaystyle \sum_\limits{i=0}^\limits{k} r^i=\dfrac{1-r^{k+1}}{1-r} $</p>
-<p>对两边形式地求导，得$\displaystyle\dfrac{d}{dr}\sum_\limits{i=0}^\limits{k} r^i=\sum_\limits{i=0}^\limits{k} i*r^{i-1}=\dfrac{d}{dr}\dfrac{1-r^{k+1}}{1-r}=-(k+1)\dfrac{r^k}{1-r}+\dfrac{1-r^{k+1}}{(1-r)^2}$</p>
+<p>对两边形式地求导，得$\displaystyle\dfrac{\rm d}{ {\rm d} r}\sum_\limits{i=0}^\limits{k} r^i=\sum_\limits{i=0}^\limits{k} i*r^{i-1}=\dfrac{\rm d}{ {\rm d} r}\dfrac{1-r^{k+1}}{1-r}=-(k+1)\dfrac{r^k}{1-r}+\dfrac{1-r^{k+1}}{(1-r)^2}$</p>
 <p>两边同时乘$r$，令$r=2$，得</p>
 <p>$\displaystyle \sum_{i=0}^{k} i \cdot 2^{i}=-2(k+1)2^k/(-1)+2(1-2^{k+1})/(-1)^2=(k+1)2^{k+1}+2-2 \cdot 2^{k+1} $</p>
 <p>化简得$(k-1)2^{k+1}+2$</p>
@@ -1959,179 +2153,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/05/06/「Codeforces 825B」Five-In-a-Row/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leoleepz">
-      <meta itemprop="description" content="My Blog">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Flying fighter">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/06/「Codeforces 825B」Five-In-a-Row/" itemprop="url">
-                  「Codeforces 825B」Five-In-a-Row
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-06 15:38:00 / 修改时间：15:39:39" itemprop="dateCreated datePublished" datetime="2018-05-06T15:38:00+08:00">2018-05-06</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>题目链接: <a href="http://codeforces.com/contest/825/problem/B" target="_blank" rel="noopener">点我</a></p>
-<h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>B. Five-In-a-Row<br>time limit per test :1 second<br>memory limit per test :256 megabytes<br><strong>Description</strong><br>Alice and Bob play 5-in-a-row game. They have a playing field of size 10 × 10. In turns they put either crosses or noughts, one at a time. Alice puts crosses and Bob puts noughts.</p>
-<p>In current match they have made some turns and now it’s Alice’s turn. She wonders if she can put cross in such empty cell that she wins immediately.</p>
-<p>Alice wins if some crosses in the field form line of length not smaller than 5. This line can be horizontal, vertical and diagonal.</p>
-<p><strong>Input</strong><br>You are given matrix 10 × 10 (10 lines of 10 characters each) with capital Latin letters ‘X’ being a cross, letters ‘O’ being a nought and ‘.’ being an empty cell. The number of ‘X’ cells is equal to the number of ‘O’ cells and there is at least one of each type. There is at least one empty cell.</p>
-<p>It is guaranteed that in the current arrangement nobody has still won.</p>
-<p><strong>Output</strong><br>Print <code>YES</code> if it’s possible for Alice to win in one turn by putting cross in some empty cell. Otherwise print <code>NO</code>.</p>
-<p><strong>Examples</strong><br>input1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.....OOOO.</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br></pre></td></tr></table></figure></p>
-<p>output1<br><code>YES</code></p>
-<p>input2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">OO.O......</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br><span class="line">..........</span><br></pre></td></tr></table></figure></p>
-<p>output2<br><code>NO</code></p>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>直接模拟，不多解释，你懂的</p>
-<p>AC 31ms<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> chk <span class="meta-keyword">if</span> (num &gt;= 5) return true;</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> M[<span class="number">12</span>][<span class="number">12</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">getch</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> t = getchar();</span><br><span class="line">	<span class="keyword">while</span> (t != <span class="string">'.'</span> &amp;&amp; t != <span class="string">'O'</span> &amp;&amp; t != <span class="string">'X'</span>) t = getchar();</span><br><span class="line">	<span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">checkwin</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp;x, <span class="keyword">const</span> <span class="keyword">int</span> &amp;y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> xx = x, yy = y;</span><br><span class="line">	<span class="comment">//horizontal</span></span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (M[xx][y] == <span class="string">'X'</span>) xx--, num++;</span><br><span class="line">	xx = x + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (M[xx][y] == <span class="string">'X'</span>) xx++, num++;</span><br><span class="line">	chk</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//vertical</span></span><br><span class="line">	num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (M[x][yy] == <span class="string">'X'</span>) yy--, num++;</span><br><span class="line">	yy = y + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (M[x][yy] == <span class="string">'X'</span>) yy++, num++;</span><br><span class="line">	chk</span><br><span class="line">	</span><br><span class="line">	xx = x, yy = y, num = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//case 1</span></span><br><span class="line">	<span class="keyword">while</span> (M[xx][yy] == <span class="string">'X'</span>) xx--, yy--, num++;</span><br><span class="line">	xx = x + <span class="number">1</span>, yy = y + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (M[xx][yy] == <span class="string">'X'</span>) xx++, yy++, num++;</span><br><span class="line">	chk</span><br><span class="line">	<span class="comment">//case 2</span></span><br><span class="line">	xx = x, yy = y, num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (M[xx][yy] == <span class="string">'X'</span>) xx++, yy--, num++;</span><br><span class="line">	xx = x - <span class="number">1</span>, yy = y + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (M[xx][yy] == <span class="string">'X'</span>) xx--, yy++, num++;</span><br><span class="line">	chk</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">10</span>; j++)</span><br><span class="line">			M[i][j] = getch();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">10</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (M[i][j] == <span class="string">'.'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				M[i][j] = <span class="string">'X'</span>;</span><br><span class="line">				<span class="keyword">if</span> (checkwin(i, j))</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">					<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				M[i][j] = <span class="string">'.'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2183,7 +2204,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2458,7 +2479,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共30.1k字</span>
+  <span class="post-count">博客全站共30.6k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -2953,9 +2974,9 @@
   
     
       
-        
-      
     
+      
+        
       
     
       

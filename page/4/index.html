@@ -341,6 +341,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/07/C++求解N阶幻方/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/C++求解N阶幻方/" itemprop="url">
+                  C++求解N阶幻方
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-07 22:31:41" itemprop="dateCreated datePublished" datetime="2018-03-07T22:31:41+08:00">2018-03-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-31 10:50:05" itemprop="dateModified" datetime="2018-03-31T10:50:05+08:00">2018-03-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/无聊/" itemprop="url" rel="index"><span itemprop="name">无聊</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>由一道数学题的联想<br>然后根据网上的做法<del>瞎jb乱打</del>了一下，居然对了<br>代码<del>精心</del>附上了注释，有兴趣的童鞋可以看一看。。<br>不说了，上代码！(自认为结构很<del>清晰易懂</del>)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 10000</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> matrix[MAXN][MAXN] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="comment">//生成奇数幻方</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateOddMagicSquare</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x = <span class="number">0</span>, y, mun = <span class="number">1</span>;</span><br><span class="line">	y = n / <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">while</span> (mun &lt;= n * n)</span><br><span class="line">	&#123;</span><br><span class="line">		matrix[x][y] = mun;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//通过x0、y0检测右上的是否已经填入数字</span></span><br><span class="line">		<span class="keyword">int</span> x0 = x;</span><br><span class="line">		<span class="keyword">int</span> y0 = y;</span><br><span class="line">		x0--;</span><br><span class="line">		y0++;</span><br><span class="line">		<span class="comment">//超界处理</span></span><br><span class="line">		<span class="keyword">if</span> (x0 &lt; <span class="number">0</span>)</span><br><span class="line">			x0 += n;</span><br><span class="line">		<span class="keyword">if</span> (y0 == n)</span><br><span class="line">			y0 = n - y0;</span><br><span class="line">		<span class="keyword">if</span> (!matrix[x0][y0])</span><br><span class="line">		&#123;</span><br><span class="line">			x = x0;</span><br><span class="line">			y = y0;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//若有数字填入之前数字的下方</span></span><br><span class="line">			x++;</span><br><span class="line">			<span class="keyword">if</span> (x == n) x = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		mun++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//生成双偶幻方</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateDoubleEvenMagicSqure</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">1</span>;</span><br><span class="line">	<span class="comment">//从1到n的平方依次赋值</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j&lt;n; j++)</span><br><span class="line">			matrix[i][j] = num++;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//小正方形的对角线上的数字取其补数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (i % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; <span class="built_in">abs</span>(i - j) % <span class="number">4</span> == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k&lt;<span class="number">4</span>; k++)</span><br><span class="line">					matrix[i + k][j + k] = <span class="built_in">abs</span>(n * n + <span class="number">1</span> - matrix[i + k][j + k]);</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (i % <span class="number">4</span> == <span class="number">3</span> &amp;&amp; (i + j) % <span class="number">4</span> == <span class="number">3</span>)</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k&lt;<span class="number">4</span>; k++)</span><br><span class="line">					matrix[i - k][j + k] = <span class="built_in">abs</span>(n * n + <span class="number">1</span> - matrix[i - k][j + k]);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//生成单偶幻方</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateSingleEvenMagicSqure</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> k = n / <span class="number">2</span>;</span><br><span class="line">	CreateOddMagicSquare(k);</span><br><span class="line">	<span class="comment">//赋初值，左上最小，右下其次，右上再次，左下最大</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; k; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			matrix[i + k][j + k] = matrix[i][j] + k * k;</span><br><span class="line">			matrix[i][j + k] = matrix[i][j] + k * k * <span class="number">2</span>;</span><br><span class="line">			matrix[i + k][j] = matrix[i][j] + k * k * <span class="number">3</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="comment">//公式 n=4m+2 </span></span><br><span class="line">	<span class="keyword">int</span> m = (n - <span class="number">2</span>) / <span class="number">4</span>;</span><br><span class="line">	<span class="comment">//交换x方向正中行的从左至右m-1个</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;m - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> buf = matrix[k / <span class="number">2</span>][i];</span><br><span class="line">		matrix[k / <span class="number">2</span>][i] = matrix[k / <span class="number">2</span> + k][i];</span><br><span class="line">		matrix[k / <span class="number">2</span> + k][i] = buf;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> buf = matrix[k / <span class="number">2</span>][k / <span class="number">2</span>];</span><br><span class="line">	<span class="comment">//以及正中间的数</span></span><br><span class="line">	matrix[k / <span class="number">2</span>][k / <span class="number">2</span>] = matrix[k / <span class="number">2</span> + k][k / <span class="number">2</span>];</span><br><span class="line">	matrix[k / <span class="number">2</span> + k][k / <span class="number">2</span>] = buf;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//交换除x正中间行的其他行对应数字m个</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i&lt;k; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">0</span>; j&lt;k / <span class="number">2</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (i != k / <span class="number">2</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> buf = matrix[i][j];</span><br><span class="line">				matrix[i][j] = matrix[i + k][j];</span><br><span class="line">				matrix[i + k][j] = buf;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//交换最右边m-1个数字</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = n - <span class="number">1</span>; j &gt; n - <span class="number">1</span> - (m - <span class="number">1</span>); j--)</span><br><span class="line">			swap(matrix[i][j], matrix[i + k][j]);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Check</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> sum = (n*(n*n + <span class="number">1</span>)) / <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">int</span> SumA = <span class="number">0</span>, SumB = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">			SumA += matrix[i][j];</span><br><span class="line">		<span class="keyword">if</span> (SumA != sum)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		SumA = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">			SumA += matrix[j][i];</span><br><span class="line">		<span class="keyword">if</span> (SumA != sum)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		SumA = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		SumA += matrix[i][i];</span><br><span class="line">		SumB += matrix[i][n - i - <span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (SumA != sum || SumB != sum)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">if</span> (n % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">		CreateOddMagicSquare(n);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (n % <span class="number">4</span> == <span class="number">0</span>)</span><br><span class="line">		CreateDoubleEvenMagicSqure(n);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">		CreateSingleEvenMagicSqure(n);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j&lt;n; j++)</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; matrix[i][j] &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!Check(n))</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Failed to generate!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	getchar(), getchar();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2030,180 +2203,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/21/如何卸载hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leoleepz">
-      <meta itemprop="description" content="My Blog">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Flying fighter">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/21/如何卸载hexo/" itemprop="url">
-                  如何卸载hexo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-21 16:01:41" itemprop="dateCreated datePublished" datetime="2018-02-21T16:01:41+08:00">2018-02-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-03-31 10:54:03" itemprop="dateModified" datetime="2018-03-31T10:54:03+08:00">2018-03-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常小知识/" itemprop="url" rel="index"><span itemprop="name">日常小知识</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>安装了hexo，出了问题，该如何卸载呢？<br>对于2.x版本的hexo,我们知道安装命令为<br><code>npm install hexo -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo -g</code></p>
-<p>对于3.x版本的hexo,我们知道安装命令为<br><code>npm install hexo-cli -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo-cli -g</code></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2255,7 +2254,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2530,7 +2529,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共30.1k字</span>
+  <span class="post-count">博客全站共30.6k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -3025,9 +3024,9 @@
   
     
       
-        
-      
     
+      
+        
       
     
       
