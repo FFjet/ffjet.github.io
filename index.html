@@ -341,6 +341,189 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/08/28/记录一次非常感人的Mathematica Animation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/28/记录一次非常感人的Mathematica Animation/" itemprop="url">
+                  记录一次非常感人的Mathematica Animation(Lissajous曲线)...
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-28 22:55:00 / 修改时间：23:00:45" itemprop="dateCreated datePublished" datetime="2018-08-28T22:55:00+08:00">2018-08-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="记录一次非常感人的Mathematica-Animation…"><a href="#记录一次非常感人的Mathematica-Animation…" class="headerlink" title="记录一次非常感人的Mathematica Animation…"></a>记录一次非常感人的Mathematica Animation…</h1><p>自己突发奇想想做一次Lissajous曲线。。</p>
+<p>Mathematica代码咯：</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Animate</span>[<span class="keyword">ParametricPlot</span>[&#123;Sin[13 u], Sin[18 u]&#125;, &#123;u, 0, a&#125;, </span><br><span class="line">  <span class="keyword">PlotLabel</span> -&gt; <span class="string">"u="</span> + a, <span class="keyword">PlotPoints</span> -&gt; <span class="number">200</span>, </span><br><span class="line">  <span class="keyword">PlotRange</span> -&gt; &#123;&#123;-1, 1&#125;, &#123;-1, 1&#125;&#125;],</span><br><span class="line"> &#123;a, (10)^(-100), 2 Pi&#125;, <span class="keyword">AnimationRunning</span> -&gt; <span class="keyword">True</span>, </span><br><span class="line"> <span class="keyword">AnimationRate</span> -&gt; <span class="number">0.05</span>, <span class="keyword">RefreshRate</span> -&gt; <span class="number">120</span>, <span class="keyword">AnimationRepetitions</span> -&gt; <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>但是我们应该如何导出视频呢？</p>
+<p>。。。这真是令人想砸电脑</p>
+<p>你看我的速率和帧率是不是调得很完美，，结果你就这么开心地导出了：</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Export</span>[</span><br><span class="line"> <span class="string">"D:\\Lissajous曲线.avi"</span>, %]</span><br></pre></td></tr></table></figure>
+<p>然后：卧槽这个简直有毒吧跑这么快干什么？</p>
+<p>于是你就不知道干啥了。。</p>
+<p>我google了一下，然后在一个Forum里面找到了解答：要设置<code>&quot;AnimationDuration&quot;-&gt;秒</code>来确定动画时间…</p>
+<p>还要<code>&quot;FrameRate&quot; -&gt; 秒</code>来确定导出帧率….我tm….</p>
+<p>导致得结果当然是奇慢无比得导出，并且质量还很差，比如说你会这么写：</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Export</span>[</span><br><span class="line"> <span class="string">"D:\\Lissajous曲线.avi"</span>, <span class="keyword">Animate</span>[<span class="keyword">ParametricPlot</span>[&#123;Sin[13 u], Sin[18 u]&#125;, &#123;u, 0, a&#125;, </span><br><span class="line">  <span class="keyword">PlotLabel</span> -&gt; <span class="string">"u="</span> + a, <span class="keyword">PlotPoints</span> -&gt; <span class="number">200</span>, </span><br><span class="line">  <span class="keyword">PlotRange</span> -&gt; &#123;&#123;-1, 1&#125;, &#123;-1, 1&#125;&#125;],</span><br><span class="line"> &#123;a, (10)^(-100), 2 Pi&#125;, <span class="keyword">AnimationRunning</span> -&gt; <span class="keyword">True</span>, </span><br><span class="line"> <span class="keyword">AnimationRate</span> -&gt; <span class="number">0.05</span>, <span class="keyword">RefreshRate</span> -&gt; <span class="number">120</span>, <span class="keyword">AnimationRepetitions</span> -&gt; <span class="number">1</span>], <span class="string">"AnimationDuration"</span> -&gt; <span class="number">30</span>, </span><br><span class="line"> <span class="string">"FrameRate"</span> -&gt; <span class="number">30</span>]</span><br></pre></td></tr></table></figure>
+<p>结果你发现这画质跟你在Youtube上面看的240p没什么区别…</p>
+<p>我们为什么不换个思路呢…既然我们都有1080P屏幕…</p>
+<p>直接录屏啊！</p>
+<p>美滋滋…效果如下（x</p>
+<video width="1024" height="552" controls="controls">
+  <source src="\images\Lissajous.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<p><del>总结：早日弃掉Export视频保平安</del></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/08/28/一些关于组合的公式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1956,184 +2139,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/05/15/『POJ 2376 』 Cleaning Shifts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leoleepz">
-      <meta itemprop="description" content="My Blog">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Flying fighter">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/15/『POJ 2376 』 Cleaning Shifts/" itemprop="url">
-                  『POJ 2376 』 Cleaning Shifts
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-15 22:21:11 / 修改时间：22:25:07" itemprop="dateCreated datePublished" datetime="2018-05-15T22:21:11+08:00">2018-05-15</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="『POJ-2376-』-Cleaning-Shifts"><a href="#『POJ-2376-』-Cleaning-Shifts" class="headerlink" title="『POJ 2376 』 Cleaning Shifts"></a>『POJ 2376 』 Cleaning Shifts</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><strong>Description</strong></p>
-<p>Farmer John is assigning some of his N (1 &lt;= N &lt;= 25,000) cows to do some cleaning chores around the barn. He always wants to have one cow working on cleaning things up and has divided the day into T shifts (1 &lt;= T &lt;= 1,000,000), the first being shift 1 and the last being shift T.<br>Each cow is only available at some interval of times during the day for work on cleaning. Any cow that is selected for cleaning duty will work for the entirety of her interval.<br>Your job is to help Farmer John assign some cows to shifts so that (i) every shift has at least one cow assigned to it, and (ii) as few cows as possible are involved in cleaning. If it is not possible to assign a cow to each shift, print -1.</p>
-<p><strong>Input</strong></p>
-<p>* Line 1: Two space-separated integers: N and T<br>* Lines 2..N+1: Each line contains the start and end times of the interval during which a cow can work. A cow starts work at the start time and finishes after the end time.</p>
-<p><strong>Output</strong></p>
-<p>* Line 1: The minimum number of cows Farmer John needs to hire or -1 if it is not possible to assign a cow to each shift.</p>
-<p><strong>Sample Input</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 10</span><br><span class="line">1 7</span><br><span class="line">3 6</span><br><span class="line">6 10</span><br></pre></td></tr></table></figure>
-<p><strong>Sample Output</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
-<p><strong>Hint</strong></p>
-<p>This problem has huge input data,use scanf() instead of cin to read data to avoid time limit exceed.<br>INPUT DETAILS:<br>There are 3 cows and 10 shifts. Cow #1 can work shifts 1..7, cow #2 can work shifts 3..6, and cow #3 can work shifts 6..10.<br>OUTPUT DETAILS:<br>By selecting cows #1 and #3, all shifts are covered. There is no way to cover all the shifts using fewer than 2 cows.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>人话题目大意：</p>
-<p>给你若干个小区间和一个大区间，需要你用最少的小区间个数以覆盖整个大区间</p>
-<p>可以说数据还是可以的，被卡了好多次。。。</p>
-<p>贪心即可</p>
-<p>按每头奶牛工作的开始时间排序，然后每次在合法的牛之间选工作结束最晚的，这样就能保证答案最小。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 25000 + 10</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> N, T;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> s, e;</span><br><span class="line">&#125; a[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node a, node b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a.s &lt; b.s) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>; x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> s = getchar();</span><br><span class="line">	<span class="keyword">while</span> (!<span class="built_in">isdigit</span>(s)) &#123; <span class="keyword">if</span> (s == <span class="string">'-'</span>) f = <span class="number">-1</span>; s = getchar(); &#125;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">isdigit</span>(s)) &#123; x = x * <span class="number">10</span> + s - <span class="string">'0'</span>; s = getchar(); &#125;</span><br><span class="line">	x *= f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **Argv)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">	read(N), read(T);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">		read(a[i].s), read(a[i].e);</span><br><span class="line">	sort(a + <span class="number">1</span>, a + N + <span class="number">1</span>, cmp);</span><br><span class="line">	<span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> ed = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (;;)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> ti = i, edmax = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (a[i + <span class="number">1</span>].s &lt;= ed + <span class="number">1</span> &amp;&amp; i + <span class="number">1</span> &lt;= N) edmax = max(edmax, a[++i].e);	<span class="comment">//保证不越界，并且在能选择的范围内选择最优的答案 </span></span><br><span class="line">		<span class="keyword">if</span> (ti == i &amp;&amp; i &lt;= N)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		ed = edmax, tot++;</span><br><span class="line">		<span class="keyword">if</span> (ed &gt;= T)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; tot &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2185,7 +2190,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2212,7 +2217,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2462,7 +2469,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共30.1k字</span>
+  <span class="post-count">博客全站共30.5k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -2959,9 +2966,9 @@
       
     
       
-        
-      
     
+      
+        
       
     
       
