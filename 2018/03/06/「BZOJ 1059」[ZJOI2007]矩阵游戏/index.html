@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="BZOJ 1059 [ZJOI2007]矩阵游戏这题什么鬼。。第一反应：大暴力？(您的电脑怕不是128位量子计算机哦)原题传送门 题目描述Description　小Q是一个非常聪明的孩子，除了国际象棋，他还很喜欢玩一个电脑益智游戏——矩阵游戏。矩阵游戏在一个$N*N$黑白方阵进行（如同国际象棋一般，只是颜色是随意的）。每次可以对该矩阵进行两种操作：行交换操作：选择矩阵的任意两行，交换这两行（即交换">
-<meta name="keywords" content="匈牙利算法,图论,BZOJ,省队,二分图匹配">
+<meta name="keywords" content="BZOJ,匈牙利算法,图论,省队,二分图匹配">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「BZOJ 1059」 [ZJOI2007]矩阵游戏">
 <meta property="og:url" content="https://skyofwar.xyz/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/index.html">
@@ -534,11 +534,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/BZOJ/" rel="tag"><i class="fa fa-tag"></i> BZOJ</a>
+          
             <a href="/tags/匈牙利算法/" rel="tag"><i class="fa fa-tag"></i> 匈牙利算法</a>
           
             <a href="/tags/图论/" rel="tag"><i class="fa fa-tag"></i> 图论</a>
-          
-            <a href="/tags/BZOJ/" rel="tag"><i class="fa fa-tag"></i> BZOJ</a>
           
             <a href="/tags/省队/" rel="tag"><i class="fa fa-tag"></i> 省队</a>
           
@@ -1124,9 +1124,10 @@
 
     
       <script type="text/javascript">
+      <script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>
       function renderGitment(){
         var gitment = new Gitmint({
-            id: '<%= page.date %>',
+            id: md5(window.location.pathname),
             owner: 'Leoleepz',
             repo: 'Leoleepz.github.io',
             

@@ -1133,9 +1133,10 @@
 
     
       <script type="text/javascript">
+      <script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>
       function renderGitment(){
         var gitment = new Gitmint({
-            id: '<%= page.date %>',
+            id: md5(window.location.pathname),
             owner: 'Leoleepz',
             repo: 'Leoleepz.github.io',
             
