@@ -428,16 +428,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/28/记录一次非常感人的Mathematica Animation/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/28/记录一次非常感人的Mathematica Animation/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -589,14 +579,6 @@ Your browser does not support the video tag.
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      
-        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
-        <div id="gitment-container" style="display:none"></div>
-      
-    </div>
 
   
 
@@ -1106,53 +1088,6 @@ Your browser does not support the video tag.
 
 
 
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
-    
-        
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-      <style>
-        a.gitment-editor-footer-tip { display: none; }
-        .gitment-container.gitment-footer-container { display: none; }
-      </style>
-    
-
-    
-      <script type="text/javascript">
-      <script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: md5(window.location.pathname),
-            owner: 'Leoleepz',
-            repo: 'Leoleepz.github.io',
-            
-            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: '81d36d1b97c2cf4e3a287ddaa268ce9520149ee9',
-            
-                client_id: '0173c1ecbfc1308f1be2'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      function showGitment(){
-        document.getElementById("gitment-display-button").style.display = "none";
-        document.getElementById("gitment-container").style.display = "block";
-        renderGitment();
-      }
-      
-      </script>
-    
 
 
 
