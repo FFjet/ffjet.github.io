@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="BZOJ 1059 [ZJOI2007]矩阵游戏这题什么鬼。。第一反应：大暴力？(您的电脑怕不是128位量子计算机哦)原题传送门 题目描述Description　小Q是一个非常聪明的孩子，除了国际象棋，他还很喜欢玩一个电脑益智游戏——矩阵游戏。矩阵游戏在一个$N*N$黑白方阵进行（如同国际象棋一般，只是颜色是随意的）。每次可以对该矩阵进行两种操作：行交换操作：选择矩阵的任意两行，交换这两行（即交换">
-<meta name="keywords" content="BZOJ,匈牙利算法,图论,省队,二分图匹配">
+<meta name="keywords" content="匈牙利算法,图论,BZOJ,省队,二分图匹配">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「BZOJ 1059」 [ZJOI2007]矩阵游戏">
 <meta property="og:url" content="https://skyofwar.xyz/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/index.html">
@@ -428,6 +428,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -506,11 +516,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/BZOJ/" rel="tag"><i class="fa fa-tag"></i> BZOJ</a>
-          
             <a href="/tags/匈牙利算法/" rel="tag"><i class="fa fa-tag"></i> 匈牙利算法</a>
           
             <a href="/tags/图论/" rel="tag"><i class="fa fa-tag"></i> 图论</a>
+          
+            <a href="/tags/BZOJ/" rel="tag"><i class="fa fa-tag"></i> BZOJ</a>
           
             <a href="/tags/省队/" rel="tag"><i class="fa fa-tag"></i> 省队</a>
           
@@ -560,6 +570,14 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
 
   
 
@@ -613,7 +631,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -781,7 +799,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">63</span>
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -902,7 +922,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共30.5k字</span>
+  <span class="post-count">博客全站共31.0k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -1041,6 +1061,52 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'Leoleepz',
+            repo: 'Leoleepz.github.io',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '81d36d1b97c2cf4e3a287ddaa268ce9520149ee9',
+            
+                client_id: '0173c1ecbfc1308f1be2'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
 
 
 
@@ -1421,7 +1487,24 @@
         }
     });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
     
   

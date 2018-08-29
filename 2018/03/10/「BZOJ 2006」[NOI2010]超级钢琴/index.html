@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="[NOI2010]超级钢琴题目描述Description小Z是一个小有名气的钢琴家，最近C博士送给了小Z一架超级钢琴，小Z希望能够用这架钢琴创作出世界上最美妙的音乐。 这架超级钢琴可以弹奏出$n$个音符，编号为$1$至$n$。第i个音符的美妙度为Ai，其中Ai可正可负。 一个“超级和弦”由若干个编号连续的音符组成，包含的音符个数不少于L且不多于R。我们定义超级和弦的美妙度为其包含的所有音符的美妙度">
-<meta name="keywords" content="BZOJ,ST表,NOI,优先队列,堆">
+<meta name="keywords" content="ST表,BZOJ,NOI,优先队列,堆">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「BZOJ 2006」[NOI2010]超级钢琴">
 <meta property="og:url" content="https://skyofwar.xyz/2018/03/10/「BZOJ 2006」[NOI2010]超级钢琴/index.html">
@@ -428,6 +428,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/10/「BZOJ 2006」[NOI2010]超级钢琴/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/03/10/「BZOJ 2006」[NOI2010]超级钢琴/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -495,9 +505,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/BZOJ/" rel="tag"><i class="fa fa-tag"></i> BZOJ</a>
-          
             <a href="/tags/ST表/" rel="tag"><i class="fa fa-tag"></i> ST表</a>
+          
+            <a href="/tags/BZOJ/" rel="tag"><i class="fa fa-tag"></i> BZOJ</a>
           
             <a href="/tags/NOI/" rel="tag"><i class="fa fa-tag"></i> NOI</a>
           
@@ -551,6 +561,14 @@
           
 
   
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
 
 
 
@@ -602,7 +620,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -770,7 +788,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">63</span>
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -891,7 +911,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共30.5k字</span>
+  <span class="post-count">博客全站共31.0k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -1030,6 +1050,52 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'Leoleepz',
+            repo: 'Leoleepz.github.io',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '81d36d1b97c2cf4e3a287ddaa268ce9520149ee9',
+            
+                client_id: '0173c1ecbfc1308f1be2'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
 
 
 
@@ -1410,7 +1476,24 @@
         }
     });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
     
   
