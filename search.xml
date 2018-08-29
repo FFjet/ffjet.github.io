@@ -21,6 +21,10 @@
             
             <tag> Tricks </tag>
             
+            <tag> sort </tag>
+            
+            <tag> JZOJ </tag>
+            
         </tags>
       
     </entry>
@@ -692,9 +696,9 @@
             
             <tag> 模板 </tag>
             
-            <tag> 线段树 </tag>
-            
             <tag> 数据结构 </tag>
+            
+            <tag> 线段树 </tag>
             
             <tag> 懒标记 </tag>
             
