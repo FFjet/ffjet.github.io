@@ -387,12 +387,24 @@
                 
               
 
-              <time title="创建时间：2018-05-15 22:26:21 / 修改时间：22:26:29" itemprop="dateCreated datePublished" datetime="2018-05-15T22:26:21+08:00">2018-05-15</time>
+              <time title="创建时间：2018-05-15 22:26:21" itemprop="dateCreated datePublished" datetime="2018-05-15T22:26:21+08:00">2018-05-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 17:04:54" itemprop="dateModified" datetime="2018-08-29T17:04:54+08:00">2018-08-29</time>
               
             
           </span>
@@ -444,8 +456,7 @@
 
       
         
-          
-            <h1 id="『POJ-2229』-Sumsets"><a href="#『POJ-2229』-Sumsets" class="headerlink" title="『POJ 2229』 Sumsets"></a>『POJ 2229』 Sumsets</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="http://poj.org/problem?id=2229" target="_blank" rel="noopener">传送门</a></p>
+          <h1 id="『POJ-2229』-Sumsets"><a href="#『POJ-2229』-Sumsets" class="headerlink" title="『POJ 2229』 Sumsets"></a>『POJ 2229』 Sumsets</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="http://poj.org/problem?id=2229" target="_blank" rel="noopener">传送门</a></p>
 <p><strong>Description</strong></p>
 <p>Farmer John commanded his cows to search for different sets of numbers that sum to a given number. The cows use only numbers that are an integer power of 2. Here are the possible sets of numbers that sum to 7: </p>
 <p> 1) 1+1+1+1+1+1+1 </p>
@@ -455,20 +466,13 @@
 <p>5) 1+2+2+2 </p>
 <p>6) 1+2+4 </p>
 <p> Help FJ count all possible representations for a given integer N (1 &lt;= N &lt;= 1,000,000).  </p>
-<p><strong>Input</strong></p>
-<p>A single line with a single integer, N. </p>
-<p><strong>Output</strong></p>
-<p>The number of ways to represent N as the indicated sum. Due to the potential huge size of this number, print only last 9 digits (in base 10 representation). </p>
-<p><strong>Sample Input</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure>
-<p><strong>Sample Output</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>DP 水题</p>
-<p>记<code>f[i]</code>为考虑的数字为i时的方案数</p>
-<p>易得当i为奇数时，与i-1方案数相同。i为偶数时，<code>f[i] = f[i - 1] + f[i &gt;&gt; 1]</code>。</p>
-<p>根据此转移方程，易得代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 1000000 + 10</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="keyword">int</span> f[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **Argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	f[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= N; ++i)</span><br><span class="line">		<span class="keyword">if</span> (i &amp; <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			f[i] = f[i - <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			f[i] = (f[i - <span class="number">1</span>] + f[i &gt;&gt; <span class="number">1</span>]) % <span class="number">1000000000</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; f[N] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/15/『POJ 2229』 Sumsets/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -569,12 +573,24 @@
                 
               
 
-              <time title="创建时间：2018-05-15 22:21:11 / 修改时间：22:25:07" itemprop="dateCreated datePublished" datetime="2018-05-15T22:21:11+08:00">2018-05-15</time>
+              <time title="创建时间：2018-05-15 22:21:11" itemprop="dateCreated datePublished" datetime="2018-05-15T22:21:11+08:00">2018-05-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 17:05:03" itemprop="dateModified" datetime="2018-08-29T17:05:03+08:00">2018-08-29</time>
               
             
           </span>
@@ -626,27 +642,15 @@
 
       
         
-          
-            <h1 id="『POJ-2376-』-Cleaning-Shifts"><a href="#『POJ-2376-』-Cleaning-Shifts" class="headerlink" title="『POJ 2376 』 Cleaning Shifts"></a>『POJ 2376 』 Cleaning Shifts</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><strong>Description</strong></p>
+          <h1 id="『POJ-2376-』-Cleaning-Shifts"><a href="#『POJ-2376-』-Cleaning-Shifts" class="headerlink" title="『POJ 2376 』 Cleaning Shifts"></a>『POJ 2376 』 Cleaning Shifts</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><strong>Description</strong></p>
 <p>Farmer John is assigning some of his N (1 &lt;= N &lt;= 25,000) cows to do some cleaning chores around the barn. He always wants to have one cow working on cleaning things up and has divided the day into T shifts (1 &lt;= T &lt;= 1,000,000), the first being shift 1 and the last being shift T.<br>Each cow is only available at some interval of times during the day for work on cleaning. Any cow that is selected for cleaning duty will work for the entirety of her interval.<br>Your job is to help Farmer John assign some cows to shifts so that (i) every shift has at least one cow assigned to it, and (ii) as few cows as possible are involved in cleaning. If it is not possible to assign a cow to each shift, print -1.</p>
-<p><strong>Input</strong></p>
-<p>* Line 1: Two space-separated integers: N and T<br>* Lines 2..N+1: Each line contains the start and end times of the interval during which a cow can work. A cow starts work at the start time and finishes after the end time.</p>
-<p><strong>Output</strong></p>
-<p>* Line 1: The minimum number of cows Farmer John needs to hire or -1 if it is not possible to assign a cow to each shift.</p>
-<p><strong>Sample Input</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 10</span><br><span class="line">1 7</span><br><span class="line">3 6</span><br><span class="line">6 10</span><br></pre></td></tr></table></figure>
-<p><strong>Sample Output</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
-<p><strong>Hint</strong></p>
-<p>This problem has huge input data,use scanf() instead of cin to read data to avoid time limit exceed.<br>INPUT DETAILS:<br>There are 3 cows and 10 shifts. Cow #1 can work shifts 1..7, cow #2 can work shifts 3..6, and cow #3 can work shifts 6..10.<br>OUTPUT DETAILS:<br>By selecting cows #1 and #3, all shifts are covered. There is no way to cover all the shifts using fewer than 2 cows.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>人话题目大意：</p>
-<p>给你若干个小区间和一个大区间，需要你用最少的小区间个数以覆盖整个大区间</p>
-<p>可以说数据还是可以的，被卡了好多次。。。</p>
-<p>贪心即可</p>
-<p>按每头奶牛工作的开始时间排序，然后每次在合法的牛之间选工作结束最晚的，这样就能保证答案最小。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 25000 + 10</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> N, T;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> s, e;</span><br><span class="line">&#125; a[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node a, node b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a.s &lt; b.s) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> f = <span class="number">1</span>; x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> s = getchar();</span><br><span class="line">	<span class="keyword">while</span> (!<span class="built_in">isdigit</span>(s)) &#123; <span class="keyword">if</span> (s == <span class="string">'-'</span>) f = <span class="number">-1</span>; s = getchar(); &#125;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">isdigit</span>(s)) &#123; x = x * <span class="number">10</span> + s - <span class="string">'0'</span>; s = getchar(); &#125;</span><br><span class="line">	x *= f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **Argv)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">	read(N), read(T);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">		read(a[i].s), read(a[i].e);</span><br><span class="line">	sort(a + <span class="number">1</span>, a + N + <span class="number">1</span>, cmp);</span><br><span class="line">	<span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> ed = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (;;)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> ti = i, edmax = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (a[i + <span class="number">1</span>].s &lt;= ed + <span class="number">1</span> &amp;&amp; i + <span class="number">1</span> &lt;= N) edmax = max(edmax, a[++i].e);	<span class="comment">//保证不越界，并且在能选择的范围内选择最优的答案 </span></span><br><span class="line">		<span class="keyword">if</span> (ti == i &amp;&amp; i &lt;= N)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		ed = edmax, tot++;</span><br><span class="line">		<span class="keyword">if</span> (ed &gt;= T)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; tot &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/15/『POJ 2376 』 Cleaning Shifts/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
