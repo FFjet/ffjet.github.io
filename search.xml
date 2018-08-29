@@ -559,6 +559,8 @@
       
         <tags>
             
+            <tag> 模板 </tag>
+            
             <tag> BZOJ </tag>
             
             <tag> HNOI </tag>
@@ -568,8 +570,6 @@
             <tag> 树 </tag>
             
             <tag> 平衡树 </tag>
-            
-            <tag> 模板 </tag>
             
         </tags>
       
@@ -613,9 +613,9 @@
       
         <tags>
             
-            <tag> BZOJ </tag>
-            
             <tag> 模板 </tag>
+            
+            <tag> BZOJ </tag>
             
             <tag> KD树 </tag>
             
@@ -692,11 +692,11 @@
       
         <tags>
             
-            <tag> 树 </tag>
-            
             <tag> 模板 </tag>
             
             <tag> 数据结构 </tag>
+            
+            <tag> 树 </tag>
             
             <tag> 线段树 </tag>
             
@@ -767,9 +767,9 @@
       
         <tags>
             
-            <tag> BZOJ </tag>
-            
             <tag> ST表 </tag>
+            
+            <tag> BZOJ </tag>
             
             <tag> NOI </tag>
             
