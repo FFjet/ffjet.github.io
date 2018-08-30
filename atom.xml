@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-08-30T13:06:33.649Z</updated>
+  <updated>2018-08-30T14:36:55.532Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8ECodeforces%20932E%E3%80%8FTeam%20Work/"/>
+    <id>https://skyofwar.xyz/2018/08/30/『Codeforces 932E』Team Work/</id>
+    <published>2018-08-30T14:08:22.798Z</published>
+    <updated>2018-08-30T14:36:55.532Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『Codeforces-932E』Team-Work&quot;&gt;&lt;a href=&quot;#『Codeforces-932E』Team-Work&quot; class=&quot;headerlink&quot; title=&quot;『Codeforces 932E』Team Work&quot;&gt;&lt;/a&gt;『Codeforces 932E』Team Work&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;time limit per test&lt;/p&gt;
+&lt;p&gt;2 seconds&lt;/p&gt;
+&lt;p&gt;memory limit per test&lt;/p&gt;
+&lt;p&gt;256 megabytes&lt;/p&gt;
+&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;You have a team of $N$ people. For a particular task, you can pick any non-empty subset of people. The cost of having $x$ people for the task is $x^k$.&lt;/p&gt;
+&lt;p&gt;Output the sum of costs over all non-empty subsets of people.&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>『AGC 012B』Splatter Painting</title>
@@ -199,7 +220,7 @@
     
       &lt;h1 id=&quot;记录一次非常感人的Mathematica-Animation…&quot;&gt;&lt;a href=&quot;#记录一次非常感人的Mathematica-Animation…&quot; class=&quot;headerlink&quot; title=&quot;记录一次非常感人的Mathematica Animation…&quot;&gt;&lt;/a&gt;记录一次非常感人的Mathematica Animation…&lt;/h1&gt;&lt;p&gt;自己突发奇想想做一次Lissajous曲线。。&lt;/p&gt;
 &lt;p&gt;Mathematica代码咯：&lt;/p&gt;
-&lt;!--�45--&gt;
+&lt;!--�44--&gt;
 &lt;p&gt;但是我们应该如何导出视频呢？&lt;/p&gt;
     
     </summary>
@@ -488,8 +509,8 @@
   
   <entry>
     <title>『POJ 2376 』 Cleaning Shifts</title>
-    <link href="https://skyofwar.xyz/2018/05/15/%E3%80%8EPOJ%202376%20%E3%80%8F%20Cleaning%20Shifts/"/>
-    <id>https://skyofwar.xyz/2018/05/15/『POJ 2376 』 Cleaning Shifts/</id>
+    <link href="https://skyofwar.xyz/2018/05/15/%E3%80%8EPOJ%202376%E3%80%8F%20Cleaning%20Shifts/"/>
+    <id>https://skyofwar.xyz/2018/05/15/『POJ 2376』 Cleaning Shifts/</id>
     <published>2018-05-15T14:21:11.000Z</published>
     <updated>2018-08-29T09:05:03.259Z</updated>
     
@@ -539,32 +560,6 @@
       <category term="水题" scheme="https://skyofwar.xyz/tags/%E6%B0%B4%E9%A2%98/"/>
     
       <category term="DP" scheme="https://skyofwar.xyz/tags/DP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSTSC 2018滚粗记</title>
-    <link href="https://skyofwar.xyz/2018/05/04/JSTSC%202018%E6%BB%9A%E7%B2%97%E8%AE%B0/"/>
-    <id>https://skyofwar.xyz/2018/05/04/JSTSC 2018滚粗记/</id>
-    <published>2018-05-04T12:20:54.000Z</published>
-    <updated>2018-05-04T15:07:44.830Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;JSTSC-2018滚粗记&quot;&gt;&lt;a href=&quot;#JSTSC-2018滚粗记&quot; class=&quot;headerlink&quot; title=&quot;JSTSC 2018滚粗记&quot;&gt;&lt;/a&gt;JSTSC 2018滚粗记&lt;/h1&gt;&lt;h2 id=&quot;Day-1&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="游记" scheme="https://skyofwar.xyz/categories/%E6%B8%B8%E8%AE%B0/"/>
-    
-    
-      <category term="游记" scheme="https://skyofwar.xyz/tags/%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   

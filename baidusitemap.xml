@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8ECodeforces%20932E%E3%80%8FTeam%20Work/</loc>
+    <lastmod>2018-08-30T14:36:55.532Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2018-08-30T14:08:22.798Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20012A%E3%80%8FAtCoder%20Group%20Contest/</loc>
     <lastmod>2018-08-30T13:06:55.841Z</lastmod>
     <data>
@@ -163,7 +178,7 @@
 
     
   <url>
-    <loc>https://skyofwar.xyz/2018/05/15/%E3%80%8EPOJ%202376%20%E3%80%8F%20Cleaning%20Shifts/</loc>
+    <loc>https://skyofwar.xyz/2018/05/15/%E3%80%8EPOJ%202376%E3%80%8F%20Cleaning%20Shifts/</loc>
     <lastmod>2018-08-29T09:05:03.259Z</lastmod>
     <data>
         <display>
@@ -615,9 +630,9 @@
         <title>「BZOJ 4520」[CQOI2016]K远点对</title>
         <pubTime>2018-03-22T13:49:33.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>模板</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>KD树</tag>
          
@@ -667,9 +682,9 @@
         <title>「BZOJ 2006」[NOI2010]超级钢琴</title>
         <pubTime>2018-03-10T14:31:33.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>ST表</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>NOI</tag>
          
@@ -723,9 +738,9 @@
         <title>「BZOJ 1588」 [HNOI2002]营业额统计</title>
         <pubTime>2018-03-26T14:20:22.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>模板</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>HNOI</tag>
          

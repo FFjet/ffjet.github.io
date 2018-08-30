@@ -341,6 +341,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/07/计算凸多边形的面积/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/07/计算凸多边形的面积/" itemprop="url">
+                  求凸多边形的面积
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-07 22:01:41" itemprop="dateCreated datePublished" datetime="2018-02-07T22:01:41+08:00">2018-02-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-31 10:50:36" itemprop="dateModified" datetime="2018-03-31T10:50:36+08:00">2018-03-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/讲解/" itemprop="url" rel="index"><span itemprop="name">讲解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="求凸多边形的面积（pol）"><a href="#求凸多边形的面积（pol）" class="headerlink" title="求凸多边形的面积（pol）"></a>求凸多边形的面积（pol）</h2><p><strong>问题描述</strong>：<br>按一定的顺序（顺、逆时针）给出一个多边形的各顶点坐标，求该多边形的面积。<br><strong>输入</strong>：<br>第一行包含一个n，表示多边形顶点的个数( 0&lt;=n&lt;=100)<br>第2行到第n+1行，每行两个整数x，y（-10000&lt;=x，y &lt;= 10000）<br><strong>输出</strong>：<br>    输出有且只有一行，包含一个数s，s为多边形的面积，保留一位小数<br><strong>样例</strong>：<br>pol.in<br>3<br>0 0<br>0 3<br>3 0</p>
+<p>pol.out<br>4.5<br>题目及测试数据: <a href="https://github.com/Leoleepz/OI-Codes/tree/master/%E4%BB%BB%E6%84%8F%E5%A4%9A%E8%BE%B9%E5%BD%A2%E9%9D%A2%E7%A7%AF" target="_blank" rel="noopener">https://github.com/Leoleepz/OI-Codes/tree/master/%E4%BB%BB%E6%84%8F%E5%A4%9A%E8%BE%B9%E5%BD%A2%E9%9D%A2%E7%A7%AF</a></p>
+<ul>
+<li>第一种方法即为朴素的向量方法。我们可以把凸多边形拆成多个三角形的面积去做。我们会发现，如果用原点去构造三角形来操作，最终结果就是（逆时针坐标乘积-顺时针坐标乘积）÷2.</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996) </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ComputeTriangleVectorArea CTVA</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">double</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span> &lt;Point&gt; Points;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ComputeTriangleVectorArea</span><span class="params">(Point p1, Point p2, Point p3)</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">double</span>)<span class="number">0.5</span> * ((p2.x - p1.x) * (p3.y - p1.y) - (p3.x - p1.x) * (p2.y - p1.y));   </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Compute</span><span class="params">(<span class="built_in">vector</span> &lt;Point&gt; PointSet)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (PointSet.empty()) <span class="keyword">return</span> <span class="number">0.0</span>;</span><br><span class="line">	<span class="keyword">double</span> area = <span class="number">0.0</span>;</span><br><span class="line">	Point O;</span><br><span class="line">	O.x = O.y = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="built_in">vector</span>&lt;Point&gt;::iterator ii = PointSet.begin(); ii != PointSet.end() - <span class="number">1</span>; ++ii)</span><br><span class="line">	&#123;</span><br><span class="line">		area += CTVA(O,(*ii),(*(ii + <span class="number">1</span>)));</span><br><span class="line">	&#125;</span><br><span class="line">	area += CTVA(O,PointSet[PointSet.size() - <span class="number">1</span>], PointSet[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">abs</span>(area);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen(<span class="string">"pol.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"pol.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Point tmp;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; tmp.x &gt;&gt; tmp.y;</span><br><span class="line">		Points.push_back(tmp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%0.1lf\n"</span>,Compute(Points));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二种方法我脑洞了一下，用了定积分的方法。定积分有正有负，依次求和，重复部分由于正负会相互抵消，最后剩下的总面积的绝对值就是多边形的面积。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996) </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">double</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span> &lt;Point&gt; Points;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">LinearIntegration</span><span class="params">(Point p1, Point p2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">double</span>)<span class="number">0.5</span> * (p2.x - p1.x) * (p2.y + p1.y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">ComputeArea</span><span class="params">(<span class="built_in">vector</span> &lt;Point&gt; PointSet)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (PointSet.empty()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">double</span> area = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="built_in">vector</span>&lt;Point&gt;::iterator ii = PointSet.begin(); ii != PointSet.end() - <span class="number">1</span>; ++ii)</span><br><span class="line">	&#123;</span><br><span class="line">		area += LinearIntegration((*ii),(*(ii + <span class="number">1</span>)));</span><br><span class="line">	&#125;</span><br><span class="line">	area += LinearIntegration(PointSet[PointSet.size() - <span class="number">1</span>], PointSet[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">abs</span>(area);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen(<span class="string">"pol.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"pol.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Point tmp;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; tmp.x &gt;&gt; tmp.y;</span><br><span class="line">		Points.push_back(tmp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%0.1lf\n"</span>,ComputeArea(Points));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/05/米勒拉宾素数判定 MR Prime Detect/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -555,7 +736,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -866,7 +1047,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共33.0k字</span>
+  <span class="post-count">博客全站共33.7k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -1376,6 +1557,8 @@
 
   
   
+    
+      
     
       
     
