@@ -341,6 +341,364 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/22/「BZOJ 4520」[CQOI2016]K远点对/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/22/「BZOJ 4520」[CQOI2016]K远点对/" itemprop="url">
+                  「BZOJ 4520」[CQOI2016]K远点对
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-22 21:49:33" itemprop="dateCreated datePublished" datetime="2018-03-22T21:49:33+08:00">2018-03-22</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-06 15:41:13" itemprop="dateModified" datetime="2018-05-06T15:41:13+08:00">2018-05-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p><strong>Description</strong><br>已知平面内 N 个点的坐标，求欧氏距离下的第 K 远点对。</p>
+<p><strong>Input</strong><br>输入文件第一行为用空格隔开的两个整数 N， K。接下来 N 行，每行两个整数 X,Y，表示一个点<br>的坐标。1 &lt; =  N &lt; =  100000， 1 &lt; =  K &lt; =  100， K &lt; =  N*(N−1)/2 ， 0 &lt; =  X, Y &lt; 2^31。<br><strong>Output</strong><br>输出文件第一行为一个整数，表示第 K 远点对的距离的平方（一定是个整数）。</p>
+<p><strong>Sample Input</strong><br>10 5<br>0 0<br>0 1<br>1 0<br>1 1<br>2 0<br>2 1<br>1 2<br>0 2<br>3 0<br>3 1<br><strong>Sample Output</strong><br>9</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>这题是KDTree模板题啊Orzzz<br>然额本蒟蒻打了好久才调出来<br>原因：<br><img src="/images/zz.png" alt=""></p>
+<p>简直了。。<br>附上蒟蒻代码：（太懒没时间打注释）<br>跑的实在是巨慢：<br><img src="/images/status1.png" alt=""><br>顺便说一句：那个MAX和MIN记录的是<strong>当前矩阵区域内最大的横纵坐标值</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 100011</span></span><br><span class="line"><span class="keyword">int</span> N, K, nowD, root, ql, qr; </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> dis;</span><br><span class="line">	<span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node &amp;a) <span class="keyword">const</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> a.dis &lt; dis;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">KDTree</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> d[<span class="number">2</span>], Min[<span class="number">2</span>], Max[<span class="number">2</span>], l, r;</span><br><span class="line">&#125; KDT;</span><br><span class="line">KDT Tree[MAXN];</span><br><span class="line">priority_queue &lt;node&gt; Q;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="title">sqr</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a * a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">MAX</span><span class="params">(KDT &amp;a, KDT b, <span class="keyword">int</span> type)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	a.Max[type] = max(a.Max[type], b.Max[type]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">MIN</span><span class="params">(KDT &amp;a, KDT b, <span class="keyword">int</span> type)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	a.Min[type] = min(a.Min[type], b.Min[type]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="title">GetDis</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sqr(Tree[x].d[<span class="number">0</span>] - Tree[y].d[<span class="number">0</span>]) + sqr(Tree[y].d[<span class="number">1</span>] - Tree[x].d[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(KDT a, KDT b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a.d[nowD] == b.d[nowD])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> a.d[nowD ^ <span class="number">1</span>] &lt; b.d[nowD ^ <span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	<span class="keyword">return</span> a.d[nowD] &lt; b.d[nowD];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Update</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (Tree[x].l) <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; ++i) MAX(Tree[x], Tree[Tree[x].l], i), MIN(Tree[x], Tree[Tree[x].l], i);</span><br><span class="line">	<span class="keyword">if</span> (Tree[x].r) <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; ++i) MAX(Tree[x], Tree[Tree[x].r], i), MIN(Tree[x], Tree[Tree[x].r], i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Build</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> D)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	nowD = D;</span><br><span class="line">	<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	nth_element(Tree + l + <span class="number">1</span>, Tree + mid + <span class="number">1</span>, Tree + r + <span class="number">1</span>, cmp);</span><br><span class="line">	<span class="keyword">if</span> (l &lt; mid) Tree[mid].l = Build(l, mid - <span class="number">1</span>, D ^ <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span> (mid &lt; r) Tree[mid].r = Build(mid + <span class="number">1</span>, r, D ^ <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; ++i)</span><br><span class="line">		Tree[mid].Min[i] = Tree[mid].Max[i] = Tree[mid].d[i];</span><br><span class="line">	Update(mid);</span><br><span class="line">	<span class="keyword">return</span> mid;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Adis</span><span class="params">(KDT A, KDT B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> max(sqr(A.d[<span class="number">0</span>] - B.Min[<span class="number">0</span>]), sqr(A.d[<span class="number">0</span>] - B.Max[<span class="number">0</span>])) + max(sqr(A.d[<span class="number">1</span>] - B.Min[<span class="number">1</span>]), sqr(A.d[<span class="number">1</span>] - B.Max[<span class="number">1</span>]));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Query</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> dl = <span class="number">0</span>, dr = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> dis = GetDis(<span class="number">0</span>, x);</span><br><span class="line">	<span class="keyword">if</span> (dis &gt; Q.top().dis)</span><br><span class="line">	&#123;</span><br><span class="line">		Q.pop();</span><br><span class="line">		Q.push((node)&#123; dis &#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (Tree[x].l) dl = Adis(Tree[<span class="number">0</span>], Tree[Tree[x].l]);</span><br><span class="line">	<span class="keyword">if</span> (Tree[x].r) dr = Adis(Tree[<span class="number">0</span>], Tree[Tree[x].r]);</span><br><span class="line">	<span class="keyword">if</span> (dl &gt; dr)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (dl &gt; Q.top().dis) Query(Tree[x].l);</span><br><span class="line">		<span class="keyword">if</span> (dr &gt; Q.top().dis) Query(Tree[x].r);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (dr &gt; Q.top().dis) Query(Tree[x].r);</span><br><span class="line">		<span class="keyword">if</span> (dl &gt; Q.top().dis) Query(Tree[x].l);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>); </span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; K;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; Tree[i].d[<span class="number">0</span>] &gt;&gt; Tree[i].d[<span class="number">1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	root = Build(<span class="number">1</span>, N, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= K * <span class="number">2</span>; ++i)</span><br><span class="line">		Q.push((node) &#123; <span class="number">0</span> &#125;);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Tree[<span class="number">0</span>].d[<span class="number">0</span>] = Tree[i].d[<span class="number">0</span>];</span><br><span class="line">		Tree[<span class="number">0</span>].d[<span class="number">1</span>] = Tree[i].d[<span class="number">1</span>];</span><br><span class="line">		Query(root); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; Q.top().dis &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/18/「CodeVS 1369」xth砍树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/18/「CodeVS 1369」xth砍树/" itemprop="url">
+                  「CodeVS 1369」xth砍树
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-18 21:20:11" itemprop="dateCreated datePublished" datetime="2018-03-18T21:20:11+08:00">2018-03-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-06 15:41:31" itemprop="dateModified" datetime="2018-05-06T15:41:31+08:00">2018-05-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://codevs.cn/problem/1369/" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><strong>题目描述 Description</strong><br>在一个凉爽的夏夜，xth 和 rabbit 来到花园里砍树。为啥米要砍树呢？是这样滴，<br>小菜儿的儿子窄森要出生了。Xth这个做伯伯的自然要做点什么。于是他决定带着<br>rabbit 去收集一些木材，给窄森做一个婴儿车……（xth 早就梦想着要天天打菜儿<br>他儿窄森的小 pp，到时候在婴儿车里安装一个电子遥控手臂，轻轻一按，啪啪<br>啪……“乌卡卡——”xth 邪恶滴笑了，“不要告诉 rabbit，她会说我缺德的……”<br>xth 如是说）。<br>花园里共有n棵树。为了花园的整体形象，rabbit 要求 xth只能在m个区域砍伐，我<br>们可以将这m个区域看成m个区间，树的间距相等，都是1，我们将每个区间设为<br>[x, y]。那么长度为k的区间中就有k棵树。树木的高度不等。现在 xth 想测量一下，<br>每个区间树木砍伐后所得的木材量是多少，而且每次测量后他都会砍下标号为<br>(x+y)/2<br>的那棵作为纪念。以方便他安排人手。(同一个区间的树木可以重复砍伐，我们认<br>为被砍过的树木高度为0)<br>每棵树的木材量=树的高度∗ 3.14（注意是3.14不是π）。</p>
+<p><strong>输入描述 Input Description</strong><br>第一行，一个整数n。<br>第二行，共n个整数，表示每棵树的高度。<br>第三行，一个整数m，表示共m个区间。<br>以下m行，每个区间[x, y]的左右端点x, y。</p>
+<p><strong>输出描述 Output Description</strong><br>共m行，每行一个数，表示每个区间的木材量。</p>
+<p>结果精确到小数点后两位。</p>
+<p><strong>样例输入 Sample Input</strong><br>5<br>1 2 3 4 5<br>2<br>1 4<br>2 4</p>
+<p><strong>样例输出 Sample Output</strong><br>31.40<br>21.98</p>
+<p><strong>数据范围及提示 Data Size &amp; Hint</strong><br>对于30%的数据，有n ≤ 5000,m ≤ 5000;<br>对于100%的数据，有n ≤ 200000,m ≤ 200000;</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>这是我见过的废话最多的题目之一。。。。<br>树状数组或线段树均可以过，反正都是单点修改区间查询即可<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 200000 + 5</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="keyword">int</span> a[MAXN], c[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x &amp; (-x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Modify</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = pos; i &lt;= N; i += lowbit(i)) c[i] += val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = pos; i &gt;= <span class="number">1</span>; i -= lowbit(i)) ret += c[i];</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">		Modify(i, a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; M;</span><br><span class="line">	<span class="keyword">while</span> (M--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> l, r;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%.2lf\n"</span>,<span class="number">3.14</span> * (query(r) - query(l - <span class="number">1</span>)));</span><br><span class="line">		Modify((l + r) &gt;&gt; <span class="number">1</span>, -a[(l + r) &gt;&gt; <span class="number">1</span>]);</span><br><span class="line">		a[(l + r) &gt;&gt; <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/17/「HDU 1556」Color the ball/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1762,376 +2120,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/05/「BZOJ 2818」 GCD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leoleepz">
-      <meta itemprop="description" content="My Blog">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Flying fighter">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/05/「BZOJ 2818」 GCD/" itemprop="url">
-                  「BZOJ 2818」 GCD
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-05 22:10:22" itemprop="dateCreated datePublished" datetime="2018-03-05T22:10:22+08:00">2018-03-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-06 15:41:06" itemprop="dateModified" datetime="2018-05-06T15:41:06+08:00">2018-05-06</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="BZOJ-2818-GCD"><a href="#BZOJ-2818-GCD" class="headerlink" title="BZOJ 2818 GCD"></a>BZOJ 2818 GCD</h1><p>咋一看这题目名字怎么那么亲切，结果看到题面就觉得不亲切了（大雾）<br><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2818" target="_blank" rel="noopener">原题传送门</a><br><strong>Description</strong><br>给定整数$N$，求$1&lt;=x,y&lt;=N$且$gcd(x,y)$为素数的数对$(x,y)$有多少对.</p>
-<p><strong>Input</strong><br>一个整数$N$</p>
-<p><strong>Output</strong><br>如题</p>
-<p><strong>Sample Input</strong><br>4</p>
-<p><strong>Sample Output</strong><br>4</p>
-<p><strong>HINT</strong><br>对于样例$(2,2),(2,4),(3,3),(4,2)$</p>
-<p>$1&lt;=N&lt;=10^7$</p>
-<p>按照<del>网上流传</del>的说法，此题为欧拉函数练手题<br>解法确实也很好懂，下面做一下详细的解释：</p>
-<p>首先，定义集合$P=\{x|x为素数\}$，接下来我们可以得出:</p>
-<script type="math/tex; mode=display">∀p∈P,∃k_1,k_2满足gcd(k1,k2) = 1,gcd(k1·p,k2·p) = p</script><p>①若$k_1≠k_2$<br>令$k_1&gt;k_2$<br>则满足调节的$k_1$的个数就为$φ(k_1)$<br>∴$k_1,k_2$所构成的组合的个数为$2·φ(k_1)$<br>②若$k_1=k_2$<br>当且仅当$k_1=k_2=1$时，满足条件</p>
-<p>综上，满足条件的所有数对个数为$\Sigma_{p∈P}^{n}[(\Sigma_{i=1}^{\lfloor\frac{n}{p}\rfloor}2φ(i))+1]$</p>
-<p>推到这一步，我们会惊讶地发现<br>woc这时间复杂度已经爆表了啊。。<br>没事，我们来看看哪里爆了。。。<br>诶？似乎没爆？</p>
-<p>==&gt;睁大眼睛好好看看$φ(N)$的计算公式：<br><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D153/sign=6ffd676c08b30f24319ae806fb94d192/8ad4b31c8701a18b93a2de42992f07082838fe76.jpg" alt=""><br>时间复杂度为标准的$O(n\sqrt{n})$，完美超时<br>下面介绍3个很奇妙的东西</p>
-<ul>
-<li>当$p∈P$(也就是P为质数)时，$φ(p) = p-1$</li>
-<li>若$i\ mod\ p =\ 0$, 那么$φ(i·p)=p·φ(i)$</li>
-<li>若$i\ mod\ p ≠\ 0$, 那么$φ(i·p)=φ(i)·( p-1 )$</li>
-</ul>
-<p>这些都是欧拉函数的一些很奇妙的性质（证明就不管它了）<br>利用这些性质，我们就可以在$O(n)$内搞出所有$φ$值了<br>算完了$φ$值，会发现还有一个和要维护，不然还是会T。这个简单，前缀和即可。<br>总时间复杂度$O(n)$<br>下面给出了带有<del>详细</del>注释的代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 10000000 + 5</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> Phi[MAXN], p[MAXN], pt;</span><br><span class="line"><span class="keyword">bool</span> flag[MAXN];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> sum[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">getphi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	pt = <span class="number">0</span>;</span><br><span class="line">	Phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= N; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!flag[i])									<span class="comment">//这表明了i是素数 </span></span><br><span class="line">		&#123;</span><br><span class="line">			p[++pt] = i;</span><br><span class="line">			Phi[i] = i - <span class="number">1</span>;								<span class="comment">//如果i是素数，那么phi(i) = p - 1; </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= pt &amp;&amp; p[j] * i &lt;= N; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> k = p[j] * i;</span><br><span class="line">			flag[k] = <span class="literal">true</span>;								<span class="comment">//k可以通过乘积的形式得到，当然就不是素数了。于是标记改为true </span></span><br><span class="line">			<span class="keyword">if</span> (i % p[j] == <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				Phi[k] = p[j] * Phi[i];					<span class="comment">//如果i mod p = 0, 那么 phi(i * p) = p * phi(i)</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				Phi[k] = (p[j] - <span class="number">1</span>) * Phi[i];			<span class="comment">//积性函数的性质 :若i mod p ≠0, 那么 phi(i * p)=phi(i) * (p - 1) </span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	getphi();</span><br><span class="line">	<span class="built_in">memset</span>(sum, <span class="number">0</span>, <span class="keyword">sizeof</span> sum);</span><br><span class="line">	sum[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		sum[i] = sum[i - <span class="number">1</span>] + <span class="number">2</span> * Phi[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= pt; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		ans += sum[(<span class="keyword">int</span>)(N / p[i])];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/27/「POJ 3253」 Fence Repair/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leoleepz">
-      <meta itemprop="description" content="My Blog">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Flying fighter">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/27/「POJ 3253」 Fence Repair/" itemprop="url">
-                  「POJ 3253」 Fence Repair
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-27 22:33:16" itemprop="dateCreated datePublished" datetime="2018-02-27T22:33:16+08:00">2018-02-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-06 15:41:43" itemprop="dateModified" datetime="2018-05-06T15:41:43+08:00">2018-05-06</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>英文题面不好懂。还是中文简洁：<br>给一块长木板，现要将其锯成n段，共需锯n-1次，每次锯的代价为所锯木板的长度，求最小总代价。</p>
-<p>弄个优先队列完事。。（STL大法好<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt; q;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">		q.push(a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (q.size() &gt;= <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> l1, l2;</span><br><span class="line">		l1 = q.top(), q.pop();</span><br><span class="line">		l2 = q.top(), q.pop();</span><br><span class="line">		ans += l1 + l2;</span><br><span class="line">		q.push(l1 + l2);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2178,7 +2171,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">49</span>
+                    <span class="site-state-item-count">51</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2489,7 +2482,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共32.4k字</span>
+  <span class="post-count">博客全站共33.0k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -2988,11 +2981,11 @@
       
     
       
+    
+      
+    
+      
         
-      
-    
-      
-    
       
     
       

@@ -3,6 +3,52 @@
   
     
     <entry>
+      <title>『AGC 012B』Splatter Painting</title>
+      <link href="/2018/08/30/%E3%80%8EAGC%20012B%E3%80%8FSplatter%20Painting/"/>
+      <url>/2018/08/30/%E3%80%8EAGC%20012B%E3%80%8FSplatter%20Painting/</url>
+      <content type="html"><![CDATA[<h1 id="『AGC-012B』Splatter-Painting"><a href="#『AGC-012B』Splatter-Painting" class="headerlink" title="『AGC 012B』Splatter Painting"></a>『AGC 012B』Splatter Painting</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Time limit : 2sec / Memory limit : 256MB</p><p><a href="https://agc012.contest.atcoder.jp/tasks/agc012_b" target="_blank" rel="noopener">door♂</a></p><p>题意简述：可以参考图，问你最后的染色情况</p><a id="more"></a><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>因为后面的染色会覆盖前面的，我们就倒过来处理，另外保存每个点的范围</p><p>比如$1-2-3-4-5-6$，</p><p>我们从$3$处理，距离是$2$<br>$3$的处理范围$2$<br>$2$的处理范围$1$<br>$1$的处理范围$0$<br>$4$的处理范围$1$<br>$5$的处理范围$0$</p><p>于是$1,5$已经到染色边界了</p><p>那么每次染色我们都比较上一次这个点的处理范围，比这一次的大，说明一定会被上一次的覆盖，没必要遍历下去了，或者处理没有染色的部分</p><p>Code:</p><div><div class="fold_hider"><div class="close hider_title">Click to show/hide the code</div></div><div class="fold"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">100000</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; q[MAXN];</span><br><span class="line"><span class="keyword">int</span> color[MAXN];</span><br><span class="line"><span class="keyword">int</span> flag[MAXN];</span><br><span class="line"><span class="keyword">int</span> n, m, k;</span><br><span class="line"><span class="keyword">int</span> v[MAXN], d[MAXN], c[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> cnt, <span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (!color[x])</span><br><span class="line">color[x] = c;</span><br><span class="line"><span class="keyword">if</span> (flag[x] &gt;= cnt)</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">if</span> (cnt == <span class="number">0</span>)</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">flag[x] = cnt;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; q[x].size(); i++)</span><br><span class="line">dfs(q[x][i], cnt - <span class="number">1</span>, c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line"><span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> x, y;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">q[x].push_back(y);</span><br><span class="line">q[y].push_back(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++)</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; v[i] &gt;&gt; d[i] &gt;&gt; c[i];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = k; i &gt;= <span class="number">1</span>; i--)</span><br><span class="line">dfs(v[i], d[i], c[i]);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; color[i] &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div>]]></content>
+      
+      <categories>
+          
+          <category> 题解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tricks </tag>
+            
+            <tag> Atcoder </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>『AGC 012A』AtCoder Group Contest</title>
+      <link href="/2018/08/30/%E3%80%8EAGC%20012A%E3%80%8FAtCoder%20Group%20Contest/"/>
+      <url>/2018/08/30/%E3%80%8EAGC%20012A%E3%80%8FAtCoder%20Group%20Contest/</url>
+      <content type="html"><![CDATA[<h1 id="『AGC-012A』AtCoder-Group-Contest"><a href="#『AGC-012A』AtCoder-Group-Contest" class="headerlink" title="『AGC 012A』AtCoder Group Contest"></a>『AGC 012A』AtCoder Group Contest</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Time limit : 2sec / Memory limit : 256MB</p><p>题意：给$3N$个数，$3​$个一组，我们取每个组第二大的数出来相加，问最大能够是多少</p><p>还是…还是弄个door吧。。</p><p><a href="https://agc012.contest.atcoder.jp/tasks/agc012_a" target="_blank" rel="noopener">door♂</a></p><a id="more"></a><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>排序，取$2,4,6,8\dots$就行</p><p>Code:</p><div><div class="fold_hider"><div class="close hider_title">Click to show/hide the code</div></div><div class="fold"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line">ll sum = <span class="number">0</span>;</span><br><span class="line">ll a[<span class="number">3</span> * <span class="number">123456</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmd</span><span class="params">(ll x, ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">return</span> x &gt; y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> _read(<span class="keyword">int</span> &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">x = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> t = getchar();</span><br><span class="line"><span class="keyword">while</span> (!<span class="built_in">isdigit</span>(t)) t = getchar();</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">isdigit</span>(t))</span><br><span class="line">&#123;</span><br><span class="line">x = x * <span class="number">10</span> + t - <span class="string">'0'</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> _read(ll &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">x = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> t = getchar();</span><br><span class="line"><span class="keyword">while</span> (!<span class="built_in">isdigit</span>(t)) t = getchar();</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">isdigit</span>(t))</span><br><span class="line">&#123;</span><br><span class="line">x = x * <span class="number">10</span> + t - <span class="string">'0'</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">_read(n);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">3</span> * n; i++) _read(a[i]);</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">2</span>;</span><br><span class="line">sort(a + <span class="number">1</span>, a + <span class="number">1</span> + <span class="number">3</span> * n, cmd);</span><br><span class="line"><span class="keyword">while</span> (n--)</span><br><span class="line">&#123;</span><br><span class="line">sum += a[i];</span><br><span class="line">i += <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld"</span>, sum);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div>]]></content>
+      
+      <categories>
+          
+          <category> 题解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tricks </tag>
+            
+            <tag> Atcoder </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>『AGC 003A』Wanna go back home</title>
       <link href="/2018/08/30/%E3%80%8EAGC%20003A%E3%80%8FWanna%20go%20back%20home/"/>
       <url>/2018/08/30/%E3%80%8EAGC%20003A%E3%80%8FWanna%20go%20back%20home/</url>
@@ -474,13 +520,13 @@
             
             <tag> BZOJ </tag>
             
-            <tag> CodeVS </tag>
-            
-            <tag> 树状数组 </tag>
-            
             <tag> 洛谷 </tag>
             
+            <tag> CodeVS </tag>
+            
             <tag> 离散化 </tag>
+            
+            <tag> 树状数组 </tag>
             
         </tags>
       
@@ -501,9 +547,9 @@
       
         <tags>
             
-            <tag> 水题 </tag>
-            
             <tag> 洛谷 </tag>
+            
+            <tag> 水题 </tag>
             
             <tag> STL </tag>
             
@@ -551,9 +597,9 @@
       
         <tags>
             
-            <tag> 水题 </tag>
-            
             <tag> 洛谷 </tag>
+            
+            <tag> 水题 </tag>
             
         </tags>
       
@@ -574,11 +620,11 @@
       
         <tags>
             
+            <tag> 洛谷 </tag>
+            
             <tag> 水题 </tag>
             
             <tag> DP </tag>
-            
-            <tag> 洛谷 </tag>
             
         </tags>
       
@@ -653,6 +699,8 @@
             
             <tag> BZOJ </tag>
             
+            <tag> 模板 </tag>
+            
             <tag> HNOI </tag>
             
             <tag> Splay </tag>
@@ -660,8 +708,6 @@
             <tag> 树 </tag>
             
             <tag> 平衡树 </tag>
-            
-            <tag> 模板 </tag>
             
         </tags>
       
@@ -784,13 +830,13 @@
       
         <tags>
             
-            <tag> 树 </tag>
-            
             <tag> 模板 </tag>
             
-            <tag> 线段树 </tag>
-            
             <tag> 数据结构 </tag>
+            
+            <tag> 树 </tag>
+            
+            <tag> 线段树 </tag>
             
             <tag> 懒标记 </tag>
             
@@ -936,11 +982,11 @@
       
         <tags>
             
-            <tag> BZOJ </tag>
-            
             <tag> 匈牙利算法 </tag>
             
             <tag> 图论 </tag>
+            
+            <tag> BZOJ </tag>
             
             <tag> 省队 </tag>
             

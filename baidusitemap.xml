@@ -3,6 +3,50 @@
 
 
     
+  <url>
+    <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20012A%E3%80%8FAtCoder%20Group%20Contest/</loc>
+    <lastmod>2018-08-30T13:06:55.841Z</lastmod>
+    <data>
+        <display>
+        <title>『AGC 012A』AtCoder Group Contest</title>
+        <pubTime>2018-08-30T12:54:27.000Z</pubTime>
+        
+        <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20012B%E3%80%8FSplatter%20Painting/</loc>
+    <lastmod>2018-08-30T13:06:33.649Z</lastmod>
+    <data>
+        <display>
+        <title>『AGC 012B』Splatter Painting</title>
+        <pubTime>2018-08-30T12:58:33.000Z</pubTime>
+        
+        <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20002C%E3%80%8FKnot%20Puzzle/</loc>
@@ -381,9 +425,9 @@
         <title>「洛谷 P1706」全排列</title>
         <pubTime>2018-03-31T03:15:33.000Z</pubTime>
         
-        <tag>水题</tag>
-         
         <tag>洛谷</tag>
+         
+        <tag>水题</tag>
          
         <tag>STL</tag>
          
@@ -405,11 +449,11 @@
         <title>「洛谷 P1510」精卫填海</title>
         <pubTime>2018-03-28T14:02:08.000Z</pubTime>
         
+        <tag>洛谷</tag>
+         
         <tag>水题</tag>
          
         <tag>DP</tag>
-         
-        <tag>洛谷</tag>
          
          
            
@@ -429,9 +473,9 @@
         <title>「洛谷 P1026」第K小数</title>
         <pubTime>2018-03-30T08:03:22.000Z</pubTime>
         
-        <tag>水题</tag>
-         
         <tag>洛谷</tag>
+         
+        <tag>水题</tag>
          
          
            
@@ -653,13 +697,13 @@
         
         <tag>BZOJ</tag>
          
-        <tag>CodeVS</tag>
-         
-        <tag>树状数组</tag>
-         
         <tag>洛谷</tag>
          
+        <tag>CodeVS</tag>
+         
         <tag>离散化</tag>
+         
+        <tag>树状数组</tag>
          
          
            
@@ -681,6 +725,8 @@
         
         <tag>BZOJ</tag>
          
+        <tag>模板</tag>
+         
         <tag>HNOI</tag>
          
         <tag>Splay</tag>
@@ -688,8 +734,6 @@
         <tag>树</tag>
          
         <tag>平衡树</tag>
-         
-        <tag>模板</tag>
          
          
            
@@ -709,11 +753,11 @@
         <title>「BZOJ 1059」 [ZJOI2007]矩阵游戏</title>
         <pubTime>2018-03-06T14:00:22.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>匈牙利算法</tag>
          
         <tag>图论</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>省队</tag>
          
@@ -805,13 +849,13 @@
         <title>线段统计 - 线段树懒标记</title>
         <pubTime>2018-03-17T09:31:41.000Z</pubTime>
         
-        <tag>树</tag>
-         
         <tag>模板</tag>
          
-        <tag>线段树</tag>
-         
         <tag>数据结构</tag>
+         
+        <tag>树</tag>
+         
+        <tag>线段树</tag>
          
         <tag>懒标记</tag>
          
