@@ -45,6 +45,29 @@
   </entry>
   
   <entry>
+    <title>『AGC 003B』Simplified mahjong</title>
+    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003B%E3%80%8FSimplified%20mahjong/"/>
+    <id>https://skyofwar.xyz/2018/08/30/『AGC 003B』Simplified mahjong/</id>
+    <published>2018-08-30T06:46:30.000Z</published>
+    <updated>2018-08-30T06:53:05.849Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『AGC-003B』Simplified-mahjong&quot;&gt;&lt;a href=&quot;#『AGC-003B』Simplified-mahjong&quot; class=&quot;headerlink&quot; title=&quot;『AGC 003B』Simplified mahjong&quot;&gt;&lt;/a&gt;『AGC 003B』Simplified mahjong&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;算了懒得搞，直接放传送门了：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://agc003.contest.atcoder.jp/tasks/agc003_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送door♂&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+  </entry>
+  
+  <entry>
     <title>『AGC 003C』BBuBBBlesort!</title>
     <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003C%E3%80%8FBBuBBBlesort!/"/>
     <id>https://skyofwar.xyz/2018/08/30/『AGC 003C』BBuBBBlesort!/</id>
@@ -104,7 +127,7 @@
     
       &lt;h1 id=&quot;记录一次非常感人的Mathematica-Animation…&quot;&gt;&lt;a href=&quot;#记录一次非常感人的Mathematica-Animation…&quot; class=&quot;headerlink&quot; title=&quot;记录一次非常感人的Mathematica Animation…&quot;&gt;&lt;/a&gt;记录一次非常感人的Mathematica Animation…&lt;/h1&gt;&lt;p&gt;自己突发奇想想做一次Lissajous曲线。。&lt;/p&gt;
 &lt;p&gt;Mathematica代码咯：&lt;/p&gt;
-&lt;!--�41--&gt;
+&lt;!--�40--&gt;
 &lt;p&gt;但是我们应该如何导出视频呢？&lt;/p&gt;
     
     </summary>
@@ -563,36 +586,6 @@
       <category term="水题" scheme="https://skyofwar.xyz/tags/%E6%B0%B4%E9%A2%98/"/>
     
       <category term="STL" scheme="https://skyofwar.xyz/tags/STL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>求乘法逆元</title>
-    <link href="https://skyofwar.xyz/2018/03/31/%E6%B1%82%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/"/>
-    <id>https://skyofwar.xyz/2018/03/31/求乘法逆元/</id>
-    <published>2018-03-30T23:29:11.000Z</published>
-    <updated>2018-03-31T02:54:31.988Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;两种方法&quot;&gt;&lt;a href=&quot;#两种方法&quot; class=&quot;headerlink&quot; title=&quot;两种方法&quot;&gt;&lt;/a&gt;两种方法&lt;/h1&gt;&lt;h2 id=&quot;拓展欧几里得法&quot;&gt;&lt;a href=&quot;#拓展欧几里得法&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="讲解" scheme="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
-    
-    
-      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
-      <category term="数论" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E8%AE%BA/"/>
-    
-      <category term="逆元" scheme="https://skyofwar.xyz/tags/%E9%80%86%E5%85%83/"/>
     
   </entry>
   

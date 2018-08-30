@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003B%E3%80%8FSimplified%20mahjong/</loc>
+    <lastmod>2018-08-30T06:53:05.849Z</lastmod>
+    <data>
+        <display>
+        <title>『AGC 003B』Simplified mahjong</title>
+        <pubTime>2018-08-30T06:46:30.000Z</pubTime>
+        
+        <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003C%E3%80%8FBBuBBBlesort!/</loc>
     <lastmod>2018-08-30T06:37:20.498Z</lastmod>
     <data>
@@ -477,9 +499,9 @@
         <title>「HDU 1556」Color the ball</title>
         <pubTime>2018-03-17T11:31:22.000Z</pubTime>
         
-        <tag>线段树</tag>
-         
         <tag>树</tag>
+         
+        <tag>线段树</tag>
          
         <tag>HDU</tag>
          
@@ -639,11 +661,11 @@
          
         <tag>BZOJ</tag>
          
-        <tag>树</tag>
-         
         <tag>HNOI</tag>
          
         <tag>Splay</tag>
+         
+        <tag>树</tag>
          
         <tag>平衡树</tag>
          
@@ -765,9 +787,9 @@
          
         <tag>数据结构</tag>
          
-        <tag>线段树</tag>
-         
         <tag>树</tag>
+         
+        <tag>线段树</tag>
          
         <tag>懒标记</tag>
          
