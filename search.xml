@@ -474,13 +474,13 @@
             
             <tag> BZOJ </tag>
             
-            <tag> CodeVS </tag>
-            
-            <tag> 树状数组 </tag>
-            
             <tag> 洛谷 </tag>
             
+            <tag> CodeVS </tag>
+            
             <tag> 离散化 </tag>
+            
+            <tag> 树状数组 </tag>
             
         </tags>
       
@@ -501,9 +501,9 @@
       
         <tags>
             
-            <tag> 水题 </tag>
-            
             <tag> 洛谷 </tag>
+            
+            <tag> 水题 </tag>
             
             <tag> STL </tag>
             
@@ -551,9 +551,9 @@
       
         <tags>
             
-            <tag> 水题 </tag>
-            
             <tag> 洛谷 </tag>
+            
+            <tag> 水题 </tag>
             
         </tags>
       
@@ -574,11 +574,11 @@
       
         <tags>
             
+            <tag> 洛谷 </tag>
+            
             <tag> 水题 </tag>
             
             <tag> DP </tag>
-            
-            <tag> 洛谷 </tag>
             
         </tags>
       
@@ -651,9 +651,9 @@
       
         <tags>
             
-            <tag> BZOJ </tag>
-            
             <tag> 模板 </tag>
+            
+            <tag> BZOJ </tag>
             
             <tag> HNOI </tag>
             
@@ -705,9 +705,9 @@
       
         <tags>
             
-            <tag> BZOJ </tag>
-            
             <tag> 模板 </tag>
+            
+            <tag> BZOJ </tag>
             
             <tag> KD树 </tag>
             
@@ -859,9 +859,9 @@
       
         <tags>
             
-            <tag> BZOJ </tag>
-            
             <tag> ST表 </tag>
+            
+            <tag> BZOJ </tag>
             
             <tag> NOI </tag>
             
