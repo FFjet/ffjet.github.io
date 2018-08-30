@@ -45,6 +45,29 @@
   </entry>
   
   <entry>
+    <title>『AGC 003A』Wanna go back home</title>
+    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003A%E3%80%8FWanna%20go%20back%20home/"/>
+    <id>https://skyofwar.xyz/2018/08/30/『AGC 003A』Wanna go back home/</id>
+    <published>2018-08-30T06:55:22.000Z</published>
+    <updated>2018-08-30T07:00:23.904Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『AGC-003A』Wanna-go-back-home&quot;&gt;&lt;a href=&quot;#『AGC-003A』Wanna-go-back-home&quot; class=&quot;headerlink&quot; title=&quot;『AGC 003A』Wanna go back home&quot;&gt;&lt;/a&gt;『AGC 003A』Wanna go back home&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;传送门：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://agc003.contest.atcoder.jp/tasks/agc003_a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送door♂&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+  </entry>
+  
+  <entry>
     <title>『AGC 003B』Simplified mahjong</title>
     <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003B%E3%80%8FSimplified%20mahjong/"/>
     <id>https://skyofwar.xyz/2018/08/30/『AGC 003B』Simplified mahjong/</id>
@@ -127,7 +150,7 @@
     
       &lt;h1 id=&quot;记录一次非常感人的Mathematica-Animation…&quot;&gt;&lt;a href=&quot;#记录一次非常感人的Mathematica-Animation…&quot; class=&quot;headerlink&quot; title=&quot;记录一次非常感人的Mathematica Animation…&quot;&gt;&lt;/a&gt;记录一次非常感人的Mathematica Animation…&lt;/h1&gt;&lt;p&gt;自己突发奇想想做一次Lissajous曲线。。&lt;/p&gt;
 &lt;p&gt;Mathematica代码咯：&lt;/p&gt;
-&lt;!--�40--&gt;
+&lt;!--�43--&gt;
 &lt;p&gt;但是我们应该如何导出视频呢？&lt;/p&gt;
     
     </summary>
@@ -556,36 +579,6 @@
       <category term="离散化" scheme="https://skyofwar.xyz/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
     
       <category term="树状数组" scheme="https://skyofwar.xyz/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「洛谷 P1706」全排列</title>
-    <link href="https://skyofwar.xyz/2018/03/31/%E3%80%8C%E6%B4%9B%E8%B0%B7%20P1706%E3%80%8D%E5%85%A8%E6%8E%92%E5%88%97/"/>
-    <id>https://skyofwar.xyz/2018/03/31/「洛谷 P1706」全排列/</id>
-    <published>2018-03-31T03:15:33.000Z</published>
-    <updated>2018-05-06T07:42:00.983Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;辣鸡题目。直接STL水掉，84ms AC&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="洛谷" scheme="https://skyofwar.xyz/tags/%E6%B4%9B%E8%B0%B7/"/>
-    
-      <category term="水题" scheme="https://skyofwar.xyz/tags/%E6%B0%B4%E9%A2%98/"/>
-    
-      <category term="STL" scheme="https://skyofwar.xyz/tags/STL/"/>
     
   </entry>
   

@@ -341,6 +341,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/27/「POJ 2159」 Ancient Cipher/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/27/「POJ 2159」 Ancient Cipher/" itemprop="url">
+                  「POJ 2159」 Ancient Cipher
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-27 22:28:07" itemprop="dateCreated datePublished" datetime="2018-02-27T22:28:07+08:00">2018-02-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-06 15:41:37" itemprop="dateModified" datetime="2018-05-06T15:41:37+08:00">2018-05-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这题简直太水了吧。。<br>只要对每个字母出现的次数统计并排序<br>然后分别对应的字母个数相等<br>就表明一定有转换方式。。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s1, s2;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">27</span>], b[<span class="number">27</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">	<span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span> a);</span><br><span class="line">	<span class="built_in">memset</span>(b, <span class="number">0</span>, <span class="keyword">sizeof</span> b);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s1.size(); ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		a[s1[i] - <span class="string">'A'</span>]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s2.size(); ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		b[s2[i] - <span class="string">'A'</span>]++; </span><br><span class="line">	&#125;</span><br><span class="line">	sort(a, a + <span class="number">26</span>);</span><br><span class="line">	sort(b, b + <span class="number">26</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a[i] != b[i])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/23/线性代数基础3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1102,180 +1275,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/21/如何卸载hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leoleepz">
-      <meta itemprop="description" content="My Blog">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Flying fighter">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/21/如何卸载hexo/" itemprop="url">
-                  如何卸载hexo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-21 16:01:41" itemprop="dateCreated datePublished" datetime="2018-02-21T16:01:41+08:00">2018-02-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-03-31 10:54:03" itemprop="dateModified" datetime="2018-03-31T10:54:03+08:00">2018-03-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常小知识/" itemprop="url" rel="index"><span itemprop="name">日常小知识</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>安装了hexo，出了问题，该如何卸载呢？<br>对于2.x版本的hexo,我们知道安装命令为<br><code>npm install hexo -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo -g</code></p>
-<p>对于3.x版本的hexo,我们知道安装命令为<br><code>npm install hexo-cli -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo-cli -g</code></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/21/线性代数基础1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1436,6 +1435,180 @@
 <li><p>什么是表出？<br>设$α_1,α_2,…,α_e(e≥1)$是域P上线性空间V中的有限个向量，若V中向量α可以表示为$α=k_1α_1+k_2α_2++…k_eα_e(k_a∈P，a=1,2,…,e)$，则称α是向量组$α_1,α_2,…,α_e(e≥1)$的一个线性组合，亦称α可由向量组$α_1,α_2,…,α_e(e≥1)$线性表示或线性表出。</p>
 </li>
 </ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/21/如何卸载hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/21/如何卸载hexo/" itemprop="url">
+                  如何卸载hexo
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-21 16:01:41" itemprop="dateCreated datePublished" datetime="2018-02-21T16:01:41+08:00">2018-02-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-31 10:54:03" itemprop="dateModified" datetime="2018-03-31T10:54:03+08:00">2018-03-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常小知识/" itemprop="url" rel="index"><span itemprop="name">日常小知识</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>安装了hexo，出了问题，该如何卸载呢？<br>对于2.x版本的hexo,我们知道安装命令为<br><code>npm install hexo -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo -g</code></p>
+<p>对于3.x版本的hexo,我们知道安装命令为<br><code>npm install hexo-cli -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo-cli -g</code></p>
 
           
         
@@ -1887,7 +2060,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2198,7 +2371,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共32.2k字</span>
+  <span class="post-count">博客全站共32.4k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -2691,6 +2864,8 @@
 
   
   
+    
+      
     
       
         

@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003A%E3%80%8FWanna%20go%20back%20home/</loc>
+    <lastmod>2018-08-30T07:00:23.904Z</lastmod>
+    <data>
+        <display>
+        <title>『AGC 003A』Wanna go back home</title>
+        <pubTime>2018-08-30T06:55:22.000Z</pubTime>
+        
+        <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003B%E3%80%8FSimplified%20mahjong/</loc>
     <lastmod>2018-08-30T06:53:05.849Z</lastmod>
     <data>
@@ -687,11 +709,11 @@
         <title>「BZOJ 1059」 [ZJOI2007]矩阵游戏</title>
         <pubTime>2018-03-06T14:00:22.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>匈牙利算法</tag>
          
         <tag>图论</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>省队</tag>
          
