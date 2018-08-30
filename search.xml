@@ -3,11 +3,27 @@
   
     
     <entry>
-      <title></title>
+      <title>『Codeforces 932E』Team Work</title>
       <link href="/2018/08/30/%E3%80%8ECodeforces%20932E%E3%80%8FTeam%20Work/"/>
       <url>/2018/08/30/%E3%80%8ECodeforces%20932E%E3%80%8FTeam%20Work/</url>
       <content type="html"><![CDATA[<h1 id="『Codeforces-932E』Team-Work"><a href="#『Codeforces-932E』Team-Work" class="headerlink" title="『Codeforces 932E』Team Work"></a>『Codeforces 932E』Team Work</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>time limit per test</p><p>2 seconds</p><p>memory limit per test</p><p>256 megabytes</p><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>You have a team of $N$ people. For a particular task, you can pick any non-empty subset of people. The cost of having $x$ people for the task is $x^k$.</p><p>Output the sum of costs over all non-empty subsets of people.</p><a id="more"></a><h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>Only line of input contains two integers $N (1 ≤ N ≤ 10^9)$ representing total number of people and $k (1 ≤ k ≤ 5000)$.</p><h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Output the sum of costs for all non empty subsets modulo 109 + 7.</p><h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><textarea name="text" id="text" cols="10" rows="1" style="background: transparent; border-style: none; overflow:hidden;">1 1</textarea>#### output<textarea name="text" id="text" cols="10" rows="1" style="background: transparent; border-style: none; overflow:hidden;">1</textarea><h4 id="input-1"><a href="#input-1" class="headerlink" title="input"></a>input</h4><textarea name="text" id="text" cols="10" rows="1" style="background: transparent; border-style: none; overflow:hidden;">3 2</textarea><h4 id="output"><a href="#output" class="headerlink" title="output"></a>output</h4><textarea name="text" id="text" cols="10" rows="1" style="background: transparent; border-style: none; overflow:hidden;">24</textarea><h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>In the first example, there is only one non-empty subset $\{1\}$ with cost  $1^1 = 1$</p><p>In the second example, there are seven non-empty subsets.</p><ul><li><p>$\{1\}$ with cost $1^2 = 1$</p></li><li><p>$\{2\}$ with cost  $1^2 = 1$</p></li><li><p>$\{1, 2\}$ with cost $2^2 = 4$</p></li><li><p>$\{3\}$ with cost $1^2 = 1$</p></li><li><p>$\{1, 3\}$ with cost $2^2 = 4$</p></li><li><p>$\{2, 3\}$ with cost $2^2 = 4$</p></li><li><p>$\{1, 2, 3\}$ with cost $3^2 = 9$</p></li></ul><p>The total cost is $1 + 1 + 4 + 1 + 4 + 4 + 9 = 24$</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>这题还是挺难的…稍不注意就会掉到什么二项式反演的坑里面去…<del>（其实还是做题少</del></p><p>正解是什么呢？</p><p>设函数$\displaystyle f(x)=(1+x)^n=\sum_{r=0}^nC_n^rx^r$</p><p>两边形式地求导：$\displaystyle f’(x)=n(1+x)^{n-1}=\sum_{r=1}^nC_n^rrx^{r-1}$</p><p>再两边乘$x$：$\displaystyle xf’(x)=nx(1+x)^{n-1}=\sum_{r=1}^nC_n^rrx^{r}$</p><p>然后你发现了什么？<br>请思考 for some time</p><p>对于$f(x)$，题目所给的公式就是我们对它进行上面的操作（求导后乘$x$）$k$次后$x=1$的值！</p><p>那么这道题现在就转化成关于$f(x)$的问题了</p><p>设$f_{a,b,c}$是对$x^b(1+x)^c$做$a$次操作后$x=1$的值</p><p>那么最终的答案即为$f_{k,0,n}$</p><p>转移：$f_{a,b,c}=b∗f_{a-1,b,c}+c∗f_{a-1,b+1,c-1}$</p><p>$a=0$时,$f_{a,b,c}=2^c$</p><p>复杂度实际上是$O(k^2)$，因为$b+c≡n$</p><p>这题目的<code>long long</code>一定不能忘了开！！！（栽坑</p><p>Code:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">5000</span> + <span class="number">10</span>;</span><br><span class="line">ll f[MAXN][MAXN];</span><br><span class="line">ll n, k;</span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">fast_pow</span><span class="params">(ll x, ll a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">register</span> ll ans = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (; a; a &gt;&gt;= <span class="number">1</span>, x = <span class="number">1l</span>l * x * x % mod) <span class="keyword">if</span> (a &amp; <span class="number">1</span>) ans = <span class="number">1l</span>l * ans * x % mod;</span><br><span class="line"><span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">dp</span><span class="params">(<span class="keyword">const</span> ll &amp;a, <span class="keyword">const</span> ll &amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (b &gt; n) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> (f[a][b] &gt;= <span class="number">0</span>) <span class="keyword">return</span> f[a][b];</span><br><span class="line"><span class="keyword">register</span> ll c = n - b;</span><br><span class="line"><span class="keyword">if</span> (!a) &#123; f[a][b] = fast_pow(<span class="number">2</span>, c); <span class="keyword">return</span> f[a][b]; &#125;</span><br><span class="line">f[a][b] = (<span class="number">1l</span>l * b * dp(a - <span class="number">1</span>, b) + <span class="number">1l</span>l * c * dp(a - <span class="number">1</span>, b + <span class="number">1</span>)) % mod;</span><br><span class="line"><span class="keyword">return</span> f[a][b];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> _read(ll &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">x = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> t = getchar();</span><br><span class="line"><span class="keyword">while</span> (!<span class="built_in">isdigit</span>(t)) t = getchar();</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">isdigit</span>(t))</span><br><span class="line">&#123;</span><br><span class="line">x = x * <span class="number">10</span> + t - <span class="string">'0'</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">_read(n), _read(k);</span><br><span class="line"><span class="built_in">memset</span>(f, <span class="number">-1</span>, <span class="keyword">sizeof</span> f);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld"</span>, dp(k, <span class="number">0</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
+      <categories>
+          
+          <category> 题解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+            <tag> Codeforces </tag>
+            
+            <tag> Tricks </tag>
+            
+        </tags>
       
     </entry>
     
@@ -706,9 +722,9 @@
       
         <tags>
             
-            <tag> 模板 </tag>
-            
             <tag> BZOJ </tag>
+            
+            <tag> 模板 </tag>
             
             <tag> HNOI </tag>
             
@@ -760,9 +776,9 @@
       
         <tags>
             
-            <tag> 模板 </tag>
-            
             <tag> BZOJ </tag>
+            
+            <tag> 模板 </tag>
             
             <tag> KD树 </tag>
             
@@ -914,9 +930,9 @@
       
         <tags>
             
-            <tag> ST表 </tag>
-            
             <tag> BZOJ </tag>
+            
+            <tag> ST表 </tag>
             
             <tag> NOI </tag>
             
@@ -1173,29 +1189,6 @@
     </entry>
     
     <entry>
-      <title>线性代数基础 1</title>
-      <link href="/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/"/>
-      <url>/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/</url>
-      <content type="html"><![CDATA[<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="复数的基本知识"><a href="#复数的基本知识" class="headerlink" title="复数的基本知识"></a>复数的基本知识</h2><p>形如$a+bi(a,b∈R)$的数称为复数，其中a称为实部，b称为虚部，i称为虚数单位。当虚部等于零时，这个复数可以视为实数；当z的虚部不等于零时，实部等于零时，常称z为纯虚数。复数域是实数域的代数闭包，也即任何复系数多项式在复数域中总有根。</p><h2 id="数域的概念"><a href="#数域的概念" class="headerlink" title="数域的概念"></a>数域的概念</h2><p>设$P$是由一些数组成的集合，如果$P$中任意两个数的和、差、积、商（除数不为0）仍是$P$中的数，则称$P$为一个数域。</p><ul><li>常见数域： 复数域$C$；实数域$R$；有理数域$Q$。</li><li>若数集$P$中任意两个数作某一运算的结果仍在$P$中，则说数集$P$对这个运算是封闭的。</li><li>数域的等价定义：如果一个包含0，1在内的数集$P$对于加法，减法，乘法与除法（除数不为0）是封闭的，则称数集$P$为一个数域。</li></ul><h1 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h1><h2 id="什么是线性方程组"><a href="#什么是线性方程组" class="headerlink" title="什么是线性方程组?"></a>什么是线性方程组?</h2><p>线性方程组长这样:<br><img src="http://i2.bvimg.com/633215/0f549ce81e86dc1a.png" alt=""></p><p>m个方程,n个未知数<br>比较大的，比较复杂的<br>所谓线性，就是没有平方啊，立方啊，$ e^x $ 啊，$ sin^x $ 之类的东西，全部都是$ax+b$的形式</p><h2 id="那么这种线性方程组怎么解呢？"><a href="#那么这种线性方程组怎么解呢？" class="headerlink" title="那么这种线性方程组怎么解呢？"></a>那么这种线性方程组怎么解呢？</h2><p><strong>高斯消元</strong><br>首先我们要知道<br>初等行变换的三种形式<br>1) 把一行乘上若干倍（当然是非0数）<br>2) 把一行减去另一行<br>3) 把两行互换位置<br>初等变换是<strong>可逆</strong>的</p><p>也就是说<br>1) 两方程互换，解不变；<br>2) 一方程乘以非零数$k$，解不变；<br>3) 一方程乘以数$k$加上另一方程，解不变。</p><p>高斯消元就是说，可以用这三种变换，把方程组变成阶梯型（甚至不是这种形状，就是变得好看一些）<br><strong>如何做？</strong></p><p>请看如下方程：<br><img src="http://i2.bvimg.com/633215/21f112f53007cafd.png" alt=""></p><p>$x$系数相同，消去$x$，解得$z$<br>随后，$z$的系数相同，解得$y$<br>代入，解得$x$<br>方程的解为：</p><p><img src="http://i2.bvimg.com/633215/691b0993cd796f33.png" alt=""></p><p>齐次线性方程组：解空间<br>非齐次的：导出组：<br>它的解为一个<strong>线性流形</strong></p><blockquote><p><strong>线性流形是啥？</strong><br>1.开集：设$A$是开集,则对$A$中的任意一点$a$,存在$a$的邻域$o(a)⊆A$<br>2.微分同胚：若$U$、$V$是$n$维实数空间（下面记之为$R^n$）中的开集,一个从$U$到$V$的可微函数$h$,如果从$V$到$U$的可微逆,则称$h$为微分同胚.<br>3.$K$维流形：$R^n$中的子集$M$称为$K$维流形,如果对于$M$中的每一点$x$都满足以下条件：<br>存在一个含$x$的开集U、一个$R^n$中的开集$V$和一个从$U$到$V$的微分同胚$h$,使得<br>$h(U∩V)=V∩(R^k×\{0\})=\{y∈V；y^{k+1}=……=y^n=0\}$<br>4.另一种等价的定义：$R^n$中的子集$M$称为$K$维流形,当且仅当$M$中的每一个点$x$,下述条件成立：<br>存在一个包含$x$的开集$U$,一个$R^k$中的开集$W$以及一个从$W$到$R^n$的$1-1$可微函数$f$,使得：<br>1)$f(W)=M∩U$；<br>2)$f’(y)$对每个$y∈W$的秩为$k$；<br>3)从$f(W)$到$W$的$f$的逆连续.<br>上述条件叫通常叫“坐标条件”,这样的$f$叫做$x$周围的坐标系.<br>5.线性流形,即满足线性运算的流形.<br>例子：<br>1）$R^n$的一个开集<br>2）$n$维球面：$\{x∈R^{n+1}:|x|=1\}$</p></blockquote><p>方程组个数小于未知数个数时一定有解？<br>很小的时候，就听说过老师说方程组个数小于未知数个数时一定有解。不知道大家是怎么理解的。</p><p>方程组可以理解为是用来约束未知数的条件，方程组过多，约束更多，不一定有解。相反地，方程组过少，约束更少，就一定有解。</p><ul><li>真的是这样吗？<br>其实跟系数矩阵的秩有很大的关系</li></ul><h1 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h1><h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><p>向量其实只是一个名称而已,不再代表具体的含义,只是一种形式记号</p><ul><li>和以前的$(x,y)$表示不太一样，以前表示的只是一种有方向的量。写成这样$(x_1,x_2,…,x_n)$<br>这样叫做行向量。相应地，竖着写也行。竖着写叫做列向量。</li></ul><h2 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h2><p>E.g.<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""></p><h2 id="数域上的向量组的线性相关与无关"><a href="#数域上的向量组的线性相关与无关" class="headerlink" title="数域上的向量组的线性相关与无关"></a>数域上的向量组的线性相关与无关</h2><p>我们引入了一个线性代数中相当重要的概念：<strong>线性相关</strong></p><ul><li>什么是线性相关？<br>假如存在<strong>不全为0</strong>的$k_1,k_2,…,k_n$，使得 $k_1\alpha_1+k_2\alpha_2+…+k_n\alpha_n=0$</li></ul><p>则称$k_1,k_2,…,k_n$和$\alpha_1+\alpha_2+…+\alpha_n$线性相关<br>线性：只是将一个向量乘一个常数，并没有一个向量乘一个向量<br>可以通过线性运算整合到一起</p><p>那么<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""><br>是否线性相关？</p><p>这个例子啊，本身判断线性相关或无关其实很困难<br>但是我们看到<br>$\alpha_1+\alpha_2-4\alpha_3=0$<br>也就是说$\alpha_3$可以用$\alpha_1和\alpha_2$表示<br><strong>这个结论很重要，请牢记</strong></p><h2 id="向量组的秩-rank"><a href="#向量组的秩-rank" class="headerlink" title="向量组的秩(rank)"></a>向量组的秩(rank)</h2><p>平时大家都喜欢rank1,rank2，但在这里，rank是秩序的意思QwQ</p><h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><p>线性无关组：线性无关的向量组成的向量组<br>极大线性无关组：一个不能再向里面添加任何其他向量的线性无关组（添加之后就线性有关了）</p><ul><li><p>怎么构造？<br>$\alpha_1,\alpha_2,…\alpha_n$<br>对于每个向量，和之前的向量检验相关性即可<br>虽然检验是否有关的时间复杂度很可怕（误），但这个算法表面上看来是$O(n)$的<br>向量组可以由它表出</p></li><li><p>什么是表出？<br>设$α_1,α_2,…,α_e(e≥1)$是域P上线性空间V中的有限个向量，若V中向量α可以表示为$α=k_1α_1+k_2α_2++…k_eα_e(k_a∈P，a=1,2,…,e)$，则称α是向量组$α_1,α_2,…,α_e(e≥1)$的一个线性组合，亦称α可由向量组$α_1,α_2,…,α_e(e≥1)$线性表示或线性表出。</p></li></ul>]]></content>
-      
-      <categories>
-          
-          <category> 讲解 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Math theory </tag>
-            
-            <tag> 线性代数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>如何卸载hexo</title>
       <link href="/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/"/>
       <url>/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/</url>
@@ -1213,6 +1206,29 @@
             <tag> web </tag>
             
             <tag> bash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>线性代数基础 1</title>
+      <link href="/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/"/>
+      <url>/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/</url>
+      <content type="html"><![CDATA[<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="复数的基本知识"><a href="#复数的基本知识" class="headerlink" title="复数的基本知识"></a>复数的基本知识</h2><p>形如$a+bi(a,b∈R)$的数称为复数，其中a称为实部，b称为虚部，i称为虚数单位。当虚部等于零时，这个复数可以视为实数；当z的虚部不等于零时，实部等于零时，常称z为纯虚数。复数域是实数域的代数闭包，也即任何复系数多项式在复数域中总有根。</p><h2 id="数域的概念"><a href="#数域的概念" class="headerlink" title="数域的概念"></a>数域的概念</h2><p>设$P$是由一些数组成的集合，如果$P$中任意两个数的和、差、积、商（除数不为0）仍是$P$中的数，则称$P$为一个数域。</p><ul><li>常见数域： 复数域$C$；实数域$R$；有理数域$Q$。</li><li>若数集$P$中任意两个数作某一运算的结果仍在$P$中，则说数集$P$对这个运算是封闭的。</li><li>数域的等价定义：如果一个包含0，1在内的数集$P$对于加法，减法，乘法与除法（除数不为0）是封闭的，则称数集$P$为一个数域。</li></ul><h1 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h1><h2 id="什么是线性方程组"><a href="#什么是线性方程组" class="headerlink" title="什么是线性方程组?"></a>什么是线性方程组?</h2><p>线性方程组长这样:<br><img src="http://i2.bvimg.com/633215/0f549ce81e86dc1a.png" alt=""></p><p>m个方程,n个未知数<br>比较大的，比较复杂的<br>所谓线性，就是没有平方啊，立方啊，$ e^x $ 啊，$ sin^x $ 之类的东西，全部都是$ax+b$的形式</p><h2 id="那么这种线性方程组怎么解呢？"><a href="#那么这种线性方程组怎么解呢？" class="headerlink" title="那么这种线性方程组怎么解呢？"></a>那么这种线性方程组怎么解呢？</h2><p><strong>高斯消元</strong><br>首先我们要知道<br>初等行变换的三种形式<br>1) 把一行乘上若干倍（当然是非0数）<br>2) 把一行减去另一行<br>3) 把两行互换位置<br>初等变换是<strong>可逆</strong>的</p><p>也就是说<br>1) 两方程互换，解不变；<br>2) 一方程乘以非零数$k$，解不变；<br>3) 一方程乘以数$k$加上另一方程，解不变。</p><p>高斯消元就是说，可以用这三种变换，把方程组变成阶梯型（甚至不是这种形状，就是变得好看一些）<br><strong>如何做？</strong></p><p>请看如下方程：<br><img src="http://i2.bvimg.com/633215/21f112f53007cafd.png" alt=""></p><p>$x$系数相同，消去$x$，解得$z$<br>随后，$z$的系数相同，解得$y$<br>代入，解得$x$<br>方程的解为：</p><p><img src="http://i2.bvimg.com/633215/691b0993cd796f33.png" alt=""></p><p>齐次线性方程组：解空间<br>非齐次的：导出组：<br>它的解为一个<strong>线性流形</strong></p><blockquote><p><strong>线性流形是啥？</strong><br>1.开集：设$A$是开集,则对$A$中的任意一点$a$,存在$a$的邻域$o(a)⊆A$<br>2.微分同胚：若$U$、$V$是$n$维实数空间（下面记之为$R^n$）中的开集,一个从$U$到$V$的可微函数$h$,如果从$V$到$U$的可微逆,则称$h$为微分同胚.<br>3.$K$维流形：$R^n$中的子集$M$称为$K$维流形,如果对于$M$中的每一点$x$都满足以下条件：<br>存在一个含$x$的开集U、一个$R^n$中的开集$V$和一个从$U$到$V$的微分同胚$h$,使得<br>$h(U∩V)=V∩(R^k×\{0\})=\{y∈V；y^{k+1}=……=y^n=0\}$<br>4.另一种等价的定义：$R^n$中的子集$M$称为$K$维流形,当且仅当$M$中的每一个点$x$,下述条件成立：<br>存在一个包含$x$的开集$U$,一个$R^k$中的开集$W$以及一个从$W$到$R^n$的$1-1$可微函数$f$,使得：<br>1)$f(W)=M∩U$；<br>2)$f’(y)$对每个$y∈W$的秩为$k$；<br>3)从$f(W)$到$W$的$f$的逆连续.<br>上述条件叫通常叫“坐标条件”,这样的$f$叫做$x$周围的坐标系.<br>5.线性流形,即满足线性运算的流形.<br>例子：<br>1）$R^n$的一个开集<br>2）$n$维球面：$\{x∈R^{n+1}:|x|=1\}$</p></blockquote><p>方程组个数小于未知数个数时一定有解？<br>很小的时候，就听说过老师说方程组个数小于未知数个数时一定有解。不知道大家是怎么理解的。</p><p>方程组可以理解为是用来约束未知数的条件，方程组过多，约束更多，不一定有解。相反地，方程组过少，约束更少，就一定有解。</p><ul><li>真的是这样吗？<br>其实跟系数矩阵的秩有很大的关系</li></ul><h1 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h1><h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><p>向量其实只是一个名称而已,不再代表具体的含义,只是一种形式记号</p><ul><li>和以前的$(x,y)$表示不太一样，以前表示的只是一种有方向的量。写成这样$(x_1,x_2,…,x_n)$<br>这样叫做行向量。相应地，竖着写也行。竖着写叫做列向量。</li></ul><h2 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h2><p>E.g.<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""></p><h2 id="数域上的向量组的线性相关与无关"><a href="#数域上的向量组的线性相关与无关" class="headerlink" title="数域上的向量组的线性相关与无关"></a>数域上的向量组的线性相关与无关</h2><p>我们引入了一个线性代数中相当重要的概念：<strong>线性相关</strong></p><ul><li>什么是线性相关？<br>假如存在<strong>不全为0</strong>的$k_1,k_2,…,k_n$，使得 $k_1\alpha_1+k_2\alpha_2+…+k_n\alpha_n=0$</li></ul><p>则称$k_1,k_2,…,k_n$和$\alpha_1+\alpha_2+…+\alpha_n$线性相关<br>线性：只是将一个向量乘一个常数，并没有一个向量乘一个向量<br>可以通过线性运算整合到一起</p><p>那么<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""><br>是否线性相关？</p><p>这个例子啊，本身判断线性相关或无关其实很困难<br>但是我们看到<br>$\alpha_1+\alpha_2-4\alpha_3=0$<br>也就是说$\alpha_3$可以用$\alpha_1和\alpha_2$表示<br><strong>这个结论很重要，请牢记</strong></p><h2 id="向量组的秩-rank"><a href="#向量组的秩-rank" class="headerlink" title="向量组的秩(rank)"></a>向量组的秩(rank)</h2><p>平时大家都喜欢rank1,rank2，但在这里，rank是秩序的意思QwQ</p><h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><p>线性无关组：线性无关的向量组成的向量组<br>极大线性无关组：一个不能再向里面添加任何其他向量的线性无关组（添加之后就线性有关了）</p><ul><li><p>怎么构造？<br>$\alpha_1,\alpha_2,…\alpha_n$<br>对于每个向量，和之前的向量检验相关性即可<br>虽然检验是否有关的时间复杂度很可怕（误），但这个算法表面上看来是$O(n)$的<br>向量组可以由它表出</p></li><li><p>什么是表出？<br>设$α_1,α_2,…,α_e(e≥1)$是域P上线性空间V中的有限个向量，若V中向量α可以表示为$α=k_1α_1+k_2α_2++…k_eα_e(k_a∈P，a=1,2,…,e)$，则称α是向量组$α_1,α_2,…,α_e(e≥1)$的一个线性组合，亦称α可由向量组$α_1,α_2,…,α_e(e≥1)$线性表示或线性表出。</p></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 讲解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Math theory </tag>
+            
+            <tag> 线性代数 </tag>
             
         </tags>
       
