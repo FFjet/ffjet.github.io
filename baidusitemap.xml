@@ -571,9 +571,9 @@
         <title>「BZOJ 4520」[CQOI2016]K远点对</title>
         <pubTime>2018-03-22T13:49:33.000Z</pubTime>
         
-        <tag>模板</tag>
-         
         <tag>BZOJ</tag>
+         
+        <tag>模板</tag>
          
         <tag>KD树</tag>
          
@@ -623,9 +623,9 @@
         <title>「BZOJ 2006」[NOI2010]超级钢琴</title>
         <pubTime>2018-03-10T14:31:33.000Z</pubTime>
         
-        <tag>ST表</tag>
-         
         <tag>BZOJ</tag>
+         
+        <tag>ST表</tag>
          
         <tag>NOI</tag>
          
@@ -679,8 +679,6 @@
         <title>「BZOJ 1588」 [HNOI2002]营业额统计</title>
         <pubTime>2018-03-26T14:20:22.000Z</pubTime>
         
-        <tag>模板</tag>
-         
         <tag>BZOJ</tag>
          
         <tag>HNOI</tag>
@@ -690,6 +688,8 @@
         <tag>树</tag>
          
         <tag>平衡树</tag>
+         
+        <tag>模板</tag>
          
          
            
@@ -805,11 +805,11 @@
         <title>线段统计 - 线段树懒标记</title>
         <pubTime>2018-03-17T09:31:41.000Z</pubTime>
         
+        <tag>树</tag>
+         
         <tag>模板</tag>
          
         <tag>数据结构</tag>
-         
-        <tag>树</tag>
          
         <tag>线段树</tag>
          
