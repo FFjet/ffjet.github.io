@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-08-30T01:17:50.549Z</updated>
+  <updated>2018-08-30T06:35:55.021Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20002C%E3%80%8FKnot%20Puzzle/"/>
     <id>https://skyofwar.xyz/2018/08/30/『AGC 002C』Knot Puzzle/</id>
     <published>2018-08-30T07:54:27.000Z</published>
-    <updated>2018-08-30T01:17:50.549Z</updated>
+    <updated>2018-08-30T06:35:55.021Z</updated>
     
     <summary type="html">
     
@@ -32,6 +32,29 @@
 &lt;li&gt;Choose a (connected) rope with a total length of at least $L$, then untie one of its knots.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Is it possible to untie all of the $N−1$ knots by properly applying this operation? If the answer is positive, find one possible order to untie the knots.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>『AGC 003C』BBuBBBlesort!</title>
+    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003C%E3%80%8FBBuBBBlesort!/"/>
+    <id>https://skyofwar.xyz/2018/08/30/『AGC 003C』BBuBBBlesort!/</id>
+    <published>2018-08-30T06:36:27.000Z</published>
+    <updated>2018-08-30T06:37:20.498Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『AGC-003C』BBuBBBlesort&quot;&gt;&lt;a href=&quot;#『AGC-003C』BBuBBBlesort&quot; class=&quot;headerlink&quot; title=&quot;『AGC 003C』BBuBBBlesort!&quot;&gt;&lt;/a&gt;『AGC 003C』BBuBBBlesort!&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;算了懒得搞，直接放传送门了：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://agc003.contest.atcoder.jp/tasks/agc003_c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送door♂&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -81,7 +104,7 @@
     
       &lt;h1 id=&quot;记录一次非常感人的Mathematica-Animation…&quot;&gt;&lt;a href=&quot;#记录一次非常感人的Mathematica-Animation…&quot; class=&quot;headerlink&quot; title=&quot;记录一次非常感人的Mathematica Animation…&quot;&gt;&lt;/a&gt;记录一次非常感人的Mathematica Animation…&lt;/h1&gt;&lt;p&gt;自己突发奇想想做一次Lissajous曲线。。&lt;/p&gt;
 &lt;p&gt;Mathematica代码咯：&lt;/p&gt;
-&lt;!--�40--&gt;
+&lt;!--�41--&gt;
 &lt;p&gt;但是我们应该如何导出视频呢？&lt;/p&gt;
     
     </summary>
@@ -570,34 +593,6 @@
       <category term="数论" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E8%AE%BA/"/>
     
       <category term="逆元" scheme="https://skyofwar.xyz/tags/%E9%80%86%E5%85%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「洛谷 P1026」第K小数</title>
-    <link href="https://skyofwar.xyz/2018/03/30/%E3%80%8C%E6%B4%9B%E8%B0%B7%20P1026%E3%80%8D%E7%AC%ACK%E5%B0%8F%E6%95%B0/"/>
-    <id>https://skyofwar.xyz/2018/03/30/「洛谷 P1026」第K小数/</id>
-    <published>2018-03-30T08:03:22.000Z</published>
-    <updated>2018-05-06T07:41:49.185Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;水一波题解。。&lt;br&gt;&lt;del&gt;我不会告诉你我没看见输出&lt;code&gt;NO RESULT&lt;/code&gt;所以&lt;strong&gt;WA&lt;/strong&gt;了两次。。。&lt;/del&gt;&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="洛谷" scheme="https://skyofwar.xyz/tags/%E6%B4%9B%E8%B0%B7/"/>
-    
-      <category term="水题" scheme="https://skyofwar.xyz/tags/%E6%B0%B4%E9%A2%98/"/>
     
   </entry>
   
