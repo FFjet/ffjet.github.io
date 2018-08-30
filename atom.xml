@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-08-30T06:35:55.021Z</updated>
+  <updated>2018-08-30T07:00:23.904Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,34 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>『AGC 002C』Knot Puzzle</title>
-    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20002C%E3%80%8FKnot%20Puzzle/"/>
-    <id>https://skyofwar.xyz/2018/08/30/『AGC 002C』Knot Puzzle/</id>
-    <published>2018-08-30T07:54:27.000Z</published>
-    <updated>2018-08-30T06:35:55.021Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;『AGC-002C』Knot-Puzzle&quot;&gt;&lt;a href=&quot;#『AGC-002C』Knot-Puzzle&quot; class=&quot;headerlink&quot; title=&quot;『AGC 002C』Knot Puzzle&quot;&gt;&lt;/a&gt;『AGC 002C』Knot Puzzle&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
-&lt;h3 id=&quot;Problem-Statement&quot;&gt;&lt;a href=&quot;#Problem-Statement&quot; class=&quot;headerlink&quot; title=&quot;Problem Statement&quot;&gt;&lt;/a&gt;Problem Statement&lt;/h3&gt;&lt;p&gt;We have $N$ pieces of ropes, numbered 1 through  $N$. The length of piece $i$ is $a_i$.&lt;/p&gt;
-&lt;p&gt;At first, for each $i(1≤i≤N−1)$, piece $i$ and piece $i+1$ are tied at the ends, forming one long rope with  $N-1$ knots. Snuke will try to untie all of the knots by performing the following operation repeatedly:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Choose a (connected) rope with a total length of at least $L$, then untie one of its knots.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Is it possible to untie all of the $N−1$ knots by properly applying this operation? If the answer is positive, find one possible order to untie the knots.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
-  </entry>
   
   <entry>
     <title>『AGC 003A』Wanna go back home</title>
@@ -101,6 +73,34 @@
     
       &lt;h1 id=&quot;『AGC-003C』BBuBBBlesort&quot;&gt;&lt;a href=&quot;#『AGC-003C』BBuBBBlesort&quot; class=&quot;headerlink&quot; title=&quot;『AGC 003C』BBuBBBlesort!&quot;&gt;&lt;/a&gt;『AGC 003C』BBuBBBlesort!&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;算了懒得搞，直接放传送门了：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://agc003.contest.atcoder.jp/tasks/agc003_c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送door♂&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>『AGC 002C』Knot Puzzle</title>
+    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20002C%E3%80%8FKnot%20Puzzle/"/>
+    <id>https://skyofwar.xyz/2018/08/30/『AGC 002C』Knot Puzzle/</id>
+    <published>2018-08-30T02:54:27.000Z</published>
+    <updated>2018-08-30T07:07:17.471Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『AGC-002C』Knot-Puzzle&quot;&gt;&lt;a href=&quot;#『AGC-002C』Knot-Puzzle&quot; class=&quot;headerlink&quot; title=&quot;『AGC 002C』Knot Puzzle&quot;&gt;&lt;/a&gt;『AGC 002C』Knot Puzzle&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+&lt;h3 id=&quot;Problem-Statement&quot;&gt;&lt;a href=&quot;#Problem-Statement&quot; class=&quot;headerlink&quot; title=&quot;Problem Statement&quot;&gt;&lt;/a&gt;Problem Statement&lt;/h3&gt;&lt;p&gt;We have $N$ pieces of ropes, numbered 1 through  $N$. The length of piece $i$ is $a_i$.&lt;/p&gt;
+&lt;p&gt;At first, for each $i(1≤i≤N−1)$, piece $i$ and piece $i+1$ are tied at the ends, forming one long rope with  $N-1$ knots. Snuke will try to untie all of the knots by performing the following operation repeatedly:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose a (connected) rope with a total length of at least $L$, then untie one of its knots.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Is it possible to untie all of the $N−1$ knots by properly applying this operation? If the answer is positive, find one possible order to untie the knots.&lt;/p&gt;
     
     </summary>
     
@@ -572,13 +572,13 @@
     
       <category term="BZOJ" scheme="https://skyofwar.xyz/tags/BZOJ/"/>
     
-      <category term="洛谷" scheme="https://skyofwar.xyz/tags/%E6%B4%9B%E8%B0%B7/"/>
-    
       <category term="CodeVS" scheme="https://skyofwar.xyz/tags/CodeVS/"/>
     
-      <category term="离散化" scheme="https://skyofwar.xyz/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
-    
       <category term="树状数组" scheme="https://skyofwar.xyz/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="洛谷" scheme="https://skyofwar.xyz/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="离散化" scheme="https://skyofwar.xyz/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
     
   </entry>
   

@@ -16,7 +16,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="Well…Since you are here… Welcome to my blog! Make friends with me! Wish you have fun reading my posts! :smile:">
+  <meta name="description" content="Well…Since you are here… Welcome to my blog! Make friends with me! Wish you have fun reading my posts!    贪吃蛇                                            const WIDTH = 1000;     const HEIGHT = 700;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="About">
 <meta property="og:url" content="https://skyofwar.xyz/about/index.html">
 <meta property="og:site_name" content="Flying fighter">
-<meta property="og:description" content="Well…Since you are here… Welcome to my blog! Make friends with me! Wish you have fun reading my posts! :smile:">
+<meta property="og:description" content="Well…Since you are here… Welcome to my blog! Make friends with me! Wish you have fun reading my posts!    贪吃蛇                                            const WIDTH = 1000;     const HEIGHT = 700;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-29T08:47:07.218Z">
+<meta property="og:updated_time" content="2018-08-30T07:07:30.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About">
-<meta name="twitter:description" content="Well…Since you are here… Welcome to my blog! Make friends with me! Wish you have fun reading my posts! :smile:">
+<meta name="twitter:description" content="Well…Since you are here… Welcome to my blog! Make friends with me! Wish you have fun reading my posts!    贪吃蛇                                            const WIDTH = 1000;     const HEIGHT = 700;">
 
 
 
@@ -173,7 +173,7 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</noscript>
 
 </head>
 
@@ -184,7 +184,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/Leoleepz"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png" alt="Fork me on GitHub"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -374,8 +374,304 @@
         
           <p>Well…<br>Since you are here…</p>
 <p><strong>Welcome to my blog! Make friends with me!</strong></p>
-<p>Wish you have fun reading my posts! :smile:</p>
+<p>Wish you have fun reading my posts!</p>
+<html>
+<head>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<title>贪吃蛇</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
 
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><canvas id="canvas" width="1000" height="700"></canvas>
+    <div>
+        <input id="switch" type="button" value="开始" onclick="clickSwitch()"><br>
+        <input id="content" type="text" value="0">
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script type="text/javascript">
+    const WIDTH = 1000;
+    const HEIGHT = 700;
+    const SNACK_WIDTH = 20;
+    const SNACK_HEIGHT = 20;
+    //移动时间间隔
+    const TIME_MOVE = 300;
+    //食物刷新时间
+    const TIME_FOOD = 5000;
+    //食物总量
+    const TOTAL_FOOD = 200; 
+    //石头刷新时间
+    const TIME_STONE = 8000;
+    //石头总量
+    const TOTAL_STONE = 300; 
+
+    var switchStatus = 0;
+    var changeMove = "right";
+    var currentMove = "right";
+    //所有被用的位置
+    var points = new Array();
+    var snacks = new Array();
+    var foods = new Array();
+    var stones = new Array();
+    var moveing = false;
+    var timeMoveId, timeFoodId, timeStoneId;
+
+    window.onload = function () {
+        createGround();
+    };
+
+    //捕获按的哪个键
+    function keyDown(event) {
+        if (event.keyCode == "87") {
+            //按下W键
+            changeMove = "up";
+        } else if (event.keyCode == "68") {
+            //按下D键
+            changeMove = "right";
+        } else if (event.keyCode == "83") {
+            //按下S键
+            changeMove = "down";
+        } else if (event.keyCode == "65") {
+            //按下A键
+            changeMove = "left";
+        }
+    }
+
+    function handlePoints(x, y, type) {
+        if (0 == type) {
+            points.push(x+y*WIDTH);
+        } else {
+            var index = points.indexOf(x+y*WIDTH);
+            if (index != -1) {
+                points.splice(index, 1);
+            }
+        }
+    }
+
+    //贪吃蛇
+    function snack(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    //食物
+    function food(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    //石头
+    function stone(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    //开关操作
+    function clickSwitch() {
+        if (switchStatus == 0 || switchStatus == 2) {
+            document.getElementById("switch").value = "暂停";
+            if (switchStatus == 0) {
+                //开始
+                play();
+            }
+            switchStatus = 1;
+        } else if (switchStatus == 1) {
+            document.getElementById("switch").value = "继续";
+            switchStatus = 2;
+        }
+    }
+
+    //碰撞判定并操作
+    function judge(x, y) {
+        /*** 判断是否撞上边界  ***/
+        if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) {
+            end();
+            return;
+        } 
+
+        var i;
+        /*** 判断是否撞上自己  ***/
+        for (i = 1; i < snacks.length; i++) {
+            if (snacks[0].x == snacks[i].x && snacks[0].y == snacks[i].y) {
+                end();
+                return;
+            }
+        }
+
+        /*** 判断是否撞上石头  ***/
+        for (i = 0; i < stones.length; i++) {
+            if (snacks[0].x == stones[i].x && snacks[0].y == stones[i].y) {
+                end();
+                return;
+            }
+        }
+
+        /*** 判断是否撞上食物  ***/
+         var flag = false;
+        for (i = 0; i < foods.length; i++) {
+            if (x == foods[i].x && y == foods[i].y) {
+                flag = true;
+                foods.splice(i, 1);
+            }
+        } 
+        var newSnack = new snack(x, y);
+        snacks.unshift(newSnack);
+        if (!flag) {
+            var p = snacks.pop();
+            handlePoints(p.x, p.y, 1);
+        }
+        document.getElementById("content").value = "x:"+snacks[0].x+" y:"+snacks[0].y+" length:"+snacks.length;
+
+        refresh();
+    }
+
+    //移动贪吃蛇
+    function move() {
+        if(moveing == false && switchStatus == 1) {
+            moveing = true;
+            if ((currentMove != "right" && changeMove == "left") || (currentMove == "left" && changeMove == "right")) {
+                currentMove = "left";
+                judge(snacks[0].x-SNACK_WIDTH, snacks[0].y);
+            } else if ((currentMove != "down" && changeMove == "up") || (currentMove == "up" && changeMove == "down")) {
+                currentMove = "up";
+                judge(snacks[0].x, snacks[0].y-SNACK_HEIGHT);
+            } else if ((currentMove != "left" && changeMove == "right")  || (currentMove == "right" && changeMove == "left")) {
+                currentMove = "right";
+                judge(snacks[0].x+SNACK_WIDTH, snacks[0].y);
+            } else if ((currentMove != "up" && changeMove == "down") || (currentMove == "down" && changeMove == "up")){
+                currentMove = "down";
+                judge(snacks[0].x, snacks[0].y+SNACK_HEIGHT);
+            } 
+            changMove = currentMove;
+        }
+        moveing = false;
+    }
+
+    //创建地图
+    function createGround() {
+        var canvas = document.getElementById("canvas");
+        var draw = canvas.getContext('2d');
+        //清除原图形
+        draw.clearRect(0, 0, WIDTH, HEIGHT);
+        draw.strokeStyle = "red";
+        draw.strokeRect(0, 0, WIDTH, HEIGHT);
+    }
+
+    //创建食物 
+    function createFood() {
+        if (foods.length < TOTAL_FOOD) {
+            var x = Math.round(Math.random()*(WIDTH/SNACK_WIDTH-1))*SNACK_WIDTH;
+            var y = Math.round(Math.random()*(HEIGHT/SNACK_HEIGHT-1))*SNACK_HEIGHT;
+            if (points.indexOf(x+y*WIDTH) == -1) {
+                var newFood = new food(x, y);
+                //alert(newFood.x + "****" + newFood.y);
+                var canvas = document.getElementById("canvas");
+                var draw = canvas.getContext('2d');
+                draw.fillStyle = "green";
+                draw.fillRect(x, y, SNACK_WIDTH, SNACK_HEIGHT);
+                foods.push(newFood);
+                handlePoints(x, y, 0);
+            }
+        }
+    }
+
+    //创建石头
+    function createStone() {
+        if (stones.length < TOTAL_STONE) {
+            var x = Math.round(Math.random()*(WIDTH/SNACK_WIDTH-1))*SNACK_WIDTH;
+            var y = Math.round(Math.random()*(HEIGHT/SNACK_HEIGHT-1))*SNACK_HEIGHT;
+            if (points.indexOf(x+y*WIDTH) == -1) {
+                var newStone = new stone(x, y);
+                var canvas = document.getElementById("canvas");
+                var draw = canvas.getContext('2d');
+                draw.fillStyle = "#663300";
+                draw.beginPath();   
+                draw.arc(x+SNACK_WIDTH*0.5, y+SNACK_HEIGHT*0.5, SNACK_WIDTH*0.5+1, 0, Math.PI*2, true);     
+                draw.closePath();                        
+                draw.fill();
+                stones.push(newStone);
+                handlePoints(x, y, 0);
+            }
+        }
+    }
+
+    //刷新场景
+    function refresh() {
+        var canvas = document.getElementById("canvas");
+        var draw = canvas.getContext('2d');
+        //清除原图形
+        draw.clearRect(1, 1, WIDTH-2, HEIGHT-2);
+
+        /*** 边界  ***/
+        draw.strokeStyle = "red";
+        draw.strokeRect(0, 0, WIDTH, HEIGHT);
+
+        var i;
+        /*** 食物   ***/
+        draw.fillStyle = "green";
+        for (i = 0; i < foods.length; i++) {
+            draw.fillRect(foods[i].x, foods[i].y, SNACK_WIDTH, SNACK_HEIGHT);
+        }
+
+        /*** 石头  ***/
+        draw.fillStyle = "#663300";
+        for (i = 0; i < stones.length; i++) {
+            draw.beginPath();   
+            draw.arc(stones[i].x+SNACK_WIDTH*0.5, stones[i].y+SNACK_HEIGHT*0.5, SNACK_WIDTH*0.5+1, 0, Math.PI*2, true);     
+            draw.closePath();                        
+            draw.fill();
+        }
+
+        /***  贪吃蛇    ***/
+        draw.fillStyle = "blue";                   
+        draw.beginPath();   
+        //圆心x坐标|圆心y坐标|半径|始|PI为圆周率，Math.PI*2为画圆|true为时针方向：逆时针，0为顺时针
+        draw.arc(snacks[0].x+SNACK_WIDTH*0.5, snacks[0].y+SNACK_HEIGHT*0.5, SNACK_WIDTH*0.5+1, 0, Math.PI*2, true);     
+        draw.closePath();                        
+        draw.fill(); 
+        for (i = 1; i < snacks.length; i++) {
+            draw.fillRect(snacks[i].x, snacks[i].y, SNACK_WIDTH, SNACK_HEIGHT);
+        }
+    }
+
+    //游戏开始
+    function play() {
+        createGround();
+
+        for (var i = 2; i > 0; i--) {
+            var newSnack = new snack(SNACK_WIDTH*i, SNACK_HEIGHT);
+            snacks.push(newSnack);
+            handlePoints(newSnack.x, newSnack.y, 0);
+        }
+        refresh();
+
+        document.onkeydown = keyDown;
+        timeMoveId = setInterval(move, TIME_MOVE); 
+        timeFoodId = setInterval(createFood, TIME_FOOD); 
+        timeStoneId = setInterval(createStone, TIME_STONE); 
+    }
+
+    //游戏结束
+    function end() {
+        clearInterval(timeMoveId);  
+        clearInterval(timeFoodId);  
+        clearInterval(timeStoneId);  
+        switchStatus = 0;
+        changeMove = "right";
+        currentMove = "right";
+        points.length = 0;
+        snacks.length = 0;
+        foods.length = 0;
+        stones.length = 0;
+        moveing = false;
+        document.getElementById("switch").value = "开始";
+        document.getElementById("content").value = "游戏结束";
+        alert("游戏结束");
+    }
+
+</script>
+
+</html>
         
       </div>
       
@@ -1238,24 +1534,7 @@
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
 
 
   
