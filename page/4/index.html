@@ -341,6 +341,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/11/蒟蒻分层赛之T1解题报告/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/11/蒟蒻分层赛之T1解题报告/" itemprop="url">
+                  蒟蒻分层赛之T1解题报告
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-11 22:31:33" itemprop="dateCreated datePublished" datetime="2018-03-11T22:31:33+08:00">2018-03-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-31 10:50:54" itemprop="dateModified" datetime="2018-03-31T10:50:54+08:00">2018-03-31</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="跳马-horse"><a href="#跳马-horse" class="headerlink" title="跳马(horse)"></a>跳马(horse)</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><strong>基本信息</strong><br>英文题目名称    horse<br>输入文件名    horse.in<br>输出文件名    horse.out<br>每个测试点时限    1S<br>测试点数目    10<br>每个测试点分值    10<br>内存限制    256MB<br>题目类型    传统<br><strong>编译选项</strong><br>对于C++语言    -O2 -lm<br>对于C语言    -O2 -lm<br>对于Pascal语言    -O2</p>
+<p><strong>题目描述</strong><br>一个骑士在一个无限大的国际象棋棋盘里跳。一开始，这个国际象棋棋盘的每一个格子都是被标记为未被走过的，而骑士一开始可以以任意的一个格子作为起点，并且这个格子标记为走过。然后，他可以以如下图的规则跳N次，每一个他所到过的格子都会被标记为已经走过。<br><img src="/images/horse.jpg" alt=""><br>现在，我们需要知道在N次跳跃之后，有多少个格子可能被标记为走过。<br><strong>输入</strong><br>第一行一个整数T，表示数据组数<br>接下来T行，每行一个整数N<br><strong>输出</strong><br>共T行，每行一个整数，表示对应测试数据的答案<br><strong>样例输入</strong><br>3<br>0<br>1<br>7<br><strong>样例输出</strong><br>1<br>9<br>649<br><strong>数据规模</strong><br>对于30%的数据，1&lt;=T&lt;=10，N&lt;=1,000<br>对于60%的数据，1&lt;=T&lt;=100，N&lt;=1,000,000<br>对于100%的数据，1&lt;=T&lt;=100,000，N&lt;=1,000,000,000</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>第一眼看上去：嗯，计数问题嘛，看上去好水。。<br>第二眼看上去：卧槽？好像不是那么回事？<br>第三眼看上去：妈卖批啊怎么推</p>
+<ul>
+<li>正解居然是：<strong>打表找规律！</strong></li>
+</ul>
+<p>又想起了那句经典的老话：数论推个屁，打表找规律。。。<br>是那么回事吗？<br>我们看看打表的情况<br>$1,9,41,109,205,325,473,649,853,1085,1345…$<br>前后相减？一点毛线规律都没有啊。。<br>要不从后往前看看（鬼知道要从后往前看），最后增量都是…28?<br>到底是在哪里不是28了呢（寻找ing）<br>哦，原来是$N=5$是分解线啊，mmp。。。</p>
+<p>然后前几项我哦们自然而然把表填上去好了，后面的话，增量相同，然后我们又会<del>自然而然</del>的想到这是个二次函数<br>求一下。。还真是<br>N&gt;=6时的通项公式为$A_i=14i^2-6i+5$</p>
+<p>随后我们的程序就显而易见了。。（去你的显而易见</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">6</span>] = &#123; <span class="number">1</span>,<span class="number">9</span>,<span class="number">41</span>,<span class="number">109</span>,<span class="number">205</span>,<span class="number">325</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen(<span class="string">"horse.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"horse.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> T;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> x, ans; <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">		<span class="keyword">if</span> (x &lt; <span class="number">6</span>) ans = a[x];</span><br><span class="line">		<span class="keyword">else</span> ans = <span class="number">14</span> * x * x - <span class="number">6</span> * x + <span class="number">5</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/10/「BZOJ 2006」[NOI2010]超级钢琴/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1968,179 +2131,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/22/显示不出来mathjax的解决方案/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leoleepz">
-      <meta itemprop="description" content="My Blog">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Flying fighter">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/22/显示不出来mathjax的解决方案/" itemprop="url">
-                  显示不出来mathjax的解决方案
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-22 16:07:40" itemprop="dateCreated datePublished" datetime="2018-02-22T16:07:40+08:00">2018-02-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-03-31 10:54:11" itemprop="dateModified" datetime="2018-03-31T10:54:11+08:00">2018-03-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常小知识/" itemprop="url" rel="index"><span itemprop="name">日常小知识</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>工具：chrome<br>有页面显示不出来数学公式？那是因为https不能加载http的js脚本<br>我们看到chrome的地址栏的右端有一块带叉叉的盾牌。点开，允许加载不安全的脚本即可<br>PS:我TM眼瞎看了一晚上才看到这个按钮xDDDD<br>PS:本页就引用了Mathjax, 同学们看看$\sum_{i=0}^9a_i$能不能正常显示吧！</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2192,7 +2182,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2366,7 +2356,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">66</span>
+                      
+                    
+                    <span class="site-state-item-count">67</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2493,7 +2485,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共31.0k字</span>
+  <span class="post-count">博客全站共31.6k字</span>
 </div>
         
 <div class="busuanzi-count">

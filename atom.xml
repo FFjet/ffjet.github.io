@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Flying fighter</title>
+  
+  <subtitle>A place where fighters soar</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://skyofwar.xyz/"/>
+  <updated>2018-08-30T01:17:50.549Z</updated>
+  <id>https://skyofwar.xyz/</id>
+  
+  <author>
+    <name>Leoleepz</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>『AGC 002C』Knot Puzzle</title>
+    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20002C%E3%80%8FKnot%20Puzzle/"/>
+    <id>https://skyofwar.xyz/2018/08/30/『AGC 002C』Knot Puzzle/</id>
+    <published>2018-08-30T07:54:27.000Z</published>
+    <updated>2018-08-30T01:17:50.549Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『AGC-002C』Knot-Puzzle&quot;&gt;&lt;a href=&quot;#『AGC-002C』Knot-Puzzle&quot; class=&quot;headerlink&quot; title=&quot;『AGC 002C』Knot Puzzle&quot;&gt;&lt;/a&gt;『AGC 002C』Knot Puzzle&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+&lt;h3 id=&quot;Problem-Statement&quot;&gt;&lt;a href=&quot;#Problem-Statement&quot; class=&quot;headerlink&quot; title=&quot;Problem Statement&quot;&gt;&lt;/a&gt;Problem Statement&lt;/h3&gt;&lt;p&gt;We have $N$ pieces of ropes, numbered 1 through  $N$. The length of piece $i$ is $a_i$.&lt;/p&gt;
+&lt;p&gt;At first, for each $i(1≤i≤N−1)$, piece $i$ and piece $i+1$ are tied at the ends, forming one long rope with  $N-1$ knots. Snuke will try to untie all of the knots by performing the following operation repeatedly:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Choose a (connected) rope with a total length of at least $L$, then untie one of its knots.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Is it possible to untie all of the $N−1$ knots by properly applying this operation? If the answer is positive, find one possible order to untie the knots.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>『JZOJ 4721』【NOIP2016提高A组模拟8.21】最长公共子序列</title>
+    <link href="https://skyofwar.xyz/2018/08/29/%E3%80%8EJZOJ-4721%E3%80%8F%E3%80%90NOIP2016%E6%8F%90%E9%AB%98A%E7%BB%84%E6%A8%A1%E6%8B%9F8.21%E3%80%91%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
+    <id>https://skyofwar.xyz/2018/08/29/『JZOJ-4721』【NOIP2016提高A组模拟8.21】最长公共子序列/</id>
+    <published>2018-08-29T07:54:27.000Z</published>
+    <updated>2018-08-30T01:05:46.280Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;4721-【NOIP2016提高A组模拟8-21】最长公共子序列&quot;&gt;&lt;a href=&quot;#4721-【NOIP2016提高A组模拟8-21】最长公共子序列&quot; class=&quot;headerlink&quot; title=&quot;4721. 【NOIP2016提高A组模拟8.21】最长公共子序列&quot;&gt;&lt;/a&gt;4721. 【NOIP2016提高A组模拟8.21】最长公共子序列&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;DJL为了避免成为一只咸鱼，来找Johann学习怎么求最长公共子序列。&lt;br&gt;经过长时间的摸索和练习，DJL终于学会了怎么求LCS。Johann感觉DJL孺子可教，就给他布置了一个课后作业：&lt;br&gt;给定两个长度分别为$n$和$m$的序列，序列中的每个元素都是正整数。保证每个序列中的各个元素互不相同。求这两个序列的最长公共子序列的长度。&lt;br&gt;DJL最讨厌重复劳动，所以不想做那些做过的题。于是他找你来帮他做作业。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="DP" scheme="https://skyofwar.xyz/tags/DP/"/>
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="sort" scheme="https://skyofwar.xyz/tags/sort/"/>
+    
+      <category term="JZOJ" scheme="https://skyofwar.xyz/tags/JZOJ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录一次非常感人的Mathematica Animation(Lissajous曲线)...</title>
+    <link href="https://skyofwar.xyz/2018/08/28/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E9%9D%9E%E5%B8%B8%E6%84%9F%E4%BA%BA%E7%9A%84Mathematica%20Animation/"/>
+    <id>https://skyofwar.xyz/2018/08/28/记录一次非常感人的Mathematica Animation/</id>
+    <published>2018-08-28T14:55:00.000Z</published>
+    <updated>2018-08-29T09:02:34.867Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;记录一次非常感人的Mathematica-Animation…&quot;&gt;&lt;a href=&quot;#记录一次非常感人的Mathematica-Animation…&quot; class=&quot;headerlink&quot; title=&quot;记录一次非常感人的Mathematica Animation…&quot;&gt;&lt;/a&gt;记录一次非常感人的Mathematica Animation…&lt;/h1&gt;&lt;p&gt;自己突发奇想想做一次Lissajous曲线。。&lt;/p&gt;
+&lt;p&gt;Mathematica代码咯：&lt;/p&gt;
+&lt;!--�37--&gt;
+&lt;p&gt;但是我们应该如何导出视频呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="MMA" scheme="https://skyofwar.xyz/tags/MMA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些关于组合的公式......</title>
+    <link href="https://skyofwar.xyz/2018/08/28/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8E%E7%BB%84%E5%90%88%E7%9A%84%E5%85%AC%E5%BC%8F/"/>
+    <id>https://skyofwar.xyz/2018/08/28/一些关于组合的公式/</id>
+    <published>2018-08-28T14:19:53.000Z</published>
+    <updated>2018-08-28T14:21:58.452Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一些关于组合的公式……&quot;&gt;&lt;a href=&quot;#一些关于组合的公式……&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="资源" scheme="https://skyofwar.xyz/categories/%E8%B5%84%E6%BA%90/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="组合数学" scheme="https://skyofwar.xyz/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Schur不等式的学习感想</title>
+    <link href="https://skyofwar.xyz/2018/08/24/Schur%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%84%9F%E6%83%B3/"/>
+    <id>https://skyofwar.xyz/2018/08/24/Schur不等式的学习感想/</id>
+    <published>2018-08-24T14:57:46.000Z</published>
+    <updated>2018-08-29T09:02:50.011Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Schur不等式的学习感想&quot;&gt;&lt;a href=&quot;#Schur不等式的学习感想&quot; class=&quot;headerlink&quot; title=&quot;Schur不等式的学习感想&quot;&gt;&lt;/a&gt;Schur不等式的学习感想&lt;/h1&gt;&lt;h2 id=&quot;什么是Schur不等式？&quot;&gt;&lt;a href=&quot;#什么是Schur不等式？&quot; class=&quot;headerlink&quot; title=&quot;什么是Schur不等式？&quot;&gt;&lt;/a&gt;什么是Schur不等式？&lt;/h2&gt;&lt;p&gt;设$x,y,z\ge 0,r \in \mathbb {R}$，则&lt;/p&gt;
+&lt;p&gt;$x^r(x-y)(x-z)+y^r(y-x)(y-z)+z^r(z-y)(z-x)\ge 0$&lt;/p&gt;
+&lt;p&gt;当$r=1$时，Schur不等式有几种变形：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$x^3+y^3+z^3 \geq (x^2y+xy^2+x^2z+xz^2+y^2z+yz^2)-3xyz$&lt;/li&gt;
+&lt;li&gt;$(x+y+z)^3 \geq 4(xy+yz+zx)(x+y+z)-9xyz$&lt;/li&gt;
+&lt;li&gt;$xyz \geq (x+y-z)(y+z-x)(z+x-y)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;差不多就是这样（个人感觉变形用的炒鸡多…）&lt;/p&gt;
+&lt;p&gt;下面看唯一一道自己做出来的题：（窝太菜了学了这个不等式之后只会做一道）&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="讲解" scheme="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="数学竞赛" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/"/>
+    
+      <category term="不等式" scheme="https://skyofwar.xyz/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>神奇的Mathematica的三角函数</title>
+    <link href="https://skyofwar.xyz/2018/08/21/%E7%A5%9E%E5%A5%87%E7%9A%84Mathematica%E7%9A%84%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%8A%9F%E8%83%BD/"/>
+    <id>https://skyofwar.xyz/2018/08/21/神奇的Mathematica的三角函数功能/</id>
+    <published>2018-08-21T14:00:22.000Z</published>
+    <updated>2018-08-21T05:09:36.771Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;神奇的Mathematica的三角函数&quot;&gt;&lt;a href=&quot;#神奇的Mathematica的三角函数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="无聊" scheme="https://skyofwar.xyz/categories/%E6%97%A0%E8%81%8A/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="MMA" scheme="https://skyofwar.xyz/tags/MMA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>由一道神奇的题目引发的思考</title>
+    <link href="https://skyofwar.xyz/2018/08/19/%E7%94%B1%E4%B8%80%E9%81%93%E7%A5%9E%E5%A5%87%E7%9A%84%E9%A2%98%E7%9B%AE%E5%BC%95%E5%8F%91%E7%9A%84%E6%80%9D%E8%80%83/"/>
+    <id>https://skyofwar.xyz/2018/08/19/由一道神奇的题目引发的思考/</id>
+    <published>2018-08-19T12:53:46.000Z</published>
+    <updated>2018-08-27T12:32:13.858Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;由一道神奇的题目引发的思考&quot;&gt;&lt;a href=&quot;#由一道神奇的题目引发的思考&quot; class=&quot;headerlink&quot; title=&quot;由一道神奇的题目引发的思考&quot;&gt;&lt;/a&gt;由一道神奇的题目引发的思考&lt;/h1&gt;&lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;计算$\displaystyle \sum_\limits{i=1}^\limits{k}i*2^i$&lt;/p&gt;
+&lt;h2 id=&quot;解答&quot;&gt;&lt;a href=&quot;#解答&quot; class=&quot;headerlink&quot; title=&quot;解答&quot;&gt;&lt;/a&gt;解答&lt;/h2&gt;&lt;p&gt;观察恒等式：$\displaystyle \sum_\limits{i=0}^\limits{k} r^i=\dfrac{1-r^{k+1}}{1-r} $&lt;/p&gt;
+&lt;p&gt;对两边形式地求导，得$\displaystyle\dfrac{\rm d}{ {\rm d} r}\sum_\limits{i=0}^\limits{k} r^i=\sum_\limits{i=0}^\limits{k} i*r^{i-1}=\dfrac{\rm d}{ {\rm d} r}\dfrac{1-r^{k+1}}{1-r}=-(k+1)\dfrac{r^k}{1-r}+\dfrac{1-r^{k+1}}{(1-r)^2}$&lt;/p&gt;
+&lt;p&gt;两边同时乘$r$，令$r=2$，得&lt;/p&gt;
+&lt;p&gt;$\displaystyle \sum_{i=0}^{k} i \cdot 2^{i}=-2(k+1)2^k/(-1)+2(1-2^{k+1})/(-1)^2=(k+1)2^{k+1}+2-2 \cdot 2^{k+1} $&lt;/p&gt;
+&lt;p&gt;化简得$(k-1)2^{k+1}+2$&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="讲解" scheme="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="复分析" scheme="https://skyofwar.xyz/tags/%E5%A4%8D%E5%88%86%E6%9E%90/"/>
+    
+      <category term="微积分" scheme="https://skyofwar.xyz/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二项式系数及其反演</title>
+    <link href="https://skyofwar.xyz/2018/08/19/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E7%B3%BB%E6%95%B0%E5%8F%8A%E5%85%B6%E5%8F%8D%E6%BC%94/"/>
+    <id>https://skyofwar.xyz/2018/08/19/二项式系数及其反演/</id>
+    <published>2018-08-19T06:49:10.000Z</published>
+    <updated>2018-08-19T10:57:55.567Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;二项式系数及其反演&quot;&gt;&lt;a href=&quot;#二项式系数及其反演&quot; class=&quot;headerlink&quot; title=&quot;二项式系数及其反演&quot;&gt;&lt;/a&gt;二项式系数及其反演&lt;/h1&gt;&lt;h2 id=&quot;二项式系数-amp-二项式定理&quot;&gt;&lt;a href=&quot;#二项式系数-amp-二项式定理&quot; class=&quot;headerlink&quot; title=&quot;二项式系数&amp;amp;二项式定理&quot;&gt;&lt;/a&gt;二项式系数&amp;amp;二项式定理&lt;/h2&gt;&lt;p&gt;了解标题之前，我们先要花一些时间复习一下普通的二项式系数：&lt;/p&gt;
+&lt;p&gt;$\left( \begin{array}{c}n\\k\end{array} \right) = \dfrac{\Gamma (n + 1)}{\Gamma (k + 1)\Gamma (n - k + 1)}$&lt;/p&gt;
+&lt;p&gt;我们对它研究得非常多，例如经典的二项式定理：&lt;/p&gt;
+&lt;p&gt;${(x + y)^n} = \left( \begin{array}{c}n\\0\end{array} \right){x^n}{y^0} + \left( \begin{array}{c}n\\1\end{array} \right){x^{n - 1}}{y^1} + \left( \begin{array}{c}n\\2\end{array} \right){x^{n - 2}}{y^2} +  \cdots  + \left( \begin{array}{c}n\\n - 1\end{array} \right){x^1}{y^{n - 1}} + \left( \begin{array}{c}n\\n\end{array} \right){x^0}{y^n}$&lt;/p&gt;
+&lt;p&gt;写成和式的形式，也就是&lt;/p&gt;
+&lt;p&gt;${(x + y)^n} = \sum\limits_{k = 0}^n {\left( \begin{array}{c}n\\k\end{array} \right)} {x^{n - k}}{y^k} = \sum\limits_{k = 0}^n {\left( \begin{array}{c}n\\k\end{array} \right)} {x^k}{y^{n - k}}$&lt;/p&gt;
+&lt;p&gt;证明挺简单的，想必大家都会，这里不会的可以来谈人生了QwQ&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="总结" scheme="https://skyofwar.xyz/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="组合数学" scheme="https://skyofwar.xyz/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>莫比乌斯反演</title>
+    <link href="https://skyofwar.xyz/2018/08/18/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
+    <id>https://skyofwar.xyz/2018/08/18/莫比乌斯反演/</id>
+    <published>2018-08-18T14:47:22.000Z</published>
+    <updated>2018-08-19T09:03:45.372Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;莫比乌斯反演&quot;&gt;&lt;a href=&quot;#莫比乌斯反演&quot; class=&quot;headerlink&quot; title=&quot;莫比乌斯反演&quot;&gt;&lt;/a&gt;莫比乌斯反演&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;不要把莫比乌斯反演和莫比乌斯变换当成一回事&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;莫比乌斯变换的范围要广的多，别一眼看上去：哇，傻逼分式线性函数嘛，so easy！然后后面你就不懂了&lt;/p&gt;
+&lt;p&gt;详细看维基百科：&lt;a href=&quot;https://en.wikipedia.org/wiki/M%C3%B6bius_transformation&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Möbius transformation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;还有这一篇&lt;del&gt;深度好文&lt;/del&gt; &lt;a href=&quot;http://www.math.bas.bg/~rkovach/lectures/Moebius.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moebius.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;言归正传，回到topic。今天主要从数学角度去研究。&lt;/p&gt;
+&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;如果对数论函数$f(n)$和$g(n)$，有以下关系式:&lt;/p&gt;
+&lt;p&gt;${\displaystyle g(n)=\sum _{d\,\mid \,n}f(d)\quad {\text{对于每个整数}}n\geq 1} $&lt;/p&gt;
+&lt;p&gt;那么有&lt;/p&gt;
+&lt;p&gt;${\displaystyle f(n)=\sum _{d\,\mid \,n}\mu (d)g\left({\frac {n}{d}}\right)\quad {\text{对于每个整数}}n\geq 1}$&lt;/p&gt;
+&lt;p&gt;其中$\mu$是莫比乌斯函数。实际上，原函数$f(n)$通过使用反演公式给定唯一的$g(n)$。$f$和$g$被称为对方的$莫比乌斯变换$&lt;/p&gt;
+&lt;p&gt;如果f和g是从正整数到某个阿贝尔群的函数（被看作ℤ - 模块），则该公式也是正确的。&lt;/p&gt;
+&lt;p&gt;用Dirichlet卷积描述，第一个公式可以写成${\displaystyle g = f * {\mathit {1}}}$&lt;/p&gt;
+&lt;p&gt;其中星号表示Dirichlet卷积，$\mathit{1}$是常数函数$\mathit{1}(n)=1$。然后将第二个公式写成$f = \mu * g$&lt;/p&gt;
+&lt;p&gt;因为卷乘是(可交换的)和关联的，并且$\mathit{1} * \mu=\varepsilon$，而$\varepsilon$是Dirichlet卷积中的单位函数&lt;/p&gt;
+&lt;p&gt;所以我们有：&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mu * g = \mu *({\mathit{1}} * f)=(\mu * {\mathit{1}}) * f = \varepsilon * f = f&lt;/script&gt;&lt;p&gt;仅仅是数论函数？我们来看看它的一般形式：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="总结" scheme="https://skyofwar.xyz/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="数论" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>疯狂的馒头---并查集的妙用</title>
+    <link href="https://skyofwar.xyz/2018/05/16/%E7%96%AF%E7%8B%82%E7%9A%84%E9%A6%92%E5%A4%B4%5B%E5%B9%B6%E6%9F%A5%E9%9B%86%5D/"/>
+    <id>https://skyofwar.xyz/2018/05/16/疯狂的馒头[并查集]/</id>
+    <published>2018-05-16T14:36:21.000Z</published>
+    <updated>2018-08-29T09:04:07.352Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;疯狂的馒头&quot;&gt;&lt;a href=&quot;#疯狂的馒头&quot; class=&quot;headerlink&quot; title=&quot;疯狂的馒头&quot;&gt;&lt;/a&gt;疯狂的馒头&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;CQF十分喜欢吃馒头，兴奋之下他一下子买了N 个馒头请所有认识他的人吃。&lt;/p&gt;
+&lt;p&gt;但是CQF不喜欢白色，喜欢红色、黄色、绿色等鲜艳的颜色。于是他把所有白色的馒头排成一列。然后进行M 次染色操作。每个染色操作都是用一个神奇的刷子把连续的多个馒头染成特定的某种颜色。一个馒头最终的颜色是最后一次染它的颜色。如果一个馒头没有被染过色，那么它的颜色就是白色。&lt;/p&gt;
+&lt;p&gt;现在CQF已经定好了染色计划：在第i次染色操作中，把第$(i × p + q)\ mod\ N + 1$个馒头和第$(i × q + p)\ mod\ N+1$个馒头之间的馒头染成颜色i，其中p, q是特定的两个正整数。他想立即知道最后每个馒头的颜色。你能帮他吗？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="并查集" scheme="https://skyofwar.xyz/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>天鹅会面 [BFS+SPFA]</title>
+    <link href="https://skyofwar.xyz/2018/05/16/%E5%A4%A9%E9%B9%85%E4%BC%9A%E9%9D%A2%20%5BBFS+SPFA%5D/"/>
+    <id>https://skyofwar.xyz/2018/05/16/天鹅会面 [BFS+SPFA]/</id>
+    <published>2018-05-16T14:35:21.000Z</published>
+    <updated>2018-08-29T09:04:35.284Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;天鹅会面-BFS-SPFA&quot;&gt;&lt;a href=&quot;#天鹅会面-BFS-SPFA&quot; class=&quot;headerlink&quot; title=&quot;天鹅会面 [BFS+SPFA]&quot;&gt;&lt;/a&gt;天鹅会面 [BFS+SPFA]&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;两头白天鹅生活在一个部分湖面结了冰的湖泊中，湖面的形状为一个长方形，并且被分割成R行C列的小方格，某些方格中结了冰，这样的方格称之为冰格，其余的方格称之为水格。&lt;/p&gt;
+&lt;p&gt;冬天过去了，湖面上的冰渐渐开始溶解了，每一天与水相邻的冰格就将消融而转化为水格。所谓两个方格相邻是指它们在水平或垂直方向有公共边，两个呈对角的方格是不相邻的。&lt;/p&gt;
+&lt;p&gt;白天鹅只能在水中沿水平或垂直方向游动，写一个程序判断多少天后两只白天鹅才能够相会。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="BFS" scheme="https://skyofwar.xyz/tags/BFS/"/>
+    
+      <category term="SPFA" scheme="https://skyofwar.xyz/tags/SPFA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>『POJ 2229 』 Sumsets</title>
+    <link href="https://skyofwar.xyz/2018/05/15/%E3%80%8EPOJ%202229%E3%80%8F%20Sumsets/"/>
+    <id>https://skyofwar.xyz/2018/05/15/『POJ 2229』 Sumsets/</id>
+    <published>2018-05-15T14:26:21.000Z</published>
+    <updated>2018-08-29T09:04:54.987Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『POJ-2229』-Sumsets&quot;&gt;&lt;a href=&quot;#『POJ-2229』-Sumsets&quot; class=&quot;headerlink&quot; title=&quot;『POJ 2229』 Sumsets&quot;&gt;&lt;/a&gt;『POJ 2229』 Sumsets&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://poj.org/problem?id=2229&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Farmer John commanded his cows to search for different sets of numbers that sum to a given number. The cows use only numbers that are an integer power of 2. Here are the possible sets of numbers that sum to 7: &lt;/p&gt;
+&lt;p&gt; 1) 1+1+1+1+1+1+1 &lt;/p&gt;
+&lt;p&gt;2) 1+1+1+1+1+2 &lt;/p&gt;
+&lt;p&gt;3) 1+1+1+2+2  &lt;/p&gt;
+&lt;p&gt;4) 1+1+1+4  &lt;/p&gt;
+&lt;p&gt;5) 1+2+2+2 &lt;/p&gt;
+&lt;p&gt;6) 1+2+4 &lt;/p&gt;
+&lt;p&gt; Help FJ count all possible representations for a given integer N (1 &amp;lt;= N &amp;lt;= 1,000,000).  &lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="DP" scheme="https://skyofwar.xyz/tags/DP/"/>
+    
+      <category term="POJ" scheme="https://skyofwar.xyz/tags/POJ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>『POJ 2376 』 Cleaning Shifts</title>
+    <link href="https://skyofwar.xyz/2018/05/15/%E3%80%8EPOJ%202376%20%E3%80%8F%20Cleaning%20Shifts/"/>
+    <id>https://skyofwar.xyz/2018/05/15/『POJ 2376 』 Cleaning Shifts/</id>
+    <published>2018-05-15T14:21:11.000Z</published>
+    <updated>2018-08-29T09:05:03.259Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『POJ-2376-』-Cleaning-Shifts&quot;&gt;&lt;a href=&quot;#『POJ-2376-』-Cleaning-Shifts&quot; class=&quot;headerlink&quot; title=&quot;『POJ 2376 』 Cleaning Shifts&quot;&gt;&lt;/a&gt;『POJ 2376 』 Cleaning Shifts&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Farmer John is assigning some of his N (1 &amp;lt;= N &amp;lt;= 25,000) cows to do some cleaning chores around the barn. He always wants to have one cow working on cleaning things up and has divided the day into T shifts (1 &amp;lt;= T &amp;lt;= 1,000,000), the first being shift 1 and the last being shift T.&lt;br&gt;Each cow is only available at some interval of times during the day for work on cleaning. Any cow that is selected for cleaning duty will work for the entirety of her interval.&lt;br&gt;Your job is to help Farmer John assign some cows to shifts so that (i) every shift has at least one cow assigned to it, and (ii) as few cows as possible are involved in cleaning. If it is not possible to assign a cow to each shift, print -1.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="POJ" scheme="https://skyofwar.xyz/tags/POJ/"/>
+    
+      <category term="贪心" scheme="https://skyofwar.xyz/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「Codeforces 825B」Five-In-a-Row</title>
+    <link href="https://skyofwar.xyz/2018/05/06/%E3%80%8CCodeforces%20825B%E3%80%8DFive-In-a-Row/"/>
+    <id>https://skyofwar.xyz/2018/05/06/「Codeforces 825B」Five-In-a-Row/</id>
+    <published>2018-05-06T07:38:00.000Z</published>
+    <updated>2018-05-06T07:39:39.806Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;题目链接: &lt;a href=&quot;http://codeforces.com/contest/825/problem/B&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;点我&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Problem&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Codeforces" scheme="https://skyofwar.xyz/tags/Codeforces/"/>
+    
+      <category term="模拟" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+      <category term="水题" scheme="https://skyofwar.xyz/tags/%E6%B0%B4%E9%A2%98/"/>
+    
+      <category term="DP" scheme="https://skyofwar.xyz/tags/DP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSTSC 2018滚粗记</title>
+    <link href="https://skyofwar.xyz/2018/05/04/JSTSC%202018%E6%BB%9A%E7%B2%97%E8%AE%B0/"/>
+    <id>https://skyofwar.xyz/2018/05/04/JSTSC 2018滚粗记/</id>
+    <published>2018-05-04T12:20:54.000Z</published>
+    <updated>2018-05-04T15:07:44.830Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JSTSC-2018滚粗记&quot;&gt;&lt;a href=&quot;#JSTSC-2018滚粗记&quot; class=&quot;headerlink&quot; title=&quot;JSTSC 2018滚粗记&quot;&gt;&lt;/a&gt;JSTSC 2018滚粗记&lt;/h1&gt;&lt;h2 id=&quot;Day-1&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="游记" scheme="https://skyofwar.xyz/categories/%E6%B8%B8%E8%AE%B0/"/>
+    
+    
+      <category term="游记" scheme="https://skyofwar.xyz/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>单调栈</title>
+    <link href="https://skyofwar.xyz/2018/05/01/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+    <id>https://skyofwar.xyz/2018/05/01/单调栈/</id>
+    <published>2018-05-01T13:25:11.000Z</published>
+    <updated>2018-05-01T13:40:22.937Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;题外话&lt;br&gt;2333感觉uups里面真的是愈发有趣、有趣得一塌糊涂不可收拾&lt;br&gt;&lt;a href=&quot;https://jq.qq.com/?_wv=1027&amp;amp;k=55zJj9R&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="讲解" scheme="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+    
+    
+      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="单调栈" scheme="https://skyofwar.xyz/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「BZOJ 1935」「洛谷 P2163」「CodeVS 2342」[SHOI2007]Tree 园丁的烦恼</title>
+    <link href="https://skyofwar.xyz/2018/04/15/%E3%80%8CBZOJ%201935%E3%80%8D%E3%80%8C%E6%B4%9B%E8%B0%B7%20P2163%E3%80%8D%E3%80%8CCodeVS%202342%E3%80%8D%5BSHOI2007%5DTree%20%E5%9B%AD%E4%B8%81%E7%9A%84%E7%83%A6%E6%81%BC/"/>
+    <id>https://skyofwar.xyz/2018/04/15/「BZOJ 1935」「洛谷 P2163」「CodeVS 2342」[SHOI2007]Tree 园丁的烦恼/</id>
+    <published>2018-04-15T13:59:22.000Z</published>
+    <updated>2018-05-06T07:40:50.371Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;题目描述
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="BZOJ" scheme="https://skyofwar.xyz/tags/BZOJ/"/>
+    
+      <category term="洛谷" scheme="https://skyofwar.xyz/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="CodeVS" scheme="https://skyofwar.xyz/tags/CodeVS/"/>
+    
+      <category term="离散化" scheme="https://skyofwar.xyz/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
+    
+      <category term="树状数组" scheme="https://skyofwar.xyz/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「洛谷 P1706」全排列</title>
+    <link href="https://skyofwar.xyz/2018/03/31/%E3%80%8C%E6%B4%9B%E8%B0%B7%20P1706%E3%80%8D%E5%85%A8%E6%8E%92%E5%88%97/"/>
+    <id>https://skyofwar.xyz/2018/03/31/「洛谷 P1706」全排列/</id>
+    <published>2018-03-31T03:15:33.000Z</published>
+    <updated>2018-05-06T07:42:00.983Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;辣鸡题目。直接STL水掉，84ms AC&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="洛谷" scheme="https://skyofwar.xyz/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="水题" scheme="https://skyofwar.xyz/tags/%E6%B0%B4%E9%A2%98/"/>
+    
+      <category term="STL" scheme="https://skyofwar.xyz/tags/STL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>求乘法逆元</title>
+    <link href="https://skyofwar.xyz/2018/03/31/%E6%B1%82%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/"/>
+    <id>https://skyofwar.xyz/2018/03/31/求乘法逆元/</id>
+    <published>2018-03-30T23:29:11.000Z</published>
+    <updated>2018-03-31T02:54:31.988Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;两种方法&quot;&gt;&lt;a href=&quot;#两种方法&quot; class=&quot;headerlink&quot; title=&quot;两种方法&quot;&gt;&lt;/a&gt;两种方法&lt;/h1&gt;&lt;h2 id=&quot;拓展欧几里得法&quot;&gt;&lt;a href=&quot;#拓展欧几里得法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="讲解" scheme="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+    
+    
+      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="数论" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="逆元" scheme="https://skyofwar.xyz/tags/%E9%80%86%E5%85%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>「洛谷 P1026」第K小数</title>
+    <link href="https://skyofwar.xyz/2018/03/30/%E3%80%8C%E6%B4%9B%E8%B0%B7%20P1026%E3%80%8D%E7%AC%ACK%E5%B0%8F%E6%95%B0/"/>
+    <id>https://skyofwar.xyz/2018/03/30/「洛谷 P1026」第K小数/</id>
+    <published>2018-03-30T08:03:22.000Z</published>
+    <updated>2018-05-06T07:41:49.185Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;水一波题解。。&lt;br&gt;&lt;del&gt;我不会告诉你我没看见输出&lt;code&gt;NO RESULT&lt;/code&gt;所以&lt;strong&gt;WA&lt;/strong&gt;了两次。。。&lt;/del&gt;&lt;br&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
+        
+      
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="洛谷" scheme="https://skyofwar.xyz/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="水题" scheme="https://skyofwar.xyz/tags/%E6%B0%B4%E9%A2%98/"/>
+    
+  </entry>
+  
+</feed>
