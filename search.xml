@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>『Codeforces 985D』Sand Fortress</title>
+      <link href="/2018/08/31/%E3%80%8ECodeforces%20985D%E3%80%8FSand%20Fortress/"/>
+      <url>/2018/08/31/%E3%80%8ECodeforces%20985D%E3%80%8FSand%20Fortress/</url>
+      <content type="html"><![CDATA[<h1 id="『Codeforces-985D』Sand-Fortress"><a href="#『Codeforces-985D』Sand-Fortress" class="headerlink" title="『Codeforces 985D』Sand Fortress"></a>『Codeforces 985D』Sand Fortress</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>窝不想抄题目了…</p><p>题目描述：</p><p>你有$n$堆沙子，最左边的沙子的最大高度不能超过$H$，让你在一个从$1$到$\infty$的一维平面内放沙子，且要满足相邻两个坐标的沙子的高度不能超过$1$。问沙子能够占用的最少坐标点的个数。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>因为题目要求相邻两个坐标的沙子高度不能超过$1$，这代表最后一堆沙子的个数也必定为$1$。</p><p>而题目要我们求占用坐标点的最少个数，根据贪心的思想，要使占用的点最少，则我们必须要贪心地令沙子的高度尽可能高。</p><ul><li><p>因为最后一堆的沙子的个数为$1$，所以沙子的高度所形成的曲线必定是先增后减的或者一直减小的曲线。</p><ul><li>沙子的高度存在单调性！</li><li>二分答案</li><li><p>不断二分占用坐标的个数即可。</p><p>而二分的$\rm check$函数，我们因为最优的情况下，两两沙堆相差均为$1$，因此我们可以运用等差数列求和公式求出总的沙子堆数，并用它与$n$进行对比进行二分即可。</p><p>值得一提的是，当枚举出$n$为奇数的时候，会出现有两个坐标的值均相当的情况，需要注意</p></li></ul></li></ul><p>Code:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll n, h;</span><br><span class="line"><span class="keyword">const</span> ll cnt = <span class="number">2000000000</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">const</span> ll &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (x &lt;= h)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (x &gt;= cnt) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">return</span> (x * (x + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>) &gt;= n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">register</span> ll a = ((x - h) &gt;&gt; <span class="number">1</span>) + h;</span><br><span class="line"><span class="keyword">if</span> (a &gt;= cnt) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">if</span> ((x - h) &amp; <span class="number">1</span>)</span><br><span class="line"><span class="keyword">return</span> ((a * (a + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>) + ((a + h) * (a + <span class="number">1</span> - h) &gt;&gt; <span class="number">1</span>)) &gt;= n;</span><br><span class="line"><span class="keyword">return</span> ((a * (a + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>) + ((a - <span class="number">1</span> + h) * (a - h) &gt;&gt; <span class="number">1</span>)) &gt;= n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line"><span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n &gt;&gt; h;</span><br><span class="line"><span class="keyword">register</span> ll ln = <span class="number">1</span>, rn = n;</span><br><span class="line"><span class="keyword">while</span> (ln &lt;= rn)</span><br><span class="line">&#123;</span><br><span class="line">ll mid = (ln + rn) &gt;&gt; <span class="number">1l</span>l;</span><br><span class="line"><span class="keyword">if</span> (check(mid)) rn = mid - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span> ln = mid + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; rn + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> 题解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Codeforces </tag>
+            
+            <tag> 二分答案 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>『Codeforces 932E』Team Work</title>
       <link href="/2018/08/30/%E3%80%8ECodeforces%20932E%E3%80%8FTeam%20Work/"/>
       <url>/2018/08/30/%E3%80%8ECodeforces%20932E%E3%80%8FTeam%20Work/</url>
@@ -724,15 +747,15 @@
             
             <tag> BZOJ </tag>
             
+            <tag> 模板 </tag>
+            
+            <tag> 树 </tag>
+            
             <tag> HNOI </tag>
             
             <tag> Splay </tag>
             
-            <tag> 树 </tag>
-            
             <tag> 平衡树 </tag>
-            
-            <tag> 模板 </tag>
             
         </tags>
       
@@ -830,9 +853,9 @@
       
         <tags>
             
-            <tag> 树 </tag>
-            
             <tag> 线段树 </tag>
+            
+            <tag> 树 </tag>
             
             <tag> HDU </tag>
             
@@ -855,13 +878,13 @@
       
         <tags>
             
-            <tag> 树 </tag>
-            
             <tag> 模板 </tag>
             
             <tag> 数据结构 </tag>
             
             <tag> 线段树 </tag>
+            
+            <tag> 树 </tag>
             
             <tag> 懒标记 </tag>
             
@@ -1007,11 +1030,11 @@
       
         <tags>
             
-            <tag> BZOJ </tag>
-            
             <tag> 匈牙利算法 </tag>
             
             <tag> 图论 </tag>
+            
+            <tag> BZOJ </tag>
             
             <tag> 省队 </tag>
             
@@ -1189,29 +1212,6 @@
     </entry>
     
     <entry>
-      <title>如何卸载hexo</title>
-      <link href="/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/"/>
-      <url>/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/</url>
-      <content type="html"><![CDATA[<p>安装了hexo，出了问题，该如何卸载呢？<br>对于2.x版本的hexo,我们知道安装命令为<br><code>npm install hexo -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo -g</code></p><p>对于3.x版本的hexo,我们知道安装命令为<br><code>npm install hexo-cli -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo-cli -g</code></p>]]></content>
-      
-      <categories>
-          
-          <category> 日常小知识 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-            <tag> bash </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>线性代数基础 1</title>
       <link href="/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/"/>
       <url>/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/</url>
@@ -1229,6 +1229,29 @@
             <tag> Math theory </tag>
             
             <tag> 线性代数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>如何卸载hexo</title>
+      <link href="/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/"/>
+      <url>/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/</url>
+      <content type="html"><![CDATA[<p>安装了hexo，出了问题，该如何卸载呢？<br>对于2.x版本的hexo,我们知道安装命令为<br><code>npm install hexo -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo -g</code></p><p>对于3.x版本的hexo,我们知道安装命令为<br><code>npm install hexo-cli -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo-cli -g</code></p>]]></content>
+      
+      <categories>
+          
+          <category> 日常小知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+            <tag> bash </tag>
             
         </tags>
       

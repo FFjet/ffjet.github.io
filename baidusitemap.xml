@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/08/31/%E3%80%8ECodeforces%20985D%E3%80%8FSand%20Fortress/</loc>
+    <lastmod>2018-08-31T04:58:29.189Z</lastmod>
+    <data>
+        <display>
+        <title>『Codeforces 985D』Sand Fortress</title>
+        <pubTime>2018-08-31T04:50:27.000Z</pubTime>
+        
+        <tag>Codeforces</tag>
+         
+        <tag>二分答案</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8ECodeforces%20932E%E3%80%8FTeam%20Work/</loc>
     <lastmod>2018-08-30T15:00:59.269Z</lastmod>
     <data>
@@ -589,9 +611,9 @@
         <title>「HDU 1556」Color the ball</title>
         <pubTime>2018-03-17T11:31:22.000Z</pubTime>
         
-        <tag>树</tag>
-         
         <tag>线段树</tag>
+         
+        <tag>树</tag>
          
         <tag>HDU</tag>
          
@@ -749,15 +771,15 @@
         
         <tag>BZOJ</tag>
          
+        <tag>模板</tag>
+         
+        <tag>树</tag>
+         
         <tag>HNOI</tag>
          
         <tag>Splay</tag>
          
-        <tag>树</tag>
-         
         <tag>平衡树</tag>
-         
-        <tag>模板</tag>
          
          
            
@@ -777,11 +799,11 @@
         <title>「BZOJ 1059」 [ZJOI2007]矩阵游戏</title>
         <pubTime>2018-03-06T14:00:22.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>匈牙利算法</tag>
          
         <tag>图论</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>省队</tag>
          
@@ -873,13 +895,13 @@
         <title>线段统计 - 线段树懒标记</title>
         <pubTime>2018-03-17T09:31:41.000Z</pubTime>
         
-        <tag>树</tag>
-         
         <tag>模板</tag>
          
         <tag>数据结构</tag>
          
         <tag>线段树</tag>
+         
+        <tag>树</tag>
          
         <tag>懒标记</tag>
          

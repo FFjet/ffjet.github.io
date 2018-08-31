@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="线性基概念设数集$T$的范围为$[1,2^n−1]$。$T$的线性基是$T$的一个子集$A=\{a1,a2,a3,…,an\}$。$A$中元素互相$xor$所形成的异或集合，等价于原数集$T$的元素互相$xor$形成的异或集合。$A$可以看成是$T$的压缩。 性质线性基有一些性质：  线性基的异或集合中不存在$0$。也就是说，$A$是$T$中的极大线性无关组，同时$A⊆T$。 线性基中每个元素的异">
-<meta name="keywords" content="模板,数据结构,线性代数,线性基">
+  <meta name="description" content="『Codeforces 985D』Sand FortressProblem窝不想抄题目了… 题目描述： 你有$n$堆沙子，最左边的沙子的最大高度不能超过$H$，让你在一个从$1$到$\infty$的一维平面内放沙子，且要满足相邻两个坐标的沙子的高度不能超过$1$。问沙子能够占用的最少坐标点的个数。 Solution因为题目要求相邻两个坐标的沙子高度不能超过$1$，这代表最后一堆沙子的个数也必定为$">
+<meta name="keywords" content="Codeforces,二分答案">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性基">
-<meta property="og:url" content="https://skyofwar.xyz/2018/03/12/线性基/index.html">
+<meta property="og:title" content="『Codeforces 985D』Sand Fortress">
+<meta property="og:url" content="https://skyofwar.xyz/2018/08/31/『Codeforces 985D』Sand Fortress/index.html">
 <meta property="og:site_name" content="Flying fighter">
-<meta property="og:description" content="线性基概念设数集$T$的范围为$[1,2^n−1]$。$T$的线性基是$T$的一个子集$A=\{a1,a2,a3,…,an\}$。$A$中元素互相$xor$所形成的异或集合，等价于原数集$T$的元素互相$xor$形成的异或集合。$A$可以看成是$T$的压缩。 性质线性基有一些性质：  线性基的异或集合中不存在$0$。也就是说，$A$是$T$中的极大线性无关组，同时$A⊆T$。 线性基中每个元素的异">
+<meta property="og:description" content="『Codeforces 985D』Sand FortressProblem窝不想抄题目了… 题目描述： 你有$n$堆沙子，最左边的沙子的最大高度不能超过$H$，让你在一个从$1$到$\infty$的一维平面内放沙子，且要满足相邻两个坐标的沙子的高度不能超过$1$。问沙子能够占用的最少坐标点的个数。 Solution因为题目要求相邻两个坐标的沙子高度不能超过$1$，这代表最后一堆沙子的个数也必定为$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-31T02:53:08.920Z">
+<meta property="og:updated_time" content="2018-08-31T04:58:29.189Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性基">
-<meta name="twitter:description" content="线性基概念设数集$T$的范围为$[1,2^n−1]$。$T$的线性基是$T$的一个子集$A=\{a1,a2,a3,…,an\}$。$A$中元素互相$xor$所形成的异或集合，等价于原数集$T$的元素互相$xor$形成的异或集合。$A$可以看成是$T$的压缩。 性质线性基有一些性质：  线性基的异或集合中不存在$0$。也就是说，$A$是$T$中的极大线性无关组，同时$A⊆T$。 线性基中每个元素的异">
+<meta name="twitter:title" content="『Codeforces 985D』Sand Fortress">
+<meta name="twitter:description" content="『Codeforces 985D』Sand FortressProblem窝不想抄题目了… 题目描述： 你有$n$堆沙子，最左边的沙子的最大高度不能超过$H$，让你在一个从$1$到$\infty$的一维平面内放沙子，且要满足相邻两个坐标的沙子的高度不能超过$1$。问沙子能够占用的最少坐标点的个数。 Solution因为题目要求相邻两个坐标的沙子高度不能超过$1$，这代表最后一堆沙子的个数也必定为$">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://skyofwar.xyz/2018/03/12/线性基/"/>
+  <link rel="canonical" href="https://skyofwar.xyz/2018/08/31/『Codeforces 985D』Sand Fortress/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>线性基 | Flying fighter</title>
+  <title>『Codeforces 985D』Sand Fortress | Flying fighter</title>
   
 
 
@@ -342,7 +342,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/12/线性基/">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/08/31/『Codeforces 985D』Sand Fortress/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Leoleepz">
@@ -359,7 +359,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">线性基
+          <h1 class="post-title" itemprop="name headline">『Codeforces 985D』Sand Fortress
               
             
           </h1>
@@ -384,24 +384,12 @@
                 
               
 
-              <time title="创建时间：2018-03-12 22:33:33" itemprop="dateCreated datePublished" datetime="2018-03-12T22:33:33+08:00">2018-03-12</time>
+              <time title="创建时间：2018-08-31 12:50:27 / 修改时间：12:58:29" itemprop="dateCreated datePublished" datetime="2018-08-31T12:50:27+08:00">2018-08-31</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-03-31 10:53:08" itemprop="dateModified" datetime="2018-03-31T10:53:08+08:00">2018-03-31</time>
               
             
           </span>
@@ -418,7 +406,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/讲解/" itemprop="url" rel="index"><span itemprop="name">讲解</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
 
                 
                 
@@ -460,21 +448,25 @@
       
 
       
-        <h1 id="线性基"><a href="#线性基" class="headerlink" title="线性基"></a>线性基</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>设数集$T$的范围为$[1,2^n−1]$。<br>$T$的线性基是$T$的一个子集$A=\{a1,a2,a3,…,an\}$。<br>$A$中元素互相$xor$所形成的异或集合，等价于原数集$T$的元素互相$xor$形成的异或集合。<br>$A$可以看成是$T$的压缩。</p>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>线性基有一些性质：</p>
+        <h1 id="『Codeforces-985D』Sand-Fortress"><a href="#『Codeforces-985D』Sand-Fortress" class="headerlink" title="『Codeforces 985D』Sand Fortress"></a>『Codeforces 985D』Sand Fortress</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>窝不想抄题目了…</p>
+<p>题目描述：</p>
+<p>你有$n$堆沙子，最左边的沙子的最大高度不能超过$H$，让你在一个从$1$到$\infty$的一维平面内放沙子，且要满足相邻两个坐标的沙子的高度不能超过$1$。问沙子能够占用的最少坐标点的个数。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>因为题目要求相邻两个坐标的沙子高度不能超过$1$，这代表最后一堆沙子的个数也必定为$1$。</p>
+<p>而题目要我们求占用坐标点的最少个数，根据贪心的思想，要使占用的点最少，则我们必须要贪心地令沙子的高度尽可能高。</p>
 <ul>
-<li>线性基的异或集合中不存在$0$。也就是说，$A$是$T$中的<a href="https://baike.baidu.com/item/%E6%9E%81%E5%A4%A7%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3%E7%BB%84/11035667?fr=aladdin" target="_blank" rel="noopener">极大线性无关组</a>，同时$A⊆T$。</li>
-<li>线性基中每个元素的异或方案唯一，也就是说，线性基中不同的异或组合异或出的数都是不一样的。这个与性质1其实是等价的。</li>
-<li>线性基的二进制最高位互不相同。</li>
-<li>如果线性基是满的，它的异或集合为$\{1,2,3…2^n-1\}$。</li>
-<li>线性基中元素互相异或，异或集合不变。</li>
+<li><p>因为最后一堆的沙子的个数为$1$，所以沙子的高度所形成的曲线必定是先增后减的或者一直减小的曲线。</p>
+<ul>
+<li>沙子的高度存在单调性！</li>
+<li>二分答案</li>
+<li><p>不断二分占用坐标的个数即可。</p>
+<p>而二分的$\rm check$函数，我们因为最优的情况下，两两沙堆相差均为$1$，因此我们可以运用等差数列求和公式求出总的沙子堆数，并用它与$n$进行对比进行二分即可。</p>
+<p>值得一提的是，当枚举出$n$为奇数的时候，会出现有两个坐标的值均相当的情况，需要注意</p>
+</li>
 </ul>
-<h2 id="维护"><a href="#维护" class="headerlink" title="维护"></a>维护</h2><h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><p>如果向线性基中插入数$x$，从高位到低位扫描它为1的二进制位。<br>扫描到第$i$位时，如果$a_i$不存在，就令$a_i=x$，否则$x=x⊗a_i$。<br>$x$的结局是，要么被扔进线性基，要么经过一系列操作过后，变成了$0$。</p>
-<h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>将一个线性基暴力插入另一个线性基即可。</p>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><h4 id="最大值"><a href="#最大值" class="headerlink" title="最大值"></a>最大值</h4><p>从高位到低位扫描线性基。<br>如果异或后可以使得答案变大，就异或到答案中去。</p>
-<h4 id="最小值"><a href="#最小值" class="headerlink" title="最小值"></a>最小值</h4><p>最小值即为最低位上的线性基。</p>
-<h4 id="k小值"><a href="#k小值" class="headerlink" title="k小值"></a>k小值</h4><p>根据性质3。<br>我们要将线性基改造成每一位相互独立。<br>具体操作就是如果i&lt;j，$a_j$的第$i$位是$1$，就将$a_j$异或上$a_i$。<br>经过一系列操作之后，对于二进制的某一位$i$。只有$a_i$的这一位是$1$，其他都是$0$。<br>所以查询的时候将$k$二进制拆分，对于$1$的位，就异或上对应的线性基。<br>最终得出的答案就是$k$小值。</p>
-<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p><strong>样例输入</strong><br>一个整数N，后面N行待插入的数值<br>6<br>5<br>23<br>4<br>12<br>2<br>9<br><strong>样例输出</strong><br>一个最大的xor值和一个最小的xor值<br>31 1<br>下面给出完整模板：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Fordowni for (register int i = 60; i &gt;= 0;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Forupi for (register int i = 0; i &lt;= 60;i++)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinearBase</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> d[<span class="number">61</span>], p[<span class="number">61</span>];</span><br><span class="line">	<span class="keyword">int</span> cnt;</span><br><span class="line">	LinearBase()</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">memset</span>(d,<span class="number">0</span>,<span class="keyword">sizeof</span>(d));</span><br><span class="line">        <span class="built_in">memset</span>(p,<span class="number">0</span>,<span class="keyword">sizeof</span>(p));</span><br><span class="line">        cnt=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">insert</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> val)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Fordowni</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (val &amp; (<span class="number">1l</span>l &lt;&lt; i))</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (!d[i])</span><br><span class="line">				&#123;</span><br><span class="line">					d[i] = val;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				val ^= d[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> val &gt; <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Querymax</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>;</span><br><span class="line">		Fordowni</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> ((res ^ d[i]) &gt; res)</span><br><span class="line">				res ^= d[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Querymin</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>;</span><br><span class="line">		Forupi			<span class="comment">//这边不要写成Fordowni </span></span><br><span class="line">			<span class="keyword">if</span> (d[i])</span><br><span class="line">				<span class="keyword">return</span> d[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">rebuild</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Fordowni</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = i - <span class="number">1</span>;j &gt;= <span class="number">0</span>;j--)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (d[i] &amp; (<span class="number">1l</span>l &lt;&lt; j))</span><br><span class="line">				&#123;</span><br><span class="line">					d[i] ^= d[j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		Forupi</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (d[i])</span><br><span class="line">				p[cnt++] = d[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">kthquery</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> k)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		rebuild();</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> ret = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (k &gt;= (<span class="number">1l</span>l &lt;&lt; cnt))</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		Fordowni</span><br><span class="line">			<span class="keyword">if</span> (k &amp; (<span class="number">1l</span>l &lt;&lt; i))		<span class="comment">//不同的写法：(k &gt;&gt; i) &amp; 1 </span></span><br><span class="line">				ret ^= p[i];</span><br><span class="line">		<span class="keyword">return</span> ret; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">LinearBase <span class="title">merge</span><span class="params">(<span class="keyword">const</span> LinearBase &amp;n1,<span class="keyword">const</span> LinearBase &amp;n2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinearBase ret = n1;</span><br><span class="line">    Fordowni</span><br><span class="line">        <span class="keyword">if</span> (n2.d[i])</span><br><span class="line">            ret.insert(n2.d[i]);</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line">LinearBase A;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> x;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">		A.insert(x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; A.Querymax() &lt;&lt; <span class="string">" "</span> &lt;&lt; A.Querymin() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
+<p>Code:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll n, h;</span><br><span class="line"><span class="keyword">const</span> ll cnt = <span class="number">2000000000</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">const</span> ll &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x &lt;= h)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (x &gt;= cnt) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">return</span> (x * (x + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>) &gt;= n;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">register</span> ll a = ((x - h) &gt;&gt; <span class="number">1</span>) + h;</span><br><span class="line">	<span class="keyword">if</span> (a &gt;= cnt) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">if</span> ((x - h) &amp; <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> ((a * (a + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>) + ((a + h) * (a + <span class="number">1</span> - h) &gt;&gt; <span class="number">1</span>)) &gt;= n;</span><br><span class="line">	<span class="keyword">return</span> ((a * (a + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>) + ((a - <span class="number">1</span> + h) * (a - h) &gt;&gt; <span class="number">1</span>)) &gt;= n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; h;</span><br><span class="line">	<span class="keyword">register</span> ll ln = <span class="number">1</span>, rn = n;</span><br><span class="line">	<span class="keyword">while</span> (ln &lt;= rn)</span><br><span class="line">	&#123;</span><br><span class="line">		ll mid = (ln + rn) &gt;&gt; <span class="number">1l</span>l;</span><br><span class="line">		<span class="keyword">if</span> (check(mid)) rn = mid - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> ln = mid + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; rn + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -509,7 +501,7 @@
     <strong>本文作者： </strong>Leoleepz</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://skyofwar.xyz/2018/03/12/线性基/" title="线性基">https://skyofwar.xyz/2018/03/12/线性基/</a>
+    <a href="https://skyofwar.xyz/2018/08/31/『Codeforces 985D』Sand Fortress/" title="『Codeforces 985D』Sand Fortress">https://skyofwar.xyz/2018/08/31/『Codeforces 985D』Sand Fortress/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -522,13 +514,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/模板/" rel="tag"><i class="fa fa-tag"></i> 模板</a>
+            <a href="/tags/Codeforces/" rel="tag"><i class="fa fa-tag"></i> Codeforces</a>
           
-            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
-          
-            <a href="/tags/线性代数/" rel="tag"><i class="fa fa-tag"></i> 线性代数</a>
-          
-            <a href="/tags/线性基/" rel="tag"><i class="fa fa-tag"></i> 线性基</a>
+            <a href="/tags/二分答案/" rel="tag"><i class="fa fa-tag"></i> 二分答案</a>
           
         </div>
       
@@ -541,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/11/蒟蒻分层赛之T1解题报告/" rel="next" title="蒟蒻分层赛之T1解题报告">
-                <i class="fa fa-chevron-left"></i> 蒟蒻分层赛之T1解题报告
+              <a href="/2018/08/30/『Codeforces 932E』Team Work/" rel="next" title="『Codeforces 932E』Team Work">
+                <i class="fa fa-chevron-left"></i> 『Codeforces 932E』Team Work
               </a>
             
           </div>
@@ -550,10 +538,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/17/线段统计 - 线段树懒标记/" rel="prev" title="线段统计 - 线段树懒标记">
-                线段统计 - 线段树懒标记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -912,7 +896,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性基"><span class="nav-number">1.</span> <span class="nav-text">线性基</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性质"><span class="nav-number">1.2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#维护"><span class="nav-number">1.3.</span> <span class="nav-text">维护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插入"><span class="nav-number">1.3.1.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并"><span class="nav-number">1.3.2.</span> <span class="nav-text">合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询"><span class="nav-number">1.3.3.</span> <span class="nav-text">查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最大值"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">最大值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最小值"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">最小值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#k小值"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">k小值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板"><span class="nav-number">1.4.</span> <span class="nav-text">模板</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#『Codeforces-985D』Sand-Fortress"><span class="nav-number">1.</span> <span class="nav-text">『Codeforces 985D』Sand Fortress</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
             
 
           </div>
