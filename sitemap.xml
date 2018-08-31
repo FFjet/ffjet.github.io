@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://skyofwar.xyz/about/index.html</loc>
+    
+    <lastmod>2018-08-31T14:59:16.885Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://skyofwar.xyz/2048/index.html</loc>
+    
+    <lastmod>2018-08-31T14:57:39.582Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
     
     <lastmod>2018-08-31T14:29:34.678Z</lastmod>
@@ -33,13 +47,6 @@
     <loc>https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20012B%E3%80%8FSplatter%20Painting/</loc>
     
     <lastmod>2018-08-30T13:06:33.649Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://skyofwar.xyz/about/index.html</loc>
-    
-    <lastmod>2018-08-30T07:09:17.889Z</lastmod>
     
   </url>
   
@@ -397,6 +404,13 @@
     <loc>https://skyofwar.xyz/tags/index.html</loc>
     
     <lastmod>2018-02-06T14:33:46.723Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://skyofwar.xyz/2048/CONTRIBUTING.html</loc>
+    
+    <lastmod>2017-06-06T12:24:21.000Z</lastmod>
     
   </url>
   
