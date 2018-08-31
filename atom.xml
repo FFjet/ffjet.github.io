@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-08-31T14:05:09.030Z</updated>
+  <updated>2018-08-31T14:09:13.089Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -21,17 +21,25 @@
     <link href="https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>https://skyofwar.xyz/2018/08/31/基础乐理与数学（一）/</id>
     <published>2018-08-31T14:04:27.000Z</published>
-    <updated>2018-08-31T14:05:09.030Z</updated>
+    <updated>2018-08-31T14:09:13.089Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;基础乐理与数学（一）&quot;&gt;&lt;a href=&quot;#基础乐理与数学（一）&quot; class=&quot;headerlink&quot; title=&quot;基础乐理与数学（一）&quot;&gt;&lt;/a&gt;基础乐理与数学（一）&lt;/h1&gt;&lt;h2 id=&quot;第一部分：声学基础&quot;&gt;&lt;a href=&quot;#第一部分：声学基础&quot;
-        
-      
+      &lt;h1 id=&quot;基础乐理与数学（一）&quot;&gt;&lt;a href=&quot;#基础乐理与数学（一）&quot; class=&quot;headerlink&quot; title=&quot;基础乐理与数学（一）&quot;&gt;&lt;/a&gt;基础乐理与数学（一）&lt;/h1&gt;&lt;h2 id=&quot;第一部分：声学基础&quot;&gt;&lt;a href=&quot;#第一部分：声学基础&quot; class=&quot;headerlink&quot; title=&quot;第一部分：声学基础&quot;&gt;&lt;/a&gt;第一部分：声学基础&lt;/h2&gt;&lt;p&gt;　　乐理的基本内容包括：和声、调式、节奏、结构、曲式。主要来说，音乐的组成从简单到复杂依次是：纯音、谐波、拍音、和声、调式、曲式。下面只介绍前几种基本的音乐组成单元。&lt;/p&gt;
+&lt;h3 id=&quot;1-音与音的复合&quot;&gt;&lt;a href=&quot;#1-音与音的复合&quot; class=&quot;headerlink&quot; title=&quot;1. 音与音的复合&quot;&gt;&lt;/a&gt;1. 音与音的复合&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;音：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;能被人类的听觉所感知的一段声波，通常可以用一个声波的波形来表示。&lt;/p&gt;
+&lt;p&gt;音的本质是一段声波（根据人耳辨别范围可知声波频率应在$20{\rm Hz} -20000\rm Hz$之内）。&lt;/p&gt;
+&lt;p&gt;一般音乐中的每个音都是周期性的，这在后面音的谐和部分会提到。&lt;/p&gt;
+&lt;p&gt;音是可以叠加的，后一个音出现时，前一个音可能尚未消失，这就关联到声波方面的&lt;strong&gt;傅立叶变换&lt;/strong&gt;。&lt;strong&gt;音是音乐的最基本的组成单位。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;音的复合：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;说到声波最先想到的最简单的波形即是正弦波，即以某个固定频率进行简谐振动所产生的声波。&lt;/p&gt;
+&lt;p&gt;这种声波被称为&lt;strong&gt;纯音&lt;/strong&gt;，比如音叉的声音或$220\rm Hz$正弦波。&lt;/p&gt;
+&lt;p&gt;纯音显然几乎没有音色可言，音与音的复合形成了&lt;strong&gt;复合音&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;复合音一般分为两种：谐波叠加与拍音叠加。&lt;/p&gt;
     
     </summary>
     
