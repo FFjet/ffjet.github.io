@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    <lastmod>2018-08-31T14:05:09.030Z</lastmod>
+    <data>
+        <display>
+        <title>基础乐理与数学（一）</title>
+        <pubTime>2018-08-31T14:04:27.000Z</pubTime>
+        
+        <tag>数学</tag>
+         
+        <tag>音乐</tag>
+         
+        <tag>乐理</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/08/31/%E3%80%8ECodeforces%20985D%E3%80%8FSand%20Fortress/</loc>
     <lastmod>2018-08-31T04:58:29.189Z</lastmod>
     <data>
@@ -611,9 +635,9 @@
         <title>「HDU 1556」Color the ball</title>
         <pubTime>2018-03-17T11:31:22.000Z</pubTime>
         
-        <tag>线段树</tag>
-         
         <tag>树</tag>
+         
+        <tag>线段树</tag>
          
         <tag>HDU</tag>
          
@@ -661,9 +685,9 @@
         <title>「BZOJ 4520」[CQOI2016]K远点对</title>
         <pubTime>2018-03-22T13:49:33.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>模板</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>KD树</tag>
          
@@ -713,9 +737,9 @@
         <title>「BZOJ 2006」[NOI2010]超级钢琴</title>
         <pubTime>2018-03-10T14:31:33.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>ST表</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>NOI</tag>
          
@@ -769,15 +793,15 @@
         <title>「BZOJ 1588」 [HNOI2002]营业额统计</title>
         <pubTime>2018-03-26T14:20:22.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>模板</tag>
          
-        <tag>树</tag>
+        <tag>BZOJ</tag>
          
         <tag>HNOI</tag>
          
         <tag>Splay</tag>
+         
+        <tag>树</tag>
          
         <tag>平衡树</tag>
          
@@ -899,9 +923,9 @@
          
         <tag>数据结构</tag>
          
-        <tag>线段树</tag>
-         
         <tag>树</tag>
+         
+        <tag>线段树</tag>
          
         <tag>懒标记</tag>
          

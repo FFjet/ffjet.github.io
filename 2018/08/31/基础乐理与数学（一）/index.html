@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/header.jpg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="基础乐理与数学（一）第一部分：声学基础　　乐理的基本内容包括：和声、调式、节奏、结构、曲式。主要来说，音乐的组成从简单到复杂依次是：纯音、谐波、拍音、和声、调式、曲式。下面只介绍前几种基本的音乐组成单元。 1. 音与音的复合 音：  能被人类的听觉所感知的一段声波，通常可以用一个声波的波形来表示。 音的本质是一段声波（根据人耳辨别范围可知声波频率应在$20{\rm Hz} -20000\rm Hz">
+<meta name="keywords" content="数学,音乐,乐理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础乐理与数学（一）">
+<meta property="og:url" content="https://skyofwar.xyz/2018/08/31/基础乐理与数学（一）/index.html">
+<meta property="og:site_name" content="Flying fighter">
+<meta property="og:description" content="基础乐理与数学（一）第一部分：声学基础　　乐理的基本内容包括：和声、调式、节奏、结构、曲式。主要来说，音乐的组成从简单到复杂依次是：纯音、谐波、拍音、和声、调式、曲式。下面只介绍前几种基本的音乐组成单元。 1. 音与音的复合 音：  能被人类的听觉所感知的一段声波，通常可以用一个声波的波形来表示。 音的本质是一段声波（根据人耳辨别范围可知声波频率应在$20{\rm Hz} -20000\rm Hz">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://skyofwar.xyz/images/24113955-73d792eaa9f44d35ae208c8e6db35571.png">
+<meta property="og:image" content="https://skyofwar.xyz/images/ppp.gif">
+<meta property="og:image" content="https://skyofwar.xyz/images/vlin.jpg">
+<meta property="og:image" content="https://skyofwar.xyz/images/27162624-979ee68f2a5a4cbba0cb55b8b81e27c8.png">
+<meta property="og:image" content="https://skyofwar.xyz/images/27171215-e40f33d0e8c54bc28beab7e78d57a9e5.png">
+<meta property="og:updated_time" content="2018-08-31T14:05:09.030Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基础乐理与数学（一）">
+<meta name="twitter:description" content="基础乐理与数学（一）第一部分：声学基础　　乐理的基本内容包括：和声、调式、节奏、结构、曲式。主要来说，音乐的组成从简单到复杂依次是：纯音、谐波、拍音、和声、调式、曲式。下面只介绍前几种基本的音乐组成单元。 1. 音与音的复合 音：  能被人类的听觉所感知的一段声波，通常可以用一个声波的波形来表示。 音的本质是一段声波（根据人耳辨别范围可知声波频率应在$20{\rm Hz} -20000\rm Hz">
+<meta name="twitter:image" content="https://skyofwar.xyz/images/24113955-73d792eaa9f44d35ae208c8e6db35571.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Flying fighter" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://skyofwar.xyz/2018/08/31/基础乐理与数学（一）/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>基础乐理与数学（一） | Flying fighter</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/Leoleepz"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Flying fighter</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">A place where fighters soar</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/08/31/基础乐理与数学（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基础乐理与数学（一）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-31 22:04:27 / 修改时间：22:05:09" itemprop="dateCreated datePublished" datetime="2018-08-31T22:04:27+08:00">2018-08-31</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="基础乐理与数学（一）"><a href="#基础乐理与数学（一）" class="headerlink" title="基础乐理与数学（一）"></a>基础乐理与数学（一）</h1><h2 id="第一部分：声学基础"><a href="#第一部分：声学基础" class="headerlink" title="第一部分：声学基础"></a>第一部分：声学基础</h2><p>　　乐理的基本内容包括：和声、调式、节奏、结构、曲式。主要来说，音乐的组成从简单到复杂依次是：纯音、谐波、拍音、和声、调式、曲式。下面只介绍前几种基本的音乐组成单元。</p>
+<h3 id="1-音与音的复合"><a href="#1-音与音的复合" class="headerlink" title="1. 音与音的复合"></a>1. 音与音的复合</h3><ul>
+<li>音：</li>
+</ul>
+<p>能被人类的听觉所感知的一段声波，通常可以用一个声波的波形来表示。</p>
+<p>音的本质是一段声波（根据人耳辨别范围可知声波频率应在$20{\rm Hz} -20000\rm Hz$之内）。</p>
+<p>一般音乐中的每个音都是周期性的，这在后面音的谐和部分会提到。</p>
+<p>音是可以叠加的，后一个音出现时，前一个音可能尚未消失，这就关联到声波方面的<strong>傅立叶变换</strong>。<strong>音是音乐的最基本的组成单位。</strong></p>
+<ul>
+<li>音的复合：</li>
+</ul>
+<p>说到声波最先想到的最简单的波形即是正弦波，即以某个固定频率进行简谐振动所产生的声波。</p>
+<p>这种声波被称为<strong>纯音</strong>，比如音叉的声音或$220\rm Hz$正弦波。</p>
+<p>纯音显然几乎没有音色可言，音与音的复合形成了<strong>复合音</strong>。</p>
+<p>复合音一般分为两种：谐波叠加与拍音叠加。</p>
+<h3 id="2-谐波叠加与拍音叠加"><a href="#2-谐波叠加与拍音叠加" class="headerlink" title="2. 谐波叠加与拍音叠加"></a>2. 谐波叠加与拍音叠加</h3><p>将一个标准的正弦波作为基准，称作<strong>基波</strong>。<strong>谐波</strong>就是比基波的频率高整数倍的波，钢琴按下一个键或小提琴拉响一根弦都会在基波的基础上产生多个谐波，音乐人往往将谐波称为<strong>泛音</strong>。例如某个纯音声波的频率是$f$，将此纯音作为基波，其谐波的频率可为$2f$、$3f$、$4f$、……，这些谐波分别称为二次谐波、三次谐波、四次谐波等。如下图所示。</p>
+<p><img src="/images/24113955-73d792eaa9f44d35ae208c8e6db35571.png" alt="基波与谐波的关系"></p>
+<p>最上面的是基波，从第二行往下分别是一次谐波、二次谐波等等。若一个复合音由基波与及其谐波相叠加构成，则称该复合音为谐波叠加，它的频率为基波频率。基波与谐波叠加构成复合音的过程见图3所示。</p>
+<p><img src="/images/ppp.gif" alt="基波与谐波复合构成复合音"></p>
+<p>实际上，所有传统乐器所发出的音都是复合音，由振幅最大的基波和一些列振幅较小的谐波叠加构成。那么我们就可以给出单音的定义了：<strong>单音</strong>特指单一乐器演奏独立的一个音发出的声波（谐波叠加），其基波的频率称为<strong>音高</strong>。不同乐器的单音所叠加的谐波在频率和振幅上都不相同，因此乐器的音色千差万别。小提琴的单音就是典型的一种谐波叠加，声音对应的波型为：</p>
+<p><img src="/images/vlin.jpg" alt=""></p>
+<ul>
+<li>谐波叠加</li>
+</ul>
+<p>我们将一个标准的正弦波作为基准，称为<strong>基波</strong>，<strong>谐波</strong>就是比基波的频率高整数倍的波。钢琴、小提琴等弦乐器产生的一个音一般都是多个谐波的叠加，在音乐领域被称为<strong>泛音</strong>。一般将一个音中振幅最大的波作为基波，其余波的频率都是这个波的倍数。</p>
+<p>也就是说，<em>组成一个谐波叠加的音的所有正弦波$k\sin(x \omega)$的频率都是基波的倍数。</em></p>
+<ul>
+<li>拍音叠加</li>
+</ul>
+<p>一个拍音是由来自同一种乐器或不同乐器的两个单音相互叠加，形成具有规律性强弱变化的振动。与谐波不同的是，拍音一般要求这两个音的振幅相近，但不要求频率为倍数关系。粗略理解就是：<em>如果组成复合音的纯音频率互为倍数则为谐波叠加，否则为拍音叠加。</em></p>
+<ul>
+<li>复合音的频率与“谐和”</li>
+</ul>
+<p>只考虑最简单的情况，两个音的频率分别为$a$和$b$，则这两个音的叠加的频率应为多少？</p>
+<blockquote>
+<p>复合音的周期是这两个音的周期的最小公倍数，即$\gcd(\dfrac{1}{a},\dfrac{1}{b})$，频率即为周期的倒数。</p>
+</blockquote>
+<p>但是，如果两个音的频率均为无理数，例如$\sqrt{3}$与$\sqrt{5}$，理论上这不是一个周期函数，这时需要用到近似。这个复合音的频率可以认为是$\dfrac{1}{4\sqrt{3}}$，因为$\dfrac{ \sqrt{3} }{ \sqrt{5} } \approx 0.7746$，接近于$0.75$，也就是$3:4$。因此这个拍音的“听感频率”大约在$\dfrac{\sqrt{5}}{4}$到$\dfrac{\sqrt{3}}{3}$之间。</p>
+<p>人耳一般会认为复合音的频率越高，声音越悦耳，<strong>即两个音的频率的倒数的最小公倍数应尽量小</strong>，这样的两个音被称为“彼此谐和”的。</p>
+<p>这里出现了一个数学方面的拓展：复合音的频率与<strong>测度论</strong>的关系。</p>
+<h2 id="第二部分-乐律与调式"><a href="#第二部分-乐律与调式" class="headerlink" title="第二部分: 乐律与调式"></a>第二部分: 乐律与调式</h2><h3 id="1-十二平均律"><a href="#1-十二平均律" class="headerlink" title="1. 十二平均律"></a>1. 十二平均律</h3><ul>
+<li>平均律</li>
+</ul>
+<p>首先我们要知道，跨越一个八度音程的两个音的频率相差一倍，即$a:b=1:2$。</p>
+<p>现在我们将一个八度音程等分成十二个部分，那么显然第一个音是$a$，第二个音是$\displaystyle a\cdot 2^\frac{1}{12}$，第三个是$\displaystyle a\cdot 2^\frac{2}{12}$，…，第十三个是$2a$。</p>
+<p>十二平均律中，任意两个相邻的音的频率比为2–√12212任两个相邻的音之间的音数为0.5。</p>
+<ul>
+<li>音程名称与音数</li>
+</ul>
+<p>学过乐理的人一定能辨别每两个音相差的音程名称，而每个音程名称都对应了一个固定的音数，如下表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>相差音数</th>
+<th>0.5</th>
+<th>1</th>
+<th>1.5</th>
+<th>2</th>
+<th>2.5</th>
+<th>3</th>
+<th>3.5</th>
+<th>4</th>
+<th>4.5</th>
+<th>5</th>
+<th>5.5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>音程名称</td>
+<td><strong>小二度</strong></td>
+<td><strong>大二度</strong></td>
+<td><strong>小三度</strong></td>
+<td><strong>大三度</strong></td>
+<td><strong>纯四度</strong></td>
+<td><strong>三全音</strong></td>
+<td><strong>纯五度</strong></td>
+<td><strong>小六度</strong></td>
+<td><strong>大六度</strong></td>
+<td><strong>小七度</strong></td>
+<td><strong>大七度</strong></td>
+<td><strong>纯八度</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>五线谱</li>
+</ul>
+<p>需要注意的是，第一个音程的$A$音的频率是$440\rm Hz$，这样我们就可以轻松地计算出任何一个音的频率了。</p>
+<h3 id="2-五度相生律"><a href="#2-五度相生律" class="headerlink" title="2. 五度相生律"></a>2. 五度相生律</h3><p>前面提到，人们一般会认为两个彼此谐和的音之间会较为悦耳，但我们遗憾地发现，用十二平均律规定的各个音大部分都是完全不谐和的，这使人们希望找到一个彼此更加谐和的划分方法。</p>
+<p>我们将一个弦分成1:2两部分，则这两部分的频率比为$3:2​$，如果在前$\dfrac{1}{3}​$中再分出前，则$\dfrac{1}{3}​$两部分的频率比变为$\dfrac{9}{4}​$，以此类推，我们将这个频率列成表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>$n$</th>
+<th>频率</th>
+<th>倍率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$1$</td>
+<td>$\dfrac{3f}{2}$</td>
+<td>$1.5$</td>
+</tr>
+<tr>
+<td>$2$</td>
+<td>$\dfrac{9f}{4}$</td>
+<td>$2.25$</td>
+</tr>
+<tr>
+<td>$3$</td>
+<td>$\dfrac{27f}{8}$</td>
+<td>$3.375$</td>
+</tr>
+<tr>
+<td>$4$</td>
+<td>$\dfrac{81f}{16}$</td>
+<td>$5.0625$</td>
+</tr>
+<tr>
+<td>$5$</td>
+<td>$\dfrac{243}{32}$</td>
+<td>$7.59375$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这个倍率已经超过$2$了，那么我们将每个值除以不大于它的最接近的$2$的次幂，从小到大排列$<1.125, 1.265625="" ,1.333,="" 1.5,="" 1.6875,="" 1.8984375="">$。$f$自身的倍率为$1$，$2f$为$2$，把这$8$个倍率一起画在二维坐标系中，如图所示。</1.125,></p>
+<p><img src="/images/27162624-979ee68f2a5a4cbba0cb55b8b81e27c8.png" alt=""></p>
+<p>这个和呈完美指数增长的划分相差并不多，更奇妙的是，由刚才的推导，这些音两两谐和。</p>
+<h3 id="3-纯律"><a href="#3-纯律" class="headerlink" title="3. 纯律"></a>3. 纯律</h3><p>我们在五度相生律中取得了良好的效果，继续这个思路，接着将表列出来：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>频率</th>
+<th>倍率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$1$</td>
+<td>$\dfrac{3}{2}$</td>
+<td>$1.5$</td>
+</tr>
+<tr>
+<td>$2$</td>
+<td>$\dfrac{9}{4}$</td>
+<td>$2.25$</td>
+</tr>
+<tr>
+<td>$3$</td>
+<td>$\dfrac{27}{8}$</td>
+<td>$3.375$</td>
+</tr>
+<tr>
+<td>$4$</td>
+<td>$\dfrac{81}{16}$</td>
+<td>$5.0625$</td>
+</tr>
+<tr>
+<td>$5$</td>
+<td>$\dfrac{243}{32}$</td>
+<td>$7.59375$</td>
+</tr>
+<tr>
+<td>$6$</td>
+<td>$\dfrac{729}{64}$</td>
+<td>$11.3906$</td>
+</tr>
+<tr>
+<td>$7$</td>
+<td>$\dfrac{2187}{128}$</td>
+<td>$17.0859$</td>
+</tr>
+<tr>
+<td>$8$</td>
+<td>$\dfrac{6561}{256}$</td>
+<td>$25.6289$</td>
+</tr>
+<tr>
+<td>$9$</td>
+<td>$\dfrac{19683}{512}$</td>
+<td>$38.4434$</td>
+</tr>
+<tr>
+<td>$10$</td>
+<td>$\dfrac{59049}{1024}$</td>
+<td>$57.6650$</td>
+</tr>
+<tr>
+<td>$11$</td>
+<td>$\dfrac{177147}{2048}$</td>
+<td>$86.4976$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>由这些倍率产生的12音阶为（用倍率除以它下面的第一个$2^n$而得）：$\{1, 1.0679, 1.125, 1.2014, 1.2656, 1.3515, 1.4238, 1.5, 1.6018, 1.6875, 1.802, 1.8984\}$，把他们画在坐标系中：</p>
+<p><img src="/images/27171215-e40f33d0e8c54bc28beab7e78d57a9e5.png" alt=""></p>
+<p>五度相生律产生$12$音阶（新产生的五个音为绿色）</p>
+<p>这也是一条平滑的折线，且每个音两两谐和。这就是纯律。</p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束了哦<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Leoleepz</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://skyofwar.xyz/2018/08/31/基础乐理与数学（一）/" title="基础乐理与数学（一）">https://skyofwar.xyz/2018/08/31/基础乐理与数学（一）/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
+          
+            <a href="/tags/音乐/" rel="tag"><i class="fa fa-tag"></i> 音乐</a>
+          
+            <a href="/tags/乐理/" rel="tag"><i class="fa fa-tag"></i> 乐理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/31/『Codeforces 985D』Sand Fortress/" rel="next" title="『Codeforces 985D』Sand Fortress">
+                <i class="fa fa-chevron-left"></i> 『Codeforces 985D』Sand Fortress
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.jpg"
+                alt="Leoleepz" />
+            
+              <p class="site-author-name" itemprop="name">Leoleepz</p>
+              <p class="site-description motion-element" itemprop="description">My Blog</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">54</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">70</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Leoleepz" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:Leoleepaytser@hotmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/116229514260659689818" target="_blank" title="Google"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/Rand_By_Rand" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/paytser.nigel.5" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.youtube.com/channel/UCoTTIUv013ld0CmpAlZPgDg" target="_blank" title="YouTube"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wuyudi.github.io/" title="几何大师wuyudi" target="_blank">几何大师wuyudi</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/JacaJava" title="OI巨佬ExtendedAsh" target="_blank">OI巨佬ExtendedAsh</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chenz01.github.io/" title="马上要碾压我的cz" target="_blank">马上要碾压我的cz</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.hh12.cn" title="galgame的神犇Highwind" target="_blank">galgame的神犇Highwind</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://judegao.com/" title="Waterloo的CS大佬Jude" target="_blank">Waterloo的CS大佬Jude</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础乐理与数学（一）"><span class="nav-number">1.</span> <span class="nav-text">基础乐理与数学（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一部分：声学基础"><span class="nav-number">1.1.</span> <span class="nav-text">第一部分：声学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-音与音的复合"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 音与音的复合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-谐波叠加与拍音叠加"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 谐波叠加与拍音叠加</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二部分-乐律与调式"><span class="nav-number">1.2.</span> <span class="nav-text">第二部分: 乐律与调式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-十二平均律"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 十二平均律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-五度相生律"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. 五度相生律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-纯律"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 纯律</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leoleepz</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共36.2k字</span>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

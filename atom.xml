@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-08-31T04:58:29.189Z</updated>
+  <updated>2018-08-31T14:05:09.030Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基础乐理与数学（一）</title>
+    <link href="https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://skyofwar.xyz/2018/08/31/基础乐理与数学（一）/</id>
+    <published>2018-08-31T14:04:27.000Z</published>
+    <updated>2018-08-31T14:05:09.030Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;基础乐理与数学（一）&quot;&gt;&lt;a href=&quot;#基础乐理与数学（一）&quot; class=&quot;headerlink&quot; title=&quot;基础乐理与数学（一）&quot;&gt;&lt;/a&gt;基础乐理与数学（一）&lt;/h1&gt;&lt;h2 id=&quot;第一部分：声学基础&quot;&gt;&lt;a href=&quot;#第一部分：声学基础&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="音乐" scheme="https://skyofwar.xyz/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+      <category term="乐理" scheme="https://skyofwar.xyz/tags/%E4%B9%90%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>『Codeforces 985D』Sand Fortress</title>
@@ -540,29 +570,6 @@
       <category term="DP" scheme="https://skyofwar.xyz/tags/DP/"/>
     
       <category term="POJ" scheme="https://skyofwar.xyz/tags/POJ/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>『POJ 2376 』 Cleaning Shifts</title>
-    <link href="https://skyofwar.xyz/2018/05/15/%E3%80%8EPOJ%202376%E3%80%8F%20Cleaning%20Shifts/"/>
-    <id>https://skyofwar.xyz/2018/05/15/『POJ 2376』 Cleaning Shifts/</id>
-    <published>2018-05-15T14:21:11.000Z</published>
-    <updated>2018-08-29T09:05:03.259Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;『POJ-2376-』-Cleaning-Shifts&quot;&gt;&lt;a href=&quot;#『POJ-2376-』-Cleaning-Shifts&quot; class=&quot;headerlink&quot; title=&quot;『POJ 2376 』 Cleaning Shifts&quot;&gt;&lt;/a&gt;『POJ 2376 』 Cleaning Shifts&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Farmer John is assigning some of his N (1 &amp;lt;= N &amp;lt;= 25,000) cows to do some cleaning chores around the barn. He always wants to have one cow working on cleaning things up and has divided the day into T shifts (1 &amp;lt;= T &amp;lt;= 1,000,000), the first being shift 1 and the last being shift T.&lt;br&gt;Each cow is only available at some interval of times during the day for work on cleaning. Any cow that is selected for cleaning duty will work for the entirety of her interval.&lt;br&gt;Your job is to help Farmer John assign some cows to shifts so that (i) every shift has at least one cow assigned to it, and (ii) as few cows as possible are involved in cleaning. If it is not possible to assign a cow to each shift, print -1.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="POJ" scheme="https://skyofwar.xyz/tags/POJ/"/>
-    
-      <category term="贪心" scheme="https://skyofwar.xyz/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
