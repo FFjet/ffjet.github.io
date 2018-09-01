@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-01T13:06:05.980Z</updated>
+  <updated>2018-09-01T14:38:43.845Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>窗函数</title>
+    <link href="https://skyofwar.xyz/2018/09/01/%E7%AA%97%E5%87%BD%E6%95%B0/"/>
+    <id>https://skyofwar.xyz/2018/09/01/窗函数/</id>
+    <published>2018-09-01T14:32:00.000Z</published>
+    <updated>2018-09-01T14:38:43.845Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;窗函数&quot;&gt;&lt;a href=&quot;#窗函数&quot; class=&quot;headerlink&quot; title=&quot;窗函数&quot;&gt;&lt;/a&gt;窗函数&lt;/h1&gt;&lt;p&gt;实在是无聊（主要是因为llc神犇在上学期提过窗函数，然而我当时并看不懂，这次把坑填上…)…然后看了几篇关于窗函数的资料…本文就权当抛砖引玉吧&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;数字信号处理的主要数学工具是傅里叶变换，而傅里叶变换是研究&lt;strong&gt;整个&lt;/strong&gt;时间域和频率域的关系，当运用计算机实现测试信号处理时，不可能对无限长的信号进行测量和运算，而是取其有限的时间片段进行分析。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从信号中截取一个时间片段，然后用截取的信号时间片段进行&lt;strong&gt;周期延拓&lt;/strong&gt;处理，得到虚拟的无限长信号，再进行傅里叶变换和相关分析。无限长信号被截断后，其频谱发生了&lt;strong&gt;畸变&lt;/strong&gt;，我们称为频谱&lt;strong&gt;能量泄漏&lt;/strong&gt;，为了减少&lt;strong&gt;频谱泄漏&lt;/strong&gt;，可采用不同的截取函数对信号进行截断，截断函数称为&lt;strong&gt;窗函数&lt;/strong&gt;，简称为窗。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="物理" scheme="https://skyofwar.xyz/tags/%E7%89%A9%E7%90%86/"/>
+    
+      <category term="信号学" scheme="https://skyofwar.xyz/tags/%E4%BF%A1%E5%8F%B7%E5%AD%A6/"/>
+    
+      <category term="FFT" scheme="https://skyofwar.xyz/tags/FFT/"/>
+    
+  </entry>
   
   <entry>
     <title>基础乐理与数学（二）</title>
@@ -550,30 +581,6 @@
     
     
       <category term="并查集" scheme="https://skyofwar.xyz/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>天鹅会面 [BFS+SPFA]</title>
-    <link href="https://skyofwar.xyz/2018/05/16/%E5%A4%A9%E9%B9%85%E4%BC%9A%E9%9D%A2%20%5BBFS+SPFA%5D/"/>
-    <id>https://skyofwar.xyz/2018/05/16/天鹅会面 [BFS+SPFA]/</id>
-    <published>2018-05-16T14:35:21.000Z</published>
-    <updated>2018-08-29T09:04:35.284Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;天鹅会面-BFS-SPFA&quot;&gt;&lt;a href=&quot;#天鹅会面-BFS-SPFA&quot; class=&quot;headerlink&quot; title=&quot;天鹅会面 [BFS+SPFA]&quot;&gt;&lt;/a&gt;天鹅会面 [BFS+SPFA]&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;两头白天鹅生活在一个部分湖面结了冰的湖泊中，湖面的形状为一个长方形，并且被分割成R行C列的小方格，某些方格中结了冰，这样的方格称之为冰格，其余的方格称之为水格。&lt;/p&gt;
-&lt;p&gt;冬天过去了，湖面上的冰渐渐开始溶解了，每一天与水相邻的冰格就将消融而转化为水格。所谓两个方格相邻是指它们在水平或垂直方向有公共边，两个呈对角的方格是不相邻的。&lt;/p&gt;
-&lt;p&gt;白天鹅只能在水中沿水平或垂直方向游动，写一个程序判断多少天后两只白天鹅才能够相会。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="BFS" scheme="https://skyofwar.xyz/tags/BFS/"/>
-    
-      <category term="SPFA" scheme="https://skyofwar.xyz/tags/SPFA/"/>
     
   </entry>
   
