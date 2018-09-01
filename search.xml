@@ -1237,29 +1237,6 @@
     </entry>
     
     <entry>
-      <title>如何卸载hexo</title>
-      <link href="/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/"/>
-      <url>/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/</url>
-      <content type="html"><![CDATA[<p>安装了hexo，出了问题，该如何卸载呢？<br>对于2.x版本的hexo,我们知道安装命令为<br><code>npm install hexo -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo -g</code></p><p>对于3.x版本的hexo,我们知道安装命令为<br><code>npm install hexo-cli -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo-cli -g</code></p>]]></content>
-      
-      <categories>
-          
-          <category> 日常小知识 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-            <tag> bash </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>线性代数基础 1</title>
       <link href="/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/"/>
       <url>/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/</url>
@@ -1277,6 +1254,29 @@
             <tag> Math theory </tag>
             
             <tag> 线性代数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>如何卸载hexo</title>
+      <link href="/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/"/>
+      <url>/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/</url>
+      <content type="html"><![CDATA[<p>安装了hexo，出了问题，该如何卸载呢？<br>对于2.x版本的hexo,我们知道安装命令为<br><code>npm install hexo -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo -g</code></p><p>对于3.x版本的hexo,我们知道安装命令为<br><code>npm install hexo-cli -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo-cli -g</code></p>]]></content>
+      
+      <categories>
+          
+          <category> 日常小知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+            <tag> bash </tag>
             
         </tags>
       
