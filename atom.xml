@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-08-31T14:29:34.678Z</updated>
+  <updated>2018-09-01T13:06:05.980Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -17,16 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基础乐理与数学（二）</title>
+    <link href="https://skyofwar.xyz/2018/09/01/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://skyofwar.xyz/2018/09/01/基础乐理与数学（二）/</id>
+    <published>2018-09-01T12:55:04.000Z</published>
+    <updated>2018-09-01T13:06:05.980Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基础乐理与数学（二）&quot;&gt;&lt;a href=&quot;#基础乐理与数学（二）&quot; class=&quot;headerlink&quot; title=&quot;基础乐理与数学（二）&quot;&gt;&lt;/a&gt;基础乐理与数学（二）&lt;/h1&gt;&lt;h2 id=&quot;Read-before&quot;&gt;&lt;a href=&quot;#Read-before&quot; class=&quot;headerlink&quot; title=&quot;Read before&quot;&gt;&lt;/a&gt;Read before&lt;/h2&gt;&lt;p&gt;阅读本文之前，您先需要阅读&lt;a href=&quot;https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/&quot;&gt;基础乐理与数学（一）&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;五线谱进阶&quot;&gt;&lt;a href=&quot;#五线谱进阶&quot; class=&quot;headerlink&quot; title=&quot;五线谱进阶&quot;&gt;&lt;/a&gt;五线谱进阶&lt;/h2&gt;&lt;h3 id=&quot;五线谱中的相对音程&quot;&gt;&lt;a href=&quot;#五线谱中的相对音程&quot; class=&quot;headerlink&quot; title=&quot;五线谱中的相对音程&quot;&gt;&lt;/a&gt;五线谱中的相对音程&lt;/h3&gt;&lt;p&gt;上一讲我们已经知道了高音五线谱中，第二间的$A$的音高定为$440\rm Hz$，很自然地引出了一个问题，我们如何来确定其它音的音高？下面将会按照&lt;em&gt;十二平均律&lt;/em&gt;的法则在五线谱中建立相对音高系统。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/25170257-974e3ba93c4c4ba2927c012168690e4e.png&quot; width=&quot;25%&quot; height=&quot;25%&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="教程" scheme="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="音乐" scheme="https://skyofwar.xyz/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+      <category term="乐理" scheme="https://skyofwar.xyz/tags/%E4%B9%90%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基础乐理与数学（一）</title>
     <link href="https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>https://skyofwar.xyz/2018/08/31/基础乐理与数学（一）/</id>
     <published>2018-08-31T14:04:27.000Z</published>
-    <updated>2018-08-31T14:29:34.678Z</updated>
+    <updated>2018-09-01T12:54:27.402Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;基础乐理与数学（一）&quot;&gt;&lt;a href=&quot;#基础乐理与数学（一）&quot; class=&quot;headerlink&quot; title=&quot;基础乐理与数学（一）&quot;&gt;&lt;/a&gt;基础乐理与数学（一）&lt;/h1&gt;&lt;h2 id=&quot;第一部分：声学基础&quot;&gt;&lt;a href=&quot;#第一部分：声学基础&quot; class=&quot;headerlink&quot; title=&quot;第一部分：声学基础&quot;&gt;&lt;/a&gt;第一部分：声学基础&lt;/h2&gt;&lt;p&gt;　　乐理的基本内容包括：和声、调式、节奏、结构、曲式。主要来说，音乐的组成从简单到复杂依次是：纯音、谐波、拍音、和声、调式、曲式。下面只介绍前几种基本的音乐组成单元。&lt;/p&gt;
-&lt;h3 id=&quot;1-音与音的复合&quot;&gt;&lt;a href=&quot;#1-音与音的复合&quot; class=&quot;headerlink&quot; title=&quot;1. 音与音的复合&quot;&gt;&lt;/a&gt;1. 音与音的复合&lt;/h3&gt;&lt;ul&gt;
+      &lt;h1 id=&quot;基础乐理与数学（一）&quot;&gt;&lt;a href=&quot;#基础乐理与数学（一）&quot; class=&quot;headerlink&quot; title=&quot;基础乐理与数学（一）&quot;&gt;&lt;/a&gt;基础乐理与数学（一）&lt;/h1&gt;&lt;h2 id=&quot;声学基础&quot;&gt;&lt;a href=&quot;#声学基础&quot; class=&quot;headerlink&quot; title=&quot;声学基础&quot;&gt;&lt;/a&gt;声学基础&lt;/h2&gt;&lt;p&gt;　　乐理的基本内容包括：和声、调式、节奏、结构、曲式。主要来说，音乐的组成从简单到复杂依次是：纯音、谐波、拍音、和声、调式、曲式。下面只介绍前几种基本的音乐组成单元。&lt;/p&gt;
+&lt;h3 id=&quot;音与音的复合&quot;&gt;&lt;a href=&quot;#音与音的复合&quot; class=&quot;headerlink&quot; title=&quot;音与音的复合&quot;&gt;&lt;/a&gt;音与音的复合&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;音：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;能被人类的听觉所感知的一段声波，通常可以用一个声波的波形来表示。&lt;/p&gt;
@@ -497,9 +524,9 @@
     
       <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="数论" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E8%AE%BA/"/>
-    
       <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="数论" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   
@@ -547,37 +574,6 @@
       <category term="BFS" scheme="https://skyofwar.xyz/tags/BFS/"/>
     
       <category term="SPFA" scheme="https://skyofwar.xyz/tags/SPFA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>『POJ 2229 』 Sumsets</title>
-    <link href="https://skyofwar.xyz/2018/05/15/%E3%80%8EPOJ%202229%E3%80%8F%20Sumsets/"/>
-    <id>https://skyofwar.xyz/2018/05/15/『POJ 2229』 Sumsets/</id>
-    <published>2018-05-15T14:26:21.000Z</published>
-    <updated>2018-08-29T09:04:54.987Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;『POJ-2229』-Sumsets&quot;&gt;&lt;a href=&quot;#『POJ-2229』-Sumsets&quot; class=&quot;headerlink&quot; title=&quot;『POJ 2229』 Sumsets&quot;&gt;&lt;/a&gt;『POJ 2229』 Sumsets&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://poj.org/problem?id=2229&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Farmer John commanded his cows to search for different sets of numbers that sum to a given number. The cows use only numbers that are an integer power of 2. Here are the possible sets of numbers that sum to 7: &lt;/p&gt;
-&lt;p&gt; 1) 1+1+1+1+1+1+1 &lt;/p&gt;
-&lt;p&gt;2) 1+1+1+1+1+2 &lt;/p&gt;
-&lt;p&gt;3) 1+1+1+2+2  &lt;/p&gt;
-&lt;p&gt;4) 1+1+1+4  &lt;/p&gt;
-&lt;p&gt;5) 1+2+2+2 &lt;/p&gt;
-&lt;p&gt;6) 1+2+4 &lt;/p&gt;
-&lt;p&gt; Help FJ count all possible representations for a given integer N (1 &amp;lt;= N &amp;lt;= 1,000,000).  &lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="DP" scheme="https://skyofwar.xyz/tags/DP/"/>
-    
-      <category term="POJ" scheme="https://skyofwar.xyz/tags/POJ/"/>
     
   </entry>
   

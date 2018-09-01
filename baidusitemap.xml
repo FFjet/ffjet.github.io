@@ -3,10 +3,33 @@
 
 
     
+  <url>
+    <loc>https://skyofwar.xyz/2018/09/01/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+    <lastmod>2018-09-01T13:06:05.980Z</lastmod>
+    <data>
+        <display>
+        <title>基础乐理与数学（二）</title>
+        <pubTime>2018-09-01T12:55:04.000Z</pubTime>
+        
+        <tag>数学</tag>
+         
+        <tag>音乐</tag>
+         
+        <tag>乐理</tag>
+         
+         
+           
+             
+              <breadCrumb title="教程" url="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
-    <lastmod>2018-08-31T14:29:34.678Z</lastmod>
+    <lastmod>2018-09-01T12:54:27.402Z</lastmod>
     <data>
         <display>
         <title>基础乐理与数学（一）</title>
@@ -27,6 +50,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>https://skyofwar.xyz/2018/08/31/%E3%80%8ECodeforces%20985D%E3%80%8FSand%20Fortress/</loc>
@@ -472,9 +496,9 @@
         
         <tag>数学</tag>
          
-        <tag>数论</tag>
-         
         <tag>高等数学</tag>
+         
+        <tag>数论</tag>
          
          
            
@@ -495,9 +519,9 @@
         <title>「洛谷 P1706」全排列</title>
         <pubTime>2018-03-31T03:15:33.000Z</pubTime>
         
-        <tag>水题</tag>
-         
         <tag>洛谷</tag>
+         
+        <tag>水题</tag>
          
         <tag>STL</tag>
          
@@ -519,11 +543,11 @@
         <title>「洛谷 P1510」精卫填海</title>
         <pubTime>2018-03-28T14:02:08.000Z</pubTime>
         
+        <tag>洛谷</tag>
+         
         <tag>水题</tag>
          
         <tag>DP</tag>
-         
-        <tag>洛谷</tag>
          
          
            
@@ -543,9 +567,9 @@
         <title>「洛谷 P1026」第K小数</title>
         <pubTime>2018-03-30T08:03:22.000Z</pubTime>
         
-        <tag>水题</tag>
-         
         <tag>洛谷</tag>
+         
+        <tag>水题</tag>
          
          
            
@@ -767,13 +791,13 @@
         
         <tag>BZOJ</tag>
          
-        <tag>CodeVS</tag>
-         
-        <tag>树状数组</tag>
-         
         <tag>洛谷</tag>
          
+        <tag>CodeVS</tag>
+         
         <tag>离散化</tag>
+         
+        <tag>树状数组</tag>
          
          
            
@@ -823,11 +847,11 @@
         <title>「BZOJ 1059」 [ZJOI2007]矩阵游戏</title>
         <pubTime>2018-03-06T14:00:22.000Z</pubTime>
         
+        <tag>BZOJ</tag>
+         
         <tag>匈牙利算法</tag>
          
         <tag>图论</tag>
-         
-        <tag>BZOJ</tag>
          
         <tag>省队</tag>
          
