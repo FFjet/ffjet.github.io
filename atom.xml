@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-01T14:45:16.416Z</updated>
+  <updated>2018-09-02T13:59:44.904Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://skyofwar.xyz/2018/09/01/%E7%AA%97%E5%87%BD%E6%95%B0/"/>
     <id>https://skyofwar.xyz/2018/09/01/窗函数/</id>
     <published>2018-09-01T14:32:00.000Z</published>
-    <updated>2018-09-01T14:45:16.416Z</updated>
+    <updated>2018-09-02T13:59:44.904Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
 &lt;hr&gt;
 &lt;p&gt;数字信号处理的主要数学工具是傅里叶变换，而傅里叶变换是研究&lt;strong&gt;整个&lt;/strong&gt;时间域和频率域的关系，当运用计算机实现测试信号处理时，不可能对无限长的信号进行测量和运算，而是取其有限的时间片段进行分析。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;从信号中截取一个时间片段，然后用截取的信号时间片段进行&lt;strong&gt;周期延拓&lt;/strong&gt;处理，得到虚拟的无限长信号，再进行傅里叶变换和相关分析。无限长信号被截断后，其频谱发生了&lt;strong&gt;畸变&lt;/strong&gt;，我们称为频谱&lt;strong&gt;能量泄漏&lt;/strong&gt;，为了减少&lt;strong&gt;频谱泄漏&lt;/strong&gt;，可采用不同的截取函数对信号进行截断，截断函数称为&lt;strong&gt;窗函数&lt;/strong&gt;，简称为窗。&lt;/li&gt;
+&lt;li&gt;从信号中截取一个时间片段，&lt;del&gt;然后用截取的信号时间片段进行&lt;strong&gt;周期延拓&lt;/strong&gt;处理，得到虚拟的无限长信号，再进行傅里叶变换和相关分析。&lt;/del&gt;无限长信号被截断后，其频谱发生了&lt;strong&gt;畸变&lt;/strong&gt;，我们称为频谱&lt;strong&gt;能量泄漏&lt;/strong&gt;，为了减少&lt;strong&gt;频谱泄漏&lt;/strong&gt;，可采用不同的截取函数对信号进行截断，截断函数称为&lt;strong&gt;窗函数&lt;/strong&gt;，简称为窗。&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -352,7 +352,7 @@
     
       &lt;h1 id=&quot;记录一次非常感人的Mathematica-Animation…&quot;&gt;&lt;a href=&quot;#记录一次非常感人的Mathematica-Animation…&quot; class=&quot;headerlink&quot; title=&quot;记录一次非常感人的Mathematica Animation…&quot;&gt;&lt;/a&gt;记录一次非常感人的Mathematica Animation…&lt;/h1&gt;&lt;p&gt;自己突发奇想想做一次Lissajous曲线。。&lt;/p&gt;
 &lt;p&gt;Mathematica代码咯：&lt;/p&gt;
-&lt;!--�47--&gt;
+&lt;!--�46--&gt;
 &lt;p&gt;但是我们应该如何导出视频呢？&lt;/p&gt;
     
     </summary>

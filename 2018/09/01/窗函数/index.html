@@ -116,17 +116,20 @@
 <meta property="og:site_name" content="Flying fighter">
 <meta property="og:description" content="窗函数实在是无聊（主要是因为llc神犇在上学期提过窗函数，然而我当时并看不懂，这次把坑填上…)…然后看了几篇关于窗函数的资料…本文就权当抛砖引玉吧  数字信号处理的主要数学工具是傅里叶变换，而傅里叶变换是研究整个时间域和频率域的关系，当运用计算机实现测试信号处理时，不可能对无限长的信号进行测量和运算，而是取其有限的时间片段进行分析。  从信号中截取一个时间片段，然后用截取的信号时间片段进行周期延拓">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://skyofwar.xyz/images/windownotes1.jpg">
+<meta property="og:image" content="https://skyofwar.xyz/images/windownotes2.jpg">
+<meta property="og:image" content="https://skyofwar.xyz/images/windownotes3.jpg">
 <meta property="og:image" content="https://skyofwar.xyz/images/window1.jpg">
 <meta property="og:image" content="https://skyofwar.xyz/images/window2.png">
 <meta property="og:image" content="https://skyofwar.xyz/images/window3.png">
 <meta property="og:image" content="https://skyofwar.xyz/images/1535810012918.png">
 <meta property="og:image" content="https://skyofwar.xyz/images/w4.jpg">
 <meta property="og:image" content="https://skyofwar.xyz/images/1535810209279.png">
-<meta property="og:updated_time" content="2018-09-01T14:45:16.416Z">
+<meta property="og:updated_time" content="2018-09-02T13:59:44.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="窗函数">
 <meta name="twitter:description" content="窗函数实在是无聊（主要是因为llc神犇在上学期提过窗函数，然而我当时并看不懂，这次把坑填上…)…然后看了几篇关于窗函数的资料…本文就权当抛砖引玉吧  数字信号处理的主要数学工具是傅里叶变换，而傅里叶变换是研究整个时间域和频率域的关系，当运用计算机实现测试信号处理时，不可能对无限长的信号进行测量和运算，而是取其有限的时间片段进行分析。  从信号中截取一个时间片段，然后用截取的信号时间片段进行周期延拓">
-<meta name="twitter:image" content="https://skyofwar.xyz/images/window1.jpg">
+<meta name="twitter:image" content="https://skyofwar.xyz/images/windownotes1.jpg">
 
 
 
@@ -399,12 +402,24 @@
                 
               
 
-              <time title="创建时间：2018-09-01 22:32:00 / 修改时间：22:45:16" itemprop="dateCreated datePublished" datetime="2018-09-01T22:32:00+08:00">2018-09-01</time>
+              <time title="创建时间：2018-09-01 22:32:00" itemprop="dateCreated datePublished" datetime="2018-09-01T22:32:00+08:00">2018-09-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-02 21:59:44" itemprop="dateModified" datetime="2018-09-02T21:59:44+08:00">2018-09-02</time>
               
             
           </span>
@@ -467,9 +482,14 @@
 <hr>
 <p>数字信号处理的主要数学工具是傅里叶变换，而傅里叶变换是研究<strong>整个</strong>时间域和频率域的关系，当运用计算机实现测试信号处理时，不可能对无限长的信号进行测量和运算，而是取其有限的时间片段进行分析。</p>
 <ul>
-<li>从信号中截取一个时间片段，然后用截取的信号时间片段进行<strong>周期延拓</strong>处理，得到虚拟的无限长信号，再进行傅里叶变换和相关分析。无限长信号被截断后，其频谱发生了<strong>畸变</strong>，我们称为频谱<strong>能量泄漏</strong>，为了减少<strong>频谱泄漏</strong>，可采用不同的截取函数对信号进行截断，截断函数称为<strong>窗函数</strong>，简称为窗。</li>
+<li>从信号中截取一个时间片段，<del>然后用截取的信号时间片段进行<strong>周期延拓</strong>处理，得到虚拟的无限长信号，再进行傅里叶变换和相关分析。</del>无限长信号被截断后，其频谱发生了<strong>畸变</strong>，我们称为频谱<strong>能量泄漏</strong>，为了减少<strong>频谱泄漏</strong>，可采用不同的截取函数对信号进行截断，截断函数称为<strong>窗函数</strong>，简称为窗。</li>
 </ul>
 <a id="more"></a>
+<p>据学信号学的大佬所说，杠掉的地方有些问题。所以这里展示一下大佬的笔记吧，就不重新表述了（公式太多QwQ）</p>
+<p><img src="/images/windownotes1.jpg" alt=""></p>
+<p><img src="/images/windownotes2.jpg" alt=""></p>
+<p><img src="/images/windownotes3.jpg" alt=""></p>
+<p>顺便膜一下dalao，看不懂的孩纸还是继续看下文吧</p>
 <h2 id="加窗的目的"><a href="#加窗的目的" class="headerlink" title="加窗的目的"></a>加窗的目的</h2><p>其实上文已经讲过了，计算机不可能对无限长的信号进行测量和运算。每次$\rm FFT$只能对有限长度的时域数据进行变换，因此需要对时域信号进行信号截断，<strong>即使是周期信号，如果截断的时间长度不是周期的整数倍(整周期截断)，那么截取后的信号也会存在频谱泄漏</strong>，为了将这个泄漏误差减少到最小程度(不是消除)，我们需要使用窗函数。加窗主要是为了使时域信号似乎更好的满足$\rm FFT$处理的周期性要求，减少泄漏。</p>
 <p><img src="/images/window1.jpg" alt="整周期截断、非整周期截断及加窗后的频谱"></p>
 <p>从上图我们得出，如果是整周期截断，则$\rm FFT$频谱为单一谱线。若为非整周期截断，则频谱出现拖尾，也就是说泄漏很严重。为了减少泄漏，给信号施加一个窗函数，原始截断后的信号与这个窗函数相乘之后得到的信号为最右侧的信号。可以看出，此时信号的起始时刻和结束时刻幅值都为$0$，也就是说在这个时间长度内，信号为周期信号，但是只有一个周期，对这个信号做$\rm FFT$，相比之前未加窗的频谱，泄漏已<strong>明显改善，但并未完全消除</strong>，因此窗函数只能<strong>减少泄漏，不能消除泄漏</strong>。</p>
@@ -478,6 +498,7 @@
 <p><img src="/images/window3.png" alt="Pic.2 Signal after Time Window Truncation"></p>
 <p>这个“窗”是一个单位权重的加权函数，成为<em>矩形窗</em>。这个<em>窗</em>外的信号是看不到的，就如同透过窗户看外面的世界，你只能看到在窗内的景色。这就是为什么这样的加权函数被成为窗函数的真正原因（其实还是很形象的）。</p>
 <p>　　Pic.2中用于截取信号的时域截取函数称为窗函数，它是一种<strong>加权函数</strong>，不同窗的<strong>加权</strong>是不一样的，也就是说，可以用不同的窗函数来做信号截断。常用的窗函数有矩形窗、汉宁窗、平顶窗和指数窗等。</p>
+<p>加窗在时域上表现的是<strong>点乘</strong>，因此在频域上则表现为<strong>卷积</strong>。卷积可以被看成是一个平滑的过程。这个平滑过程可以被看出是由一组具有特定函数形状的滤波器，因此，原始信号中在某一频率点上的能量会结合滤波器的形状表现出来，从而减小泄漏。基于这个原理，人们通常在时域上直接加窗。</p>
 <h2 id="窗函数的时频域特征"><a href="#窗函数的时频域特征" class="headerlink" title="窗函数的时频域特征"></a>窗函数的时频域特征</h2><p><img src="\images\1535810012918.png" alt="信号加窗"></p>
 <p><img src="/images/w4.jpg" alt="常用窗函数"> </p>
 <p>上面那幅图当中，较为平缓的曲线为<em>时域形状</em>，有若干个瓣是<em>频域特征</em></p>
@@ -590,8 +611,19 @@
 </tbody>
 </table>
 </div>
+<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><h3 id="加窗是为了截取信号的某一截-如果采集了32K的点，点数不是已经有限了？"><a href="#加窗是为了截取信号的某一截-如果采集了32K的点，点数不是已经有限了？" class="headerlink" title="加窗是为了截取信号的某一截?如果采集了32K的点，点数不是已经有限了？"></a>加窗是为了截取信号的某一截?如果采集了32K的点，点数不是已经有限了？</h3><blockquote>
+<p>并不是。</p>
+<p>FFT算法基于你采样的信号是<strong>无限长的周期的</strong>信号，也就是你32k的数据会被认为是<strong>不断重复</strong>的，32k最后一个点之后又连到第一个点，这样不断重复，这样就有可能出现波形断开的情况，这个不连续会导致FFT结果出现频谱泄漏现象， 但是你的实际信号是连续的，所以加窗的目的就是让不太连续的地方（最后一个点和第一个的连接处）看上去平滑了，没有原来那么明显的突变了</p>
+</blockquote>
+<h3 id="原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？"><a href="#原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？" class="headerlink" title="原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？"></a>原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？</h3><blockquote>
+<p>这个问题其实非常的奇怪…</p>
+<p>窗函数加在时间域上，相当于和信号做乘法，所以频域上是卷积，这就是傅里叶变换的性质</p>
+<p>窗函数不是周期函数。它的频率可以看成无穷小，傅里叶变换从另一个角度也可以看成傅里叶级数当T趋于无穷的极限。</p>
+<p>加完窗到底能改进些什么？当然是减少能量泄露。因为不加窗无穷序列，计算机没法做FFT，加窗是迫不得已。有的时候你想了解某一段的频率特性，也需要加窗。加窗的影响就是那个卷积变换，自己要加入幅值修正。</p>
+</blockquote>
 <h2 id="Related"><a href="#Related" class="headerlink" title="Related"></a>Related</h2><p>[1] WIKIPEDIA, <a href="https://en.wikipedia.org/wiki/Window_function" target="_blank" rel="noopener">Window Function</a></p>
 <p>[2] VFE, <a href="https://www.vfe.cc/NewsDetail-2239.aspx" target="_blank" rel="noopener">通俗地理解窗函数</a></p>
+<p>[3] 雪韵凌枫, <a href="https://blog.csdn.net/u013360881/article/details/77714168" target="_blank" rel="noopener">数字信号分析——窗函数</a></p>
 
       
     </div>
@@ -1035,7 +1067,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#窗函数"><span class="nav-number">1.</span> <span class="nav-text">窗函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加窗的目的"><span class="nav-number">1.1.</span> <span class="nav-text">加窗的目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窗函数的形象描述"><span class="nav-number">1.2.</span> <span class="nav-text">窗函数的形象描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窗函数的时频域特征"><span class="nav-number">1.3.</span> <span class="nav-text">窗函数的时频域特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窗函数的选择"><span class="nav-number">1.4.</span> <span class="nav-text">窗函数的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related"><span class="nav-number">1.5.</span> <span class="nav-text">Related</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#窗函数"><span class="nav-number">1.</span> <span class="nav-text">窗函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加窗的目的"><span class="nav-number">1.1.</span> <span class="nav-text">加窗的目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窗函数的形象描述"><span class="nav-number">1.2.</span> <span class="nav-text">窗函数的形象描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窗函数的时频域特征"><span class="nav-number">1.3.</span> <span class="nav-text">窗函数的时频域特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窗函数的选择"><span class="nav-number">1.4.</span> <span class="nav-text">窗函数的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">1.5.</span> <span class="nav-text">Questions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加窗是为了截取信号的某一截-如果采集了32K的点，点数不是已经有限了？"><span class="nav-number">1.5.1.</span> <span class="nav-text">加窗是为了截取信号的某一截?如果采集了32K的点，点数不是已经有限了？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？"><span class="nav-number">1.5.2.</span> <span class="nav-text">原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related"><span class="nav-number">1.6.</span> <span class="nav-text">Related</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1079,7 +1111,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共41.1k字</span>
+  <span class="post-count">博客全站共41.7k字</span>
 </div>
         
 <div class="busuanzi-count">
