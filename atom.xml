@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-02T13:59:44.904Z</updated>
+  <updated>2018-09-02T14:58:25.617Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>『JZOJ 4669』【NOIP2016提高A组模拟7.19】弄提纲</title>
+    <link href="https://skyofwar.xyz/2018/09/02/%E3%80%8EJZOJ-4669%E3%80%8F%E3%80%90NOIP2016%E6%8F%90%E9%AB%98A%E7%BB%84%E6%A8%A1%E6%8B%9F7.19%E3%80%91%E5%BC%84%E6%8F%90%E7%BA%B2/"/>
+    <id>https://skyofwar.xyz/2018/09/02/『JZOJ-4669』【NOIP2016提高A组模拟7.19】弄提纲/</id>
+    <published>2018-09-02T14:43:57.000Z</published>
+    <updated>2018-09-02T14:58:25.617Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『JZOJ-4669』【NOIP2016提高A组模拟7-19】弄提纲&quot;&gt;&lt;a href=&quot;#『JZOJ-4669』【NOIP2016提高A组模拟7-19】弄提纲&quot; class=&quot;headerlink&quot; title=&quot;『JZOJ 4669』【NOIP2016提高A组模拟7.19】弄提纲&quot;&gt;&lt;/a&gt;『JZOJ 4669』【NOIP2016提高A组模拟7.19】弄提纲&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://jzoj.net/senior/#main/show/4669&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\images\jzoj4669.jpg&quot; alt=&quot;jzoj4669&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="LCA" scheme="https://skyofwar.xyz/tags/LCA/"/>
+    
+      <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
+    
+      <category term="KMP" scheme="https://skyofwar.xyz/tags/KMP/"/>
+    
+  </entry>
   
   <entry>
     <title>窗函数</title>
@@ -352,7 +377,7 @@
     
       &lt;h1 id=&quot;记录一次非常感人的Mathematica-Animation…&quot;&gt;&lt;a href=&quot;#记录一次非常感人的Mathematica-Animation…&quot; class=&quot;headerlink&quot; title=&quot;记录一次非常感人的Mathematica Animation…&quot;&gt;&lt;/a&gt;记录一次非常感人的Mathematica Animation…&lt;/h1&gt;&lt;p&gt;自己突发奇想想做一次Lissajous曲线。。&lt;/p&gt;
 &lt;p&gt;Mathematica代码咯：&lt;/p&gt;
-&lt;!--�46--&gt;
+&lt;!--�48--&gt;
 &lt;p&gt;但是我们应该如何导出视频呢？&lt;/p&gt;
     
     </summary>
@@ -558,29 +583,6 @@
       <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
     
       <category term="数论" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>疯狂的馒头---并查集的妙用</title>
-    <link href="https://skyofwar.xyz/2018/05/16/%E7%96%AF%E7%8B%82%E7%9A%84%E9%A6%92%E5%A4%B4%5B%E5%B9%B6%E6%9F%A5%E9%9B%86%5D/"/>
-    <id>https://skyofwar.xyz/2018/05/16/疯狂的馒头[并查集]/</id>
-    <published>2018-05-16T14:36:21.000Z</published>
-    <updated>2018-08-29T09:04:07.352Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;疯狂的馒头&quot;&gt;&lt;a href=&quot;#疯狂的馒头&quot; class=&quot;headerlink&quot; title=&quot;疯狂的馒头&quot;&gt;&lt;/a&gt;疯狂的馒头&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;CQF十分喜欢吃馒头，兴奋之下他一下子买了N 个馒头请所有认识他的人吃。&lt;/p&gt;
-&lt;p&gt;但是CQF不喜欢白色，喜欢红色、黄色、绿色等鲜艳的颜色。于是他把所有白色的馒头排成一列。然后进行M 次染色操作。每个染色操作都是用一个神奇的刷子把连续的多个馒头染成特定的某种颜色。一个馒头最终的颜色是最后一次染它的颜色。如果一个馒头没有被染过色，那么它的颜色就是白色。&lt;/p&gt;
-&lt;p&gt;现在CQF已经定好了染色计划：在第i次染色操作中，把第$(i × p + q)\ mod\ N + 1$个馒头和第$(i × q + p)\ mod\ N+1$个馒头之间的馒头染成颜色i，其中p, q是特定的两个正整数。他想立即知道最后每个馒头的颜色。你能帮他吗？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="并查集" scheme="https://skyofwar.xyz/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
   </entry>
   
