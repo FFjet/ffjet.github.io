@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-02T14:58:25.617Z</updated>
+  <updated>2018-09-03T15:00:17.986Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OI代码模板计划 - 后缀数组</title>
+    <link href="https://skyofwar.xyz/2018/09/03/%5BOI%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF%E8%AE%A1%E5%88%92%5D%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
+    <id>https://skyofwar.xyz/2018/09/03/[OI代码模板计划]后缀数组/</id>
+    <published>2018-09-03T14:50:00.000Z</published>
+    <updated>2018-09-03T15:00:17.986Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;OI代码模板计划-后缀数组&quot;&gt;&lt;a href=&quot;#OI代码模板计划-后缀数组&quot; class=&quot;headerlink&quot; title=&quot;[OI代码模板计划] 后缀数组&quot;&gt;&lt;/a&gt;[OI代码模板计划] 后缀数组&lt;/h1&gt;&lt;p&gt;代码：后缀排序&lt;/p&gt;
+&lt;p&gt;读入一个长度为 $n$ 的由小写英文字母组成的字符串，请把这个字符串的所有非空后缀按字典序从小到大排序，然后按顺序输出后缀的第一个字符在原串中的位置。位置编号为 $1$ 到 $n$。&lt;/p&gt;
+&lt;p&gt;除此之外为了进一步证明你确实有给后缀排序的超能力，请另外输出 $n−1$ 个整数分别表示排序后相邻后缀的最长公共前缀的长度。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="复习" scheme="https://skyofwar.xyz/categories/%E5%A4%8D%E4%B9%A0/"/>
+    
+    
+      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
+    
+  </entry>
   
   <entry>
     <title>『JZOJ 4669』【NOIP2016提高A组模拟7.19】弄提纲</title>
@@ -33,9 +57,9 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="LCA" scheme="https://skyofwar.xyz/tags/LCA/"/>
-    
       <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
+    
+      <category term="LCA" scheme="https://skyofwar.xyz/tags/LCA/"/>
     
       <category term="KMP" scheme="https://skyofwar.xyz/tags/KMP/"/>
     
@@ -542,47 +566,6 @@
       <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
     
       <category term="组合数学" scheme="https://skyofwar.xyz/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>莫比乌斯反演</title>
-    <link href="https://skyofwar.xyz/2018/08/18/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
-    <id>https://skyofwar.xyz/2018/08/18/莫比乌斯反演/</id>
-    <published>2018-08-18T14:47:22.000Z</published>
-    <updated>2018-08-19T09:03:45.372Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;莫比乌斯反演&quot;&gt;&lt;a href=&quot;#莫比乌斯反演&quot; class=&quot;headerlink&quot; title=&quot;莫比乌斯反演&quot;&gt;&lt;/a&gt;莫比乌斯反演&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;不要把莫比乌斯反演和莫比乌斯变换当成一回事&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;莫比乌斯变换的范围要广的多，别一眼看上去：哇，傻逼分式线性函数嘛，so easy！然后后面你就不懂了&lt;/p&gt;
-&lt;p&gt;详细看维基百科：&lt;a href=&quot;https://en.wikipedia.org/wiki/M%C3%B6bius_transformation&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Möbius transformation&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;还有这一篇&lt;del&gt;深度好文&lt;/del&gt; &lt;a href=&quot;http://www.math.bas.bg/~rkovach/lectures/Moebius.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moebius.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;言归正传，回到topic。今天主要从数学角度去研究。&lt;/p&gt;
-&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;如果对数论函数$f(n)$和$g(n)$，有以下关系式:&lt;/p&gt;
-&lt;p&gt;${\displaystyle g(n)=\sum _{d\,\mid \,n}f(d)\quad {\text{对于每个整数}}n\geq 1} $&lt;/p&gt;
-&lt;p&gt;那么有&lt;/p&gt;
-&lt;p&gt;${\displaystyle f(n)=\sum _{d\,\mid \,n}\mu (d)g\left({\frac {n}{d}}\right)\quad {\text{对于每个整数}}n\geq 1}$&lt;/p&gt;
-&lt;p&gt;其中$\mu$是莫比乌斯函数。实际上，原函数$f(n)$通过使用反演公式给定唯一的$g(n)$。$f$和$g$被称为对方的$莫比乌斯变换$&lt;/p&gt;
-&lt;p&gt;如果f和g是从正整数到某个阿贝尔群的函数（被看作ℤ - 模块），则该公式也是正确的。&lt;/p&gt;
-&lt;p&gt;用Dirichlet卷积描述，第一个公式可以写成${\displaystyle g = f * {\mathit {1}}}$&lt;/p&gt;
-&lt;p&gt;其中星号表示Dirichlet卷积，$\mathit{1}$是常数函数$\mathit{1}(n)=1$。然后将第二个公式写成$f = \mu * g$&lt;/p&gt;
-&lt;p&gt;因为卷乘是(可交换的)和关联的，并且$\mathit{1} * \mu=\varepsilon$，而$\varepsilon$是Dirichlet卷积中的单位函数&lt;/p&gt;
-&lt;p&gt;所以我们有：&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mu * g = \mu *({\mathit{1}} * f)=(\mu * {\mathit{1}}) * f = \varepsilon * f = f&lt;/script&gt;&lt;p&gt;仅仅是数论函数？我们来看看它的一般形式：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="总结" scheme="https://skyofwar.xyz/categories/%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="数论" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   

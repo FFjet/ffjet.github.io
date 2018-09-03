@@ -349,6 +349,184 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/17/线段统计 - 线段树懒标记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leoleepz">
+      <meta itemprop="description" content="My Blog">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Flying fighter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/17/线段统计 - 线段树懒标记/" itemprop="url">
+                  线段统计 - 线段树懒标记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-17 17:31:41" itemprop="dateCreated datePublished" datetime="2018-03-17T17:31:41+08:00">2018-03-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-31 10:55:56" itemprop="dateModified" datetime="2018-03-31T10:55:56+08:00">2018-03-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/讲解/" itemprop="url" rel="index"><span itemprop="name">讲解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="线段统计-线段树懒标记"><a href="#线段统计-线段树懒标记" class="headerlink" title="线段统计 - 线段树懒标记"></a>线段统计 - 线段树懒标记</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><strong>题目描述</strong><br>在数轴上进行一系列操作。每次操作有两种类型，一种是在线段[a,b]上涂上颜色，另一种将[a,b]上的颜色擦去。问经过一系列的操作后，有多少条单位线段[k,k+1]被涂上了颜色。</p>
+<p><strong>输入格式</strong><br>第1行：2个整数n（0&lt;=n&lt;=60000）和m（1&lt;=m&lt;=60000）分别表示数轴长度和进行操作的次数。<br>接下来m行，每行3个整数i，a，b， 0 &lt;=a&lt;=b&lt;=60000，若i=1表示给线段[a,b]上涂上颜色，若i=2表示将[a,b]上的颜色擦去。</p>
+<p><strong>输出格式</strong><br>文件输出仅有一行为1个整数，表示有多少条单位线段[k,k+1]被涂上了颜色。</p>
+<p><strong>样例输入</strong><br>10 5<br>1 2 8<br>2 3 6<br>1 1 10<br>2 4 7<br>1 1 5</p>
+<p><strong>样例输出</strong><br>7</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>最为经典的一道区间修改区间查询加懒标记的题了<br>懒标记的实质：推迟信息更新，避免无用操作<br>如果不加懒标记，线段树连暴力都不如。<br>对于每个非完全包含的区间，在修改和查询到的时候都要向下传标记。<br>比如此题，如果标记为全部有色，传下去儿子结点全部有色，全部无色亦然。<br>传完标记后需要将标记置为0表示儿子中有的有颜色有的无颜色。<br>因为建树方式不同，线段映射到点右端点需-1</p>
+<h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 1000005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Segt</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> l, r, colored, lazy;</span><br><span class="line">	<span class="comment">//lazy=1表示该区间内全部染了色 </span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SegmentTree</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Segt Tree[MAXN * <span class="number">4</span>];</span><br><span class="line">	<span class="keyword">int</span> sum;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Build</span><span class="params">(<span class="keyword">int</span> ind, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Tree[ind].l = l, Tree[ind].r = r;</span><br><span class="line">		Tree[ind].colored = <span class="number">0</span>, Tree[ind].lazy = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		Build(ind &lt;&lt; <span class="number">1</span>, l, mid);</span><br><span class="line">		Build(ind &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">PD</span><span class="params">(<span class="keyword">int</span> ind)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (Tree[ind].lazy == <span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			Tree[ind &lt;&lt; <span class="number">1</span>].lazy = Tree[ind &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].lazy = <span class="number">-1</span>;</span><br><span class="line">			Tree[ind &lt;&lt; <span class="number">1</span>].colored = Tree[ind &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].colored = <span class="number">0</span>;</span><br><span class="line">			Tree[ind].lazy = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (Tree[ind].lazy == <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			Tree[ind &lt;&lt; <span class="number">1</span>].lazy = Tree[ind &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].lazy = <span class="number">1</span>;</span><br><span class="line">			Tree[ind &lt;&lt; <span class="number">1</span>].colored = Tree[ind &lt;&lt; <span class="number">1</span>].r - Tree[ind &lt;&lt; <span class="number">1</span>].l + <span class="number">1</span>;</span><br><span class="line">			Tree[ind &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].colored = Tree[ind &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].r - Tree[ind &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].l + <span class="number">1</span>;</span><br><span class="line">			Tree[ind].lazy = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">PU</span><span class="params">(<span class="keyword">int</span> ind)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Tree[ind].colored = Tree[ind &lt;&lt; <span class="number">1</span>].colored + Tree[ind &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].colored;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Modify</span><span class="params">(<span class="keyword">int</span> ind, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ope)</span>	<span class="comment">//Ope:Operations:1-&gt;color,2-&gt;discolor</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">if</span> (Tree[ind].l &gt; r || Tree[ind].r &lt; l) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">if</span> (Tree[ind].lazy == ope) <span class="keyword">return</span>;</span><br><span class="line">		<span class="keyword">if</span> (l &lt;= Tree[ind].l &amp;&amp; Tree[ind].r &lt;= r)</span><br><span class="line">		&#123;</span><br><span class="line">			Tree[ind].lazy = ope;</span><br><span class="line">			<span class="keyword">if</span> (ope == <span class="number">-1</span> || ope == <span class="number">0</span>) Tree[ind].colored = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">else</span> Tree[ind].colored = Tree[ind].r - Tree[ind].l + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">return</span>; </span><br><span class="line">		&#125;</span><br><span class="line">		PD(ind);</span><br><span class="line">		Modify(ind &lt;&lt; <span class="number">1</span>, l, r, ope);</span><br><span class="line">		Modify(ind &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r, ope);</span><br><span class="line">		PU(ind);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">SegmentTree st;</span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; M;</span><br><span class="line">	st.Build(<span class="number">1</span>, <span class="number">1</span>, N);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= M; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> ope, l, r;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; ope &gt;&gt; l &gt;&gt; r;</span><br><span class="line">		<span class="keyword">if</span> (ope == <span class="number">1</span>) st.Modify(<span class="number">1</span>, l, r - <span class="number">1</span>, <span class="number">1</span>);	<span class="comment">//记得这边要是r - 1 </span></span><br><span class="line">		<span class="keyword">else</span> st.Modify(<span class="number">1</span>, l, r - <span class="number">1</span>, <span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; st.Tree[<span class="number">1</span>].colored &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/12/线性基/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1949,194 +2127,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/23/线性代数基础3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leoleepz">
-      <meta itemprop="description" content="My Blog">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Flying fighter">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/23/线性代数基础3/" itemprop="url">
-                  线性代数基础 3
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-23 16:01:41" itemprop="dateCreated datePublished" datetime="2018-02-23T16:01:41+08:00">2018-02-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-03-31 10:53:02" itemprop="dateModified" datetime="2018-03-31T10:53:02+08:00">2018-03-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/讲解/" itemprop="url" rel="index"><span itemprop="name">讲解</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h1><blockquote>
-<p>有趣有趣</p>
-</blockquote>
-<h2 id="几何含义"><a href="#几何含义" class="headerlink" title="几何含义"></a>几何含义</h2><p>平面六面体的有向体积，平行四边形的有向面积</p>
-<h2 id="方阵的行列式"><a href="#方阵的行列式" class="headerlink" title="方阵的行列式"></a>方阵的行列式</h2><p>定义：完全展开式</p>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p><strong>决定性质:<br>1.反对称:任意两行相同时为0<br>2.双线性:行线性（列线性与行线性推导相同）<br>3.单位矩阵 ==&gt; 行列式为1</strong></p>
-<p>==展开式能反映性质，性质最终能推出展开式==</p>
-<p>其它性质：<br>①行列式$A$中某行(或列)用同一数$k$乘,其结果等于$kA$。<br>②行列式$A$等于其转置行列式$AT$($AT$的第$i$行为$A$的第$i$列)。<br>③若$n$阶行列式 $α$ 中某行(或列);行列式则 $α$ 是两个行列式的和,这两个行列式的第$i$行(或列),一个是$b_1,b_2,…,b_n$；另一个是$с_1，с_2,…,с_n$;其余各行（或列）上的元与 $α$ 的完全一样。<br>④行列式$A$中两行（或列）互换,其结果等于$-A$。<br>⑤把行列式$A$的某行（或列）中各元同乘一数后加到另一行（或列）中各对应元上，结果仍然是$A$。</p>
-<h2 id="实际计算"><a href="#实际计算" class="headerlink" title="实际计算"></a>实际计算</h2><p>emmm很重要哦xDDDD</p>
-<ul>
-<li>$T(π)$表示<strong>逆序对数</strong>(<a href="https://zh.wikipedia.org/wiki/%E9%80%86%E5%BA%8F%E5%AF%B9" target="_blank" rel="noopener">什么是逆序对？</a>)</li>
-</ul>
-<h2 id="具体计算"><a href="#具体计算" class="headerlink" title="具体计算"></a>具体计算</h2><p>最简单的方法是按照定义<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c37d3280bcfc7714d2f4422eaea2f7628151dcc8" alt=""><br>计算或按照拉普拉斯公式进行<strong>递归</strong>运算。这样的算法需要计算$n!$次的加法，复杂度是指数函数。在实际的计算中只能用于计算阶数很小的行列式。注意到拉普拉斯公式的性质，如果一行或一列里面有很多个0，那么就可以把行列式按这一行或一列展开，这时数值为零的系数所对应的代数余子式就不必计算了，因为最后要乘以0，这样就可以简化计算。然而<strong>更加简便的算法是利用<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E6%96%AF%E6%B6%88%E5%8E%BB%E6%B3%95" target="_blank" rel="noopener">Gauss消元法</a>或<a href="https://zh.wikipedia.org/wiki/LU%E5%88%86%E8%A7%A3" target="_blank" rel="noopener">LU分解法</a>，把矩阵通过初等变换变成三角矩阵或三角矩阵的乘积来计算行列式的值</strong>。这些算法的复杂度都是$n^{3}$级别，远远小于直接计算的复杂度。</p>
-<ul>
-<li>不满秩时行列式为$0$</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2188,7 +2178,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-count">58</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2217,7 +2207,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2517,7 +2509,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共42.2k字</span>
+  <span class="post-count">博客全站共42.8k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -3012,9 +3004,9 @@
   
     
       
-        
-      
     
+      
+        
       
     
       
