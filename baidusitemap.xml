@@ -4,6 +4,80 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/09/06/%E3%80%8EAGC%20023C%E3%80%8FPainting%20Machines/</loc>
+    <lastmod>2018-09-06T15:09:29.535Z</lastmod>
+    <data>
+        <display>
+        <title>『AGC 023C』Painting Machines</title>
+        <pubTime>2018-09-06T15:09:27.000Z</pubTime>
+        
+        <tag>Atcoder</tag>
+         
+        <tag>组合</tag>
+         
+        <tag>计数</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://skyofwar.xyz/2018/09/06/%E3%80%8EAGC%20023F%E3%80%8F01%20on%20Tree/</loc>
+    <lastmod>2018-09-06T14:52:21.849Z</lastmod>
+    <data>
+        <display>
+        <title>『AGC 023F』01 on Tree</title>
+        <pubTime>2018-09-06T14:50:27.000Z</pubTime>
+        
+        <tag>Atcoder</tag>
+         
+        <tag>Heap</tag>
+         
+        <tag>并查集</tag>
+         
+        <tag>贪心</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://skyofwar.xyz/2018/09/06/%E3%80%8EAGC%20023A%E3%80%8FZero-Sum%20Ranges/</loc>
+    <lastmod>2018-09-06T14:33:04.713Z</lastmod>
+    <data>
+        <display>
+        <title>『AGC 023A』Zero-Sum Ranges</title>
+        <pubTime>2018-09-06T14:32:27.000Z</pubTime>
+        
+        <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
+         
+        <tag>map</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/09/03/%5BOI%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF%E8%AE%A1%E5%88%92%5D%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2018-09-03T15:00:23.014Z</lastmod>
     <data>
@@ -75,11 +149,11 @@
         <title>「Codeforces 825B」Five-In-a-Row</title>
         <pubTime>2018-05-06T07:38:00.000Z</pubTime>
         
-        <tag>水题</tag>
-         
         <tag>Codeforces</tag>
          
         <tag>模拟</tag>
+         
+        <tag>水题</tag>
          
         <tag>DP</tag>
          
@@ -426,9 +500,9 @@
         <title>『POJ 2229 』 Sumsets</title>
         <pubTime>2018-05-15T14:26:21.000Z</pubTime>
         
-        <tag>POJ</tag>
-         
         <tag>DP</tag>
+         
+        <tag>POJ</tag>
          
          
            
@@ -729,9 +803,9 @@
         <title>「POJ 3253」 Fence Repair</title>
         <pubTime>2018-02-27T14:33:16.000Z</pubTime>
         
-        <tag>POJ</tag>
-         
         <tag>水题</tag>
+         
+        <tag>POJ</tag>
          
          
            
@@ -751,9 +825,9 @@
         <title>「POJ 2159」 Ancient Cipher</title>
         <pubTime>2018-02-27T14:28:07.000Z</pubTime>
         
-        <tag>POJ</tag>
-         
         <tag>水题</tag>
+         
+        <tag>POJ</tag>
          
          
            
@@ -987,11 +1061,11 @@
         <title>「BZOJ 1059」 [ZJOI2007]矩阵游戏</title>
         <pubTime>2018-03-06T14:00:22.000Z</pubTime>
         
+        <tag>BZOJ</tag>
+         
         <tag>匈牙利算法</tag>
          
         <tag>图论</tag>
-         
-        <tag>BZOJ</tag>
          
         <tag>省队</tag>
          

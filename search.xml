@@ -3,6 +3,83 @@
   
     
     <entry>
+      <title>『AGC 023C』Painting Machines</title>
+      <link href="/2018/09/06/%E3%80%8EAGC%20023C%E3%80%8FPainting%20Machines/"/>
+      <url>/2018/09/06/%E3%80%8EAGC%20023C%E3%80%8FPainting%20Machines/</url>
+      <content type="html"><![CDATA[<h1 id="『AGC-023C』Painting-Machines"><a href="#『AGC-023C』Painting-Machines" class="headerlink" title="『AGC 023C』Painting Machines"></a>『AGC 023C』Painting Machines</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Time limit : 2sec / Memory limit : 256MB</p><p>题意简述：</p><p>有$n$个方块排成一行，从左到右编号为$1$到$n$。最初所有的方块都是白色的。我们还有$N-1$台涂漆机，编号为$1$至$N-1$。当操作时，第$i$号机器把第$i$和$i+1$号方块染黑。</p><p>Snuke将逐个操作这些机器。他操作它们的顺序是$(1,2,…,N-1)$的一个排列$P$,这意味着第$i$个操作的机器是机器$P_i$。</p><p>排列$P$的得分被定义为当机器以$P$指定的顺序操作时，在所有方块第一次被涂成黑色之前操作的机器的数量。找出他所有可能排列的得分总和。因为这可能非常大，计算模$10^9+7$。</p><p><a href="https://agc023.contest.atcoder.jp/tasks/agc023_c" target="_blank" rel="noopener">door♂</a></p><a id="more"></a><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>题目可以转化为求 $\displaystyle \sum_{i = 0}^{N - 2} T(i)$</p><p>其中$T(i)$表示用了$i$次操作没有全部染黑的方案数</p><p>首先我们有$T(0) = (N - 1)!$ </p><p>然后分类讨论，一个是因为没用$N-1$而没有全部染黑的方案数是$\displaystyle \binom{N - 2}{i}i!$ </p><p>如果用了$N - 1$，那么方案是$\displaystyle \left (\binom{N - 2}{i - 1} - W(i - 1) \right )i!$ </p><p>$W(i)$表示用了一个$N - 1$号机器和其他$i$个机器，把所有方格染黑了的方案数</p><p>显然序列里会有$1$</p><p>把序列差分一下，会发现这个序列不是$1$就是$2$，也就是一堆$1$和一堆$2$的数目固定，一堆$1$和一堆$2$的和是$N - 2$，这是个二元一次方程，然后求出了$1$的个数和$2$的个数，就是个带重复元素的全排列，答案是 $\displaystyle\frac {(\text{num}_1 + \text{num}_2)! }{\text{num}_1 ! \text{num}_2 !}$ </p><p>由于其他$N - 1 - i$台机器随意排列，最后还要乘上$(N - i - 1)!$</p><p>Code:</p><div><div class="fold_hider"><div class="close hider_title">Click to show/hide the code</div></div><div class="fold"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 1000010</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 1000000007</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll fac[MAXN], invfac[MAXN], ans;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">fpow</span><span class="params">(<span class="keyword">const</span> ll&amp; x, ll c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">register</span> ll res = <span class="number">1</span>, t = x;</span><br><span class="line"><span class="keyword">while</span> (c)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (c &amp; <span class="number">1</span>) res = res * t % MOD;</span><br><span class="line">t = t * t % MOD;</span><br><span class="line">c &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">C</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>&amp; n, <span class="keyword">const</span> <span class="keyword">int</span>&amp; m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (n &lt; m) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">return</span> fac[n] * invfac[m] % MOD * invfac[n - m] % MOD;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">W</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span>&amp; k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> x = N - <span class="number">2</span> - k;</span><br><span class="line"><span class="keyword">int</span> y = k - x;</span><br><span class="line"><span class="keyword">if</span> (x &lt; <span class="number">0</span> || y &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">return</span> fac[k] * invfac[y] % MOD * invfac[x] % MOD;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;N);</span><br><span class="line"><span class="keyword">if</span> (N == <span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">puts</span>(<span class="string">"1"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">fac[<span class="number">0</span>] = invfac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">fac[i] = fac[i - <span class="number">1</span>] * i % MOD;</span><br><span class="line">invfac[N] = fpow(fac[N], MOD - <span class="number">2</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = N - <span class="number">1</span>; i &gt;= <span class="number">1</span>; --i)</span><br><span class="line">invfac[i] = invfac[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % MOD;</span><br><span class="line">ans += fac[N - <span class="number">1</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N - <span class="number">1</span>; ++i)</span><br><span class="line">ans += (C(N - <span class="number">2</span>, i) + C(N - <span class="number">2</span>, i - <span class="number">1</span>) + MOD - W(i - <span class="number">1</span>))* fac[i] % MOD * fac[N - <span class="number">1</span> - i] % MOD, ans %= MOD;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld"</span>, ans);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div>]]></content>
+      
+      <categories>
+          
+          <category> 题解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Atcoder </tag>
+            
+            <tag> 组合 </tag>
+            
+            <tag> 计数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>『AGC 023F』01 on Tree</title>
+      <link href="/2018/09/06/%E3%80%8EAGC%20023F%E3%80%8F01%20on%20Tree/"/>
+      <url>/2018/09/06/%E3%80%8EAGC%20023F%E3%80%8F01%20on%20Tree/</url>
+      <content type="html"><![CDATA[<h1 id="『AGC-023F』01-on-Tree"><a href="#『AGC-023F』01-on-Tree" class="headerlink" title="『AGC 023F』01 on Tree"></a>『AGC 023F』01 on Tree</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Time limit : 2sec / Memory limit : 256MB</p><p>题意简述：给你一棵由$0$和$1$组成的树（就是每个点的权值为$0$或者$1$），让你求该树的一种排列，使得每个节点的孩子都排在这个节点的后面，并且逆序对数量最小。</p><p><a href="https://agc023.contest.atcoder.jp/tasks/agc023_f" target="_blank" rel="noopener">door♂</a></p><a id="more"></a><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>把序列看成若干个集合的并</p><p>对于一个集合$C$记$C_0,C_1$为集合中$0,1$出现的次数</p><p>则我们考虑何时应该把这个集合$u$接在它父亲$p$的$01$集合后面</p><p>考虑如何选择这个集合$u$</p><p>我们知道，对于两个集合$m,n$，如果要使$m$放在$n$前面更优的话，必然满足$m_0&gt;n_0,m_1<n_1$，然后把这两个不等式左右两边都比一下，容易得到需要满足$\dfrac{m_0}{m_1}>\dfrac{n_0}{n_1}$</n_1$，然后把这两个不等式左右两边都比一下，容易得到需要满足$\dfrac{m_0}{m_1}></p><p>所以对于一个节点$u$，我们存储它的集合信息为$u_0,u_1$，因为只需要知道这两个东西就可以比较它们的偏序</p><p>于是我们就维护一个堆或者一个<code>set</code>，用来每次弹出最大的$\dfrac{u_0}{u_1}$的$u$，接在它的父亲节点的后面，然后把父亲节点和这个节点用一个并查集缩起来，相当于一个点</p><p>不停地取元素，直到堆为空。时间复杂度$O(\alpha n\log n)$，其中$\alpha$可以近似认为是一个常数。</p><p>Code:</p><div><div class="fold_hider"><div class="close hider_title">Click to show/hide the code</div></div><div class="fold"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 200010</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line">ll A[MAXN];</span><br><span class="line"><span class="built_in">map</span> &lt;ll, <span class="keyword">int</span>&gt; M;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> _read(<span class="keyword">int</span> &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">x = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">register</span> <span class="keyword">int</span> y = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">char</span> t = getchar();</span><br><span class="line"><span class="keyword">while</span> (!<span class="built_in">isdigit</span>(t) &amp;&amp; t != <span class="string">'-'</span>) t = getchar();</span><br><span class="line"><span class="keyword">if</span> (t == <span class="string">'-'</span>)</span><br><span class="line">&#123;</span><br><span class="line">y = <span class="number">-1</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">isdigit</span>(t))</span><br><span class="line">&#123;</span><br><span class="line">x = x * <span class="number">10</span> + t - <span class="string">'0'</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line">x *= y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> _read(ll &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">x = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">register</span> ll y = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">char</span> t = getchar();</span><br><span class="line"><span class="keyword">while</span> (!<span class="built_in">isdigit</span>(t) &amp;&amp; t != <span class="string">'-'</span>) t = getchar();</span><br><span class="line"><span class="keyword">if</span> (t == <span class="string">'-'</span>)</span><br><span class="line">&#123;</span><br><span class="line">y = <span class="number">-1</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">isdigit</span>(t))</span><br><span class="line">&#123;</span><br><span class="line">x = x * <span class="number">10</span> + t - <span class="string">'0'</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line">x *= y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">_read(N);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) _read(A[i]);</span><br><span class="line">M[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">ll ans = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">&#123;</span><br><span class="line">A[i] += A[i - <span class="number">1</span>];</span><br><span class="line">ans += M[A[i]];</span><br><span class="line">M[A[i]] += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div>]]></content>
+      
+      <categories>
+          
+          <category> 题解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Atcoder </tag>
+            
+            <tag> Heap </tag>
+            
+            <tag> 并查集 </tag>
+            
+            <tag> 贪心 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>『AGC 023A』Zero-Sum Ranges</title>
+      <link href="/2018/09/06/%E3%80%8EAGC%20023A%E3%80%8FZero-Sum%20Ranges/"/>
+      <url>/2018/09/06/%E3%80%8EAGC%20023A%E3%80%8FZero-Sum%20Ranges/</url>
+      <content type="html"><![CDATA[<h1 id="『AGC-023A』Zero-Sum-Ranges"><a href="#『AGC-023A』Zero-Sum-Ranges" class="headerlink" title="『AGC 023A』Zero-Sum Ranges"></a>『AGC 023A』Zero-Sum Ranges</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Time limit : 2sec / Memory limit : 256MB</p><p>我们有一个整数序列$A$，其长度是$N$</p><p>请找出其总和为$0$的$A$的非空邻接子序列的数目。请注意，我们正在计算取出子序列的方法。也就是说，即使某些两个子序列的内容相同，如果它们取自不同的位置，则对它们进行单独计数。</p><p><a href="https://agc023.contest.atcoder.jp/tasks/agc023_a" target="_blank" rel="noopener">door♂</a></p><a id="more"></a><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ul><li>$n^2$的算法会超时</li></ul><p>首先看样例</p><div class="table-container"><table><thead><tr><th>下标</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead><tbody><tr><td>数字</td><td>1</td><td>3</td><td>-4</td><td>2</td><td>2</td><td>-2</td></tr><tr><td>前缀和</td><td>1</td><td>4</td><td>0</td><td>2</td><td>4</td><td>2</td></tr></tbody></table></div><p>我们可以发现<strong>相同的两个数之间之间经过的数</strong>的和一定是$0$；<br>例如第一个$4 $和第二个$4$ 之间是 $-4 + 2 +2=0$所以我们发现规律：</p><ul><li>只要找到相同的数的个数让他们之间两两连接就是个数<br>如果和为$0$代表从第一个开始到它的和就是$0$所以要额外加上$0$的个数</li></ul><p>懒得离散化就用<code>map</code>，反正能过233</p><p>Code:</p><div><div class="fold_hider"><div class="close hider_title">Click to show/hide the code</div></div><div class="fold"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 200010</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line">ll A[MAXN];</span><br><span class="line"><span class="built_in">map</span> &lt;ll, <span class="keyword">int</span>&gt; M;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> _read(<span class="keyword">int</span> &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">x = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">register</span> <span class="keyword">int</span> y = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">char</span> t = getchar();</span><br><span class="line"><span class="keyword">while</span> (!<span class="built_in">isdigit</span>(t) &amp;&amp; t != <span class="string">'-'</span>) t = getchar();</span><br><span class="line"><span class="keyword">if</span> (t == <span class="string">'-'</span>)</span><br><span class="line">&#123;</span><br><span class="line">y = <span class="number">-1</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">isdigit</span>(t))</span><br><span class="line">&#123;</span><br><span class="line">x = x * <span class="number">10</span> + t - <span class="string">'0'</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line">x *= y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> _read(ll &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">x = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">register</span> ll y = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">char</span> t = getchar();</span><br><span class="line"><span class="keyword">while</span> (!<span class="built_in">isdigit</span>(t) &amp;&amp; t != <span class="string">'-'</span>) t = getchar();</span><br><span class="line"><span class="keyword">if</span> (t == <span class="string">'-'</span>)</span><br><span class="line">&#123;</span><br><span class="line">y = <span class="number">-1</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">isdigit</span>(t))</span><br><span class="line">&#123;</span><br><span class="line">x = x * <span class="number">10</span> + t - <span class="string">'0'</span>;</span><br><span class="line">t = getchar();</span><br><span class="line">&#125;</span><br><span class="line">x *= y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">_read(N);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) _read(A[i]);</span><br><span class="line">M[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">ll ans = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">&#123;</span><br><span class="line">A[i] += A[i - <span class="number">1</span>];</span><br><span class="line">ans += M[A[i]];</span><br><span class="line">M[A[i]] += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div>]]></content>
+      
+      <categories>
+          
+          <category> 题解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tricks </tag>
+            
+            <tag> Atcoder </tag>
+            
+            <tag> map </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>OI代码模板计划 - 后缀数组</title>
       <link href="/2018/09/03/%5BOI%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF%E8%AE%A1%E5%88%92%5D%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
       <url>/2018/09/03/%5BOI%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF%E8%AE%A1%E5%88%92%5D%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/</url>
@@ -574,9 +651,9 @@
       
         <tags>
             
-            <tag> POJ </tag>
-            
             <tag> DP </tag>
+            
+            <tag> POJ </tag>
             
         </tags>
       
@@ -620,11 +697,11 @@
       
         <tags>
             
-            <tag> 水题 </tag>
-            
             <tag> Codeforces </tag>
             
             <tag> 模拟 </tag>
+            
+            <tag> 水题 </tag>
             
             <tag> DP </tag>
             
@@ -1155,11 +1232,11 @@
       
         <tags>
             
+            <tag> BZOJ </tag>
+            
             <tag> 匈牙利算法 </tag>
             
             <tag> 图论 </tag>
-            
-            <tag> BZOJ </tag>
             
             <tag> 省队 </tag>
             
@@ -1211,9 +1288,9 @@
       
         <tags>
             
-            <tag> POJ </tag>
-            
             <tag> 水题 </tag>
+            
+            <tag> POJ </tag>
             
         </tags>
       
@@ -1234,9 +1311,9 @@
       
         <tags>
             
-            <tag> POJ </tag>
-            
             <tag> 水题 </tag>
+            
+            <tag> POJ </tag>
             
         </tags>
       
@@ -1337,29 +1414,6 @@
     </entry>
     
     <entry>
-      <title>线性代数基础 1</title>
-      <link href="/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/"/>
-      <url>/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/</url>
-      <content type="html"><![CDATA[<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="复数的基本知识"><a href="#复数的基本知识" class="headerlink" title="复数的基本知识"></a>复数的基本知识</h2><p>形如$a+bi(a,b∈R)$的数称为复数，其中a称为实部，b称为虚部，i称为虚数单位。当虚部等于零时，这个复数可以视为实数；当z的虚部不等于零时，实部等于零时，常称z为纯虚数。复数域是实数域的代数闭包，也即任何复系数多项式在复数域中总有根。</p><h2 id="数域的概念"><a href="#数域的概念" class="headerlink" title="数域的概念"></a>数域的概念</h2><p>设$P$是由一些数组成的集合，如果$P$中任意两个数的和、差、积、商（除数不为0）仍是$P$中的数，则称$P$为一个数域。</p><ul><li>常见数域： 复数域$C$；实数域$R$；有理数域$Q$。</li><li>若数集$P$中任意两个数作某一运算的结果仍在$P$中，则说数集$P$对这个运算是封闭的。</li><li>数域的等价定义：如果一个包含0，1在内的数集$P$对于加法，减法，乘法与除法（除数不为0）是封闭的，则称数集$P$为一个数域。</li></ul><h1 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h1><h2 id="什么是线性方程组"><a href="#什么是线性方程组" class="headerlink" title="什么是线性方程组?"></a>什么是线性方程组?</h2><p>线性方程组长这样:<br><img src="http://i2.bvimg.com/633215/0f549ce81e86dc1a.png" alt=""></p><p>m个方程,n个未知数<br>比较大的，比较复杂的<br>所谓线性，就是没有平方啊，立方啊，$ e^x $ 啊，$ sin^x $ 之类的东西，全部都是$ax+b$的形式</p><h2 id="那么这种线性方程组怎么解呢？"><a href="#那么这种线性方程组怎么解呢？" class="headerlink" title="那么这种线性方程组怎么解呢？"></a>那么这种线性方程组怎么解呢？</h2><p><strong>高斯消元</strong><br>首先我们要知道<br>初等行变换的三种形式<br>1) 把一行乘上若干倍（当然是非0数）<br>2) 把一行减去另一行<br>3) 把两行互换位置<br>初等变换是<strong>可逆</strong>的</p><p>也就是说<br>1) 两方程互换，解不变；<br>2) 一方程乘以非零数$k$，解不变；<br>3) 一方程乘以数$k$加上另一方程，解不变。</p><p>高斯消元就是说，可以用这三种变换，把方程组变成阶梯型（甚至不是这种形状，就是变得好看一些）<br><strong>如何做？</strong></p><p>请看如下方程：<br><img src="http://i2.bvimg.com/633215/21f112f53007cafd.png" alt=""></p><p>$x$系数相同，消去$x$，解得$z$<br>随后，$z$的系数相同，解得$y$<br>代入，解得$x$<br>方程的解为：</p><p><img src="http://i2.bvimg.com/633215/691b0993cd796f33.png" alt=""></p><p>齐次线性方程组：解空间<br>非齐次的：导出组：<br>它的解为一个<strong>线性流形</strong></p><blockquote><p><strong>线性流形是啥？</strong><br>1.开集：设$A$是开集,则对$A$中的任意一点$a$,存在$a$的邻域$o(a)⊆A$<br>2.微分同胚：若$U$、$V$是$n$维实数空间（下面记之为$R^n$）中的开集,一个从$U$到$V$的可微函数$h$,如果从$V$到$U$的可微逆,则称$h$为微分同胚.<br>3.$K$维流形：$R^n$中的子集$M$称为$K$维流形,如果对于$M$中的每一点$x$都满足以下条件：<br>存在一个含$x$的开集U、一个$R^n$中的开集$V$和一个从$U$到$V$的微分同胚$h$,使得<br>$h(U∩V)=V∩(R^k×\{0\})=\{y∈V；y^{k+1}=……=y^n=0\}$<br>4.另一种等价的定义：$R^n$中的子集$M$称为$K$维流形,当且仅当$M$中的每一个点$x$,下述条件成立：<br>存在一个包含$x$的开集$U$,一个$R^k$中的开集$W$以及一个从$W$到$R^n$的$1-1$可微函数$f$,使得：<br>1)$f(W)=M∩U$；<br>2)$f’(y)$对每个$y∈W$的秩为$k$；<br>3)从$f(W)$到$W$的$f$的逆连续.<br>上述条件叫通常叫“坐标条件”,这样的$f$叫做$x$周围的坐标系.<br>5.线性流形,即满足线性运算的流形.<br>例子：<br>1）$R^n$的一个开集<br>2）$n$维球面：$\{x∈R^{n+1}:|x|=1\}$</p></blockquote><p>方程组个数小于未知数个数时一定有解？<br>很小的时候，就听说过老师说方程组个数小于未知数个数时一定有解。不知道大家是怎么理解的。</p><p>方程组可以理解为是用来约束未知数的条件，方程组过多，约束更多，不一定有解。相反地，方程组过少，约束更少，就一定有解。</p><ul><li>真的是这样吗？<br>其实跟系数矩阵的秩有很大的关系</li></ul><h1 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h1><h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><p>向量其实只是一个名称而已,不再代表具体的含义,只是一种形式记号</p><ul><li>和以前的$(x,y)$表示不太一样，以前表示的只是一种有方向的量。写成这样$(x_1,x_2,…,x_n)$<br>这样叫做行向量。相应地，竖着写也行。竖着写叫做列向量。</li></ul><h2 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h2><p>E.g.<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""></p><h2 id="数域上的向量组的线性相关与无关"><a href="#数域上的向量组的线性相关与无关" class="headerlink" title="数域上的向量组的线性相关与无关"></a>数域上的向量组的线性相关与无关</h2><p>我们引入了一个线性代数中相当重要的概念：<strong>线性相关</strong></p><ul><li>什么是线性相关？<br>假如存在<strong>不全为0</strong>的$k_1,k_2,…,k_n$，使得 $k_1\alpha_1+k_2\alpha_2+…+k_n\alpha_n=0$</li></ul><p>则称$k_1,k_2,…,k_n$和$\alpha_1+\alpha_2+…+\alpha_n$线性相关<br>线性：只是将一个向量乘一个常数，并没有一个向量乘一个向量<br>可以通过线性运算整合到一起</p><p>那么<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""><br>是否线性相关？</p><p>这个例子啊，本身判断线性相关或无关其实很困难<br>但是我们看到<br>$\alpha_1+\alpha_2-4\alpha_3=0$<br>也就是说$\alpha_3$可以用$\alpha_1和\alpha_2$表示<br><strong>这个结论很重要，请牢记</strong></p><h2 id="向量组的秩-rank"><a href="#向量组的秩-rank" class="headerlink" title="向量组的秩(rank)"></a>向量组的秩(rank)</h2><p>平时大家都喜欢rank1,rank2，但在这里，rank是秩序的意思QwQ</p><h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><p>线性无关组：线性无关的向量组成的向量组<br>极大线性无关组：一个不能再向里面添加任何其他向量的线性无关组（添加之后就线性有关了）</p><ul><li><p>怎么构造？<br>$\alpha_1,\alpha_2,…\alpha_n$<br>对于每个向量，和之前的向量检验相关性即可<br>虽然检验是否有关的时间复杂度很可怕（误），但这个算法表面上看来是$O(n)$的<br>向量组可以由它表出</p></li><li><p>什么是表出？<br>设$α_1,α_2,…,α_e(e≥1)$是域P上线性空间V中的有限个向量，若V中向量α可以表示为$α=k_1α_1+k_2α_2++…k_eα_e(k_a∈P，a=1,2,…,e)$，则称α是向量组$α_1,α_2,…,α_e(e≥1)$的一个线性组合，亦称α可由向量组$α_1,α_2,…,α_e(e≥1)$线性表示或线性表出。</p></li></ul>]]></content>
-      
-      <categories>
-          
-          <category> 讲解 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Math theory </tag>
-            
-            <tag> 线性代数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>如何卸载hexo</title>
       <link href="/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/"/>
       <url>/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/</url>
@@ -1377,6 +1431,29 @@
             <tag> web </tag>
             
             <tag> bash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>线性代数基础 1</title>
+      <link href="/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/"/>
+      <url>/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/</url>
+      <content type="html"><![CDATA[<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="复数的基本知识"><a href="#复数的基本知识" class="headerlink" title="复数的基本知识"></a>复数的基本知识</h2><p>形如$a+bi(a,b∈R)$的数称为复数，其中a称为实部，b称为虚部，i称为虚数单位。当虚部等于零时，这个复数可以视为实数；当z的虚部不等于零时，实部等于零时，常称z为纯虚数。复数域是实数域的代数闭包，也即任何复系数多项式在复数域中总有根。</p><h2 id="数域的概念"><a href="#数域的概念" class="headerlink" title="数域的概念"></a>数域的概念</h2><p>设$P$是由一些数组成的集合，如果$P$中任意两个数的和、差、积、商（除数不为0）仍是$P$中的数，则称$P$为一个数域。</p><ul><li>常见数域： 复数域$C$；实数域$R$；有理数域$Q$。</li><li>若数集$P$中任意两个数作某一运算的结果仍在$P$中，则说数集$P$对这个运算是封闭的。</li><li>数域的等价定义：如果一个包含0，1在内的数集$P$对于加法，减法，乘法与除法（除数不为0）是封闭的，则称数集$P$为一个数域。</li></ul><h1 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h1><h2 id="什么是线性方程组"><a href="#什么是线性方程组" class="headerlink" title="什么是线性方程组?"></a>什么是线性方程组?</h2><p>线性方程组长这样:<br><img src="http://i2.bvimg.com/633215/0f549ce81e86dc1a.png" alt=""></p><p>m个方程,n个未知数<br>比较大的，比较复杂的<br>所谓线性，就是没有平方啊，立方啊，$ e^x $ 啊，$ sin^x $ 之类的东西，全部都是$ax+b$的形式</p><h2 id="那么这种线性方程组怎么解呢？"><a href="#那么这种线性方程组怎么解呢？" class="headerlink" title="那么这种线性方程组怎么解呢？"></a>那么这种线性方程组怎么解呢？</h2><p><strong>高斯消元</strong><br>首先我们要知道<br>初等行变换的三种形式<br>1) 把一行乘上若干倍（当然是非0数）<br>2) 把一行减去另一行<br>3) 把两行互换位置<br>初等变换是<strong>可逆</strong>的</p><p>也就是说<br>1) 两方程互换，解不变；<br>2) 一方程乘以非零数$k$，解不变；<br>3) 一方程乘以数$k$加上另一方程，解不变。</p><p>高斯消元就是说，可以用这三种变换，把方程组变成阶梯型（甚至不是这种形状，就是变得好看一些）<br><strong>如何做？</strong></p><p>请看如下方程：<br><img src="http://i2.bvimg.com/633215/21f112f53007cafd.png" alt=""></p><p>$x$系数相同，消去$x$，解得$z$<br>随后，$z$的系数相同，解得$y$<br>代入，解得$x$<br>方程的解为：</p><p><img src="http://i2.bvimg.com/633215/691b0993cd796f33.png" alt=""></p><p>齐次线性方程组：解空间<br>非齐次的：导出组：<br>它的解为一个<strong>线性流形</strong></p><blockquote><p><strong>线性流形是啥？</strong><br>1.开集：设$A$是开集,则对$A$中的任意一点$a$,存在$a$的邻域$o(a)⊆A$<br>2.微分同胚：若$U$、$V$是$n$维实数空间（下面记之为$R^n$）中的开集,一个从$U$到$V$的可微函数$h$,如果从$V$到$U$的可微逆,则称$h$为微分同胚.<br>3.$K$维流形：$R^n$中的子集$M$称为$K$维流形,如果对于$M$中的每一点$x$都满足以下条件：<br>存在一个含$x$的开集U、一个$R^n$中的开集$V$和一个从$U$到$V$的微分同胚$h$,使得<br>$h(U∩V)=V∩(R^k×\{0\})=\{y∈V；y^{k+1}=……=y^n=0\}$<br>4.另一种等价的定义：$R^n$中的子集$M$称为$K$维流形,当且仅当$M$中的每一个点$x$,下述条件成立：<br>存在一个包含$x$的开集$U$,一个$R^k$中的开集$W$以及一个从$W$到$R^n$的$1-1$可微函数$f$,使得：<br>1)$f(W)=M∩U$；<br>2)$f’(y)$对每个$y∈W$的秩为$k$；<br>3)从$f(W)$到$W$的$f$的逆连续.<br>上述条件叫通常叫“坐标条件”,这样的$f$叫做$x$周围的坐标系.<br>5.线性流形,即满足线性运算的流形.<br>例子：<br>1）$R^n$的一个开集<br>2）$n$维球面：$\{x∈R^{n+1}:|x|=1\}$</p></blockquote><p>方程组个数小于未知数个数时一定有解？<br>很小的时候，就听说过老师说方程组个数小于未知数个数时一定有解。不知道大家是怎么理解的。</p><p>方程组可以理解为是用来约束未知数的条件，方程组过多，约束更多，不一定有解。相反地，方程组过少，约束更少，就一定有解。</p><ul><li>真的是这样吗？<br>其实跟系数矩阵的秩有很大的关系</li></ul><h1 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h1><h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><p>向量其实只是一个名称而已,不再代表具体的含义,只是一种形式记号</p><ul><li>和以前的$(x,y)$表示不太一样，以前表示的只是一种有方向的量。写成这样$(x_1,x_2,…,x_n)$<br>这样叫做行向量。相应地，竖着写也行。竖着写叫做列向量。</li></ul><h2 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h2><p>E.g.<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""></p><h2 id="数域上的向量组的线性相关与无关"><a href="#数域上的向量组的线性相关与无关" class="headerlink" title="数域上的向量组的线性相关与无关"></a>数域上的向量组的线性相关与无关</h2><p>我们引入了一个线性代数中相当重要的概念：<strong>线性相关</strong></p><ul><li>什么是线性相关？<br>假如存在<strong>不全为0</strong>的$k_1,k_2,…,k_n$，使得 $k_1\alpha_1+k_2\alpha_2+…+k_n\alpha_n=0$</li></ul><p>则称$k_1,k_2,…,k_n$和$\alpha_1+\alpha_2+…+\alpha_n$线性相关<br>线性：只是将一个向量乘一个常数，并没有一个向量乘一个向量<br>可以通过线性运算整合到一起</p><p>那么<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""><br>是否线性相关？</p><p>这个例子啊，本身判断线性相关或无关其实很困难<br>但是我们看到<br>$\alpha_1+\alpha_2-4\alpha_3=0$<br>也就是说$\alpha_3$可以用$\alpha_1和\alpha_2$表示<br><strong>这个结论很重要，请牢记</strong></p><h2 id="向量组的秩-rank"><a href="#向量组的秩-rank" class="headerlink" title="向量组的秩(rank)"></a>向量组的秩(rank)</h2><p>平时大家都喜欢rank1,rank2，但在这里，rank是秩序的意思QwQ</p><h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><p>线性无关组：线性无关的向量组成的向量组<br>极大线性无关组：一个不能再向里面添加任何其他向量的线性无关组（添加之后就线性有关了）</p><ul><li><p>怎么构造？<br>$\alpha_1,\alpha_2,…\alpha_n$<br>对于每个向量，和之前的向量检验相关性即可<br>虽然检验是否有关的时间复杂度很可怕（误），但这个算法表面上看来是$O(n)$的<br>向量组可以由它表出</p></li><li><p>什么是表出？<br>设$α_1,α_2,…,α_e(e≥1)$是域P上线性空间V中的有限个向量，若V中向量α可以表示为$α=k_1α_1+k_2α_2++…k_eα_e(k_a∈P，a=1,2,…,e)$，则称α是向量组$α_1,α_2,…,α_e(e≥1)$的一个线性组合，亦称α可由向量组$α_1,α_2,…,α_e(e≥1)$线性表示或线性表出。</p></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 讲解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Math theory </tag>
+            
+            <tag> 线性代数 </tag>
             
         </tags>
       
