@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-06T15:09:29.535Z</updated>
+  <updated>2018-09-07T05:12:34.593Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>『ARC 068F』Solitaire</title>
+    <link href="https://skyofwar.xyz/2018/09/07/%E3%80%8EARC%20068F%E3%80%8FSolitaire/"/>
+    <id>https://skyofwar.xyz/2018/09/07/『ARC 068F』Solitaire/</id>
+    <published>2018-09-07T04:54:20.000Z</published>
+    <updated>2018-09-07T05:12:34.593Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『ARC-068F』Solitaire&quot;&gt;&lt;a href=&quot;#『ARC-068F』Solitaire&quot; class=&quot;headerlink&quot; title=&quot;『ARC 068F』Solitaire&quot;&gt;&lt;/a&gt;『ARC 068F』Solitaire&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+&lt;p&gt;将$1-n$顺序加入双端队列（每次可加头可加尾），再删除（每次可删头可删尾），求有多少种删除序列，使得$1$是第$k$个被删的。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://agc023.contest.atcoder.jp/tasks/agc023_f&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="dp" scheme="https://skyofwar.xyz/tags/dp/"/>
+    
+  </entry>
   
   <entry>
     <title>『AGC 023C』Painting Machines</title>
@@ -485,7 +509,7 @@
     
       &lt;h1 id=&quot;记录一次非常感人的Mathematica-Animation…&quot;&gt;&lt;a href=&quot;#记录一次非常感人的Mathematica-Animation…&quot; class=&quot;headerlink&quot; title=&quot;记录一次非常感人的Mathematica Animation…&quot;&gt;&lt;/a&gt;记录一次非常感人的Mathematica Animation…&lt;/h1&gt;&lt;p&gt;自己突发奇想想做一次Lissajous曲线。。&lt;/p&gt;
 &lt;p&gt;Mathematica代码咯：&lt;/p&gt;
-&lt;!--�52--&gt;
+&lt;!--�53--&gt;
 &lt;p&gt;但是我们应该如何导出视频呢？&lt;/p&gt;
     
     </summary>
@@ -526,41 +550,6 @@
       <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
     
       <category term="组合数学" scheme="https://skyofwar.xyz/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Schur不等式的学习感想</title>
-    <link href="https://skyofwar.xyz/2018/08/24/Schur%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%84%9F%E6%83%B3/"/>
-    <id>https://skyofwar.xyz/2018/08/24/Schur不等式的学习感想/</id>
-    <published>2018-08-24T14:57:46.000Z</published>
-    <updated>2018-08-29T09:02:50.011Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Schur不等式的学习感想&quot;&gt;&lt;a href=&quot;#Schur不等式的学习感想&quot; class=&quot;headerlink&quot; title=&quot;Schur不等式的学习感想&quot;&gt;&lt;/a&gt;Schur不等式的学习感想&lt;/h1&gt;&lt;h2 id=&quot;什么是Schur不等式？&quot;&gt;&lt;a href=&quot;#什么是Schur不等式？&quot; class=&quot;headerlink&quot; title=&quot;什么是Schur不等式？&quot;&gt;&lt;/a&gt;什么是Schur不等式？&lt;/h2&gt;&lt;p&gt;设$x,y,z\ge 0,r \in \mathbb {R}$，则&lt;/p&gt;
-&lt;p&gt;$x^r(x-y)(x-z)+y^r(y-x)(y-z)+z^r(z-y)(z-x)\ge 0$&lt;/p&gt;
-&lt;p&gt;当$r=1$时，Schur不等式有几种变形：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;$x^3+y^3+z^3 \geq (x^2y+xy^2+x^2z+xz^2+y^2z+yz^2)-3xyz$&lt;/li&gt;
-&lt;li&gt;$(x+y+z)^3 \geq 4(xy+yz+zx)(x+y+z)-9xyz$&lt;/li&gt;
-&lt;li&gt;$xyz \geq (x+y-z)(y+z-x)(z+x-y)$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;差不多就是这样（个人感觉变形用的炒鸡多…）&lt;/p&gt;
-&lt;p&gt;下面看唯一一道自己做出来的题：（窝太菜了学了这个不等式之后只会做一道）&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="讲解" scheme="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
-    
-    
-      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="数学竞赛" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/"/>
-    
-      <category term="不等式" scheme="https://skyofwar.xyz/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/"/>
     
   </entry>
   

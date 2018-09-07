@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="BZOJ 1059 [ZJOI2007]矩阵游戏这题什么鬼。。第一反应：大暴力？(您的电脑怕不是128位量子计算机哦)原题传送门 题目描述Description　小Q是一个非常聪明的孩子，除了国际象棋，他还很喜欢玩一个电脑益智游戏——矩阵游戏。矩阵游戏在一个$N*N$黑白方阵进行（如同国际象棋一般，只是颜色是随意的）。每次可以对该矩阵进行两种操作：行交换操作：选择矩阵的任意两行，交换这两行（即交换">
-<meta name="keywords" content="匈牙利算法,图论,BZOJ,省队,二分图匹配">
+  <meta name="description" content="『ARC 068F』SolitaireProblemTime limit : 2sec / Memory limit : 256MB 将$1-n$顺序加入双端队列（每次可加头可加尾），再删除（每次可删头可删尾），求有多少种删除序列，使得$1$是第$k$个被删的。 传送门">
+<meta name="keywords" content="Atcoder,dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「BZOJ 1059」 [ZJOI2007]矩阵游戏">
-<meta property="og:url" content="https://skyofwar.xyz/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/index.html">
+<meta property="og:title" content="『ARC 068F』Solitaire">
+<meta property="og:url" content="https://skyofwar.xyz/2018/09/07/『ARC 068F』Solitaire/index.html">
 <meta property="og:site_name" content="Sky of war">
-<meta property="og:description" content="BZOJ 1059 [ZJOI2007]矩阵游戏这题什么鬼。。第一反应：大暴力？(您的电脑怕不是128位量子计算机哦)原题传送门 题目描述Description　小Q是一个非常聪明的孩子，除了国际象棋，他还很喜欢玩一个电脑益智游戏——矩阵游戏。矩阵游戏在一个$N*N$黑白方阵进行（如同国际象棋一般，只是颜色是随意的）。每次可以对该矩阵进行两种操作：行交换操作：选择矩阵的任意两行，交换这两行（即交换">
+<meta property="og:description" content="『ARC 068F』SolitaireProblemTime limit : 2sec / Memory limit : 256MB 将$1-n$顺序加入双端队列（每次可加头可加尾），再删除（每次可删头可删尾），求有多少种删除序列，使得$1$是第$k$个被删的。 传送门">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-06T07:40:36.872Z">
+<meta property="og:updated_time" content="2018-09-07T05:12:34.593Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「BZOJ 1059」 [ZJOI2007]矩阵游戏">
-<meta name="twitter:description" content="BZOJ 1059 [ZJOI2007]矩阵游戏这题什么鬼。。第一反应：大暴力？(您的电脑怕不是128位量子计算机哦)原题传送门 题目描述Description　小Q是一个非常聪明的孩子，除了国际象棋，他还很喜欢玩一个电脑益智游戏——矩阵游戏。矩阵游戏在一个$N*N$黑白方阵进行（如同国际象棋一般，只是颜色是随意的）。每次可以对该矩阵进行两种操作：行交换操作：选择矩阵的任意两行，交换这两行（即交换">
+<meta name="twitter:title" content="『ARC 068F』Solitaire">
+<meta name="twitter:description" content="『ARC 068F』SolitaireProblemTime limit : 2sec / Memory limit : 256MB 将$1-n$顺序加入双端队列（每次可加头可加尾），再删除（每次可删头可删尾），求有多少种删除序列，使得$1$是第$k$个被删的。 传送门">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://skyofwar.xyz/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/"/>
+  <link rel="canonical" href="https://skyofwar.xyz/2018/09/07/『ARC 068F』Solitaire/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>「BZOJ 1059」 [ZJOI2007]矩阵游戏 | Sky of war</title>
+  <title>『ARC 068F』Solitaire | Sky of war</title>
   
 
 
@@ -350,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/09/07/『ARC 068F』Solitaire/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sky of war">
@@ -367,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">「BZOJ 1059」 [ZJOI2007]矩阵游戏
+          <h1 class="post-title" itemprop="name headline">『ARC 068F』Solitaire
               
             
           </h1>
@@ -392,24 +392,12 @@
                 
               
 
-              <time title="创建时间：2018-03-06 22:00:22" itemprop="dateCreated datePublished" datetime="2018-03-06T22:00:22+08:00">2018-03-06</time>
+              <time title="创建时间：2018-09-07 12:54:20 / 修改时间：13:12:34" itemprop="dateCreated datePublished" datetime="2018-09-07T12:54:20+08:00">2018-09-07</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-06 15:40:36" itemprop="dateModified" datetime="2018-05-06T15:40:36+08:00">2018-05-06</time>
               
             
           </span>
@@ -468,24 +456,35 @@
       
 
       
-        <h1 id="BZOJ-1059-ZJOI2007-矩阵游戏"><a href="#BZOJ-1059-ZJOI2007-矩阵游戏" class="headerlink" title="BZOJ 1059 [ZJOI2007]矩阵游戏"></a>BZOJ 1059 [ZJOI2007]矩阵游戏</h1><p>这题什么鬼。。<br>第一反应：大暴力？<br>(您的电脑怕不是128位量子计算机哦)<br><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1059" target="_blank" rel="noopener">原题传送门</a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><strong>Description</strong><br>　小Q是一个非常聪明的孩子，除了国际象棋，他还很喜欢玩一个电脑益智游戏——矩阵游戏。矩阵游戏在一个$N*N$黑白方阵进行（如同国际象棋一般，只是颜色是随意的）。每次可以对该矩阵进行两种操作：行交换操作：选择矩阵的任意两行，交换这两行（即交换对应格子的颜色）列交换操作：选择矩阵的任意行列，交换这两列（即交换对应格子的颜色）游戏的目标，即通过若干次操作，使得方阵的主对角线(左上角到右下角的连线)上的格子均为黑色。对于某些关卡，小Q百思不得其解，以致他开始怀疑这些关卡是不是根本就是无解的！！于是小Q决定写一个程序来判断这些关卡是否有解。</p>
-<p><strong>Input</strong><br>第一行包含一个整数$T$，表示数据的组数。接下来包含$T$组数据，每组数据第一行为一个整数$N$，表示方阵的大<br>小；接下来$N$行为一个$N*N$的$01$矩阵（$0$表示白色，$1$表示黑色）。</p>
-<p><strong>Output</strong><br>输出文件应包含$T$行。对于每一组数据，如果该关卡有解，输出一行$Yes$；否则输出一行$No$。</p>
-<p><strong>Sample Input</strong><br>2<br>2<br>0 0<br>0 1<br>3<br>0 0 1<br>0 1 0<br>1 0 0</p>
-<p><strong>Sample Output</strong><br>No<br>Yes</p>
-<p><strong>HINT</strong></p>
-<p>「数据规模」<br>对于$20%$的数据，$N ≤ 7$<br>对于$50%$的数据，$N ≤ 50$<br>对于$100%$的数据，$N ≤ 200$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>emmm</p>
+        <h1 id="『ARC-068F』Solitaire"><a href="#『ARC-068F』Solitaire" class="headerlink" title="『ARC 068F』Solitaire"></a>『ARC 068F』Solitaire</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Time limit : 2sec / Memory limit : 256MB</p>
+<p>将$1-n$顺序加入双端队列（每次可加头可加尾），再删除（每次可删头可删尾），求有多少种删除序列，使得$1$是第$k$个被删的。</p>
+<p><a href="https://agc023.contest.atcoder.jp/tasks/agc023_f" target="_blank" rel="noopener">传送门</a></p>
+<a id="more"></a>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>考虑合法的删除序列，发现满足如下的性质：</p>
 <ul>
-<li>其实答案就是让你求是否可以找出n个点使得两两不同行且两两不同列</li>
-<li>这点非常重要</li>
-<li>想到了之后 恍然大悟</li>
-<li>哦，原来只要把<strong>所有行看成左边n个点，所有列看成右边n个点，如果(i,j)是黑边就把左边第i个点与右边第j个点连边</strong>就可以了！</li>
-<li>用vector模拟邻接链表的做法，和匈牙利算法搭配，时间复杂度为$O(nm)$</li>
+<li><p>第$k$个是$1$</p>
+</li>
+<li><p>前$k-1​$个元素能拆分成两个单调下降序列</p>
+</li>
+<li>第$k$个后的元素每个位置都大于等于后缀最大值或小于等于后缀最小值</li>
+<li>前$k-1$个元素拆分出的单调下降序列其中一个的最小值大于等于第$k$个后的元素的最大值</li>
 </ul>
-<p>下面贴出AC源码，这次貌似没什么好解释的<del>（主要是因为懒）</del></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 210</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; G[maxn];</span><br><span class="line"><span class="keyword">int</span> mate[maxn];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G[x].size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> k = G[x][i];</span><br><span class="line">		<span class="keyword">if</span> (!vis[k])</span><br><span class="line">		&#123;</span><br><span class="line">			vis[k] = <span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">if</span> (!mate[k] || dfs(mate[k]))</span><br><span class="line">			&#123;</span><br><span class="line">				mate[k] = x;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">memset</span>(mate, <span class="number">0</span>, <span class="keyword">sizeof</span> mate);</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">		<span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			G[i].clear();			<span class="comment">//一定要有这一句，爱写vector的小朋友们注意了。。</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> x;</span><br><span class="line">				<span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">				<span class="keyword">if</span> (x == <span class="number">1</span>) G[i].push_back(j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span> vis);</span><br><span class="line">			<span class="keyword">if</span> (!dfs(i))</span><br><span class="line">			&#123;</span><br><span class="line">				flag = <span class="literal">false</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (!flag) <span class="built_in">puts</span>(<span class="string">"No"</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"Yes"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>思考怎么构造这个删除序列</p>
+<p>先考虑后$n-k-1$个数，这些数一定是由一个单调的队列每次弹出头或尾来构成的，只要我们确定前$k-1$个数，就可以得出这个单调的队列能构成的后$n-k-1$个数的方案，就是$2^{n-k-1}$</p>
+<p>问题来了，我们应该如何确定前$k-1$个数，使其满足第二条性质呢？</p>
+<blockquote>
+<p>设$f_{i,j}$表示，前$k-1$个数中，已确定了$i$个数，在已经确定的数中的最小值为$j$。 </p>
+</blockquote>
+<p>如果加进第一个单调序列，那么第二个单调序列就要满足第4条性质</p>
+<p>新加一个数时，加进第一个单调序列，显然加入的数就要小于$j $</p>
+<p>这时$f_{i,j}$转移到$f_{i+1,k}(k&lt;j)$</p>
+<p>如果加进第二个单调序列，则加入的数就要是当前没加的数中最大的</p>
+<p>这时$f_{i,j}$转移到$f_{i+1,j}$</p>
+<p>Code:</p>
+<div><div class="fold_hider"><div class="close hider_title">Click to show/hide the code</div></div><div class="fold">
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> mo = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">3000</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, k;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans, po[MAXN], f[MAXN][MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">	po[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) po[i] = po[i - <span class="number">1</span>] * <span class="number">2</span> % mo;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = n; i &gt;= <span class="number">2</span>; i--) f[<span class="number">1</span>][i] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">register</span> <span class="keyword">long</span> <span class="keyword">long</span> sum = f[i][n - i + <span class="number">1</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = n - i; j &gt;= <span class="number">2</span>; j--)</span><br><span class="line">		&#123;</span><br><span class="line">			sum = (sum + f[i][j]) % mo;</span><br><span class="line">			f[i + <span class="number">1</span>][j] = (f[i + <span class="number">1</span>][j] + sum) % mo;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">2</span>; j &lt;= n - k + <span class="number">2</span>; j++) ans = (ans + f[k - <span class="number">1</span>][j]) % mo;</span><br><span class="line">	<span class="keyword">if</span> (k == <span class="number">1</span>) ans = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (n - <span class="number">1</span> - k &lt; <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; ans * po[n - <span class="number">1</span> - k] % mo;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
       
     </div>
 
@@ -519,7 +518,7 @@
     <strong>本文作者： </strong>Sky of war</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://skyofwar.xyz/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/" title="「BZOJ 1059」 [ZJOI2007]矩阵游戏">https://skyofwar.xyz/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/</a>
+    <a href="https://skyofwar.xyz/2018/09/07/『ARC 068F』Solitaire/" title="『ARC 068F』Solitaire">https://skyofwar.xyz/2018/09/07/『ARC 068F』Solitaire/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -532,15 +531,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/匈牙利算法/" rel="tag"><i class="fa fa-tag"></i> 匈牙利算法</a>
+            <a href="/tags/Atcoder/" rel="tag"><i class="fa fa-tag"></i> Atcoder</a>
           
-            <a href="/tags/图论/" rel="tag"><i class="fa fa-tag"></i> 图论</a>
-          
-            <a href="/tags/BZOJ/" rel="tag"><i class="fa fa-tag"></i> BZOJ</a>
-          
-            <a href="/tags/省队/" rel="tag"><i class="fa fa-tag"></i> 省队</a>
-          
-            <a href="/tags/二分图匹配/" rel="tag"><i class="fa fa-tag"></i> 二分图匹配</a>
+            <a href="/tags/dp/" rel="tag"><i class="fa fa-tag"></i> dp</a>
           
         </div>
       
@@ -553,8 +546,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/05/「BZOJ 2818」 GCD/" rel="next" title="「BZOJ 2818」 GCD">
-                <i class="fa fa-chevron-left"></i> 「BZOJ 2818」 GCD
+              <a href="/2018/09/06/『AGC 023C』Painting Machines/" rel="next" title="『AGC 023C』Painting Machines">
+                <i class="fa fa-chevron-left"></i> 『AGC 023C』Painting Machines
               </a>
             
           </div>
@@ -562,10 +555,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/07/C++求解N阶幻方/" rel="prev" title="C++求解N阶幻方">
-                C++求解N阶幻方 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -952,7 +941,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BZOJ-1059-ZJOI2007-矩阵游戏"><span class="nav-number">1.</span> <span class="nav-text">BZOJ 1059 [ZJOI2007]矩阵游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#『ARC-068F』Solitaire"><span class="nav-number">1.</span> <span class="nav-text">『ARC 068F』Solitaire</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
             
 
           </div>

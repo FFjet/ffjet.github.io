@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/09/07/%E3%80%8EARC%20068F%E3%80%8FSolitaire/</loc>
+    <lastmod>2018-09-07T05:12:34.593Z</lastmod>
+    <data>
+        <display>
+        <title>『ARC 068F』Solitaire</title>
+        <pubTime>2018-09-07T04:54:20.000Z</pubTime>
+        
+        <tag>Atcoder</tag>
+         
+        <tag>dp</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/09/06/%E3%80%8EAGC%20023F%E3%80%8F01%20on%20Tree/</loc>
     <lastmod>2018-09-07T04:36:26.166Z</lastmod>
     <data>
@@ -149,13 +171,13 @@
         <title>「Codeforces 825B」Five-In-a-Row</title>
         <pubTime>2018-05-06T07:38:00.000Z</pubTime>
         
-        <tag>水题</tag>
-         
-        <tag>DP</tag>
-         
         <tag>Codeforces</tag>
          
         <tag>模拟</tag>
+         
+        <tag>水题</tag>
+         
+        <tag>DP</tag>
          
          
            
@@ -1061,11 +1083,11 @@
         <title>「BZOJ 1059」 [ZJOI2007]矩阵游戏</title>
         <pubTime>2018-03-06T14:00:22.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>匈牙利算法</tag>
          
         <tag>图论</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>省队</tag>
          

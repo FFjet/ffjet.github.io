@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>『ARC 068F』Solitaire</title>
+      <link href="/2018/09/07/%E3%80%8EARC%20068F%E3%80%8FSolitaire/"/>
+      <url>/2018/09/07/%E3%80%8EARC%20068F%E3%80%8FSolitaire/</url>
+      <content type="html"><![CDATA[<h1 id="『ARC-068F』Solitaire"><a href="#『ARC-068F』Solitaire" class="headerlink" title="『ARC 068F』Solitaire"></a>『ARC 068F』Solitaire</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Time limit : 2sec / Memory limit : 256MB</p><p>将$1-n$顺序加入双端队列（每次可加头可加尾），再删除（每次可删头可删尾），求有多少种删除序列，使得$1$是第$k$个被删的。</p><p><a href="https://agc023.contest.atcoder.jp/tasks/agc023_f" target="_blank" rel="noopener">传送门</a></p><a id="more"></a><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>考虑合法的删除序列，发现满足如下的性质：</p><ul><li><p>第$k$个是$1$</p></li><li><p>前$k-1​$个元素能拆分成两个单调下降序列</p></li><li>第$k$个后的元素每个位置都大于等于后缀最大值或小于等于后缀最小值</li><li>前$k-1$个元素拆分出的单调下降序列其中一个的最小值大于等于第$k$个后的元素的最大值</li></ul><p>思考怎么构造这个删除序列</p><p>先考虑后$n-k-1$个数，这些数一定是由一个单调的队列每次弹出头或尾来构成的，只要我们确定前$k-1$个数，就可以得出这个单调的队列能构成的后$n-k-1$个数的方案，就是$2^{n-k-1}$</p><p>问题来了，我们应该如何确定前$k-1$个数，使其满足第二条性质呢？</p><blockquote><p>设$f_{i,j}$表示，前$k-1$个数中，已确定了$i$个数，在已经确定的数中的最小值为$j$。 </p></blockquote><p>如果加进第一个单调序列，那么第二个单调序列就要满足第4条性质</p><p>新加一个数时，加进第一个单调序列，显然加入的数就要小于$j $</p><p>这时$f_{i,j}$转移到$f_{i+1,k}(k&lt;j)$</p><p>如果加进第二个单调序列，则加入的数就要是当前没加的数中最大的</p><p>这时$f_{i,j}$转移到$f_{i+1,j}$</p><p>Code:</p><div><div class="fold_hider"><div class="close hider_title">Click to show/hide the code</div></div><div class="fold"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> mo = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">3000</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, k;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans, po[MAXN], f[MAXN][MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line"><span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">po[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) po[i] = po[i - <span class="number">1</span>] * <span class="number">2</span> % mo;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = n; i &gt;= <span class="number">2</span>; i--) f[<span class="number">1</span>][i] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k - <span class="number">1</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">register</span> <span class="keyword">long</span> <span class="keyword">long</span> sum = f[i][n - i + <span class="number">1</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = n - i; j &gt;= <span class="number">2</span>; j--)</span><br><span class="line">&#123;</span><br><span class="line">sum = (sum + f[i][j]) % mo;</span><br><span class="line">f[i + <span class="number">1</span>][j] = (f[i + <span class="number">1</span>][j] + sum) % mo;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">2</span>; j &lt;= n - k + <span class="number">2</span>; j++) ans = (ans + f[k - <span class="number">1</span>][j]) % mo;</span><br><span class="line"><span class="keyword">if</span> (k == <span class="number">1</span>) ans = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (n - <span class="number">1</span> - k &lt; <span class="number">0</span>) <span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line"><span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; ans * po[n - <span class="number">1</span> - k] % mo;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div>]]></content>
+      
+      <categories>
+          
+          <category> 题解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Atcoder </tag>
+            
+            <tag> dp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>『AGC 023C』Painting Machines</title>
       <link href="/2018/09/06/%E3%80%8EAGC%20023C%E3%80%8FPainting%20Machines/"/>
       <url>/2018/09/06/%E3%80%8EAGC%20023C%E3%80%8FPainting%20Machines/</url>
@@ -697,13 +720,13 @@
       
         <tags>
             
-            <tag> 水题 </tag>
-            
-            <tag> DP </tag>
-            
             <tag> Codeforces </tag>
             
             <tag> 模拟 </tag>
+            
+            <tag> 水题 </tag>
+            
+            <tag> DP </tag>
             
         </tags>
       
@@ -1232,11 +1255,11 @@
       
         <tags>
             
-            <tag> BZOJ </tag>
-            
             <tag> 匈牙利算法 </tag>
             
             <tag> 图论 </tag>
+            
+            <tag> BZOJ </tag>
             
             <tag> 省队 </tag>
             
@@ -1414,29 +1437,6 @@
     </entry>
     
     <entry>
-      <title>如何卸载hexo</title>
-      <link href="/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/"/>
-      <url>/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/</url>
-      <content type="html"><![CDATA[<p>安装了hexo，出了问题，该如何卸载呢？<br>对于2.x版本的hexo,我们知道安装命令为<br><code>npm install hexo -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo -g</code></p><p>对于3.x版本的hexo,我们知道安装命令为<br><code>npm install hexo-cli -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo-cli -g</code></p>]]></content>
-      
-      <categories>
-          
-          <category> 日常小知识 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-            <tag> bash </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>线性代数基础 1</title>
       <link href="/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/"/>
       <url>/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/</url>
@@ -1454,6 +1454,29 @@
             <tag> Math theory </tag>
             
             <tag> 线性代数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>如何卸载hexo</title>
+      <link href="/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/"/>
+      <url>/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/</url>
+      <content type="html"><![CDATA[<p>安装了hexo，出了问题，该如何卸载呢？<br>对于2.x版本的hexo,我们知道安装命令为<br><code>npm install hexo -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo -g</code></p><p>对于3.x版本的hexo,我们知道安装命令为<br><code>npm install hexo-cli -g</code><br>那么我们只需要把install替换为uninstall即可，相应的命令为<br><code>npm uninstall hexo-cli -g</code></p>]]></content>
+      
+      <categories>
+          
+          <category> 日常小知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+            <tag> bash </tag>
             
         </tags>
       
