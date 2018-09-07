@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-07T05:12:34.593Z</updated>
+  <updated>2018-09-07T15:11:16.914Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -17,17 +17,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>『AGC 006F』Blackout</title>
+    <link href="https://skyofwar.xyz/2018/09/07/%E3%80%8EAGC%20006F%E3%80%8FBlackout/"/>
+    <id>https://skyofwar.xyz/2018/09/07/『AGC 006F』Blackout/</id>
+    <published>2018-09-07T15:11:27.000Z</published>
+    <updated>2018-09-07T15:11:16.914Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『AGC-006F』Blackout&quot;&gt;&lt;a href=&quot;#『AGC-006F』Blackout&quot; class=&quot;headerlink&quot; title=&quot;『AGC 006F』Blackout&quot;&gt;&lt;/a&gt;『AGC 006F』Blackout&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+&lt;p&gt;题意简述：&lt;/p&gt;
+&lt;p&gt;给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z-&amp;gt;x$。  重复该过程直到不能再添加，求最终图中有多少边。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://agc006.contest.atcoder.jp/tasks/agc006_f&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="图论" scheme="https://skyofwar.xyz/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="二分图" scheme="https://skyofwar.xyz/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
+    
+      <category term="染色" scheme="https://skyofwar.xyz/tags/%E6%9F%93%E8%89%B2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>『ARC 068F』Solitaire</title>
     <link href="https://skyofwar.xyz/2018/09/07/%E3%80%8EARC%20068F%E3%80%8FSolitaire/"/>
     <id>https://skyofwar.xyz/2018/09/07/『ARC 068F』Solitaire/</id>
     <published>2018-09-07T04:54:20.000Z</published>
-    <updated>2018-09-07T05:12:34.593Z</updated>
+    <updated>2018-09-07T14:22:16.462Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;『ARC-068F』Solitaire&quot;&gt;&lt;a href=&quot;#『ARC-068F』Solitaire&quot; class=&quot;headerlink&quot; title=&quot;『ARC 068F』Solitaire&quot;&gt;&lt;/a&gt;『ARC 068F』Solitaire&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;将$1-n$顺序加入双端队列（每次可加头可加尾），再删除（每次可删头可删尾），求有多少种删除序列，使得$1$是第$k$个被删的。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://agc023.contest.atcoder.jp/tasks/agc023_f&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arc068.contest.atcoder.jp/tasks/arc068_d&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -509,7 +538,7 @@
     
       &lt;h1 id=&quot;记录一次非常感人的Mathematica-Animation…&quot;&gt;&lt;a href=&quot;#记录一次非常感人的Mathematica-Animation…&quot; class=&quot;headerlink&quot; title=&quot;记录一次非常感人的Mathematica Animation…&quot;&gt;&lt;/a&gt;记录一次非常感人的Mathematica Animation…&lt;/h1&gt;&lt;p&gt;自己突发奇想想做一次Lissajous曲线。。&lt;/p&gt;
 &lt;p&gt;Mathematica代码咯：&lt;/p&gt;
-&lt;!--�53--&gt;
+&lt;!--�54--&gt;
 &lt;p&gt;但是我们应该如何导出视频呢？&lt;/p&gt;
     
     </summary>
@@ -520,36 +549,6 @@
       <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="MMA" scheme="https://skyofwar.xyz/tags/MMA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一些关于组合的公式......</title>
-    <link href="https://skyofwar.xyz/2018/08/28/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8E%E7%BB%84%E5%90%88%E7%9A%84%E5%85%AC%E5%BC%8F/"/>
-    <id>https://skyofwar.xyz/2018/08/28/一些关于组合的公式/</id>
-    <published>2018-08-28T14:19:53.000Z</published>
-    <updated>2018-08-28T14:21:58.452Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;一些关于组合的公式……&quot;&gt;&lt;a href=&quot;#一些关于组合的公式……&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="资源" scheme="https://skyofwar.xyz/categories/%E8%B5%84%E6%BA%90/"/>
-    
-    
-      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="高等数学" scheme="https://skyofwar.xyz/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="组合数学" scheme="https://skyofwar.xyz/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
