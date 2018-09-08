@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-07T15:11:16.914Z</updated>
+  <updated>2018-09-08T05:19:57.082Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>『ARC 084D』Small Multiple</title>
+    <link href="https://skyofwar.xyz/2018/09/08/%E3%80%8EARC%20084D%E3%80%8FSmall%20Multiple/"/>
+    <id>https://skyofwar.xyz/2018/09/08/『ARC 084D』Small Multiple/</id>
+    <published>2018-09-08T04:51:20.000Z</published>
+    <updated>2018-09-08T05:19:57.082Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『ARC-084D』Small-Multiple&quot;&gt;&lt;a href=&quot;#『ARC-084D』Small-Multiple&quot; class=&quot;headerlink&quot; title=&quot;『ARC 084D』Small Multiple&quot;&gt;&lt;/a&gt;『ARC 084D』Small Multiple&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+&lt;p&gt;求一个$k$的倍数使其数位和最小，输出数位和，$k \leqslant 10^5$。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arc084.contest.atcoder.jp/tasks/arc084_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="图论" scheme="https://skyofwar.xyz/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="最短路" scheme="https://skyofwar.xyz/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>『AGC 006F』Blackout</title>
@@ -171,9 +197,9 @@
       <category term="复习" scheme="https://skyofwar.xyz/categories/%E5%A4%8D%E4%B9%A0/"/>
     
     
-      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
       <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
+    
+      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
@@ -349,9 +375,9 @@
     
       <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="Codeforces" scheme="https://skyofwar.xyz/tags/Codeforces/"/>
-    
       <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="Codeforces" scheme="https://skyofwar.xyz/tags/Codeforces/"/>
     
   </entry>
   
@@ -524,31 +550,6 @@
       <category term="sort" scheme="https://skyofwar.xyz/tags/sort/"/>
     
       <category term="JZOJ" scheme="https://skyofwar.xyz/tags/JZOJ/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记录一次非常感人的Mathematica Animation(Lissajous曲线)...</title>
-    <link href="https://skyofwar.xyz/2018/08/28/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E9%9D%9E%E5%B8%B8%E6%84%9F%E4%BA%BA%E7%9A%84Mathematica%20Animation/"/>
-    <id>https://skyofwar.xyz/2018/08/28/记录一次非常感人的Mathematica Animation/</id>
-    <published>2018-08-28T14:55:00.000Z</published>
-    <updated>2018-08-29T09:02:34.867Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;记录一次非常感人的Mathematica-Animation…&quot;&gt;&lt;a href=&quot;#记录一次非常感人的Mathematica-Animation…&quot; class=&quot;headerlink&quot; title=&quot;记录一次非常感人的Mathematica Animation…&quot;&gt;&lt;/a&gt;记录一次非常感人的Mathematica Animation…&lt;/h1&gt;&lt;p&gt;自己突发奇想想做一次Lissajous曲线。。&lt;/p&gt;
-&lt;p&gt;Mathematica代码咯：&lt;/p&gt;
-&lt;!--�54--&gt;
-&lt;p&gt;但是我们应该如何导出视频呢？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="教程" scheme="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="MMA" scheme="https://skyofwar.xyz/tags/MMA/"/>
     
   </entry>
   

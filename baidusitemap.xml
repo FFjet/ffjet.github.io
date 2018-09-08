@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/09/08/%E3%80%8EARC%20084D%E3%80%8FSmall%20Multiple/</loc>
+    <lastmod>2018-09-08T05:19:57.082Z</lastmod>
+    <data>
+        <display>
+        <title>『ARC 084D』Small Multiple</title>
+        <pubTime>2018-09-08T04:51:20.000Z</pubTime>
+        
+        <tag>图论</tag>
+         
+        <tag>Atcoder</tag>
+         
+        <tag>最短路</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/09/07/%E3%80%8EAGC%20006F%E3%80%8FBlackout/</loc>
     <lastmod>2018-09-07T15:11:16.914Z</lastmod>
     <data>
@@ -133,9 +157,9 @@
         <title>OI代码模板计划 - 后缀数组</title>
         <pubTime>2018-09-03T14:50:00.000Z</pubTime>
         
-        <tag>模板</tag>
-         
         <tag>strings</tag>
+         
+        <tag>模板</tag>
          
          
            
@@ -197,13 +221,13 @@
         <title>「Codeforces 825B」Five-In-a-Row</title>
         <pubTime>2018-05-06T07:38:00.000Z</pubTime>
         
-        <tag>Codeforces</tag>
-         
-        <tag>模拟</tag>
-         
         <tag>水题</tag>
          
         <tag>DP</tag>
+         
+        <tag>Codeforces</tag>
+         
+        <tag>模拟</tag>
          
          
            
@@ -346,9 +370,9 @@
         
         <tag>数学</tag>
          
-        <tag>Codeforces</tag>
-         
         <tag>Tricks</tag>
+         
+        <tag>Codeforces</tag>
          
          
            

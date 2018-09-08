@@ -349,6 +349,193 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/08/ST表详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sky of war">
+      <meta itemprop="description" content="Why I gotta fly? The boundlessness precipitates me to do so.">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sky of war">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/08/ST表详解/" itemprop="url">
+                  ST表详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-08 22:31:41" itemprop="dateCreated datePublished" datetime="2018-03-08T22:31:41+08:00">2018-03-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-31 10:50:24" itemprop="dateModified" datetime="2018-03-31T10:50:24+08:00">2018-03-31</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/讲解/" itemprop="url" rel="index"><span itemprop="name">讲解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><ul>
+<li>ST算法是用来求解给定区间的最值的</li>
+</ul>
+<h1 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h1><ul>
+<li>ST算法分成两部分：离线预处理 $O(nlogn)$和 在线查询$O(1)$。虽然还可以使用线段树、树状链表等求解区间最值，但是ST算法要比它们更快，而且适用于在线查询。</li>
+</ul>
+<h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><h2 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h2><ul>
+<li>就是DP， 用于求解区间最值，并保存到一个二维数组中</li>
+<li>使用倍增的思想，每次增加2^i个长度<br>使用$f[i,j]$表示以$i$为起点，区间长度为$2^j$的区间最值，此时区间为$[i,i + 2^j - 1]$。<br>比如，$f[0,2]$表示区间$[0,3]$的最小值，即等于$4$，$f[2,2]$表示区间$[2,5]$的最小值，即等于$1$。<br>在求解$f[i,j]$时，ST算法先对长度为$2^j$的区间$[i,i + 2^j - 1]$分成两等份，每份长度均为$2^{j - 1}$。之后在分别求解这两个区间的最值$f[i,j - 1]$和$f[i + 2^{j - 1},j - 1]$。，最后在结合这两个区间的最值，求出整个区间的最值。特殊情况，当$j = 0$时，区间长度等于$1$，即区间中只有一个元素，此时$f[i,0]$应等于每一个元素的值。<br>举例：要求解$f[1,2]$的值，即求解区间$[1,4] = \{4,6,10,1\}$的最小值，此时需要把这个区间分成两个等长的区间，即为$[1,2]$和$[3,4]$，之后分别求解这两个区间的最小值。此时这两个区间最小值分别对应着$f[1,1]$ 和 $f[3,1]$的值。<br>状态转移方程: $f[i,j] = min(f[i,j - 1],f[i + 2^{j-1},j - 1])$<br>初始状态为：$f[i,0] = data[i]$</li>
+</ul>
+<h2 id="求最值"><a href="#求最值" class="headerlink" title="求最值"></a>求最值</h2><p>已知待查询的区间$[x,y]$，求最值</p>
+<p>我们把待查询的区间分成<strong>两个小区间</strong>，这两个小区间满足两个条件：<br>（1）这两个小区间要能覆盖整个区间<br>（2）为了利用预处理的结果，要求小区间长度相等且都为$2^i$。注意两个小区间可能重叠。</p>
+<p>我们可以直接得到两段区间的$i=log_2^{l-r+1}$</p>
+<p>把待查询区间$[x，y]$分成两个小区间$[x，x + 2^i - 1]$ 和 $[y - 2^i + 1，y]$，其又分别对应着$f[x,i]$和$f[y - 2^i + 1,i]$，此时为了求解整个区间的最小值，我们只需求这两个值得最小值即可，此时复杂度是$O(1)$。</p>
+<p>下面给出完整的代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Sparse_Table ST</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sparse_Table</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="meta">#<span class="meta-keyword">define</span> MAXN 233333</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> MAXEXPO 32</span></span><br><span class="line">    <span class="comment">//这边列表示2的幂次，32足够int类型使用</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> QMax[MAXN][MAXEXPO];</span><br><span class="line">	<span class="keyword">int</span> QMin[MAXN][MAXEXPO];</span><br><span class="line">	</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> N;</span><br><span class="line">	<span class="keyword">int</span> data[MAXN];</span><br><span class="line">	<span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">log2</span><span class="params">(<span class="keyword">double</span> a)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="keyword">double</span>)<span class="built_in">log</span>(a) / <span class="built_in">log</span>(<span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">initST</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>; (<span class="number">2</span> &lt;&lt; j) &lt;&lt; N; ++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= N; ++i)</span><br><span class="line">			&#123;</span><br><span class="line">				QMax[i][j] = max(QMax[i][j - <span class="number">1</span>], QMax[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);	<span class="comment">//一定要注意是(1&lt;&lt;(j-1)),表示2^(j-1)</span></span><br><span class="line">				QMin[i][j] = min(QMin[i][j - <span class="number">1</span>], QMin[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">QueryMin</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> k = log2(<span class="built_in">abs</span>(r - l + <span class="number">1</span>));</span><br><span class="line">		<span class="keyword">return</span> min(QMin[l][k], QMin[r - (<span class="number">1</span> &lt;&lt; k) + <span class="number">1</span>][k]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">QueryMax</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> k = log2(<span class="built_in">abs</span>(r - l + <span class="number">1</span>));</span><br><span class="line">		<span class="keyword">return</span> max(QMax[l][k], QMax[r - (<span class="number">1</span> &lt;&lt; k) + <span class="number">1</span>][k]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">ST A;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; A.N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= A.N; ++i)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; A.data[i];</span><br><span class="line">	A.initST();</span><br><span class="line">	<span class="keyword">int</span> Queries;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter your number of queries:"</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; Queries;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= Queries; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x, y;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"MAXINUM Between "</span> &lt;&lt; x &lt;&lt; <span class="string">" and "</span> &lt;&lt; y &lt;&lt; <span class="string">" is "</span> &lt;&lt; A.QueryMax(x, y) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"MININUM Between "</span> &lt;&lt; x &lt;&lt; <span class="string">" and "</span> &lt;&lt; y &lt;&lt; <span class="string">" is "</span> &lt;&lt; A.QueryMin(x, y) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/07/C++求解N阶幻方/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1995,222 +2182,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/21/线性代数基础1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sky of war">
-      <meta itemprop="description" content="Why I gotta fly? The boundlessness precipitates me to do so.">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sky of war">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/21/线性代数基础1/" itemprop="url">
-                  线性代数基础 1
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-21 16:01:41" itemprop="dateCreated datePublished" datetime="2018-02-21T16:01:41+08:00">2018-02-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-03-31 10:52:45" itemprop="dateModified" datetime="2018-03-31T10:52:45+08:00">2018-03-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/讲解/" itemprop="url" rel="index"><span itemprop="name">讲解</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="复数的基本知识"><a href="#复数的基本知识" class="headerlink" title="复数的基本知识"></a>复数的基本知识</h2><p>形如$a+bi(a,b∈R)$的数称为复数，其中a称为实部，b称为虚部，i称为虚数单位。当虚部等于零时，这个复数可以视为实数；当z的虚部不等于零时，实部等于零时，常称z为纯虚数。复数域是实数域的代数闭包，也即任何复系数多项式在复数域中总有根。</p>
-<h2 id="数域的概念"><a href="#数域的概念" class="headerlink" title="数域的概念"></a>数域的概念</h2><p>设$P$是由一些数组成的集合，如果$P$中任意两个数的和、差、积、商（除数不为0）仍是$P$中的数，则称$P$为一个数域。</p>
-<ul>
-<li>常见数域： 复数域$C$；实数域$R$；有理数域$Q$。</li>
-<li>若数集$P$中任意两个数作某一运算的结果仍在$P$中，则说数集$P$对这个运算是封闭的。</li>
-<li>数域的等价定义：如果一个包含0，1在内的数集$P$对于加法，减法，乘法与除法（除数不为0）是封闭的，则称数集$P$为一个数域。</li>
-</ul>
-<h1 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h1><h2 id="什么是线性方程组"><a href="#什么是线性方程组" class="headerlink" title="什么是线性方程组?"></a>什么是线性方程组?</h2><p>线性方程组长这样:<br><img src="http://i2.bvimg.com/633215/0f549ce81e86dc1a.png" alt=""></p>
-<p>m个方程,n个未知数<br>比较大的，比较复杂的<br>所谓线性，就是没有平方啊，立方啊，$ e^x $ 啊，$ sin^x $ 之类的东西，全部都是$ax+b$的形式</p>
-<h2 id="那么这种线性方程组怎么解呢？"><a href="#那么这种线性方程组怎么解呢？" class="headerlink" title="那么这种线性方程组怎么解呢？"></a>那么这种线性方程组怎么解呢？</h2><p><strong>高斯消元</strong><br>首先我们要知道<br>初等行变换的三种形式<br>1) 把一行乘上若干倍（当然是非0数）<br>2) 把一行减去另一行<br>3) 把两行互换位置<br>初等变换是<strong>可逆</strong>的</p>
-<p>也就是说<br>1) 两方程互换，解不变；<br>2) 一方程乘以非零数$k$，解不变；<br>3) 一方程乘以数$k$加上另一方程，解不变。</p>
-<p>高斯消元就是说，可以用这三种变换，把方程组变成阶梯型（甚至不是这种形状，就是变得好看一些）<br><strong>如何做？</strong></p>
-<p>请看如下方程：<br><img src="http://i2.bvimg.com/633215/21f112f53007cafd.png" alt=""></p>
-<p>$x$系数相同，消去$x$，解得$z$<br>随后，$z$的系数相同，解得$y$<br>代入，解得$x$<br>方程的解为：</p>
-<p><img src="http://i2.bvimg.com/633215/691b0993cd796f33.png" alt=""></p>
-<p>齐次线性方程组：解空间<br>非齐次的：导出组：<br>它的解为一个<strong>线性流形</strong></p>
-<blockquote>
-<p><strong>线性流形是啥？</strong><br>1.开集：设$A$是开集,则对$A$中的任意一点$a$,存在$a$的邻域$o(a)⊆A$<br>2.微分同胚：若$U$、$V$是$n$维实数空间（下面记之为$R^n$）中的开集,一个从$U$到$V$的可微函数$h$,如果从$V$到$U$的可微逆,则称$h$为微分同胚.<br>3.$K$维流形：$R^n$中的子集$M$称为$K$维流形,如果对于$M$中的每一点$x$都满足以下条件：<br>存在一个含$x$的开集U、一个$R^n$中的开集$V$和一个从$U$到$V$的微分同胚$h$,使得<br>$h(U∩V)=V∩(R^k×\{0\})=\{y∈V；y^{k+1}=……=y^n=0\}$<br>4.另一种等价的定义：$R^n$中的子集$M$称为$K$维流形,当且仅当$M$中的每一个点$x$,下述条件成立：<br>存在一个包含$x$的开集$U$,一个$R^k$中的开集$W$以及一个从$W$到$R^n$的$1-1$可微函数$f$,使得：<br>1)$f(W)=M∩U$；<br>2)$f’(y)$对每个$y∈W$的秩为$k$；<br>3)从$f(W)$到$W$的$f$的逆连续.<br>上述条件叫通常叫“坐标条件”,这样的$f$叫做$x$周围的坐标系.<br>5.线性流形,即满足线性运算的流形.<br>例子：<br>1）$R^n$的一个开集<br>2）$n$维球面：$\{x∈R^{n+1}:|x|=1\}$</p>
-</blockquote>
-<p>方程组个数小于未知数个数时一定有解？<br>很小的时候，就听说过老师说方程组个数小于未知数个数时一定有解。不知道大家是怎么理解的。</p>
-<p>方程组可以理解为是用来约束未知数的条件，方程组过多，约束更多，不一定有解。相反地，方程组过少，约束更少，就一定有解。</p>
-<ul>
-<li>真的是这样吗？<br>其实跟系数矩阵的秩有很大的关系</li>
-</ul>
-<h1 id="向量空间"><a href="#向量空间" class="headerlink" title="向量空间"></a>向量空间</h1><h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><p>向量其实只是一个名称而已,不再代表具体的含义,只是一种形式记号</p>
-<ul>
-<li>和以前的$(x,y)$表示不太一样，以前表示的只是一种有方向的量。写成这样$(x_1,x_2,…,x_n)$<br>这样叫做行向量。相应地，竖着写也行。竖着写叫做列向量。</li>
-</ul>
-<h2 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h2><p>E.g.<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""></p>
-<h2 id="数域上的向量组的线性相关与无关"><a href="#数域上的向量组的线性相关与无关" class="headerlink" title="数域上的向量组的线性相关与无关"></a>数域上的向量组的线性相关与无关</h2><p>我们引入了一个线性代数中相当重要的概念：<strong>线性相关</strong></p>
-<ul>
-<li>什么是线性相关？<br>假如存在<strong>不全为0</strong>的$k_1,k_2,…,k_n$，使得 $k_1\alpha_1+k_2\alpha_2+…+k_n\alpha_n=0$</li>
-</ul>
-<p>则称$k_1,k_2,…,k_n$和$\alpha_1+\alpha_2+…+\alpha_n$线性相关<br>线性：只是将一个向量乘一个常数，并没有一个向量乘一个向量<br>可以通过线性运算整合到一起</p>
-<p>那么<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""><br>是否线性相关？</p>
-<p>这个例子啊，本身判断线性相关或无关其实很困难<br>但是我们看到<br>$\alpha_1+\alpha_2-4\alpha_3=0$<br>也就是说$\alpha_3$可以用$\alpha_1和\alpha_2$表示<br><strong>这个结论很重要，请牢记</strong></p>
-<h2 id="向量组的秩-rank"><a href="#向量组的秩-rank" class="headerlink" title="向量组的秩(rank)"></a>向量组的秩(rank)</h2><p>平时大家都喜欢rank1,rank2，但在这里，rank是秩序的意思QwQ</p>
-<h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><p>线性无关组：线性无关的向量组成的向量组<br>极大线性无关组：一个不能再向里面添加任何其他向量的线性无关组（添加之后就线性有关了）</p>
-<ul>
-<li><p>怎么构造？<br>$\alpha_1,\alpha_2,…\alpha_n$<br>对于每个向量，和之前的向量检验相关性即可<br>虽然检验是否有关的时间复杂度很可怕（误），但这个算法表面上看来是$O(n)$的<br>向量组可以由它表出</p>
-</li>
-<li><p>什么是表出？<br>设$α_1,α_2,…,α_e(e≥1)$是域P上线性空间V中的有限个向量，若V中向量α可以表示为$α=k_1α_1+k_2α_2++…k_eα_e(k_a∈P，a=1,2,…,e)$，则称α是向量组$α_1,α_2,…,α_e(e≥1)$的一个线性组合，亦称α可由向量组$α_1,α_2,…,α_e(e≥1)$线性表示或线性表出。</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2262,7 +2233,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">63</span>
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2472,7 +2443,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">83</span>
+                      
+                    
+                    <span class="site-state-item-count">84</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2607,7 +2580,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共45.8k字</span>
+  <span class="post-count">博客全站共46.4k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -3104,9 +3077,9 @@
       
     
       
-        
-      
     
+      
+        
       
     
       
