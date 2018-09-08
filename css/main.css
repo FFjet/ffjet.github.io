@@ -1864,7 +1864,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c8ff33;
+  background: #2bff65;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2845,6 +2845,7 @@ ul.breadcrumb li+li:last-child {
   background: rgba(255,255,255,0.7);
   box-shadow: initial;
   border-radius: initial;
+  height: fixed;
   opacity: 0;
 }
 .sidebar-inner.affix {
@@ -2990,7 +2991,7 @@ body {
   background: url("/images/bg.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 .hider_title {
   font-family: "Microsoft Yahei";
