@@ -116,16 +116,13 @@
 <meta property="og:site_name" content="Sky of war">
 <meta property="og:description" content="预备知识复数的基本知识形如$a+bi(a,b∈R)$的数称为复数，其中a称为实部，b称为虚部，i称为虚数单位。当虚部等于零时，这个复数可以视为实数；当z的虚部不等于零时，实部等于零时，常称z为纯虚数。复数域是实数域的代数闭包，也即任何复系数多项式在复数域中总有根。 数域的概念设$P$是由一些数组成的集合，如果$P$中任意两个数的和、差、积、商（除数不为0）仍是$P$中的数，则称$P$为一个数域。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://i2.bvimg.com/633215/0f549ce81e86dc1a.png">
 <meta property="og:image" content="http://i2.bvimg.com/633215/21f112f53007cafd.png">
 <meta property="og:image" content="http://i2.bvimg.com/633215/691b0993cd796f33.png">
-<meta property="og:image" content="http://i2.bvimg.com/633215/caf1a675646fd262.png">
-<meta property="og:image" content="http://i2.bvimg.com/633215/caf1a675646fd262.png">
-<meta property="og:updated_time" content="2018-03-31T02:52:45.698Z">
+<meta property="og:updated_time" content="2018-09-08T11:47:25.953Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性代数基础 1">
 <meta name="twitter:description" content="预备知识复数的基本知识形如$a+bi(a,b∈R)$的数称为复数，其中a称为实部，b称为虚部，i称为虚数单位。当虚部等于零时，这个复数可以视为实数；当z的虚部不等于零时，实部等于零时，常称z为纯虚数。复数域是实数域的代数闭包，也即任何复系数多项式在复数域中总有根。 数域的概念设$P$是由一些数组成的集合，如果$P$中任意两个数的和、差、积、商（除数不为0）仍是$P$中的数，则称$P$为一个数域。">
-<meta name="twitter:image" content="http://i2.bvimg.com/633215/0f549ce81e86dc1a.png">
+<meta name="twitter:image" content="http://i2.bvimg.com/633215/21f112f53007cafd.png">
 
 
 
@@ -415,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-03-31 10:52:45" itemprop="dateModified" datetime="2018-03-31T10:52:45+08:00">2018-03-31</time>
+                <time title="修改时间：2018-09-08 19:47:25" itemprop="dateModified" datetime="2018-09-08T19:47:25+08:00">2018-09-08</time>
               
             
           </span>
@@ -481,11 +478,11 @@
 <li>若数集$P$中任意两个数作某一运算的结果仍在$P$中，则说数集$P$对这个运算是封闭的。</li>
 <li>数域的等价定义：如果一个包含0，1在内的数集$P$对于加法，减法，乘法与除法（除数不为0）是封闭的，则称数集$P$为一个数域。</li>
 </ul>
-<h1 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h1><h2 id="什么是线性方程组"><a href="#什么是线性方程组" class="headerlink" title="什么是线性方程组?"></a>什么是线性方程组?</h2><p>线性方程组长这样:<br><img src="http://i2.bvimg.com/633215/0f549ce81e86dc1a.png" alt=""></p>
-<p>m个方程,n个未知数<br>比较大的，比较复杂的<br>所谓线性，就是没有平方啊，立方啊，$ e^x $ 啊，$ sin^x $ 之类的东西，全部都是$ax+b$的形式</p>
+<h1 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h1><h2 id="什么是线性方程组"><a href="#什么是线性方程组" class="headerlink" title="什么是线性方程组?"></a>什么是线性方程组?</h2><p>线性方程组是m个方程,n个未知数<br>比较大的，比较复杂的<br>所谓线性，就是没有平方啊，立方啊，$ e^x $ 啊，$ sin^x $ 之类的东西，全部都是$ax+b$的形式</p>
 <h2 id="那么这种线性方程组怎么解呢？"><a href="#那么这种线性方程组怎么解呢？" class="headerlink" title="那么这种线性方程组怎么解呢？"></a>那么这种线性方程组怎么解呢？</h2><p><strong>高斯消元</strong><br>首先我们要知道<br>初等行变换的三种形式<br>1) 把一行乘上若干倍（当然是非0数）<br>2) 把一行减去另一行<br>3) 把两行互换位置<br>初等变换是<strong>可逆</strong>的</p>
 <p>也就是说<br>1) 两方程互换，解不变；<br>2) 一方程乘以非零数$k$，解不变；<br>3) 一方程乘以数$k$加上另一方程，解不变。</p>
-<p>高斯消元就是说，可以用这三种变换，把方程组变成阶梯型（甚至不是这种形状，就是变得好看一些）<br><strong>如何做？</strong></p>
+<p>高斯消元就是说，可以用这三种变换，把方程组变成阶梯型（甚至不是这种形状，就是变得好看一些）</p>
+<p>齐次线性方程组：解空间</p>
 <p>请看如下方程：<br><img src="http://i2.bvimg.com/633215/21f112f53007cafd.png" alt=""></p>
 <p>$x$系数相同，消去$x$，解得$z$<br>随后，$z$的系数相同，解得$y$<br>代入，解得$x$<br>方程的解为：</p>
 <p><img src="http://i2.bvimg.com/633215/691b0993cd796f33.png" alt=""></p>
@@ -502,14 +499,11 @@
 <ul>
 <li>和以前的$(x,y)$表示不太一样，以前表示的只是一种有方向的量。写成这样$(x_1,x_2,…,x_n)$<br>这样叫做行向量。相应地，竖着写也行。竖着写叫做列向量。</li>
 </ul>
-<h2 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h2><p>E.g.<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""></p>
-<h2 id="数域上的向量组的线性相关与无关"><a href="#数域上的向量组的线性相关与无关" class="headerlink" title="数域上的向量组的线性相关与无关"></a>数域上的向量组的线性相关与无关</h2><p>我们引入了一个线性代数中相当重要的概念：<strong>线性相关</strong></p>
+<h2 id="向量组"><a href="#向量组" class="headerlink" title="向量组"></a>向量组</h2><h2 id="数域上的向量组的线性相关与无关"><a href="#数域上的向量组的线性相关与无关" class="headerlink" title="数域上的向量组的线性相关与无关"></a>数域上的向量组的线性相关与无关</h2><p>我们引入了一个线性代数中相当重要的概念：<strong>线性相关</strong></p>
 <ul>
 <li>什么是线性相关？<br>假如存在<strong>不全为0</strong>的$k_1,k_2,…,k_n$，使得 $k_1\alpha_1+k_2\alpha_2+…+k_n\alpha_n=0$</li>
 </ul>
 <p>则称$k_1,k_2,…,k_n$和$\alpha_1+\alpha_2+…+\alpha_n$线性相关<br>线性：只是将一个向量乘一个常数，并没有一个向量乘一个向量<br>可以通过线性运算整合到一起</p>
-<p>那么<br><img src="http://i2.bvimg.com/633215/caf1a675646fd262.png" alt=""><br>是否线性相关？</p>
-<p>这个例子啊，本身判断线性相关或无关其实很困难<br>但是我们看到<br>$\alpha_1+\alpha_2-4\alpha_3=0$<br>也就是说$\alpha_3$可以用$\alpha_1和\alpha_2$表示<br><strong>这个结论很重要，请牢记</strong></p>
 <h2 id="向量组的秩-rank"><a href="#向量组的秩-rank" class="headerlink" title="向量组的秩(rank)"></a>向量组的秩(rank)</h2><p>平时大家都喜欢rank1,rank2，但在这里，rank是秩序的意思QwQ</p>
 <h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><p>线性无关组：线性无关的向量组成的向量组<br>极大线性无关组：一个不能再向里面添加任何其他向量的线性无关组（添加之后就线性有关了）</p>
 <ul>

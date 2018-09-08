@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/02/05/%E7%B1%B3%E5%8B%92%E6%8B%89%E5%AE%BE%E7%B4%A0%E6%95%B0%E5%88%A4%E5%AE%9A%20MR%20Prime%20Detect/</loc>
+    <lastmod>2018-09-08T11:49:19.772Z</lastmod>
+    <data>
+        <display>
+        <title>米勒-拉宾素数判定 MR Prime Detect</title>
+        <pubTime>2018-02-05T14:01:41.000Z</pubTime>
+        
+        <tag>Math theory</tag>
+         
+         
+           
+             
+              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://skyofwar.xyz/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/</loc>
+    <lastmod>2018-09-08T11:47:25.953Z</lastmod>
+    <data>
+        <display>
+        <title>线性代数基础 1</title>
+        <pubTime>2018-02-21T08:01:41.000Z</pubTime>
+        
+        <tag>Math theory</tag>
+         
+        <tag>线性代数</tag>
+         
+         
+           
+             
+              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/09/07/%E3%80%8EAGC%20006F%E3%80%8FBlackout/</loc>
     <lastmod>2018-09-08T10:52:13.928Z</lastmod>
     <data>
@@ -133,9 +175,9 @@
         <title>『AGC 023A』Zero-Sum Ranges</title>
         <pubTime>2018-09-06T14:32:27.000Z</pubTime>
         
-        <tag>Atcoder</tag>
-         
         <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
          
         <tag>map</tag>
          
@@ -392,9 +434,9 @@
         <title>『AGC 012A』AtCoder Group Contest</title>
         <pubTime>2018-08-30T12:54:27.000Z</pubTime>
         
-        <tag>Atcoder</tag>
-         
         <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
          
          
            
@@ -414,9 +456,9 @@
         <title>『AGC 012B』Splatter Painting</title>
         <pubTime>2018-08-30T12:58:33.000Z</pubTime>
         
-        <tag>Atcoder</tag>
-         
         <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
          
          
            
@@ -436,9 +478,9 @@
         <title>『AGC 002C』Knot Puzzle</title>
         <pubTime>2018-08-30T02:54:27.000Z</pubTime>
         
-        <tag>Atcoder</tag>
-         
         <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
          
          
            
@@ -458,9 +500,9 @@
         <title>『AGC 003A』Wanna go back home</title>
         <pubTime>2018-08-30T06:55:22.000Z</pubTime>
         
-        <tag>Atcoder</tag>
-         
         <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
          
          
            
@@ -480,9 +522,9 @@
         <title>『AGC 003B』Simplified mahjong</title>
         <pubTime>2018-08-30T06:46:30.000Z</pubTime>
         
-        <tag>Atcoder</tag>
-         
         <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
          
          
            
@@ -502,9 +544,9 @@
         <title>『AGC 003C』BBuBBBlesort!</title>
         <pubTime>2018-08-30T06:36:27.000Z</pubTime>
         
-        <tag>Atcoder</tag>
-         
         <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
          
          
            
@@ -945,11 +987,11 @@
         <title>「HDU 1556」Color the ball</title>
         <pubTime>2018-03-17T11:31:22.000Z</pubTime>
         
+        <tag>树</tag>
+         
         <tag>线段树</tag>
          
         <tag>HDU</tag>
-         
-        <tag>树</tag>
          
          
            
@@ -995,9 +1037,9 @@
         <title>「BZOJ 4520」[CQOI2016]K远点对</title>
         <pubTime>2018-03-22T13:49:33.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>模板</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>KD树</tag>
          
@@ -1047,9 +1089,9 @@
         <title>「BZOJ 2006」[NOI2010]超级钢琴</title>
         <pubTime>2018-03-10T14:31:33.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>ST表</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>NOI</tag>
          
@@ -1103,15 +1145,15 @@
         <title>「BZOJ 1588」 [HNOI2002]营业额统计</title>
         <pubTime>2018-03-26T14:20:22.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>模板</tag>
          
-        <tag>树</tag>
+        <tag>BZOJ</tag>
          
         <tag>HNOI</tag>
          
         <tag>Splay</tag>
+         
+        <tag>树</tag>
          
         <tag>平衡树</tag>
          
@@ -1165,31 +1207,11 @@
          
         <tag>数据结构</tag>
          
-        <tag>线段树</tag>
-         
         <tag>树</tag>
          
+        <tag>线段树</tag>
+         
         <tag>懒标记</tag>
-         
-         
-           
-             
-              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/02/05/%E7%B1%B3%E5%8B%92%E6%8B%89%E5%AE%BE%E7%B4%A0%E6%95%B0%E5%88%A4%E5%AE%9A%20MR%20Prime%20Detect/</loc>
-    <lastmod>2018-03-31T02:54:43.817Z</lastmod>
-    <data>
-        <display>
-        <title>米勒-拉宾素数判定 MR Prime Detect</title>
-        <pubTime>2018-02-05T14:01:41.000Z</pubTime>
-        
-        <tag>Math theory</tag>
          
          
            
@@ -1350,28 +1372,6 @@
         <display>
         <title>线性代数基础 2</title>
         <pubTime>2018-02-22T08:01:41.000Z</pubTime>
-        
-        <tag>Math theory</tag>
-         
-        <tag>线性代数</tag>
-         
-         
-           
-             
-              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/</loc>
-    <lastmod>2018-03-31T02:52:45.698Z</lastmod>
-    <data>
-        <display>
-        <title>线性代数基础 1</title>
-        <pubTime>2018-02-21T08:01:41.000Z</pubTime>
         
         <tag>Math theory</tag>
          

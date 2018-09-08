@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="首先需要知道两个定理:1、费马小定理： 假如p是素数，且gcd(a,p)=1，那么 a(p-1)≡1（mod p）。不知所云的萌新请点击此处‍自行脑补一下 2、二次探测定理：如果p是素数，x是小于p的正整数，且 ，那么要么x=1，要么x=p-1。 　　证明：这是显然的，因为 相当于p能整除 ，也即p能整除(x+1)(x-1)。 　　由于p是素数，那么只可能是x-1能被p整除(此时x=1) 或 x+">
+  <meta name="description" content="首先需要知道两个定理:1、费马小定理： 假如$p$是素数，且$\gcd(a,p)=1$，那么 $a(p-1)≡1(\text{mod}\ p)$。不知所云的萌新请点击此处‍自行脑补一下 2、二次探测定理：如果$p$是素数，$x$是小于$p$的正整数，那么要么$x=1$，要么$x=p-1$。 　　证明：这是显然的，因为相当于$p$能整除$(x+1)(x-1)$。 　　由于$p$是素数，那么只可能是$">
 <meta name="keywords" content="Math theory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="米勒-拉宾素数判定 MR Prime Detect">
 <meta property="og:url" content="https://skyofwar.xyz/2018/02/05/米勒拉宾素数判定 MR Prime Detect/index.html">
 <meta property="og:site_name" content="Sky of war">
-<meta property="og:description" content="首先需要知道两个定理:1、费马小定理： 假如p是素数，且gcd(a,p)=1，那么 a(p-1)≡1（mod p）。不知所云的萌新请点击此处‍自行脑补一下 2、二次探测定理：如果p是素数，x是小于p的正整数，且 ，那么要么x=1，要么x=p-1。 　　证明：这是显然的，因为 相当于p能整除 ，也即p能整除(x+1)(x-1)。 　　由于p是素数，那么只可能是x-1能被p整除(此时x=1) 或 x+">
+<meta property="og:description" content="首先需要知道两个定理:1、费马小定理： 假如$p$是素数，且$\gcd(a,p)=1$，那么 $a(p-1)≡1(\text{mod}\ p)$。不知所云的萌新请点击此处‍自行脑补一下 2、二次探测定理：如果$p$是素数，$x$是小于$p$的正整数，那么要么$x=1$，要么$x=p-1$。 　　证明：这是显然的，因为相当于$p$能整除$(x+1)(x-1)$。 　　由于$p$是素数，那么只可能是$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-31T02:54:43.817Z">
+<meta property="og:updated_time" content="2018-09-08T11:49:19.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="米勒-拉宾素数判定 MR Prime Detect">
-<meta name="twitter:description" content="首先需要知道两个定理:1、费马小定理： 假如p是素数，且gcd(a,p)=1，那么 a(p-1)≡1（mod p）。不知所云的萌新请点击此处‍自行脑补一下 2、二次探测定理：如果p是素数，x是小于p的正整数，且 ，那么要么x=1，要么x=p-1。 　　证明：这是显然的，因为 相当于p能整除 ，也即p能整除(x+1)(x-1)。 　　由于p是素数，那么只可能是x-1能被p整除(此时x=1) 或 x+">
+<meta name="twitter:description" content="首先需要知道两个定理:1、费马小定理： 假如$p$是素数，且$\gcd(a,p)=1$，那么 $a(p-1)≡1(\text{mod}\ p)$。不知所云的萌新请点击此处‍自行脑补一下 2、二次探测定理：如果$p$是素数，$x$是小于$p$的正整数，那么要么$x=1$，要么$x=p-1$。 　　证明：这是显然的，因为相当于$p$能整除$(x+1)(x-1)$。 　　由于$p$是素数，那么只可能是$">
 
 
 
@@ -409,7 +409,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-03-31 10:54:43" itemprop="dateModified" datetime="2018-03-31T10:54:43+08:00">2018-03-31</time>
+                <time title="修改时间：2018-09-08 19:49:19" itemprop="dateModified" datetime="2018-09-08T19:49:19+08:00">2018-09-08</time>
               
             
           </span>
@@ -468,13 +468,13 @@
       
 
       
-        <h1 id="首先需要知道两个定理"><a href="#首先需要知道两个定理" class="headerlink" title="首先需要知道两个定理:"></a>首先需要知道两个定理:</h1><p>1、<strong>费马小定理</strong>： 假如p是素数，且gcd(a,p)=1，那么 a(p-1)≡1（mod p）。不知所云的萌新请点击此处‍自行脑补一下</p>
-<p>2、<strong>二次探测定理</strong>：如果p是素数，x是小于p的正整数，且 ，那么要么x=1，要么x=p-1。</p>
-<p>　　证明：这是显然的，因为 相当于p能整除 ，也即p能整除(x+1)(x-1)。</p>
-<p>　　由于p是素数，那么只可能是x-1能被p整除(此时x=1) 或 x+1能被p整除(此时x=p-1)。</p>
-<p>接着，如果a^(n-1) ≡ 1 (mod n)成立，Miller-Rabin算法不是立即找另一个a进行测试，而是看n-1是不是偶数。如果n-1是偶数，另u=(n-1)/2，并检查是否满足二次探测定理即a^u ≡ 1 或 a^u ≡ n - 1(mod n)。</p>
-<h1 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h1><p>Miller-Rabin算法随机生成底数a，进行多次调用函数进行测试，Miller-Rabin检测也存在伪素数的问题，但是与费马检测不同，MR检测的正确概率不依赖被检测数p，而仅依赖于检测次数。已经证明，如果一个数p为合数，那么Miller-Rabin检测的证据数量不少于比其小的正整数的3/4，换言之，k次检测后得到错误结果的概率为(1/4)^k。我们在实际应用中一般可以测试15~20次。</p>
-<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>, buff = a;</span><br><span class="line">	<span class="keyword">while</span> (b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (b &amp; <span class="number">1</span>)ans = (ans * buff) % r;</span><br><span class="line">		buff = (buff * buff) % r;</span><br><span class="line">		b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Miller_Rabbin</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> r = <span class="number">0</span>, s = n - <span class="number">1</span>, j;</span><br><span class="line">	<span class="keyword">if</span> (!(n%a))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">while</span> (!(s &amp; <span class="number">1</span>))</span><br><span class="line">	&#123;</span><br><span class="line">		s &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		r++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> k = qpow(a, s, n);</span><br><span class="line">	<span class="keyword">if</span> (k == <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; r; j++, k = k * k % n)</span><br><span class="line">		<span class="keyword">if</span> (k == n - <span class="number">1</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">IsPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> tab[] = &#123; <span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (n == tab[i])</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span> (!Miller_Rabbin(n, tab[i]))</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> n;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; IsPrime(n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="首先需要知道两个定理"><a href="#首先需要知道两个定理" class="headerlink" title="首先需要知道两个定理:"></a>首先需要知道两个定理:</h1><p>1、<strong>费马小定理</strong>： 假如$p$是素数，且$\gcd(a,p)=1$，那么 $a(p-1)≡1(\text{mod}\ p)$。不知所云的萌新请点击此处‍自行脑补一下</p>
+<p>2、<strong>二次探测定理</strong>：如果$p$是素数，$x$是小于$p$的正整数，那么要么$x=1$，要么$x=p-1$。</p>
+<p>　　证明：这是显然的，因为相当于$p$能整除$(x+1)(x-1)$。</p>
+<p>　　由于$p$是素数，那么只可能是$x-1$能被p整除(此时x=1) 或 x+1能被p整除(此时x=p-1)。</p>
+<p>接着，如果$a^{n-1} ≡ 1 (\text{mod} n)$成立，Miller-Rabin算法不是立即找另一个$a$进行测试，而是看$n-1$是不是偶数。如果$n-1$是偶数，另$u=\dfrac{n-1}{2}$，并检查是否满足二次探测定理即$a^u ≡ 1$ 或$ a^u ≡ n - 1(\text{mod}\ n)$。</p>
+<h1 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h1><p>Miller-Rabin算法随机生成底数$a$，进行多次调用函数进行测试，Miller-Rabin检测也存在伪素数的问题，但是<strong>与费马检测不同，MR检测的正确概率不依赖被检测数$p$，而仅依赖于检测次数</strong>。已经证明，如果一个数$p$为合数，那么Miller-Rabin检测的证据数量不少于比其小的正整数的$\dfrac{3}{4}p$，换言之，$k$次检测后得到错误结果的概率为$\left (\dfrac{1}{4} \right )^k$。我们在实际应用中一般可以测试$15\sim20$次。</p>
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>, buff = a;</span><br><span class="line">	<span class="keyword">while</span> (b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (b &amp; <span class="number">1</span>)ans = (ans * buff) % r;</span><br><span class="line">		buff = (buff * buff) % r;</span><br><span class="line">		b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Miller_Rabbin</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> r = <span class="number">0</span>, s = n - <span class="number">1</span>, j;</span><br><span class="line">	<span class="keyword">if</span> (!(n%a))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">while</span> (!(s &amp; <span class="number">1</span>))</span><br><span class="line">	&#123;</span><br><span class="line">		s &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		r++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> k = qpow(a, s, n);</span><br><span class="line">	<span class="keyword">if</span> (k == <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; r; j++, k = k * k % n)</span><br><span class="line">		<span class="keyword">if</span> (k == n - <span class="number">1</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">IsPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> tab[] = &#123; <span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (n == tab[i])</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span> (!Miller_Rabbin(n, tab[i]))</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> n;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; IsPrime(n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1468,7 +1468,37 @@
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -1487,13 +1517,7 @@
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
 
-
-  
-  
-
-  
-  
-
+    
   
 
 
