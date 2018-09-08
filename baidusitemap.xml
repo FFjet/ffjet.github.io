@@ -4,32 +4,8 @@
 
     
   <url>
-    <loc>https://skyofwar.xyz/2018/09/08/%E3%80%8EARC%20084D%E3%80%8FSmall%20Multiple/</loc>
-    <lastmod>2018-09-08T05:19:57.082Z</lastmod>
-    <data>
-        <display>
-        <title>『ARC 084D』Small Multiple</title>
-        <pubTime>2018-09-08T04:51:20.000Z</pubTime>
-        
-        <tag>图论</tag>
-         
-        <tag>Atcoder</tag>
-         
-        <tag>最短路</tag>
-         
-         
-           
-             
-              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://skyofwar.xyz/2018/09/07/%E3%80%8EAGC%20006F%E3%80%8FBlackout/</loc>
-    <lastmod>2018-09-07T15:11:16.914Z</lastmod>
+    <lastmod>2018-09-08T10:52:13.928Z</lastmod>
     <data>
         <display>
         <title>『AGC 006F』Blackout</title>
@@ -42,6 +18,30 @@
         <tag>二分图</tag>
          
         <tag>染色</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://skyofwar.xyz/2018/09/08/%E3%80%8EARC%20084D%E3%80%8FSmall%20Multiple/</loc>
+    <lastmod>2018-09-08T10:51:59.913Z</lastmod>
+    <data>
+        <display>
+        <title>『ARC 084D』Small Multiple</title>
+        <pubTime>2018-09-08T04:51:20.000Z</pubTime>
+        
+        <tag>图论</tag>
+         
+        <tag>Atcoder</tag>
+         
+        <tag>最短路</tag>
          
          
            
@@ -133,9 +133,9 @@
         <title>『AGC 023A』Zero-Sum Ranges</title>
         <pubTime>2018-09-06T14:32:27.000Z</pubTime>
         
-        <tag>Tricks</tag>
-         
         <tag>Atcoder</tag>
+         
+        <tag>Tricks</tag>
          
         <tag>map</tag>
          
@@ -157,9 +157,9 @@
         <title>OI代码模板计划 - 后缀数组</title>
         <pubTime>2018-09-03T14:50:00.000Z</pubTime>
         
-        <tag>strings</tag>
-         
         <tag>模板</tag>
+         
+        <tag>strings</tag>
          
          
            
@@ -221,13 +221,13 @@
         <title>「Codeforces 825B」Five-In-a-Row</title>
         <pubTime>2018-05-06T07:38:00.000Z</pubTime>
         
-        <tag>水题</tag>
-         
-        <tag>DP</tag>
-         
         <tag>Codeforces</tag>
          
         <tag>模拟</tag>
+         
+        <tag>水题</tag>
+         
+        <tag>DP</tag>
          
          
            
@@ -370,9 +370,9 @@
         
         <tag>数学</tag>
          
-        <tag>Tricks</tag>
-         
         <tag>Codeforces</tag>
+         
+        <tag>Tricks</tag>
          
          
            
@@ -392,9 +392,9 @@
         <title>『AGC 012A』AtCoder Group Contest</title>
         <pubTime>2018-08-30T12:54:27.000Z</pubTime>
         
-        <tag>Tricks</tag>
-         
         <tag>Atcoder</tag>
+         
+        <tag>Tricks</tag>
          
          
            
@@ -414,9 +414,9 @@
         <title>『AGC 012B』Splatter Painting</title>
         <pubTime>2018-08-30T12:58:33.000Z</pubTime>
         
-        <tag>Tricks</tag>
-         
         <tag>Atcoder</tag>
+         
+        <tag>Tricks</tag>
          
          
            
@@ -436,9 +436,9 @@
         <title>『AGC 002C』Knot Puzzle</title>
         <pubTime>2018-08-30T02:54:27.000Z</pubTime>
         
-        <tag>Tricks</tag>
-         
         <tag>Atcoder</tag>
+         
+        <tag>Tricks</tag>
          
          
            
@@ -458,9 +458,9 @@
         <title>『AGC 003A』Wanna go back home</title>
         <pubTime>2018-08-30T06:55:22.000Z</pubTime>
         
-        <tag>Tricks</tag>
-         
         <tag>Atcoder</tag>
+         
+        <tag>Tricks</tag>
          
          
            
@@ -480,9 +480,9 @@
         <title>『AGC 003B』Simplified mahjong</title>
         <pubTime>2018-08-30T06:46:30.000Z</pubTime>
         
-        <tag>Tricks</tag>
-         
         <tag>Atcoder</tag>
+         
+        <tag>Tricks</tag>
          
          
            
@@ -502,9 +502,9 @@
         <title>『AGC 003C』BBuBBBlesort!</title>
         <pubTime>2018-08-30T06:36:27.000Z</pubTime>
         
-        <tag>Tricks</tag>
-         
         <tag>Atcoder</tag>
+         
+        <tag>Tricks</tag>
          
          
            
@@ -945,11 +945,11 @@
         <title>「HDU 1556」Color the ball</title>
         <pubTime>2018-03-17T11:31:22.000Z</pubTime>
         
-        <tag>树</tag>
-         
         <tag>线段树</tag>
          
         <tag>HDU</tag>
+         
+        <tag>树</tag>
          
          
            
@@ -995,9 +995,9 @@
         <title>「BZOJ 4520」[CQOI2016]K远点对</title>
         <pubTime>2018-03-22T13:49:33.000Z</pubTime>
         
-        <tag>模板</tag>
-         
         <tag>BZOJ</tag>
+         
+        <tag>模板</tag>
          
         <tag>KD树</tag>
          
@@ -1047,9 +1047,9 @@
         <title>「BZOJ 2006」[NOI2010]超级钢琴</title>
         <pubTime>2018-03-10T14:31:33.000Z</pubTime>
         
-        <tag>ST表</tag>
-         
         <tag>BZOJ</tag>
+         
+        <tag>ST表</tag>
          
         <tag>NOI</tag>
          
@@ -1103,15 +1103,15 @@
         <title>「BZOJ 1588」 [HNOI2002]营业额统计</title>
         <pubTime>2018-03-26T14:20:22.000Z</pubTime>
         
+        <tag>BZOJ</tag>
+         
         <tag>模板</tag>
          
-        <tag>BZOJ</tag>
+        <tag>树</tag>
          
         <tag>HNOI</tag>
          
         <tag>Splay</tag>
-         
-        <tag>树</tag>
          
         <tag>平衡树</tag>
          
@@ -1165,9 +1165,9 @@
          
         <tag>数据结构</tag>
          
-        <tag>树</tag>
-         
         <tag>线段树</tag>
+         
+        <tag>树</tag>
          
         <tag>懒标记</tag>
          

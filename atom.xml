@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-08T05:19:57.082Z</updated>
+  <updated>2018-09-08T10:51:59.913Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://skyofwar.xyz/2018/09/08/%E3%80%8EARC%20084D%E3%80%8FSmall%20Multiple/"/>
     <id>https://skyofwar.xyz/2018/09/08/『ARC 084D』Small Multiple/</id>
     <published>2018-09-08T04:51:20.000Z</published>
-    <updated>2018-09-08T05:19:57.082Z</updated>
+    <updated>2018-09-08T10:51:59.913Z</updated>
     
     <summary type="html">
     
@@ -47,13 +47,13 @@
     <link href="https://skyofwar.xyz/2018/09/07/%E3%80%8EAGC%20006F%E3%80%8FBlackout/"/>
     <id>https://skyofwar.xyz/2018/09/07/『AGC 006F』Blackout/</id>
     <published>2018-09-07T15:11:27.000Z</published>
-    <updated>2018-09-07T15:11:16.914Z</updated>
+    <updated>2018-09-08T10:52:13.928Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;『AGC-006F』Blackout&quot;&gt;&lt;a href=&quot;#『AGC-006F』Blackout&quot; class=&quot;headerlink&quot; title=&quot;『AGC 006F』Blackout&quot;&gt;&lt;/a&gt;『AGC 006F』Blackout&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;题意简述：&lt;/p&gt;
-&lt;p&gt;给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z-&amp;gt;x$。  重复该过程直到不能再添加，求最终图中有多少边。&lt;/p&gt;
+&lt;p&gt;给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z \rightarrow x$。  重复该过程直到不能再添加，求最终图中有多少边。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://agc006.contest.atcoder.jp/tasks/agc006_f&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
     
     </summary>
@@ -171,9 +171,9 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
       <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
       <category term="map" scheme="https://skyofwar.xyz/tags/map/"/>
     
@@ -197,9 +197,9 @@
       <category term="复习" scheme="https://skyofwar.xyz/categories/%E5%A4%8D%E4%B9%A0/"/>
     
     
-      <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
-    
       <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
     
   </entry>
   
@@ -375,9 +375,9 @@
     
       <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
       <category term="Codeforces" scheme="https://skyofwar.xyz/tags/Codeforces/"/>
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
   </entry>
   
@@ -399,9 +399,9 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
       <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
   </entry>
   
@@ -424,9 +424,9 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
       <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
   </entry>
   
@@ -447,9 +447,9 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
       <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
   </entry>
   
@@ -470,9 +470,9 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
       <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
   </entry>
   
@@ -493,9 +493,9 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
       <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
   </entry>
   
@@ -521,9 +521,9 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
       <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
   </entry>
   
