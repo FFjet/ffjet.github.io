@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>『ARC 092D』Two Sequences</title>
+      <link href="/2018/09/09/%E3%80%8EARC%20092D%E3%80%8FTwo%20Sequences/"/>
+      <url>/2018/09/09/%E3%80%8EARC%20092D%E3%80%8FTwo%20Sequences/</url>
+      <content type="html"><![CDATA[<h1 id="『ARC-092D』Two-Sequences"><a href="#『ARC-092D』Two-Sequences" class="headerlink" title="『ARC 092D』Two Sequences"></a>『ARC 092D』Two Sequences</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Time limit : 3sec / Memory limit : 256MB</p><p>题意：</p><p>给定$n$个数的数组$A$和数组$B$，求所有$A_i+B_j$的异或和$(1\leq i,j \leq n)$。</p><p>$n \leq 200000$。</p><p><a href="https://arc092.contest.atcoder.jp/tasks/arc092_b" target="_blank" rel="noopener">door♂</a></p><a id="more"></a><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>首先按位考虑，求所有的$a_i+b_j$中每个数位的xor和。</p><ul><li><p>我们可以想到，如果有两个数x,y，且$0&lt;x,y \leq 2^k$，那么当$0 \leq x+y&lt;2^k$时，$x+y$在$2^k$这一位上的贡献肯定为$0$。</p></li><li><p>如果$2^{k+1} \leq x+y&lt;2^{k+1}+2^k$，那么$x+y$在$2^k$这一位上的贡献依然为$0$，此时就相当于$x+y$在$2^k$这一位上的贡献被后面的数的进位抹去了。</p></li><li><p>用在计算答案的第$k$位时，把序列$a,b$中的数的最后$k$位算出来，设为$a’,b’$。</p></li><li><p>把$b’$排个序，二分找找$a’i+b’j&gt;2^{k-1}$和$2^k \leq a’i+b’j&lt;2^k+2^{k-1}$的方案数，两者相减后判断一下奇偶性。</p></li></ul><p>Code:</p><div><div class="fold_hider"><div class="close hider_title">Click to show/hide the code</div></div><div class="fold"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">ll a[<span class="number">200010</span>], b[<span class="number">200010</span>];</span><br><span class="line">ll tmp[<span class="number">200010</span>];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">chk</span><span class="params">(ll k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">register</span> <span class="keyword">int</span> l = <span class="number">1</span>, r = n + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (l &lt; r)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">register</span> <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (tmp[mid] &gt;= k)r = mid; <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line"><span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n; </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; b[i];</span><br><span class="line"><span class="keyword">register</span> ll ans = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">29</span>; k++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">register</span> ll base = (<span class="number">1</span> &lt;&lt; k) - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)tmp[i] = b[i] &amp; base;</span><br><span class="line">sort(tmp + <span class="number">1</span>, tmp + n + <span class="number">1</span>);</span><br><span class="line"><span class="keyword">register</span> ll cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">cnt += n - chk((<span class="number">1</span> &lt;&lt; (k - <span class="number">1</span>)) - (a[i] &amp; base)) + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">cnt -= chk((<span class="number">1</span> &lt;&lt; k) + (<span class="number">1</span> &lt;&lt; (k - <span class="number">1</span>)) - (a[i] &amp; base)) - chk((<span class="number">1</span> &lt;&lt; k) - (a[i] &amp; base));</span><br><span class="line"><span class="keyword">if</span> (cnt &amp; <span class="number">1</span>) ans += (<span class="number">1</span> &lt;&lt; (k - <span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>; <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div>]]></content>
+      
+      <categories>
+          
+          <category> 题解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tricks </tag>
+            
+            <tag> Atcoder </tag>
+            
+            <tag> 二分 </tag>
+            
+            <tag> 位运算 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>『ARC 084D』Small Multiple</title>
       <link href="/2018/09/08/%E3%80%8EARC%20084D%E3%80%8FSmall%20Multiple/"/>
       <url>/2018/09/08/%E3%80%8EARC%20084D%E3%80%8FSmall%20Multiple/</url>
@@ -726,9 +753,9 @@
       
         <tags>
             
-            <tag> DP </tag>
-            
             <tag> POJ </tag>
+            
+            <tag> DP </tag>
             
         </tags>
       
@@ -772,11 +799,11 @@
       
         <tags>
             
+            <tag> 水题 </tag>
+            
             <tag> Codeforces </tag>
             
             <tag> 模拟 </tag>
-            
-            <tag> 水题 </tag>
             
             <tag> DP </tag>
             
@@ -1132,9 +1159,9 @@
             
             <tag> 树 </tag>
             
-            <tag> HDU </tag>
-            
             <tag> 线段树 </tag>
+            
+            <tag> HDU </tag>
             
         </tags>
       
@@ -1157,9 +1184,9 @@
             
             <tag> 模板 </tag>
             
-            <tag> 树 </tag>
-            
             <tag> 数据结构 </tag>
+            
+            <tag> 树 </tag>
             
             <tag> 线段树 </tag>
             
@@ -1230,9 +1257,9 @@
       
         <tags>
             
-            <tag> BZOJ </tag>
-            
             <tag> ST表 </tag>
+            
+            <tag> BZOJ </tag>
             
             <tag> NOI </tag>
             
@@ -1363,9 +1390,9 @@
       
         <tags>
             
-            <tag> 水题 </tag>
-            
             <tag> POJ </tag>
+            
+            <tag> 水题 </tag>
             
         </tags>
       
@@ -1386,9 +1413,9 @@
       
         <tags>
             
-            <tag> 水题 </tag>
-            
             <tag> POJ </tag>
+            
+            <tag> 水题 </tag>
             
         </tags>
       

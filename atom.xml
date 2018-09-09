@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-08T10:51:59.913Z</updated>
+  <updated>2018-09-09T15:02:02.909Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>『ARC 092D』Two Sequences</title>
+    <link href="https://skyofwar.xyz/2018/09/09/%E3%80%8EARC%20092D%E3%80%8FTwo%20Sequences/"/>
+    <id>https://skyofwar.xyz/2018/09/09/『ARC 092D』Two Sequences/</id>
+    <published>2018-09-09T14:49:27.000Z</published>
+    <updated>2018-09-09T15:02:02.909Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『ARC-092D』Two-Sequences&quot;&gt;&lt;a href=&quot;#『ARC-092D』Two-Sequences&quot; class=&quot;headerlink&quot; title=&quot;『ARC 092D』Two Sequences&quot;&gt;&lt;/a&gt;『ARC 092D』Two Sequences&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
+&lt;p&gt;题意：&lt;/p&gt;
+&lt;p&gt;给定$n$个数的数组$A$和数组$B$，求所有$A_i+B_j$的异或和$(1\leq i,j \leq n)$。&lt;/p&gt;
+&lt;p&gt;$n \leq 200000$。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arc092.contest.atcoder.jp/tasks/arc092_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="二分" scheme="https://skyofwar.xyz/tags/%E4%BA%8C%E5%88%86/"/>
+    
+      <category term="位运算" scheme="https://skyofwar.xyz/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+  </entry>
   
   <entry>
     <title>『ARC 084D』Small Multiple</title>
@@ -524,32 +554,6 @@
       <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
       <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>『JZOJ 4721』【NOIP2016提高A组模拟8.21】最长公共子序列</title>
-    <link href="https://skyofwar.xyz/2018/08/29/%E3%80%8EJZOJ-4721%E3%80%8F%E3%80%90NOIP2016%E6%8F%90%E9%AB%98A%E7%BB%84%E6%A8%A1%E6%8B%9F8.21%E3%80%91%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
-    <id>https://skyofwar.xyz/2018/08/29/『JZOJ-4721』【NOIP2016提高A组模拟8.21】最长公共子序列/</id>
-    <published>2018-08-29T07:54:27.000Z</published>
-    <updated>2018-08-30T01:05:46.280Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;4721-【NOIP2016提高A组模拟8-21】最长公共子序列&quot;&gt;&lt;a href=&quot;#4721-【NOIP2016提高A组模拟8-21】最长公共子序列&quot; class=&quot;headerlink&quot; title=&quot;4721. 【NOIP2016提高A组模拟8.21】最长公共子序列&quot;&gt;&lt;/a&gt;4721. 【NOIP2016提高A组模拟8.21】最长公共子序列&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;DJL为了避免成为一只咸鱼，来找Johann学习怎么求最长公共子序列。&lt;br&gt;经过长时间的摸索和练习，DJL终于学会了怎么求LCS。Johann感觉DJL孺子可教，就给他布置了一个课后作业：&lt;br&gt;给定两个长度分别为$n$和$m$的序列，序列中的每个元素都是正整数。保证每个序列中的各个元素互不相同。求这两个序列的最长公共子序列的长度。&lt;br&gt;DJL最讨厌重复劳动，所以不想做那些做过的题。于是他找你来帮他做作业。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="DP" scheme="https://skyofwar.xyz/tags/DP/"/>
-    
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
-      <category term="sort" scheme="https://skyofwar.xyz/tags/sort/"/>
-    
-      <category term="JZOJ" scheme="https://skyofwar.xyz/tags/JZOJ/"/>
     
   </entry>
   
