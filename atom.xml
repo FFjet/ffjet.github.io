@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-10T04:59:52.864Z</updated>
+  <updated>2018-09-10T05:02:10.512Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://skyofwar.xyz/2018/09/10/%E3%80%8EARC%20092F%E3%80%8FTwo%20Faced%20Edges/"/>
     <id>https://skyofwar.xyz/2018/09/10/『ARC 092F』Two Faced Edges/</id>
     <published>2018-09-10T04:29:27.000Z</published>
-    <updated>2018-09-10T04:59:52.864Z</updated>
+    <updated>2018-09-10T05:02:10.512Z</updated>
     
     <summary type="html">
     
@@ -254,9 +254,9 @@
       <category term="复习" scheme="https://skyofwar.xyz/categories/%E5%A4%8D%E4%B9%A0/"/>
     
     
-      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
       <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
+    
+      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
