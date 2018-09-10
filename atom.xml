@@ -47,6 +47,36 @@
   </entry>
   
   <entry>
+    <title>『ARC 092D』Two Sequences</title>
+    <link href="https://skyofwar.xyz/2018/09/09/%E3%80%8EARC%20092F%E3%80%8FTwo%20Faced%20Edges/"/>
+    <id>https://skyofwar.xyz/2018/09/09/『ARC 092F』Two Faced Edges/</id>
+    <published>2018-09-09T14:49:27.000Z</published>
+    <updated>2018-09-09T15:02:02.909Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『ARC-092D』Two-Sequences&quot;&gt;&lt;a href=&quot;#『ARC-092D』Two-Sequences&quot; class=&quot;headerlink&quot; title=&quot;『ARC 092D』Two Sequences&quot;&gt;&lt;/a&gt;『ARC 092D』Two Sequences&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
+&lt;p&gt;题意：&lt;/p&gt;
+&lt;p&gt;给定$n$个数的数组$A$和数组$B$，求所有$A_i+B_j$的异或和$(1\leq i,j \leq n)$。&lt;/p&gt;
+&lt;p&gt;$n \leq 200000$。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arc092.contest.atcoder.jp/tasks/arc092_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="二分" scheme="https://skyofwar.xyz/tags/%E4%BA%8C%E5%88%86/"/>
+    
+      <category term="位运算" scheme="https://skyofwar.xyz/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>『ARC 084D』Small Multiple</title>
     <link href="https://skyofwar.xyz/2018/09/08/%E3%80%8EARC%20084D%E3%80%8FSmall%20Multiple/"/>
     <id>https://skyofwar.xyz/2018/09/08/『ARC 084D』Small Multiple/</id>
@@ -227,9 +257,9 @@
       <category term="复习" scheme="https://skyofwar.xyz/categories/%E5%A4%8D%E4%B9%A0/"/>
     
     
-      <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
-    
       <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
     
   </entry>
   
@@ -517,34 +547,6 @@
     
       &lt;h1 id=&quot;『AGC-003C』BBuBBBlesort&quot;&gt;&lt;a href=&quot;#『AGC-003C』BBuBBBlesort&quot; class=&quot;headerlink&quot; title=&quot;『AGC 003C』BBuBBBlesort!&quot;&gt;&lt;/a&gt;『AGC 003C』BBuBBBlesort!&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;算了懒得搞，直接放传送门了：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://agc003.contest.atcoder.jp/tasks/agc003_c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送door♂&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>『AGC 002C』Knot Puzzle</title>
-    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20002C%E3%80%8FKnot%20Puzzle/"/>
-    <id>https://skyofwar.xyz/2018/08/30/『AGC 002C』Knot Puzzle/</id>
-    <published>2018-08-30T02:54:27.000Z</published>
-    <updated>2018-08-30T07:07:17.471Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;『AGC-002C』Knot-Puzzle&quot;&gt;&lt;a href=&quot;#『AGC-002C』Knot-Puzzle&quot; class=&quot;headerlink&quot; title=&quot;『AGC 002C』Knot Puzzle&quot;&gt;&lt;/a&gt;『AGC 002C』Knot Puzzle&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
-&lt;h3 id=&quot;Problem-Statement&quot;&gt;&lt;a href=&quot;#Problem-Statement&quot; class=&quot;headerlink&quot; title=&quot;Problem Statement&quot;&gt;&lt;/a&gt;Problem Statement&lt;/h3&gt;&lt;p&gt;We have $N$ pieces of ropes, numbered 1 through  $N$. The length of piece $i$ is $a_i$.&lt;/p&gt;
-&lt;p&gt;At first, for each $i(1≤i≤N−1)$, piece $i$ and piece $i+1$ are tied at the ends, forming one long rope with  $N-1$ knots. Snuke will try to untie all of the knots by performing the following operation repeatedly:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Choose a (connected) rope with a total length of at least $L$, then untie one of its knots.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Is it possible to untie all of the $N−1$ knots by properly applying this operation? If the answer is positive, find one possible order to untie the knots.&lt;/p&gt;
     
     </summary>
     

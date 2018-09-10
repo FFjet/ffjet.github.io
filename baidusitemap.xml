@@ -30,6 +30,32 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/09/09/%E3%80%8EARC%20092F%E3%80%8FTwo%20Faced%20Edges/</loc>
+    <lastmod>2018-09-09T15:02:02.909Z</lastmod>
+    <data>
+        <display>
+        <title>『ARC 092D』Two Sequences</title>
+        <pubTime>2018-09-09T14:49:27.000Z</pubTime>
+        
+        <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
+         
+        <tag>二分</tag>
+         
+        <tag>位运算</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/02/05/%E7%B1%B3%E5%8B%92%E6%8B%89%E5%AE%BE%E7%B4%A0%E6%95%B0%E5%88%A4%E5%AE%9A%20MR%20Prime%20Detect/</loc>
     <lastmod>2018-09-08T11:49:19.772Z</lastmod>
     <data>
@@ -38,28 +64,6 @@
         <pubTime>2018-02-05T14:01:41.000Z</pubTime>
         
         <tag>Math theory</tag>
-         
-         
-           
-             
-              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/02/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%801/</loc>
-    <lastmod>2018-09-08T11:47:25.953Z</lastmod>
-    <data>
-        <display>
-        <title>线性代数基础 1</title>
-        <pubTime>2018-02-21T08:01:41.000Z</pubTime>
-        
-        <tag>Math theory</tag>
-         
-        <tag>线性代数</tag>
          
          
            
@@ -225,9 +229,9 @@
         <title>OI代码模板计划 - 后缀数组</title>
         <pubTime>2018-09-03T14:50:00.000Z</pubTime>
         
-        <tag>strings</tag>
-         
         <tag>模板</tag>
+         
+        <tag>strings</tag>
          
          
            
@@ -1115,9 +1119,9 @@
         <title>「BZOJ 2006」[NOI2010]超级钢琴</title>
         <pubTime>2018-03-10T14:31:33.000Z</pubTime>
         
-        <tag>BZOJ</tag>
-         
         <tag>ST表</tag>
+         
+        <tag>BZOJ</tag>
          
         <tag>NOI</tag>
          
@@ -1298,52 +1302,6 @@
 
     
   <url>
-    <loc>https://skyofwar.xyz/2018/02/22/%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%87%BA%E6%9D%A5mathjax%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
-    <lastmod>2018-03-31T02:54:11.387Z</lastmod>
-    <data>
-        <display>
-        <title>显示不出来mathjax的解决方案</title>
-        <pubTime>2018-02-22T08:07:40.000Z</pubTime>
-        
-        <tag>web</tag>
-         
-        <tag>mathjax</tag>
-         
-        <tag>github</tag>
-         
-         
-           
-             
-              <breadCrumb title="日常小知识" url="https://skyofwar.xyz/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/02/21/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDhexo/</loc>
-    <lastmod>2018-03-31T02:54:03.596Z</lastmod>
-    <data>
-        <display>
-        <title>如何卸载hexo</title>
-        <pubTime>2018-02-21T08:01:41.000Z</pubTime>
-        
-        <tag>web</tag>
-         
-        <tag>bash</tag>
-         
-         
-           
-             
-              <breadCrumb title="日常小知识" url="https://skyofwar.xyz/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://skyofwar.xyz/2018/03/12/%E7%BA%BF%E6%80%A7%E5%9F%BA/</loc>
     <lastmod>2018-03-31T02:53:08.920Z</lastmod>
     <data>
@@ -1355,94 +1313,7 @@
          
         <tag>数据结构</tag>
          
-        <tag>线性代数</tag>
-         
         <tag>线性基</tag>
-         
-         
-           
-             
-              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/02/23/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%803/</loc>
-    <lastmod>2018-03-31T02:53:02.530Z</lastmod>
-    <data>
-        <display>
-        <title>线性代数基础 3</title>
-        <pubTime>2018-02-23T08:01:41.000Z</pubTime>
-        
-        <tag>Math theory</tag>
-         
-        <tag>线性代数</tag>
-         
-         
-           
-             
-              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/02/22/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%802/</loc>
-    <lastmod>2018-03-31T02:52:55.226Z</lastmod>
-    <data>
-        <display>
-        <title>线性代数基础 2</title>
-        <pubTime>2018-02-22T08:01:41.000Z</pubTime>
-        
-        <tag>Math theory</tag>
-         
-        <tag>线性代数</tag>
-         
-         
-           
-             
-              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/03/11/%E8%92%9F%E8%92%BB%E5%88%86%E5%B1%82%E8%B5%9B%E4%B9%8BT1%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/</loc>
-    <lastmod>2018-03-31T02:50:54.746Z</lastmod>
-    <data>
-        <display>
-        <title>蒟蒻分层赛之T1解题报告</title>
-        <pubTime>2018-03-11T14:31:33.000Z</pubTime>
-        
-        <tag>数论</tag>
-         
-        <tag>智商题</tag>
-         
-        <tag>打表</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/02/23/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9%E7%BB%86%E7%BB%86%E8%AE%B2/</loc>
-    <lastmod>2018-03-31T02:50:47.581Z</lastmod>
-    <data>
-        <display>
-        <title>矩阵的秩细细讲</title>
-        <pubTime>2018-02-23T05:08:25.000Z</pubTime>
-        
-        <tag>Math theory</tag>
          
         <tag>线性代数</tag>
          
@@ -1496,28 +1367,6 @@
            
              
               <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/03/24/Mathematica%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/</loc>
-    <lastmod>2018-03-31T02:50:15.265Z</lastmod>
-    <data>
-        <display>
-        <title>Mathematica 解题报告[数学竞赛课？！]</title>
-        <pubTime>2018-03-24T14:00:22.000Z</pubTime>
-        
-        <tag>数学</tag>
-         
-        <tag>MMA</tag>
-         
-         
-           
-             
-              <breadCrumb title="无聊" url="https://skyofwar.xyz/categories/%E6%97%A0%E8%81%8A/"/>
           
         </display>
     </data>

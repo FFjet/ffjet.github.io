@@ -243,7 +243,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">86</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">80</span></a>
   </li>
         
         
@@ -251,7 +251,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">9</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">8</span></a>
   </li>
         
         
@@ -259,7 +259,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">65</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">58</span></a>
   </li>
         
         
@@ -333,184 +333,6 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/10/「BZOJ 2006」[NOI2010]超级钢琴/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sky of war">
-      <meta itemprop="description" content="Why I gotta fly? The boundlessness precipitates me to do so.">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sky of war">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/10/「BZOJ 2006」[NOI2010]超级钢琴/" itemprop="url">
-                  「BZOJ 2006」[NOI2010]超级钢琴
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-10 22:31:33" itemprop="dateCreated datePublished" datetime="2018-03-10T22:31:33+08:00">2018-03-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-06 15:40:56" itemprop="dateModified" datetime="2018-05-06T15:40:56+08:00">2018-05-06</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="NOI2010-超级钢琴"><a href="#NOI2010-超级钢琴" class="headerlink" title="[NOI2010]超级钢琴"></a>[NOI2010]超级钢琴</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><strong>Description</strong><br>小Z是一个小有名气的钢琴家，最近C博士送给了小Z一架超级钢琴，小Z希望能够用这架钢琴创作出世界上最美妙的音乐。 这架超级钢琴可以弹奏出$n$个音符，编号为$1$至$n$。第i个音符的美妙度为Ai，其中Ai可正可负。 一个“超级和弦”由若干个编号连续的音符组成，包含的音符个数不少于L且不多于R。我们定义超级和弦的美妙度为其包含的所有音符的美妙度之和。两个超级和弦被认为是相同的，当且仅当这两个超级和弦所包含的音符集合是相同的。 小Z决定创作一首由k个超级和弦组成的乐曲，为了使得乐曲更加动听，小Z要求该乐曲由k个不同的超级和弦组成。我们定义一首乐曲的美妙度为其所包含的所有超级和弦的美妙度之和。小Z想知道他能够创出来的乐曲美妙度最<br>大值是多少。<br><strong>Input</strong><br>第一行包含四个正整数n, k, L, R。其中n为音符的个数，k为乐曲所包含的超级和弦个数，L和R分别是超级和弦所<br>包含音符个数的下限和上限。 接下来n行，每行包含一个整数Ai，表示按编号从小到大每个音符的美妙度。<br>N&lt;=500,000<br>k&lt;=500,000<br>-1000&lt;=$A_i$&lt;=1000,1&lt;=L&lt;=R&lt;=N且保证一定存在满足条件的乐曲<br>Output<br>只有一个整数，表示乐曲美妙度的最大值。</p>
-<p><strong>Sample Input</strong><br>4 3 2 3<br>3<br>2<br>-6<br>8<br><strong>Sample Output</strong><br>11</p>
-<p>【样例说明】</p>
-<p>共有5种不同的超级和弦：<br>音符1 ~ 2，美妙度为3 + 2 = 5<br>音符2 ~ 3，美妙度为2 + (-6) = -4<br>音符3 ~ 4，美妙度为(-6) + 8 = 2<br>音符1 ~ 3，美妙度为3 + 2 + (-6) = -1<br>音符2 ~ 4，美妙度为2 + (-6) + 8 = 4<br>最优方案为：乐曲由和弦1，和弦3，和弦5组成，美妙度为5 + 2 + 4 = 11。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>首先考虑如果k=1的时候如何来做。当k=1时，也就是只选出来一个最大值就可以了，我们可以枚举区间的起点，每一个起点对应的一个区间长度合法的区间，从这段区间里找出来一个前缀和最大的然后减去起点的就可以了。<br>但是如果k&gt;1的话，我们不能只找一个最大的。那么可以考虑维护一个大根堆，每次弹出堆中最大的元素来，弹k次。每次找出来一个最大值，然后压到堆里。每次从堆中弹出一个最大的，这个最大的还记录的一些信息：起点head，合法区间的lr，以及取最大值的位置loc，那么找出这个最大值之后计入答案，然后再将同样是head为起点，[l,loc-1]和[loc+1,r]的最大值压入堆。这样就贪心地找出了前k大的。时间复杂度$O(klogn)$。</p>
-<p>一样给大家附上了<del>精美</del>的代码。。。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt; </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 500000 + 5</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXexpo 30</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HeapNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> val, loc, l, r, head;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> HeapNode &amp;a) <span class="keyword">const</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> val &lt; a.val;	<span class="comment">//这玩意不能写反</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">HeapNode</span> <span class="title">HN</span>;</span></span><br><span class="line"><span class="keyword">int</span> N, k, l, r;</span><br><span class="line"><span class="keyword">int</span> data[MAXN], sum[MAXN];</span><br><span class="line">HN f[MAXN][MAXexpo];</span><br><span class="line">priority_queue &lt;HN&gt; que;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">initst</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">		f[i][<span class="number">0</span>].val = sum[i], f[i][<span class="number">0</span>].loc = i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>; j &lt; MAXexpo; ++j)	<span class="comment">//这边要预处理一直到MAXexpo，而不能仅仅预处理到log n</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span>&lt;= N; ++i)</span><br><span class="line">		&#123;</span><br><span class="line">			f[i][j] = max(f[i][j - <span class="number">1</span>], f[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> HN <span class="title">query</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> k = log2(r - l + <span class="number">1</span>);		<span class="comment">//后来发现log2原来是个STL啊。。</span></span><br><span class="line">	<span class="keyword">return</span> max(f[l][k], f[r - (<span class="number">1</span> &lt;&lt; k) + <span class="number">1</span>][k]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> head)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l &gt; r) <span class="keyword">return</span> ;</span><br><span class="line">	HN now = query(l, r);</span><br><span class="line">	now.val -= sum[head - <span class="number">1</span>], now.l = l, now.r = r, now.head = head;</span><br><span class="line">    <span class="comment">//先计算前缀和</span></span><br><span class="line">	que.push(now);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; k &gt;&gt; l &gt;&gt; r;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; data[i];</span><br><span class="line">		sum[i] = sum[i - <span class="number">1</span>] + data[i];</span><br><span class="line">	&#125;</span><br><span class="line">	initst();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i + l - <span class="number">1</span> &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> Left = min(i + l - <span class="number">1</span>, N);</span><br><span class="line">		<span class="keyword">int</span> Right = min(i + r - <span class="number">1</span>, N);</span><br><span class="line">		Add(Left, Right, i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;	<span class="comment">//一定要记得初始化赋值啊。。</span></span><br><span class="line">	<span class="keyword">while</span> (k--)</span><br><span class="line">	&#123;</span><br><span class="line">		HN now = que.top();	<span class="comment">//每次弹出一个最大值</span></span><br><span class="line">		que.pop();</span><br><span class="line">		ans += (<span class="keyword">long</span> <span class="keyword">long</span>)now.val;</span><br><span class="line">		Add(now.l, now.loc - <span class="number">1</span>, now.head);</span><br><span class="line">		Add(now.loc + <span class="number">1</span>, now.r, now.head);	<span class="comment">//把区间中的最大值继续压入堆中</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
     
       
 
@@ -1614,7 +1436,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/23/线性代数基础3/">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/07/计算凸多边形的面积/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sky of war">
@@ -1633,8 +1455,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/23/线性代数基础3/" itemprop="url">
-                  线性代数基础 3
+                <a class="post-title-link" href="/2018/02/07/计算凸多边形的面积/" itemprop="url">
+                  求凸多边形的面积
                 </a>
               
             
@@ -1660,7 +1482,7 @@
                 
               
 
-              <time title="创建时间：2018-02-23 16:01:41" itemprop="dateCreated datePublished" datetime="2018-02-23T16:01:41+08:00">2018-02-23</time>
+              <time title="创建时间：2018-02-07 22:01:41" itemprop="dateCreated datePublished" datetime="2018-02-07T22:01:41+08:00">2018-02-07</time>
             
 
             
@@ -1677,7 +1499,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-03-31 10:53:02" itemprop="dateModified" datetime="2018-03-31T10:53:02+08:00">2018-03-31</time>
+                <time title="修改时间：2018-03-31 10:50:36" itemprop="dateModified" datetime="2018-03-31T10:50:36+08:00">2018-03-31</time>
               
             
           </span>
@@ -1730,23 +1552,16 @@
       
         
           
-            <h1 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h1><blockquote>
-<p>有趣有趣</p>
-</blockquote>
-<h2 id="几何含义"><a href="#几何含义" class="headerlink" title="几何含义"></a>几何含义</h2><p>平面六面体的有向体积，平行四边形的有向面积</p>
-<h2 id="方阵的行列式"><a href="#方阵的行列式" class="headerlink" title="方阵的行列式"></a>方阵的行列式</h2><p>定义：完全展开式</p>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p><strong>决定性质:<br>1.反对称:任意两行相同时为0<br>2.双线性:行线性（列线性与行线性推导相同）<br>3.单位矩阵 ==&gt; 行列式为1</strong></p>
-<p>==展开式能反映性质，性质最终能推出展开式==</p>
-<p>其它性质：<br>①行列式$A$中某行(或列)用同一数$k$乘,其结果等于$kA$。<br>②行列式$A$等于其转置行列式$AT$($AT$的第$i$行为$A$的第$i$列)。<br>③若$n$阶行列式 $α$ 中某行(或列);行列式则 $α$ 是两个行列式的和,这两个行列式的第$i$行(或列),一个是$b_1,b_2,…,b_n$；另一个是$с_1，с_2,…,с_n$;其余各行（或列）上的元与 $α$ 的完全一样。<br>④行列式$A$中两行（或列）互换,其结果等于$-A$。<br>⑤把行列式$A$的某行（或列）中各元同乘一数后加到另一行（或列）中各对应元上，结果仍然是$A$。</p>
-<h2 id="实际计算"><a href="#实际计算" class="headerlink" title="实际计算"></a>实际计算</h2><p>emmm很重要哦xDDDD</p>
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="求凸多边形的面积（pol）"><a href="#求凸多边形的面积（pol）" class="headerlink" title="求凸多边形的面积（pol）"></a>求凸多边形的面积（pol）</h2><p><strong>问题描述</strong>：<br>按一定的顺序（顺、逆时针）给出一个多边形的各顶点坐标，求该多边形的面积。<br><strong>输入</strong>：<br>第一行包含一个n，表示多边形顶点的个数( 0&lt;=n&lt;=100)<br>第2行到第n+1行，每行两个整数x，y（-10000&lt;=x，y &lt;= 10000）<br><strong>输出</strong>：<br>    输出有且只有一行，包含一个数s，s为多边形的面积，保留一位小数<br><strong>样例</strong>：<br>pol.in<br>3<br>0 0<br>0 3<br>3 0</p>
+<p>pol.out<br>4.5<br>题目及测试数据: <a href="https://github.com/Leoleepz/OI-Codes/tree/master/%E4%BB%BB%E6%84%8F%E5%A4%9A%E8%BE%B9%E5%BD%A2%E9%9D%A2%E7%A7%AF" target="_blank" rel="noopener">https://github.com/Leoleepz/OI-Codes/tree/master/%E4%BB%BB%E6%84%8F%E5%A4%9A%E8%BE%B9%E5%BD%A2%E9%9D%A2%E7%A7%AF</a></p>
 <ul>
-<li>$T(π)$表示<strong>逆序对数</strong>(<a href="https://zh.wikipedia.org/wiki/%E9%80%86%E5%BA%8F%E5%AF%B9" target="_blank" rel="noopener">什么是逆序对？</a>)</li>
+<li>第一种方法即为朴素的向量方法。我们可以把凸多边形拆成多个三角形的面积去做。我们会发现，如果用原点去构造三角形来操作，最终结果就是（逆时针坐标乘积-顺时针坐标乘积）÷2.</li>
 </ul>
-<h2 id="具体计算"><a href="#具体计算" class="headerlink" title="具体计算"></a>具体计算</h2><p>最简单的方法是按照定义<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c37d3280bcfc7714d2f4422eaea2f7628151dcc8" alt=""><br>计算或按照拉普拉斯公式进行<strong>递归</strong>运算。这样的算法需要计算$n!$次的加法，复杂度是指数函数。在实际的计算中只能用于计算阶数很小的行列式。注意到拉普拉斯公式的性质，如果一行或一列里面有很多个0，那么就可以把行列式按这一行或一列展开，这时数值为零的系数所对应的代数余子式就不必计算了，因为最后要乘以0，这样就可以简化计算。然而<strong>更加简便的算法是利用<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E6%96%AF%E6%B6%88%E5%8E%BB%E6%B3%95" target="_blank" rel="noopener">Gauss消元法</a>或<a href="https://zh.wikipedia.org/wiki/LU%E5%88%86%E8%A7%A3" target="_blank" rel="noopener">LU分解法</a>，把矩阵通过初等变换变成三角矩阵或三角矩阵的乘积来计算行列式的值</strong>。这些算法的复杂度都是$n^{3}$级别，远远小于直接计算的复杂度。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996) </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ComputeTriangleVectorArea CTVA</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">double</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span> &lt;Point&gt; Points;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ComputeTriangleVectorArea</span><span class="params">(Point p1, Point p2, Point p3)</span></span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">double</span>)<span class="number">0.5</span> * ((p2.x - p1.x) * (p3.y - p1.y) - (p3.x - p1.x) * (p2.y - p1.y));   </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Compute</span><span class="params">(<span class="built_in">vector</span> &lt;Point&gt; PointSet)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (PointSet.empty()) <span class="keyword">return</span> <span class="number">0.0</span>;</span><br><span class="line">	<span class="keyword">double</span> area = <span class="number">0.0</span>;</span><br><span class="line">	Point O;</span><br><span class="line">	O.x = O.y = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="built_in">vector</span>&lt;Point&gt;::iterator ii = PointSet.begin(); ii != PointSet.end() - <span class="number">1</span>; ++ii)</span><br><span class="line">	&#123;</span><br><span class="line">		area += CTVA(O,(*ii),(*(ii + <span class="number">1</span>)));</span><br><span class="line">	&#125;</span><br><span class="line">	area += CTVA(O,PointSet[PointSet.size() - <span class="number">1</span>], PointSet[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">abs</span>(area);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen(<span class="string">"pol.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"pol.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Point tmp;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; tmp.x &gt;&gt; tmp.y;</span><br><span class="line">		Points.push_back(tmp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%0.1lf\n"</span>,Compute(Points));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>不满秩时行列式为$0$</li>
+<li>第二种方法我脑洞了一下，用了定积分的方法。定积分有正有负，依次求和，重复部分由于正负会相互抵消，最后剩下的总面积的绝对值就是多边形的面积。</li>
 </ul>
-
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> <span class="meta-keyword">warning</span>(disable:4996) </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">double</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span> &lt;Point&gt; Points;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">LinearIntegration</span><span class="params">(Point p1, Point p2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">double</span>)<span class="number">0.5</span> * (p2.x - p1.x) * (p2.y + p1.y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">double</span> <span class="title">ComputeArea</span><span class="params">(<span class="built_in">vector</span> &lt;Point&gt; PointSet)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (PointSet.empty()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">double</span> area = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="built_in">vector</span>&lt;Point&gt;::iterator ii = PointSet.begin(); ii != PointSet.end() - <span class="number">1</span>; ++ii)</span><br><span class="line">	&#123;</span><br><span class="line">		area += LinearIntegration((*ii),(*(ii + <span class="number">1</span>)));</span><br><span class="line">	&#125;</span><br><span class="line">	area += LinearIntegration(PointSet[PointSet.size() - <span class="number">1</span>], PointSet[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">abs</span>(area);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	freopen(<span class="string">"pol.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"pol.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		Point tmp;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; tmp.x &gt;&gt; tmp.y;</span><br><span class="line">		Points.push_back(tmp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%0.1lf\n"</span>,ComputeArea(Points));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1802,7 +1617,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/23/矩阵的秩细细讲/">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/05/米勒拉宾素数判定 MR Prime Detect/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sky of war">
@@ -1821,8 +1636,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/23/矩阵的秩细细讲/" itemprop="url">
-                  矩阵的秩细细讲
+                <a class="post-title-link" href="/2018/02/05/米勒拉宾素数判定 MR Prime Detect/" itemprop="url">
+                  米勒-拉宾素数判定 MR Prime Detect
                 </a>
               
             
@@ -1848,7 +1663,7 @@
                 
               
 
-              <time title="创建时间：2018-02-23 13:08:25" itemprop="dateCreated datePublished" datetime="2018-02-23T13:08:25+08:00">2018-02-23</time>
+              <time title="创建时间：2018-02-05 22:01:41" itemprop="dateCreated datePublished" datetime="2018-02-05T22:01:41+08:00">2018-02-05</time>
             
 
             
@@ -1865,7 +1680,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-03-31 10:50:47" itemprop="dateModified" datetime="2018-03-31T10:50:47+08:00">2018-03-31</time>
+                <time title="修改时间：2018-09-08 19:49:19" itemprop="dateModified" datetime="2018-09-08T19:49:19+08:00">2018-09-08</time>
               
             
           </span>
@@ -1918,197 +1733,13 @@
       
         
           
-            <p>在线性代数中，一个矩阵$A$的列秩是$A$的线性独立的纵列的极大数目。类似地，行秩是$A$的线性独立的横行的极大数目。</p>
-<p>矩阵的列秩和行秩总是<strong>相等</strong>的，因此它们可以简单地称作矩阵$A$的秩。通常表示为$r(A)$，$rk(A)$或$rank A$。</p>
-<h1 id="铺垫"><a href="#铺垫" class="headerlink" title="铺垫"></a>铺垫</h1><h2 id="奇异值分解"><a href="#奇异值分解" class="headerlink" title="奇异值分解"></a>奇异值分解</h2><p>奇异值分解（singular value decomposition）是线性代数中一种重要的矩阵分解，在信号处理、统计学等领域有重要应用</p>
-<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>假设$ M $是一个$ m×n $阶矩阵，其中的元素全部属于域$ K $，也就是实数域或复数域。如此则存在一个分解使得$M=U\Sigma V^*$<br>其中$ U $是$ m×m $阶酉矩阵；$Σ$是$ m×n $阶非负实数对角矩阵；而$ V^* $，即$ V $的共轭转置，是$ n×n $阶酉矩阵。这样的分解就称作$ M $的奇异值分解。$ Σ $对角线上的元素$ Σ_i $， $ i $即为$ M $的奇异值。<br>常见的做法是将奇异值由大而小排列。如此$ Σ $便能由$M$唯一确定了。（$ U $和$ V $仍然不能确定）</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>观察一个$4×5$的矩阵<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dadc0b09a06ed4cc8af20f64599c13b7d0c7481e" alt=""><br>$M$矩阵的奇异值分解如下$U\Sigma V^*$<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b83098d6ad99cd44041aaece6be9206217d32216" alt=""><br><img src="http://i2.bvimg.com/633215/f66dd98c7e433dc5.png" alt=""></p>
-<h1 id="正式内容"><a href="#正式内容" class="headerlink" title="正式内容"></a>正式内容</h1><h2 id="行秩列秩相等性"><a href="#行秩列秩相等性" class="headerlink" title="行秩列秩相等性"></a>行秩列秩相等性</h2><p>矩阵的行秩与列秩相等，是线性代数基本定理的重要组成部分. 其基本证明思路是，矩阵可以看作<strong>线性映射的变换矩阵</strong>，列秩为<strong>像空间</strong>的维度，行秩为<strong>非零原像空间</strong>的维度，因此列秩与行秩相等，即<strong>像空间的维度</strong>与<strong>非零原像空间的维度</strong>相等（这里的非零原像空间是指约去了<strong>零空间</strong>后的<strong>商空间</strong>：<strong>原像空间</strong>）。这从矩阵的<strong>奇异值分解</strong>就可以看出来。</p>
-<ul>
-<li><strong>引理</strong> 设矩阵$A=a_{ij}(s×n)$的列秩等于$A$的列数$n$，则$A$的列秩，行秩都等于$n$。</li>
-<li><strong>定理</strong> 矩阵的行秩，列秩，秩都相等。</li>
-<li><strong>定理</strong> 初等变换不改变矩阵的秩。</li>
-<li><strong>定理</strong> 矩阵的乘积的秩$R(ab)&lt;=min(R(a),R(b))$;<blockquote>
-<p>当$r(A)≤n-2$时，最高阶非零子式的阶数$≤n-2$，任何$n-1$阶子式均为零，而伴随阵中的各元素就是$n-1$阶子式再加上个正负号，所以伴随阵为$0$矩阵。<br>当$r(A)≤n-1$时，最高阶非零子式的阶数$≤n-1$，所以$n-1$阶子式有可能不为零，所以伴随阵有可能非零（等号成立时伴随阵必为非零）。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="秩的变化规律"><a href="#秩的变化规律" class="headerlink" title="秩的变化规律"></a>秩的变化规律</h2><p>(1) Transpose后秩不变<br>(2) $r(A)≤min(m,n)$,$A$是$m×n$型矩阵<br>(3) $r(kA)=r(A)$,$k$不等于0<br>(4) $r(A)=0 ⇔ A=0$<br>(5) $r(A+B)≤r(A)+r(B)$<br>(6) $r(AB)≤min(r(A),r(B))$<br>(7) $r(A)+r(B)-n≤r(AB)$</p>
-<p>就讲到这啦。。。。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/22/显示不出来mathjax的解决方案/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sky of war">
-      <meta itemprop="description" content="Why I gotta fly? The boundlessness precipitates me to do so.">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sky of war">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/22/显示不出来mathjax的解决方案/" itemprop="url">
-                  显示不出来mathjax的解决方案
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-22 16:07:40" itemprop="dateCreated datePublished" datetime="2018-02-22T16:07:40+08:00">2018-02-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-03-31 10:54:11" itemprop="dateModified" datetime="2018-03-31T10:54:11+08:00">2018-03-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/日常小知识/" itemprop="url" rel="index"><span itemprop="name">日常小知识</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>工具：chrome<br>有页面显示不出来数学公式？那是因为https不能加载http的js脚本<br>我们看到chrome的地址栏的右端有一块带叉叉的盾牌。点开，允许加载不安全的脚本即可<br>PS:我TM眼瞎看了一晚上才看到这个按钮xDDDD<br>PS:本页就引用了Mathjax, 同学们看看$\sum_{i=0}^9a_i$能不能正常显示吧！</p>
-
+            <h1 id="首先需要知道两个定理"><a href="#首先需要知道两个定理" class="headerlink" title="首先需要知道两个定理:"></a>首先需要知道两个定理:</h1><p>1、<strong>费马小定理</strong>： 假如$p$是素数，且$\gcd(a,p)=1$，那么 $a(p-1)≡1(\text{mod}\ p)$。不知所云的萌新请点击此处‍自行脑补一下</p>
+<p>2、<strong>二次探测定理</strong>：如果$p$是素数，$x$是小于$p$的正整数，那么要么$x=1$，要么$x=p-1$。</p>
+<p>　　证明：这是显然的，因为相当于$p$能整除$(x+1)(x-1)$。</p>
+<p>　　由于$p$是素数，那么只可能是$x-1$能被p整除(此时x=1) 或 x+1能被p整除(此时x=p-1)。</p>
+<p>接着，如果$a^{n-1} ≡ 1 (\text{mod} n)$成立，Miller-Rabin算法不是立即找另一个$a$进行测试，而是看$n-1$是不是偶数。如果$n-1$是偶数，另$u=\dfrac{n-1}{2}$，并检查是否满足二次探测定理即$a^u ≡ 1$ 或$ a^u ≡ n - 1(\text{mod}\ n)$。</p>
+<h1 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h1><p>Miller-Rabin算法随机生成底数$a$，进行多次调用函数进行测试，Miller-Rabin检测也存在伪素数的问题，但是<strong>与费马检测不同，MR检测的正确概率不依赖被检测数$p$，而仅依赖于检测次数</strong>。已经证明，如果一个数$p$为合数，那么Miller-Rabin检测的证据数量不少于比其小的正整数的$\dfrac{3}{4}p$，换言之，$k$次检测后得到错误结果的概率为$\left (\dfrac{1}{4} \right )^k$。我们在实际应用中一般可以测试$15\sim20$次。</p>
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>, buff = a;</span><br><span class="line">	<span class="keyword">while</span> (b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (b &amp; <span class="number">1</span>)ans = (ans * buff) % r;</span><br><span class="line">		buff = (buff * buff) % r;</span><br><span class="line">		b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Miller_Rabbin</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> r = <span class="number">0</span>, s = n - <span class="number">1</span>, j;</span><br><span class="line">	<span class="keyword">if</span> (!(n%a))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">while</span> (!(s &amp; <span class="number">1</span>))</span><br><span class="line">	&#123;</span><br><span class="line">		s &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		r++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> k = qpow(a, s, n);</span><br><span class="line">	<span class="keyword">if</span> (k == <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; r; j++, k = k * k % n)</span><br><span class="line">		<span class="keyword">if</span> (k == n - <span class="number">1</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">IsPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> tab[] = &#123; <span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (n == tab[i])</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span> (!Miller_Rabbin(n, tab[i]))</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> n;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; IsPrime(n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -2153,7 +1784,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
   </nav>
 
 
@@ -2200,7 +1831,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">65</span>
+                    <span class="site-state-item-count">58</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2229,9 +1860,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2404,19 +2033,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2562,7 +2179,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共46.9k字</span>
+  <span class="post-count">博客全站共42.7k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -3050,15 +2667,11 @@
   
     
       
+    
+      
+    
+      
         
-      
-    
-      
-    
-      
-    
-      
-    
       
     
       
