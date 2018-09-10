@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-10T05:02:10.512Z</updated>
+  <updated>2018-09-10T15:11:33.493Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>『ARC 092D』Two Sequences</title>
+    <link href="https://skyofwar.xyz/2018/09/10/%E3%80%8EARC%20077D%E3%80%8FD%20-%2011/"/>
+    <id>https://skyofwar.xyz/2018/09/10/『ARC 077D』D - 11/</id>
+    <published>2018-09-10T05:04:27.000Z</published>
+    <updated>2018-09-10T15:11:33.493Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『ARC-077D』D-11&quot;&gt;&lt;a href=&quot;#『ARC-077D』D-11&quot; class=&quot;headerlink&quot; title=&quot;『ARC 077D』D - 11&quot;&gt;&lt;/a&gt;『ARC 077D』D - 11&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
+&lt;p&gt;题意：&lt;/p&gt;
+&lt;p&gt;给出$n$个数，其中有一个数会出现两次，其余数只出现一次，问不同长度且不同的子串的数量。取模$10^9+7$&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arc077.contest.atcoder.jp/tasks/arc077_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="组合数学" scheme="https://skyofwar.xyz/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="容斥" scheme="https://skyofwar.xyz/tags/%E5%AE%B9%E6%96%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>『ARC 092F』Two Faced Edges</title>
@@ -254,9 +283,9 @@
       <category term="复习" scheme="https://skyofwar.xyz/categories/%E5%A4%8D%E4%B9%A0/"/>
     
     
-      <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
-    
       <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
     
   </entry>
   
@@ -521,29 +550,6 @@
     
       &lt;h1 id=&quot;『AGC-003B』Simplified-mahjong&quot;&gt;&lt;a href=&quot;#『AGC-003B』Simplified-mahjong&quot; class=&quot;headerlink&quot; title=&quot;『AGC 003B』Simplified mahjong&quot;&gt;&lt;/a&gt;『AGC 003B』Simplified mahjong&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;算了懒得搞，直接放传送门了：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://agc003.contest.atcoder.jp/tasks/agc003_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送door♂&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>『AGC 003C』BBuBBBlesort!</title>
-    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003C%E3%80%8FBBuBBBlesort!/"/>
-    <id>https://skyofwar.xyz/2018/08/30/『AGC 003C』BBuBBBlesort!/</id>
-    <published>2018-08-30T06:36:27.000Z</published>
-    <updated>2018-08-30T06:37:20.498Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;『AGC-003C』BBuBBBlesort&quot;&gt;&lt;a href=&quot;#『AGC-003C』BBuBBBlesort&quot; class=&quot;headerlink&quot; title=&quot;『AGC 003C』BBuBBBlesort!&quot;&gt;&lt;/a&gt;『AGC 003C』BBuBBBlesort!&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;算了懒得搞，直接放传送门了：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://agc003.contest.atcoder.jp/tasks/agc003_c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送door♂&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     

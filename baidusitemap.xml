@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/09/10/%E3%80%8EARC%20077D%E3%80%8FD%20-%2011/</loc>
+    <lastmod>2018-09-10T15:11:33.493Z</lastmod>
+    <data>
+        <display>
+        <title>『ARC 092D』Two Sequences</title>
+        <pubTime>2018-09-10T05:04:27.000Z</pubTime>
+        
+        <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
+         
+        <tag>组合数学</tag>
+         
+        <tag>容斥</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/09/10/%E3%80%8EARC%20092F%E3%80%8FTwo%20Faced%20Edges/</loc>
     <lastmod>2018-09-10T05:02:10.512Z</lastmod>
     <data>
@@ -273,9 +299,9 @@
         <title>OI代码模板计划 - 后缀数组</title>
         <pubTime>2018-09-03T14:50:00.000Z</pubTime>
         
-        <tag>strings</tag>
-         
         <tag>模板</tag>
+         
+        <tag>strings</tag>
          
          
            
