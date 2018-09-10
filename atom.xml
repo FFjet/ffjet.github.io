@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-10T04:29:46.564Z</updated>
+  <updated>2018-09-10T04:59:52.864Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -21,12 +21,13 @@
     <link href="https://skyofwar.xyz/2018/09/10/%E3%80%8EARC%20092F%E3%80%8FTwo%20Faced%20Edges/"/>
     <id>https://skyofwar.xyz/2018/09/10/『ARC 092F』Two Faced Edges/</id>
     <published>2018-09-10T04:29:27.000Z</published>
-    <updated>2018-09-10T04:29:46.564Z</updated>
+    <updated>2018-09-10T04:59:52.864Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『ARC-092F』Two-Faced-Edges&quot;&gt;&lt;a href=&quot;#『ARC-092F』Two-Faced-Edges&quot; class=&quot;headerlink&quot; title=&quot;『ARC 092F』Two Faced Edges&quot;&gt;&lt;/a&gt;『ARC 092F』Two Faced Edges&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;『ARC-092F』Two-Faced-Edges&quot;&gt;&lt;a href=&quot;#『ARC-092F』Two-Faced-Edges&quot; class=&quot;headerlink&quot; title=&quot;『ARC 092F』Two Faced Edges&quot;&gt;&lt;/a&gt;『ARC 092F』Two Faced Edges&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;题意：&lt;/p&gt;
+&lt;p&gt;给定一个有向图，然后询问每一条边将它反转之后整张图的强联通分量是否会发生变化&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://arc092.contest.atcoder.jp/tasks/arc092_d&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
     
     </summary>
