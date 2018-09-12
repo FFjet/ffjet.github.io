@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-10T15:14:06.862Z</updated>
+  <updated>2018-09-12T07:17:41.989Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>矩阵的伪逆</title>
+    <link href="https://skyofwar.xyz/2018/09/12/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BC%AA%E9%80%86/"/>
+    <id>https://skyofwar.xyz/2018/09/12/矩阵的伪逆/</id>
+    <published>2018-09-12T07:04:27.000Z</published>
+    <updated>2018-09-12T07:17:41.989Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;矩阵的伪逆&quot;&gt;&lt;a href=&quot;#矩阵的伪逆&quot; class=&quot;headerlink&quot; title=&quot;矩阵的伪逆&quot;&gt;&lt;/a&gt;矩阵的伪逆&lt;/h1&gt;&lt;h2 id=&quot;伪逆&quot;&gt;&lt;a href=&quot;#伪逆&quot; class=&quot;headerlink&quot; title=&quot;伪逆&quot;&gt;&lt;/a&gt;伪逆&lt;/h2&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;广义逆阵&lt;/strong&gt;(Generalized inverse)也称为&lt;strong&gt;伪逆矩阵&lt;/strong&gt;（pseudoinverse)，是在数学矩阵领域内的名词，一矩阵&lt;em&gt;A&lt;/em&gt;的广义逆阵是指另一矩阵具有部分逆矩阵的特性，但是不一定具有逆矩阵的所有特性。假设一矩阵${\displaystyle A\in \mathbb {R} ^{n\times m}}$及另一矩阵${\displaystyle A^{\mathrm {g} }\in \mathbb {R} ^{m\times n}}$，若${\displaystyle A^{\mathrm {g} } }$满足${\displaystyle AA^{\mathrm {g} }A=A}$，则${\displaystyle A^{\mathrm {g} } }$即为${\displaystyle A}$的广义逆阵。&lt;/p&gt;
+&lt;p&gt;建构广义逆阵的目的是针对可逆矩阵以外的矩阵（例如&lt;strong&gt;非方阵的矩阵&lt;/strong&gt;）可以找到一类矩阵，使它们有一些&lt;strong&gt;类似逆矩阵&lt;/strong&gt;的特性。&lt;strong&gt;任意的矩阵都存在广义逆阵&lt;/strong&gt;，&lt;em&gt;若一矩阵存在逆矩阵，逆矩阵即为其唯一的广义逆阵&lt;/em&gt;。有些广义逆阵可以定义在和结合律乘法有关的数学结构，如半群中。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="讲解" scheme="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+    
+    
+      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="线性代数" scheme="https://skyofwar.xyz/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>『ARC 077D』D - 11</title>
@@ -319,7 +342,7 @@
     <link href="https://skyofwar.xyz/2018/09/01/%E7%AA%97%E5%87%BD%E6%95%B0/"/>
     <id>https://skyofwar.xyz/2018/09/01/窗函数/</id>
     <published>2018-09-01T14:32:00.000Z</published>
-    <updated>2018-09-02T13:59:44.904Z</updated>
+    <updated>2018-09-12T07:05:28.308Z</updated>
     
     <summary type="html">
     
@@ -332,7 +355,7 @@
     
     </summary>
     
-      <category term="教程" scheme="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="讲解" scheme="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
     
     
       <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
@@ -350,7 +373,7 @@
     <link href="https://skyofwar.xyz/2018/09/01/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
     <id>https://skyofwar.xyz/2018/09/01/基础乐理与数学（二）/</id>
     <published>2018-09-01T12:55:04.000Z</published>
-    <updated>2018-09-01T13:06:05.980Z</updated>
+    <updated>2018-09-12T07:05:37.379Z</updated>
     
     <summary type="html">
     
@@ -361,7 +384,7 @@
     
     </summary>
     
-      <category term="教程" scheme="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="讲解" scheme="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
     
     
       <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
@@ -377,7 +400,7 @@
     <link href="https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>https://skyofwar.xyz/2018/08/31/基础乐理与数学（一）/</id>
     <published>2018-08-31T14:04:27.000Z</published>
-    <updated>2018-09-01T12:54:27.402Z</updated>
+    <updated>2018-09-12T07:05:42.887Z</updated>
     
     <summary type="html">
     
@@ -399,7 +422,7 @@
     
     </summary>
     
-      <category term="教程" scheme="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+      <category term="讲解" scheme="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
     
     
       <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
@@ -527,29 +550,6 @@
     
       &lt;h1 id=&quot;『AGC-003A』Wanna-go-back-home&quot;&gt;&lt;a href=&quot;#『AGC-003A』Wanna-go-back-home&quot; class=&quot;headerlink&quot; title=&quot;『AGC 003A』Wanna go back home&quot;&gt;&lt;/a&gt;『AGC 003A』Wanna go back home&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;传送门：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://agc003.contest.atcoder.jp/tasks/agc003_a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送door♂&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>『AGC 003B』Simplified mahjong</title>
-    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003B%E3%80%8FSimplified%20mahjong/"/>
-    <id>https://skyofwar.xyz/2018/08/30/『AGC 003B』Simplified mahjong/</id>
-    <published>2018-08-30T06:46:30.000Z</published>
-    <updated>2018-08-30T06:53:05.849Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;『AGC-003B』Simplified-mahjong&quot;&gt;&lt;a href=&quot;#『AGC-003B』Simplified-mahjong&quot; class=&quot;headerlink&quot; title=&quot;『AGC 003B』Simplified mahjong&quot;&gt;&lt;/a&gt;『AGC 003B』Simplified mahjong&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;算了懒得搞，直接放传送门了：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://agc003.contest.atcoder.jp/tasks/agc003_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送door♂&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     

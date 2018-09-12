@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>矩阵的伪逆</title>
+      <link href="/2018/09/12/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BC%AA%E9%80%86/"/>
+      <url>/2018/09/12/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BC%AA%E9%80%86/</url>
+      <content type="html"><![CDATA[<h1 id="矩阵的伪逆"><a href="#矩阵的伪逆" class="headerlink" title="矩阵的伪逆"></a>矩阵的伪逆</h1><h2 id="伪逆"><a href="#伪逆" class="headerlink" title="伪逆"></a>伪逆</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>广义逆阵</strong>(Generalized inverse)也称为<strong>伪逆矩阵</strong>（pseudoinverse)，是在数学矩阵领域内的名词，一矩阵<em>A</em>的广义逆阵是指另一矩阵具有部分逆矩阵的特性，但是不一定具有逆矩阵的所有特性。假设一矩阵${\displaystyle A\in \mathbb {R} ^{n\times m}}$及另一矩阵${\displaystyle A^{\mathrm {g} }\in \mathbb {R} ^{m\times n}}$，若${\displaystyle A^{\mathrm {g} } }$满足${\displaystyle AA^{\mathrm {g} }A=A}$，则${\displaystyle A^{\mathrm {g} } }$即为${\displaystyle A}$的广义逆阵。</p><p>建构广义逆阵的目的是针对可逆矩阵以外的矩阵（例如<strong>非方阵的矩阵</strong>）可以找到一类矩阵，使它们有一些<strong>类似逆矩阵</strong>的特性。<strong>任意的矩阵都存在广义逆阵</strong>，<em>若一矩阵存在逆矩阵，逆矩阵即为其唯一的广义逆阵</em>。有些广义逆阵可以定义在和结合律乘法有关的数学结构，如半群中。</p><a id="more"></a><h3 id="一组实例"><a href="#一组实例" class="headerlink" title="一组实例"></a>一组实例</h3><p>考虑以下的线性方程</p><script type="math/tex; mode=display">{\displaystyle A  \vec x= \vec y}</script><p>其中${\displaystyle A}$为${\displaystyle n\times m}$的矩阵，而${\displaystyle \vec y\in {\mathcal {R}}(A)}$, ${\displaystyle A}$的列空间。</p><p>回顾一下我们的线性代数课程。如果矩阵$A$是可逆矩阵那么一切都变得非常轻松愉快：${\displaystyle \vec x=A^{-1} \vec y}$即为方程式的解。</p><p>而若矩阵${\displaystyle A}$为可逆矩阵则有</p><p>$\displaystyle AA^{-1}A=A$</p><p>假设矩阵${\displaystyle A}$不可逆或是${\displaystyle n\neq m}$，需要一个适合的${\displaystyle m\times n}$矩阵${\displaystyle G}$使得下式成立</p><script type="math/tex; mode=display">{\displaystyle AG \vec y=\vec y.}</script><p>因此${\displaystyle G \vec y}$为线性系统${\displaystyle A \vec x= \vec y}$的解。 而同样的，${\displaystyle m\times n}$阶的矩阵${\displaystyle G}$也会使下式成立</p><script type="math/tex; mode=display">{\displaystyle AGA=A.}</script><p>因此可以用以下的方式定义<strong>广义逆阵</strong>：假设一个${\displaystyle n\times m}$的矩阵${\displaystyle A}$，${\displaystyle m\times n}$的矩阵${\displaystyle G}$若可以使${\displaystyle  AGA=A}$成立，矩阵${\displaystyle G}$即为${\displaystyle A}$的广义逆阵.</p><h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><p>一种产生广义逆阵的方式：</p><p>若$ {\displaystyle A=BC}$为其<strong>秩分解</strong>，则$ {\displaystyle G=C_{r}^{-}B_{l}^{-}} $为 ${\displaystyle A}$ 的广义逆阵，其中$ {\displaystyle C_{r}^{-}} $为$ {\displaystyle C} $的右逆矩阵，而$ {\displaystyle B_{l}^{-}}$为$ {\displaystyle B} $的左逆矩阵。<br>若$ {\displaystyle A=P{\begin{bmatrix}I_{r}&amp;0\\0&amp;0\end{bmatrix}}Q}$ ，其中 ${\displaystyle P} P及$$ {\displaystyle Q} $为可逆矩阵，则 ${\displaystyle G=Q^{-1}{\begin{bmatrix}I_{r}&amp;U\\W&amp;V\end{bmatrix}}P^{-1}}$ 是$ {\displaystyle A} $的广义逆阵，其中$ {\displaystyle U,V} $及$ {\displaystyle W} $均为任意矩阵。<br>令 ${\displaystyle A} $为秩为$ {\displaystyle r} $的矩阵，在不失一般性的情形下，令 $\displaystyle A={\begin{bmatrix}B&amp;C\\D&amp;E\end{bmatrix} } $，其中 ${\displaystyle B_{r\times r}} $为$ {\displaystyle A}$ 的可逆子矩阵，则 $\displaystyle G={\begin{bmatrix}B^{-1}&amp;0\\0&amp;0\end{bmatrix} }$为$ {\displaystyle A} $的广义逆阵。</p><h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><ul><li><a href="https://en.wikipedia.org/wiki/Drazin_inverse" target="_blank" rel="noopener">德拉任逆矩阵</a></li><li><a href="https://en.wikipedia.org/wiki/Constrained_generalized_inverse" target="_blank" rel="noopener">博特-达芬逆矩阵</a></li><li><a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse" target="_blank" rel="noopener">摩尔－彭若斯广义逆</a></li></ul><h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ul><li>如果没有用，我们还要它干嘛？</li></ul><p>任何一种广义逆阵都可以用来判断线性方程组是否有解，若有解时列出其所有的解。若以下$n \times m$的线性系统有解存在$A \vec x=\vec b$<br>其中向量 ${\displaystyle \vec x} $为未知数，向量$\vec b$为常数，以下是所有的解</p><p>${\displaystyle \vec x=A^{\mathrm {g} } \vec b+[I-A^{\mathrm {g} }A] w}$<br>其中参数$w$为<strong>任意矩阵</strong>，而 ${\displaystyle A^{\mathrm {g} }} $为 ${\displaystyle A} $的任何一个广义逆阵。解存在的条件为当且仅当$ {\displaystyle A^{\mathrm {g} } \vec b} $是其中一个解，也就是当且仅当$ {\displaystyle AA^{\mathrm {g} }\vec b=\vec b}$。</p><h3 id="Something-more-amp-总结"><a href="#Something-more-amp-总结" class="headerlink" title="Something more&amp;总结"></a>Something more&amp;总结</h3><ul><li><p>如果$A$列满秩，列向量线性无关，$r=n，A\vec x=\vec b$为<strong>超定方程组</strong>，存在$0$或$1$个解，那么$\text{pinv}(A)=(A^TA)^{-1}A^T$，因为$(A^TA)^{-1}A=I$，因此也称为<strong>左逆</strong></p></li><li><p>如果$A$行满秩，行向量线性无关，$A \vec x= \vec b$为欠定方程组，存在$0$个或$\infty$解，那么$\text{pinv}(A)=\text{pinv}(A^T)^T$，因为$AA^T(AA^T)^{-1}=I$，因此也称为<strong>右逆</strong></p></li><li><ul><li><p>如果秩亏损，那么只好先做奇异值分解$A=UDV^T$,其中$U,V$为<strong>正交矩阵</strong>，$D$是对角阵</p></li><li><p>然后取对角阵$S$</p></li><li><p>如果$D_{i,i}=0$，那么$S_{i,i}=0$</p></li><li><p>如果$D_{i,i} \not= 0$，那么$S_{i,i}=\dfrac{1}{D_{i,i}}$</p></li><li><p>于是$\text{pinv}(A)=VSU^T$</p></li></ul></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 讲解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+            <tag> 线性代数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>『ARC 077D』D - 11</title>
       <link href="/2018/09/10/%E3%80%8EARC%20077D%E3%80%8FD%20-%2011/"/>
       <url>/2018/09/10/%E3%80%8EARC%20077D%E3%80%8FD%20-%2011/</url>
@@ -289,7 +312,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 讲解 </category>
           
       </categories>
       
@@ -316,7 +339,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 讲解 </category>
           
       </categories>
       
@@ -341,7 +364,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 讲解 </category>
           
       </categories>
       
@@ -579,7 +602,7 @@
       
       <categories>
           
-          <category> 教程 </category>
+          <category> 讲解 </category>
           
       </categories>
       
@@ -602,7 +625,7 @@
       
       <categories>
           
-          <category> 资源 </category>
+          <category> 讲解 </category>
           
       </categories>
       
@@ -1244,9 +1267,9 @@
             
             <tag> 数据结构 </tag>
             
-            <tag> 线性基 </tag>
-            
             <tag> 线性代数 </tag>
+            
+            <tag> 线性基 </tag>
             
         </tags>
       

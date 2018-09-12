@@ -4,6 +4,148 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/09/12/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BC%AA%E9%80%86/</loc>
+    <lastmod>2018-09-12T07:17:41.989Z</lastmod>
+    <data>
+        <display>
+        <title>矩阵的伪逆</title>
+        <pubTime>2018-09-12T07:04:27.000Z</pubTime>
+        
+        <tag>数学</tag>
+         
+        <tag>线性代数</tag>
+         
+         
+           
+             
+              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://skyofwar.xyz/2018/08/28/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8E%E7%BB%84%E5%90%88%E7%9A%84%E5%85%AC%E5%BC%8F/</loc>
+    <lastmod>2018-09-12T07:06:17.223Z</lastmod>
+    <data>
+        <display>
+        <title>一些关于组合的公式......</title>
+        <pubTime>2018-08-28T14:19:53.000Z</pubTime>
+        
+        <tag>数学</tag>
+         
+        <tag>高等数学</tag>
+         
+        <tag>组合数学</tag>
+         
+         
+           
+             
+              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://skyofwar.xyz/2018/08/28/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E9%9D%9E%E5%B8%B8%E6%84%9F%E4%BA%BA%E7%9A%84Mathematica%20Animation/</loc>
+    <lastmod>2018-09-12T07:05:58.339Z</lastmod>
+    <data>
+        <display>
+        <title>记录一次非常感人的Mathematica Animation(Lissajous曲线)...</title>
+        <pubTime>2018-08-28T14:55:00.000Z</pubTime>
+        
+        <tag>数学</tag>
+         
+        <tag>MMA</tag>
+         
+         
+           
+             
+              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    <lastmod>2018-09-12T07:05:42.887Z</lastmod>
+    <data>
+        <display>
+        <title>基础乐理与数学（一）</title>
+        <pubTime>2018-08-31T14:04:27.000Z</pubTime>
+        
+        <tag>数学</tag>
+         
+        <tag>音乐</tag>
+         
+        <tag>乐理</tag>
+         
+         
+           
+             
+              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://skyofwar.xyz/2018/09/01/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+    <lastmod>2018-09-12T07:05:37.379Z</lastmod>
+    <data>
+        <display>
+        <title>基础乐理与数学（二）</title>
+        <pubTime>2018-09-01T12:55:04.000Z</pubTime>
+        
+        <tag>数学</tag>
+         
+        <tag>音乐</tag>
+         
+        <tag>乐理</tag>
+         
+         
+           
+             
+              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://skyofwar.xyz/2018/09/01/%E7%AA%97%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2018-09-12T07:05:28.308Z</lastmod>
+    <data>
+        <display>
+        <title>窗函数</title>
+        <pubTime>2018-09-01T14:32:00.000Z</pubTime>
+        
+        <tag>数学</tag>
+         
+        <tag>物理</tag>
+         
+        <tag>信号学</tag>
+         
+        <tag>FFT</tag>
+         
+         
+           
+             
+              <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/09/10/%E3%80%8EARC%20077D%E3%80%8FD%20-%2011/</loc>
     <lastmod>2018-09-10T15:14:06.862Z</lastmod>
     <data>
@@ -405,80 +547,6 @@
     </url>
 
     
-  <url>
-    <loc>https://skyofwar.xyz/2018/09/01/%E7%AA%97%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2018-09-02T13:59:44.904Z</lastmod>
-    <data>
-        <display>
-        <title>窗函数</title>
-        <pubTime>2018-09-01T14:32:00.000Z</pubTime>
-        
-        <tag>数学</tag>
-         
-        <tag>物理</tag>
-         
-        <tag>信号学</tag>
-         
-        <tag>FFT</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/09/01/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
-    <lastmod>2018-09-01T13:06:05.980Z</lastmod>
-    <data>
-        <display>
-        <title>基础乐理与数学（二）</title>
-        <pubTime>2018-09-01T12:55:04.000Z</pubTime>
-        
-        <tag>数学</tag>
-         
-        <tag>音乐</tag>
-         
-        <tag>乐理</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
-    <lastmod>2018-09-01T12:54:27.402Z</lastmod>
-    <data>
-        <display>
-        <title>基础乐理与数学（一）</title>
-        <pubTime>2018-08-31T14:04:27.000Z</pubTime>
-        
-        <tag>数学</tag>
-         
-        <tag>音乐</tag>
-         
-        <tag>乐理</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
   <url>
     <loc>https://skyofwar.xyz/2018/08/31/%E3%80%8ECodeforces%20985D%E3%80%8FSand%20Fortress/</loc>
@@ -790,52 +858,6 @@
            
              
               <breadCrumb title="讲解" url="https://skyofwar.xyz/categories/%E8%AE%B2%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/08/28/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E9%9D%9E%E5%B8%B8%E6%84%9F%E4%BA%BA%E7%9A%84Mathematica%20Animation/</loc>
-    <lastmod>2018-08-29T09:02:34.867Z</lastmod>
-    <data>
-        <display>
-        <title>记录一次非常感人的Mathematica Animation(Lissajous曲线)...</title>
-        <pubTime>2018-08-28T14:55:00.000Z</pubTime>
-        
-        <tag>数学</tag>
-         
-        <tag>MMA</tag>
-         
-         
-           
-             
-              <breadCrumb title="教程" url="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://skyofwar.xyz/2018/08/28/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8E%E7%BB%84%E5%90%88%E7%9A%84%E5%85%AC%E5%BC%8F/</loc>
-    <lastmod>2018-08-28T14:21:58.452Z</lastmod>
-    <data>
-        <display>
-        <title>一些关于组合的公式......</title>
-        <pubTime>2018-08-28T14:19:53.000Z</pubTime>
-        
-        <tag>数学</tag>
-         
-        <tag>高等数学</tag>
-         
-        <tag>组合数学</tag>
-         
-         
-           
-             
-              <breadCrumb title="资源" url="https://skyofwar.xyz/categories/%E8%B5%84%E6%BA%90/"/>
           
         </display>
     </data>
@@ -1383,9 +1405,9 @@
          
         <tag>数据结构</tag>
          
-        <tag>线性基</tag>
-         
         <tag>线性代数</tag>
+         
+        <tag>线性基</tag>
          
          
            
