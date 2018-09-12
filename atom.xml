@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-12T07:23:35.908Z</updated>
+  <updated>2018-09-12T14:56:38.871Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -17,15 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>OI代码模板计划 - 动态树 - LCT</title>
+    <link href="https://skyofwar.xyz/2018/09/12/%5BOI%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF%E8%AE%A1%E5%88%92%5D%E5%8A%A8%E6%80%81%E6%A0%91%20-%20LCT/"/>
+    <id>https://skyofwar.xyz/2018/09/12/[OI代码模板计划]动态树 - LCT/</id>
+    <published>2018-09-12T14:50:00.000Z</published>
+    <updated>2018-09-12T14:56:38.871Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;代码：洛谷P3690 Link Cut Tree （动态树）&lt;/p&gt;
+&lt;p&gt;给定n个点以及每个点的权值，要你处理接下来的m个操作。操作有4种。操作从0到3编号。点从1到n编号。&lt;/p&gt;
+&lt;p&gt;0：后接两个整数(x，y)，代表询问从x到y的路径上的点的权值的xor和。保证x到y是联通的。&lt;/p&gt;
+&lt;p&gt;1：后接两个整数(x，y)，代表连接x到y，若x到y已经联通则无需连接。&lt;/p&gt;
+&lt;p&gt;2：后接两个整数(x，y)，代表删除边(x，y)，不保证边(x，y)存在。&lt;/p&gt;
+&lt;p&gt;3：后接两个整数(x，y)，代表将点x上的权值变成y。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="复习" scheme="https://skyofwar.xyz/categories/%E5%A4%8D%E4%B9%A0/"/>
+    
+    
+      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="LCT" scheme="https://skyofwar.xyz/tags/LCT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>矩阵的伪逆</title>
     <link href="https://skyofwar.xyz/2018/09/12/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BC%AA%E9%80%86/"/>
     <id>https://skyofwar.xyz/2018/09/12/矩阵的伪逆/</id>
     <published>2018-09-12T07:04:27.000Z</published>
-    <updated>2018-09-12T07:23:35.908Z</updated>
+    <updated>2018-09-12T14:19:15.190Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;矩阵的伪逆&quot;&gt;&lt;a href=&quot;#矩阵的伪逆&quot; class=&quot;headerlink&quot; title=&quot;矩阵的伪逆&quot;&gt;&lt;/a&gt;矩阵的伪逆&lt;/h1&gt;&lt;h2 id=&quot;伪逆&quot;&gt;&lt;a href=&quot;#伪逆&quot; class=&quot;headerlink&quot; title=&quot;伪逆&quot;&gt;&lt;/a&gt;伪逆&lt;/h2&gt;&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;广义逆阵&lt;/strong&gt;(Generalized inverse)也称为&lt;strong&gt;伪逆矩阵&lt;/strong&gt;（pseudoinverse)，是在数学矩阵领域内的名词，一矩阵&lt;em&gt;A&lt;/em&gt;的广义逆阵是指另一矩阵具有部分逆矩阵的特性，但是不一定具有逆矩阵的所有特性。假设一矩阵${\displaystyle A\in \mathbb {R} ^{n\times m}}$及另一矩阵${\displaystyle A^{\mathrm {g} }\in \mathbb {R} ^{m\times n}}$，若${\displaystyle A^{\mathrm {g} } }$满足${\displaystyle AA^{\mathrm {g} }A=A}$，则${\displaystyle A^{\mathrm {g} } }$即为${\displaystyle A}$的广义逆阵。&lt;/p&gt;
+      &lt;h1 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;广义逆阵&lt;/strong&gt;(Generalized inverse)也称为&lt;strong&gt;伪逆矩阵&lt;/strong&gt;（pseudoinverse)，是在数学矩阵领域内的名词，一矩阵&lt;em&gt;A&lt;/em&gt;的广义逆阵是指另一矩阵具有部分逆矩阵的特性，但是不一定具有逆矩阵的所有特性。假设一矩阵${\displaystyle A\in \mathbb {R} ^{n\times m}}$及另一矩阵${\displaystyle A^{\mathrm {g} }\in \mathbb {R} ^{m\times n}}$，若${\displaystyle A^{\mathrm {g} } }$满足${\displaystyle AA^{\mathrm {g} }A=A}$，则${\displaystyle A^{\mathrm {g} } }$即为${\displaystyle A}$的广义逆阵。&lt;/p&gt;
 &lt;p&gt;建构广义逆阵的目的是针对可逆矩阵以外的矩阵（例如&lt;strong&gt;非方阵的矩阵&lt;/strong&gt;）可以找到一类矩阵，使它们有一些&lt;strong&gt;类似逆矩阵&lt;/strong&gt;的特性。&lt;strong&gt;任意的矩阵都存在广义逆阵&lt;/strong&gt;，&lt;em&gt;若一矩阵存在逆矩阵，逆矩阵即为其唯一的广义逆阵&lt;/em&gt;。有些广义逆阵可以定义在和结合律乘法有关的数学结构，如半群中。&lt;/p&gt;
     
     </summary>
@@ -293,11 +320,11 @@
     <link href="https://skyofwar.xyz/2018/09/03/%5BOI%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF%E8%AE%A1%E5%88%92%5D%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
     <id>https://skyofwar.xyz/2018/09/03/[OI代码模板计划]后缀数组/</id>
     <published>2018-09-03T14:50:00.000Z</published>
-    <updated>2018-09-03T15:00:23.014Z</updated>
+    <updated>2018-09-12T14:57:37.678Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;OI代码模板计划-后缀数组&quot;&gt;&lt;a href=&quot;#OI代码模板计划-后缀数组&quot; class=&quot;headerlink&quot; title=&quot;[OI代码模板计划] 后缀数组&quot;&gt;&lt;/a&gt;[OI代码模板计划] 后缀数组&lt;/h1&gt;&lt;p&gt;代码：后缀排序&lt;/p&gt;
+      &lt;p&gt;代码：后缀排序&lt;/p&gt;
 &lt;p&gt;读入一个长度为 $n$ 的由小写英文字母组成的字符串，请把这个字符串的所有非空后缀按字典序从小到大排序，然后按顺序输出后缀的第一个字符在原串中的位置。位置编号为 $1$ 到 $n$。&lt;/p&gt;
 &lt;p&gt;除此之外为了进一步证明你确实有给后缀排序的超能力，请另外输出 $n−1$ 个整数分别表示排序后相邻后缀的最长公共前缀的长度。&lt;/p&gt;
     
@@ -400,7 +427,7 @@
     <link href="https://skyofwar.xyz/2018/08/31/%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E4%B8%8E%E6%95%B0%E5%AD%A6%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>https://skyofwar.xyz/2018/08/31/基础乐理与数学（一）/</id>
     <published>2018-08-31T14:04:27.000Z</published>
-    <updated>2018-09-12T07:05:42.887Z</updated>
+    <updated>2018-09-12T14:57:00.480Z</updated>
     
     <summary type="html">
     
@@ -527,29 +554,6 @@
 &lt;p&gt;题意：给$3N$个数，$3​$个一组，我们取每个组第二大的数出来相加，问最大能够是多少&lt;/p&gt;
 &lt;p&gt;还是…还是弄个door吧。。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://agc012.contest.atcoder.jp/tasks/agc012_a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>『AGC 003A』Wanna go back home</title>
-    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20003A%E3%80%8FWanna%20go%20back%20home/"/>
-    <id>https://skyofwar.xyz/2018/08/30/『AGC 003A』Wanna go back home/</id>
-    <published>2018-08-30T06:55:22.000Z</published>
-    <updated>2018-08-30T07:00:23.904Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;『AGC-003A』Wanna-go-back-home&quot;&gt;&lt;a href=&quot;#『AGC-003A』Wanna-go-back-home&quot; class=&quot;headerlink&quot; title=&quot;『AGC 003A』Wanna go back home&quot;&gt;&lt;/a&gt;『AGC 003A』Wanna go back home&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;传送门：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://agc003.contest.atcoder.jp/tasks/agc003_a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送door♂&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
