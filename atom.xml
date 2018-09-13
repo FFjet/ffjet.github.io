@@ -18,8 +18,8 @@
   
   <entry>
     <title>『ARC 077E』guruguru - 咕噜噜~</title>
-    <link href="https://skyofwar.xyz/2018/09/13/%E3%80%8EARC%20077E%E3%80%8Fguruguru%20-%20%E5%92%95%E5%99%9C%E5%99%9C~/"/>
-    <id>https://skyofwar.xyz/2018/09/13/『ARC 077E』guruguru - 咕噜噜~/</id>
+    <link href="https://skyofwar.xyz/2018/09/13/%E3%80%8EARC%20077E%E3%80%8Fguruguru/"/>
+    <id>https://skyofwar.xyz/2018/09/13/『ARC 077E』guruguru/</id>
     <published>2018-09-13T05:15:27.000Z</published>
     <updated>2018-09-13T05:15:17.665Z</updated>
     
@@ -358,9 +358,9 @@
       <category term="复习" scheme="https://skyofwar.xyz/categories/%E5%A4%8D%E4%B9%A0/"/>
     
     
-      <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
-    
       <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
     
   </entry>
   
