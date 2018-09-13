@@ -1,0 +1,4096 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/header.jpg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="二项式系数及其反演二项式系数&amp;amp;二项式定理了解标题之前，我们先要花一些时间复习一下普通的二项式系数： $\left( \begin{array}{c}n\\k\end{array} \right) = \dfrac{\Gamma (n + 1)}{\Gamma (k + 1)\Gamma (n - k + 1)}$ 我们对它研究得非常多，例如经典的二项式定理： ${(x + y)^n} =">
+<meta name="keywords" content="数学,高等数学,组合数学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二项式系数及其反演">
+<meta property="og:url" content="https://skyofwar.xyz/2018/08/19/二项式系数及其反演/index.html">
+<meta property="og:site_name" content="Sky of war">
+<meta property="og:description" content="二项式系数及其反演二项式系数&amp;amp;二项式定理了解标题之前，我们先要花一些时间复习一下普通的二项式系数： $\left( \begin{array}{c}n\\k\end{array} \right) = \dfrac{\Gamma (n + 1)}{\Gamma (k + 1)\Gamma (n - k + 1)}$ 我们对它研究得非常多，例如经典的二项式定理： ${(x + y)^n} =">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-19T10:57:55.567Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="二项式系数及其反演">
+<meta name="twitter:description" content="二项式系数及其反演二项式系数&amp;amp;二项式定理了解标题之前，我们先要花一些时间复习一下普通的二项式系数： $\left( \begin{array}{c}n\\k\end{array} \right) = \dfrac{\Gamma (n + 1)}{\Gamma (k + 1)\Gamma (n - k + 1)}$ 我们对它研究得非常多，例如经典的二项式定理： ${(x + y)^n} =">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sky of war" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://skyofwar.xyz/2018/08/19/二项式系数及其反演/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>二项式系数及其反演 | Sky of war</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/Leoleepz"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sky of war</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Beyond the spectacle of the sky</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">78</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">6</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">62</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-game2048">
+    <a href="/2048/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-2048"></i> <br />Game2048</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/08/19/二项式系数及其反演/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sky of war">
+      <meta itemprop="description" content="Why I gotta fly? The boundlessness precipitates me to do so.">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sky of war">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">二项式系数及其反演
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-19 14:49:10 / 修改时间：18:57:55" itemprop="dateCreated datePublished" datetime="2018-08-19T14:49:10+08:00">2018-08-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/总结/" itemprop="url" rel="index"><span itemprop="name">总结</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="二项式系数及其反演"><a href="#二项式系数及其反演" class="headerlink" title="二项式系数及其反演"></a>二项式系数及其反演</h1><h2 id="二项式系数-amp-二项式定理"><a href="#二项式系数-amp-二项式定理" class="headerlink" title="二项式系数&amp;二项式定理"></a>二项式系数&amp;二项式定理</h2><p>了解标题之前，我们先要花一些时间复习一下普通的二项式系数：</p>
+<p>$\left( \begin{array}{c}n\\k\end{array} \right) = \dfrac{\Gamma (n + 1)}{\Gamma (k + 1)\Gamma (n - k + 1)}$</p>
+<p>我们对它研究得非常多，例如经典的二项式定理：</p>
+<p>${(x + y)^n} = \left( \begin{array}{c}n\\0\end{array} \right){x^n}{y^0} + \left( \begin{array}{c}n\\1\end{array} \right){x^{n - 1}}{y^1} + \left( \begin{array}{c}n\\2\end{array} \right){x^{n - 2}}{y^2} +  \cdots  + \left( \begin{array}{c}n\\n - 1\end{array} \right){x^1}{y^{n - 1}} + \left( \begin{array}{c}n\\n\end{array} \right){x^0}{y^n}$</p>
+<p>写成和式的形式，也就是</p>
+<p>${(x + y)^n} = \sum\limits_{k = 0}^n {\left( \begin{array}{c}n\\k\end{array} \right)} {x^{n - k}}{y^k} = \sum\limits_{k = 0}^n {\left( \begin{array}{c}n\\k\end{array} \right)} {x^k}{y^{n - k}}$</p>
+<p>证明挺简单的，想必大家都会，这里不会的可以来谈人生了QwQ</p>
+<a id="more"></a>
+<h2 id="广义二项式定理"><a href="#广义二项式定理" class="headerlink" title="广义二项式定理"></a>广义二项式定理</h2><p>这玩意怎么推广？</p>
+<p>${(x + y)^\alpha } = \mathop \sum \limits_{k = 0}^\infty  \left( \begin{array}{c}\alpha \\k\end{array} \right){x^{\alpha  - k}}{y^k}$</p>
+<h3 id="第一种证明"><a href="#第一种证明" class="headerlink" title="第一种证明"></a>第一种证明</h3><p>证明也非常简单</p>
+<p>它可以看成$(1+x)^\alpha$的幂级数展开</p>
+<p>显然函数当$\alpha&gt;0$的时候是analytic的，所以可以通过多次求导得到幂级数中的项： </p>
+<p>$f(x)=\sum_\limits{n\geq 0}\dfrac{f^{(n)}(0)}{n!}x^n$</p>
+<p>令$f(x)=(1+x)^\alpha$，多次求导可得</p>
+<p>${f^{(n)}}(x) = \alpha (\alpha  - 1) \cdots  \cdots (\alpha  - n + 1){(1 + x)^{a - n}}$</p>
+<p>当然这个只对$\alpha&gt;0$有效，对于其它情况，可以用<strong>幂级数倒数</strong>的性质来证明。 </p>
+<p>这个证明可能用的定理太高级，其实还是组合式的比较好，但是可能就比较长就是了…… </p>
+<h3 id="第二种证明"><a href="#第二种证明" class="headerlink" title="第二种证明"></a>第二种证明</h3><p>还是原来的函数$f(x)$，假定它能展开成幂级数$f(x) = \sum\limits_{n \ge 0} {a_n} {x^n}$</p>
+<p>然后我们<del>无比震惊地发现</del>它满足如下的微分方程：</p>
+<p>$(1 + x)f’(x) = \alpha f(x),f(0) = 1$</p>
+<p>这个微分方程又可以写成系数之间的递推式： </p>
+<p>${a_0} = 1,\sum\limits_{n \ge 0} {((n + 1){a_{n + 1}} + n{a_n})x = \sum\limits_{n \ge 0} {\alpha {a_n}{x^n}} } $</p>
+<p>然后就有</p>
+<p>${a_0} = 1,\forall n,n{a_n} = (\alpha  - n - 1){a_{n + 1}}$</p>
+<p>然后解递推方程咯…..</p>
+<p>如果你还是看不懂，可以去<a href="https://zh.wikipedia.org/zh-hans/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86#%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E" target="_blank" rel="noopener">维基百科</a>看详细过程解答。</p>
+<h3 id="组合证明"><a href="#组合证明" class="headerlink" title="组合证明"></a>组合证明</h3><p><a href="https://baike.baidu.com/item/%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86/7134359?fr=aladdin" target="_blank" rel="noopener">百度百科-二项式定理</a>上面有写，如果你这个都看不懂说明你废了。。</p>
+<h2 id="二项式定理的一些小应用"><a href="#二项式定理的一些小应用" class="headerlink" title="二项式定理的一些小应用"></a>二项式定理的一些小应用</h2><ul>
+<li>当然是帮助证明东西</li>
+</ul>
+<p><strong>证明组合恒等式</strong>：</p>
+<p>比如证明</p>
+<script type="math/tex; mode=display">\sum\limits_{k = 0}^n {\left( {\begin{array}{*{20}{c}}n\\k\end{array}} \right)}^2  = \left( {\begin{array}{*{20}{c}}{2n}\\n\end{array}} \right)</script><p>可以考虑恒等式</p>
+<script type="math/tex; mode=display">{(1 + x)^n}{(1 + x)^n} = {(1 + x)^{2n}}</script><p>然后证明就很显然了</p>
+<p><strong>证明自然数幂求和公式</strong>:</p>
+<p>我没有看懂<del>（留坑）</del>，但是有一篇博客系统地讲述了自然数幂和的各种求法：<a href="https://blog.csdn.net/doyouseeman/article/details/50826293" target="_blank" rel="noopener">解决自然数幂和的方法</a></p>
+<h2 id="二项式反演！"><a href="#二项式反演！" class="headerlink" title="二项式反演！"></a>二项式反演！</h2><h3 id="前置定义-amp-定理"><a href="#前置定义-amp-定理" class="headerlink" title="前置定义&amp;定理"></a>前置定义&amp;定理</h3><p>设$x$为任意复数，$n$是非负整数</p>
+<p>对于广义二项式系数$\left( {\begin{array}{*{20}{c}}x\\n\end{array}} \right)$，有Vandermonde卷积公式：</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mi>x</mi><mo>+</mo><mi>y</mi></mrow>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mi>n</mi>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow><mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>x</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mi>k</mi>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mi>y</mi>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaabmaapaqaauaabeqa
+  ceaaaeaapeGaamiEaiabgUcaRiaadMhaa8aabaWdbiaad6gaaaaaca
+  GLOaGaayzkaaGaeyypa0ZaaabCa8aabaWdbmaabmaapaqaauaabeqa
+  ceaaaeaapeGaamiEaaWdaeaapeGaam4AaaaaaiaawIcacaGLPaaaaS
+  WdaeaapeGaam4Aaiabg2da9iaaicdaa8aabaWdbiaad6gaa0Gaeyye
+  IuoakmaabmaapaqaauaabeqaceaaaeaapeGaamyEaaWdaeaapeGaam
+  OBaiabgkHiTiaadUgaaaaacaGLOaGaayzkaaaaaa@5595@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>以及展开形式(expand form)</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <msup>
+    <mrow>
+     <mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>t</mi><mo stretchy="false">)</mo></mrow>
+    <mi>x</mi>
+   </msup>
+   <mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>n</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>&#x221E;</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>x</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mi>n</mi>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msup>
+    <mi>t</mi>
+    <mi>n</mi>
+   </msup>
+   <mo>,</mo><msup>
+    <mrow>
+     <mo stretchy="false">(</mo><mn>1</mn><mo>&#x2212;</mo><mi>t</mi><mo stretchy="false">)</mo></mrow>
+    <mrow>
+     <mo>&#x2212;</mo><mi>x</mi></mrow>
+   </msup>
+   <mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>n</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>&#x221E;</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>&#x2329;</mo> <mrow>
+      <mtable>
+       <mtr>
+        <mtd>
+         <mi>x</mi>
+        </mtd>
+       </mtr>
+       <mtr>
+        <mtd>
+         <mi>n</mi>
+        </mtd>
+       </mtr>
+
+      </mtable></mrow> <mo>&#x232A;</mo></mrow></mrow>
+   </mstyle><msup>
+    <mi>t</mi>
+    <mi>n</mi>
+   </msup>
+   </mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbiaacIcacaaIXaGaey4k
+  aSIaamiDaiaacMcapaWaaWbaaSqabeaapeGaamiEaaaakiabg2da9m
+  aaqahapaqaa8qadaqadaWdaeaafaqabeGabaaabaWdbiaadIhaa8aa
+  baWdbiaad6gaaaaacaGLOaGaayzkaaaal8aabaWdbiaad6gacqGH9a
+  qpcaaIWaaapaqaa8qacqGHEisPa0GaeyyeIuoakiaadshapaWaaWba
+  aSqabeaapeGaamOBaaaakiaacYcacaGGOaGaaGymaiabgkHiTiaads
+  hacaGGPaWdamaaCaaaleqabaWdbiabgkHiTiaadIhaaaGccqGH9aqp
+  daaeWbWdaeaapeWaaaWaa8aabaqbaeqabiqaaaqaa8qacaWG4baapa
+  qaa8qacaWGUbaaaaGaayzkJiaawQYiaaWcpaqaa8qacaWGUbGaeyyp
+  a0JaaGimaaWdaeaapeGaeyOhIukaniabggHiLdGccaWG0bWdamaaCa
+  aaleqabaWdbiaad6gaaaaaaa@6757@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>其中$\left\langle {\begin{array}{*{20}{c}}x\\n\end{array}} \right\rangle  = \dfrac{x(x + 1) \cdots (x + n - 1)}{n!}$</p>
+<p>且有</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mrow><mo>&#x2329;</mo> <mrow>
+    <mtable>
+     <mtr>
+      <mtd>
+       <mrow>
+        <mi>x</mi><mo>+</mo><mi>y</mi></mrow>
+      </mtd>
+     </mtr>
+     <mtr>
+      <mtd>
+       <mi>n</mi>
+      </mtd>
+     </mtr>
+
+    </mtable></mrow> <mo>&#x232A;</mo></mrow><mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>&#x2329;</mo> <mrow>
+      <mtable>
+       <mtr>
+        <mtd>
+         <mi>x</mi>
+        </mtd>
+       </mtr>
+       <mtr>
+        <mtd>
+         <mi>k</mi>
+        </mtd>
+       </mtr>
+
+      </mtable></mrow> <mo>&#x232A;</mo></mrow></mrow>
+   </mstyle><mrow><mo>&#x2329;</mo> <mrow>
+    <mtable>
+     <mtr>
+      <mtd>
+       <mi>y</mi>
+      </mtd>
+     </mtr>
+     <mtr>
+      <mtd>
+       <mrow>
+        <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+      </mtd>
+     </mtr>
+
+    </mtable></mrow> <mo>&#x232A;</mo></mrow></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaamaapaqaauaabeqa
+  ceaaaeaapeGaamiEaiabgUcaRiaadMhaa8aabaWdbiaad6gaaaaaca
+  GLPmIaayPkJaGaeyypa0ZaaabCa8aabaWdbmaaamaapaqaauaabeqa
+  ceaaaeaapeGaamiEaaWdaeaapeGaam4AaaaaaiaawMYicaGLQmcaaS
+  WdaeaapeGaam4Aaiabg2da9iaaicdaa8aabaWdbiaad6gaa0Gaeyye
+  IuoakmaaamaapaqaauaabeqaceaaaeaapeGaamyEaaWdaeaapeGaam
+  OBaiabgkHiTiaadUgaaaaacaGLPmIaayPkJaaaaa@566A@
+  </annotation>
+ </semantics>
+</math>
+
+
+
+
+<ul>
+<li><strong>定义1</strong></li>
+</ul>
+<p>$x$为任意数，$n+1$阶矩阵$P_n[x],Q_n[x],D_k(k \in N^*)$分别定义</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mtable columnalign="left">
+    <mtr columnalign="left">
+     <mtd columnalign="left">
+      <mrow>
+       <msub>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>P</mi>
+          <mi>n</mi>
+         </msub>
+         <mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow>
+        <mrow>
+         <mi>i</mi><mi>j</mi></mrow>
+       </msub>
+       <mo>=</mo><mrow><mo>{</mo> <mrow>
+        <mtable>
+         <mtr>
+          <mtd>
+           <mrow>
+            <mrow><mo>(</mo>
+             <mrow>
+              <mtable>
+               <mtr>
+                <mtd>
+                 <mi>x</mi>
+                </mtd>
+               </mtr>
+               <mtr>
+                <mtd>
+                 <mrow>
+                  <mi>i</mi><mo>&#x2212;</mo><mi>j</mi></mrow>
+                </mtd>
+               </mtr>
+
+              </mtable></mrow>
+            <mo>)</mo></mrow><mo>,</mo></mrow>
+          </mtd>
+          <mtd>
+           <mrow>
+            <mi>i</mi><mo>&#x2265;</mo><mi>j</mi></mrow>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd>
+           <mn>0</mn>
+          </mtd>
+          <mtd>
+           <mrow>
+            <mi>o</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>w</mi><mi>i</mi><mi>s</mi><mi>e</mi></mrow>
+          </mtd>
+         </mtr>
+
+        </mtable></mrow> </mrow></mrow>
+     </mtd>
+    </mtr>
+    <mtr columnalign="left">
+     <mtd columnalign="left">
+      <mrow>
+       <msub>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>Q</mi>
+          <mi>n</mi>
+         </msub>
+         <mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow>
+        <mrow>
+         <mi>i</mi><mi>j</mi></mrow>
+       </msub>
+       <mo>=</mo><mrow><mo>{</mo> <mrow>
+        <mtable>
+         <mtr>
+          <mtd>
+           <mrow>
+            <mrow><mo>&#x2329;</mo> <mrow>
+             <mtable>
+              <mtr>
+               <mtd>
+                <mi>x</mi>
+               </mtd>
+              </mtr>
+              <mtr>
+               <mtd>
+                <mrow>
+                 <mi>i</mi><mo>&#x2212;</mo><mi>j</mi></mrow>
+               </mtd>
+              </mtr>
+
+             </mtable></mrow> <mo>&#x232A;</mo></mrow><mo>,</mo></mrow>
+          </mtd>
+          <mtd>
+           <mrow>
+            <mi>i</mi><mo>&#x2265;</mo><mi>j</mi></mrow>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd>
+           <mn>0</mn>
+          </mtd>
+          <mtd>
+           <mrow>
+            <mi>o</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>w</mi><mi>i</mi><mi>s</mi><mi>e</mi></mrow>
+          </mtd>
+         </mtr>
+
+        </mtable></mrow> </mrow></mrow>
+     </mtd>
+    </mtr>
+    <mtr columnalign="left">
+     <mtd columnalign="left">
+      <mrow>
+       <msub>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>D</mi>
+          <mi>k</mi>
+         </msub>
+         <mo stretchy="false">)</mo></mrow>
+        <mrow>
+         <mi>i</mi><mi>j</mi></mrow>
+       </msub>
+       <mo>=</mo><mrow><mo>{</mo> <mrow>
+        <mtable>
+         <mtr>
+          <mtd>
+           <mrow>
+            <mn>1</mn><mo>,</mo></mrow>
+          </mtd>
+          <mtd>
+           <mrow>
+            <mi>i</mi><mo>=</mo><mi>j</mi><mo>+</mo><mi>k</mi></mrow>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd>
+           <mrow>
+            <mn>0</mn><mo>,</mo></mrow>
+          </mtd>
+          <mtd>
+           <mrow>
+            <mi>o</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>w</mi><mi>i</mi><mi>s</mi><mi>e</mi></mrow>
+          </mtd>
+         </mtr>
+
+        </mtable></mrow> </mrow></mrow>
+     </mtd>
+    </mtr>
+
+   </mtable></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaafaqaaeWabaaabaaeaaaaaaaaa8qacaGG
+  OaGaamiua8aadaWgaaWcbaWdbiaad6gaa8aabeaak8qacaGGBbGaam
+  iEaiaac2facaGGPaWdamaaBaaaleaapeGaamyAaiaadQgaa8aabeaa
+  k8qacqGH9aqpdaGabaWdaeaafaqabeGacaaabaWdbmaabmaapaqaau
+  aabeqaceaaaeaapeGaamiEaaWdaeaapeGaamyAaiabgkHiTiaadQga
+  aaaacaGLOaGaayzkaaGaaiilaaWdaeaapeGaamyAaiabgwMiZkaadQ
+  gaa8aabaWdbiaaicdaa8aabaWdbiaad+gacaWG0bGaamiAaiaadwga
+  caWGYbGaam4DaiaadMgacaWGZbGaamyzaaaaaiaawUhaaaWdaeaape
+  GaaiikaiaadgfapaWaaSbaaSqaa8qacaWGUbaapaqabaGcpeGaai4w
+  aiaadIhacaGGDbGaaiyka8aadaWgaaWcbaWdbiaadMgacaWGQbaapa
+  qabaGcpeGaeyypa0Zaaiqaa8aabaqbaeqabiGaaaqaa8qadaaadaWd
+  aeaafaqabeGabaaabaWdbiaadIhaa8aabaWdbiaadMgacqGHsislca
+  WGQbaaaaGaayzkJiaawQYiaiaacYcaa8aabaWdbiaadMgacqGHLjYS
+  caWGQbaapaqaa8qacaaIWaaapaqaa8qacaWGVbGaamiDaiaadIgaca
+  WGLbGaamOCaiaadEhacaWGPbGaam4CaiaadwgaaaaacaGL7baaa8aa
+  baWdbiaacIcacaWGebWdamaaBaaaleaapeGaam4AaaWdaeqaaOWdbi
+  aacMcapaWaaSbaaSqaa8qacaWGPbGaamOAaaWdaeqaaOWdbiabg2da
+  9maaceaapaqaauaabeqaciaaaeaapeGaaGymaiaacYcaa8aabaWdbi
+  aadMgacqGH9aqpcaWGQbGaey4kaSIaam4AaaWdaeaapeGaaGimaiaa
+  cYcaa8aabaWdbiaad+gacaWG0bGaamiAaiaadwgacaWGYbGaam4Dai
+  aadMgacaWGZbGaamyzaaaaaiaawUhaaaaaaaa@9560@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>显然，$P_n[0]=Q_n[0]=D_0=I_{n+1}$($I_{n+1}$阶单位矩阵)。设$D_1=D$，那么$D_k=D^k,k \in N^*$。设$(x)_k=\dfrac{\Gamma(x+1)}{\Gamma(k+1)}$，${\langle x \rangle}_k=\dfrac{\Gamma(x+k)}{\Gamma(x)}$，由矩阵乘法和Stirling数的性质，我们得到了一个定理：</p>
+<ul>
+<li><strong>定理1</strong></li>
+</ul>
+<p>$x$为任意数，则有</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mtable columnalign="left">
+    <mtr columnalign="left">
+     <mtd columnalign="left">
+      <mrow>
+       <msub>
+        <mi>P</mi>
+        <mi>n</mi>
+       </msub>
+       <mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">]</mo><mo>=</mo><mstyle displaystyle="true">
+        <munderover>
+         <mo>&#x2211;</mo>
+         <mrow>
+          <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+         <mi>n</mi>
+        </munderover>
+        <mrow>
+         <mrow><mo>(</mo>
+          <mrow>
+           <mtable>
+            <mtr>
+             <mtd>
+              <mi>x</mi>
+             </mtd>
+            </mtr>
+            <mtr>
+             <mtd>
+              <mi>k</mi>
+             </mtd>
+            </mtr>
+
+           </mtable></mrow>
+         <mo>)</mo></mrow></mrow>
+       </mstyle><msub>
+        <mi>D</mi>
+        <mi>k</mi>
+       </msub>
+       <mo>=</mo><mstyle displaystyle="true">
+        <munderover>
+         <mo>&#x2211;</mo>
+         <mrow>
+          <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+         <mi>n</mi>
+        </munderover>
+        <mrow>
+         <mfrac>
+          <mrow>
+           <msub>
+            <mrow>
+             <mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow>
+            <mi>k</mi>
+           </msub>
+           </mrow>
+          <mrow>
+           <mi>&#x0393;</mi><mo stretchy="false">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+         </mfrac>
+         </mrow>
+       </mstyle><msup>
+        <mi>D</mi>
+        <mi>k</mi>
+       </msup>
+       <mo>=</mo><mstyle displaystyle="true">
+        <munderover>
+         <mo>&#x2211;</mo>
+         <mrow>
+          <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+         <mi>n</mi>
+        </munderover>
+        <mrow>
+         <mstyle displaystyle="true">
+          <munderover>
+           <mo>&#x2211;</mo>
+           <mrow>
+            <mi>i</mi><mo>=</mo><mi>k</mi></mrow>
+           <mi>n</mi>
+          </munderover>
+          <mrow>
+           <mfrac>
+            <mrow>
+             <mrow><mo>[</mo> <mrow>
+              <mtable>
+               <mtr>
+                <mtd>
+                 <mi>i</mi>
+                </mtd>
+               </mtr>
+               <mtr>
+                <mtd>
+                 <mi>k</mi>
+                </mtd>
+               </mtr>
+
+              </mtable></mrow> <mo>]</mo></mrow></mrow>
+            <mrow>
+             <mi>&#x0393;</mi><mo stretchy="false">(</mo><mi>i</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+           </mfrac>
+           </mrow>
+         </mstyle></mrow>
+       </mstyle><msup>
+        <mi>D</mi>
+        <mi>i</mi>
+       </msup>
+       <msup>
+        <mi>x</mi>
+        <mi>k</mi>
+       </msup>
+       <mo>,</mo></mrow>
+     </mtd>
+    </mtr>
+    <mtr columnalign="left">
+     <mtd columnalign="left">
+      <mrow>
+       <msub>
+        <mi>Q</mi>
+        <mi>n</mi>
+       </msub>
+       <mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">]</mo><mo>=</mo><mstyle displaystyle="true">
+        <munderover>
+         <mo>&#x2211;</mo>
+         <mrow>
+          <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+         <mi>n</mi>
+        </munderover>
+        <mrow>
+         <mfrac>
+          <mrow>
+           <msub>
+            <mrow>
+             <mo>&#x2329;</mo><mi>x</mi><mo>&#x232A;</mo></mrow>
+            <mi>k</mi>
+           </msub>
+           </mrow>
+          <mrow>
+           <mi>&#x0393;</mi><mo stretchy="false">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+         </mfrac>
+         </mrow>
+       </mstyle><msup>
+        <mi>D</mi>
+        <mi>k</mi>
+       </msup>
+       <mo>=</mo><mstyle displaystyle="true">
+        <munderover>
+         <mo>&#x2211;</mo>
+         <mrow>
+          <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+         <mi>n</mi>
+        </munderover>
+        <mrow>
+         <mstyle displaystyle="true">
+          <munderover>
+           <mo>&#x2211;</mo>
+           <mrow>
+            <mi>i</mi><mo>=</mo><mi>k</mi></mrow>
+           <mi>n</mi>
+          </munderover>
+          <mrow>
+           <msup>
+            <mrow>
+             <mo stretchy="false">(</mo><mo>&#x2212;</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+            <mrow>
+             <mi>i</mi><mo>+</mo><mi>k</mi></mrow>
+           </msup>
+           </mrow>
+         </mstyle></mrow>
+       </mstyle><mfrac>
+        <mrow>
+         <mrow><mo>[</mo> <mrow>
+          <mtable>
+           <mtr>
+            <mtd>
+             <mi>i</mi>
+            </mtd>
+           </mtr>
+           <mtr>
+            <mtd>
+             <mi>k</mi>
+            </mtd>
+           </mtr>
+
+          </mtable></mrow> <mo>]</mo></mrow></mrow>
+        <mrow>
+         <mi>&#x0393;</mi><mo stretchy="false">(</mo><mi>i</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+       </mfrac>
+       <msup>
+        <mi>D</mi>
+        <mi>i</mi>
+       </msup>
+       <msup>
+        <mi>x</mi>
+        <mi>k</mi>
+       </msup>
+       </mrow>
+     </mtd>
+    </mtr>
+
+   </mtable></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaafaqaaeGabaaabaaeaaaaaaaaa8qacaWG
+  qbWdamaaBaaaleaapeGaamOBaaWdaeqaaOWdbiaacUfacaWG4bGaai
+  yxaiabg2da9maaqahapaqaa8qadaqadaWdaeaafaqabeGabaaabaWd
+  biaadIhaa8aabaWdbiaadUgaaaaacaGLOaGaayzkaaaal8aabaWdbi
+  aadUgacqGH9aqpcaaIWaaapaqaa8qacaWGUbaaniabggHiLdGccaWG
+  ebWdamaaBaaaleaapeGaam4AaaWdaeqaaOWdbiabg2da9maaqahapa
+  qaa8qadaWcaaWdaeaapeGaaiikaiaadIhacaGGPaWdamaaBaaaleaa
+  peGaam4AaaWdaeqaaaGcbaWdbiabfo5ahjaacIcacaWGRbGaey4kaS
+  IaaGymaiaacMcaaaaal8aabaWdbiaadUgacqGH9aqpcaaIWaaapaqa
+  a8qacaWGUbaaniabggHiLdGccaWGebWdamaaCaaaleqabaWdbiaadU
+  gaaaGccqGH9aqpdaaeWbWdaeaapeWaaabCa8aabaWdbmaalaaapaqa
+  a8qadaWadaWdaeaafaqabeGabaaabaWdbiaadMgaa8aabaWdbiaadU
+  gaaaaacaGLBbGaayzxaaaapaqaa8qacqqHtoWrcaGGOaGaamyAaiab
+  gUcaRiaaigdacaGGPaaaaaWcpaqaa8qacaWGPbGaeyypa0Jaam4Aaa
+  WdaeaapeGaamOBaaqdcqGHris5aaWcpaqaa8qacaWGRbGaeyypa0Ja
+  aGimaaWdaeaapeGaamOBaaqdcqGHris5aOGaamira8aadaahaaWcbe
+  qaa8qacaWGPbaaaOGaamiEa8aadaahaaWcbeqaa8qacaWGRbaaaOGa
+  aiilaaWdaeaapeGaamyua8aadaWgaaWcbaWdbiaad6gaa8aabeaak8
+  qacaGGBbGaamiEaiaac2facqGH9aqpdaaeWbWdaeaapeWaaSaaa8aa
+  baWdbiabgMYiHlaadIhacqGHQms8paWaaSbaaSqaa8qacaWGRbaapa
+  qabaaakeaapeGaeu4KdCKaaiikaiaadUgacqGHRaWkcaaIXaGaaiyk
+  aaaaaSWdaeaapeGaam4Aaiabg2da9iaaicdaa8aabaWdbiaad6gaa0
+  GaeyyeIuoakiaadseapaWaaWbaaSqabeaapeGaam4Aaaaakiabg2da
+  9maaqahapaqaa8qadaaeWbWdaeaapeGaaiikaiabgkHiTiaaigdaca
+  GGPaWdamaaCaaaleqabaWdbiaadMgacqGHRaWkcaWGRbaaaaWdaeaa
+  peGaamyAaiabg2da9iaadUgaa8aabaWdbiaad6gaa0GaeyyeIuoaaS
+  WdaeaapeGaam4Aaiabg2da9iaaicdaa8aabaWdbiaad6gaa0Gaeyye
+  Iuoakmaalaaapaqaa8qadaWadaWdaeaafaqabeGabaaabaWdbiaadM
+  gaa8aabaWdbiaadUgaaaaacaGLBbGaayzxaaaapaqaa8qacqqHtoWr
+  caGGOaGaamyAaiabgUcaRiaaigdacaGGPaaaaiaadseapaWaaWbaaS
+  qabeaapeGaamyAaaaakiaadIhapaWaaWbaaSqabeaapeGaam4Aaaaa
+  aaaaaa@BC36@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>其中$\left[ {\begin{array}{*{20}{c}}n\\k\end{array}} \right]$是第一类无符号Stirling数。</p>
+<ul>
+<li><strong>定理2</strong></li>
+</ul>
+<p>$\forall x,y \in \mathbb{R}$，则有$\begin{array}{l}P_n[x + y] = P_n[x]P_n[y],\\{Q_n}[x + y] = {Q_n}[x]{Q_n}[y].\end{array}$</p>
+<p>证明：当$i \geq j$时，</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <msub>
+    <mrow>
+     <mo stretchy="false">(</mo><msub>
+      <mi>P</mi>
+      <mi>n</mi>
+     </msub>
+     <mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">]</mo><msub>
+      <mi>P</mi>
+      <mi>n</mi>
+     </msub>
+     <mo stretchy="false">[</mo><mi>y</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow>
+    <mrow>
+     <mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   <mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mi>j</mi></mrow>
+     <mi>i</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>x</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>i</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mi>y</mi>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mi>k</mi><mo>&#x2212;</mo><mi>j</mi></mrow>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mi>x</mi><mo>+</mo><mi>y</mi></mrow>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mi>i</mi><mo>&#x2212;</mo><mi>j</mi></mrow>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow><mo>=</mo><msub>
+    <mrow>
+     <mo stretchy="false">(</mo><msub>
+      <mi>P</mi>
+      <mi>n</mi>
+     </msub>
+     <mo stretchy="false">[</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow>
+    <mrow>
+     <mi>i</mi><mi>j</mi></mrow>
+   </msub>
+   </mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbiaacIcacaWGqbWdamaa
+  BaaaleaapeGaamOBaaWdaeqaaOWdbiaacUfacaWG4bGaaiyxaiaadc
+  fapaWaaSbaaSqaa8qacaWGUbaapaqabaGcpeGaai4waiaadMhacaGG
+  DbGaaiyka8aadaWgaaWcbaWdbiaadMgacaWGQbaapaqabaGcpeGaey
+  ypa0ZaaabCa8aabaWdbmaabmaapaqaauaabeqaceaaaeaapeGaamiE
+  aaWdaeaapeGaamyAaiabgkHiTiaadUgaaaaacaGLOaGaayzkaaaal8
+  aabaWdbiaadUgacqGH9aqpcaWGQbaapaqaa8qacaWGPbaaniabggHi
+  LdGcdaqadaWdaeaafaqabeGabaaabaWdbiaadMhaa8aabaWdbiaadU
+  gacqGHsislcaWGQbaaaaGaayjkaiaawMcaaiabg2da9maabmaapaqa
+  auaabeqaceaaaeaapeGaamiEaiabgUcaRiaadMhaa8aabaWdbiaadM
+  gacqGHsislcaWGQbaaaaGaayjkaiaawMcaaiabg2da9iaacIcacaWG
+  qbWdamaaBaaaleaapeGaamOBaaWdaeqaaOWdbiaacUfacaWG4bGaey
+  4kaSIaamyEaiaac2facaGGPaWdamaaBaaaleaapeGaamyAaiaadQga
+  a8aabeaaaaa@7385@
+  </annotation>
+ </semantics>
+</math>
+
+<p><em>推论</em>：$\forall x,y \in \mathbb{R},m \in \mathbb{Z}$，有$\begin{array}{l}P_n{[x]^{ - 1}} = P_n[ - x],\\P_n{[x]^m} = P_n[mx],\\P_n[x] = P_n{[\frac{x}{m}]^m}.\end{array}$</p>
+<ul>
+<li><strong>定义2</strong></li>
+</ul>
+<p>$\forall x,y \in \mathbb{R}$,$n+1$阶矩阵$P_n[x,y],Q_n[x,y]$分别定义为</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mtable columnalign="left">
+    <mtr columnalign="left">
+     <mtd columnalign="left">
+      <mrow>
+       <msub>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>P</mi>
+          <mi>n</mi>
+         </msub>
+         <mo stretchy="false">[</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow>
+        <mrow>
+         <mi>i</mi><mi>j</mi></mrow>
+       </msub>
+       <mo>=</mo><mrow><mo>{</mo> <mrow>
+        <mtable>
+         <mtr>
+          <mtd>
+           <mrow>
+            <mrow><mo>(</mo>
+             <mrow>
+              <mtable>
+               <mtr>
+                <mtd>
+                 <mi>x</mi>
+                </mtd>
+               </mtr>
+               <mtr>
+                <mtd>
+                 <mrow>
+                  <mi>i</mi><mo>&#x2212;</mo><mi>j</mi></mrow>
+                </mtd>
+               </mtr>
+
+              </mtable></mrow>
+            <mo>)</mo></mrow><msup>
+             <mi>y</mi>
+             <mrow>
+              <mi>i</mi><mo>&#x2212;</mo><mi>j</mi></mrow>
+            </msup>
+            </mrow>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd>
+           <mn>0</mn>
+          </mtd>
+         </mtr>
+
+        </mtable></mrow> </mrow><mo>,</mo><mi>i</mi><mo>&#x2265;</mo><mi>j</mi><mo>;</mo></mrow>
+     </mtd>
+    </mtr>
+    <mtr columnalign="left">
+     <mtd columnalign="left">
+      <mrow>
+       <msub>
+        <mrow>
+         <mo stretchy="false">(</mo><msub>
+          <mi>Q</mi>
+          <mi>n</mi>
+         </msub>
+         <mo stretchy="false">[</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow>
+        <mrow>
+         <mi>i</mi><mi>j</mi></mrow>
+       </msub>
+       <mo>=</mo><mrow><mo>{</mo> <mrow>
+        <mtable>
+         <mtr>
+          <mtd>
+           <mrow>
+            <mrow><mo>&#x2329;</mo> <mrow>
+             <mtable>
+              <mtr>
+               <mtd>
+                <mi>x</mi>
+               </mtd>
+              </mtr>
+              <mtr>
+               <mtd>
+                <mrow>
+                 <mi>i</mi><mo>&#x2212;</mo><mi>j</mi></mrow>
+               </mtd>
+              </mtr>
+
+             </mtable></mrow> <mo>&#x232A;</mo></mrow><msup>
+             <mi>y</mi>
+             <mrow>
+              <mi>i</mi><mo>&#x2212;</mo><mi>j</mi></mrow>
+            </msup>
+            </mrow>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd>
+           <mn>0</mn>
+          </mtd>
+         </mtr>
+
+        </mtable></mrow> </mrow><mo>,</mo><mi>i</mi><mo>&#x2265;</mo><mi>j</mi><mo>.</mo></mrow>
+     </mtd>
+    </mtr>
+
+   </mtable></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaafaqaaeGabaaabaaeaaaaaaaaa8qacaGG
+  OaGaamiua8aadaWgaaWcbaWdbiaad6gaa8aabeaak8qacaGGBbGaam
+  iEaiaacYcacaWG5bGaaiyxaiaacMcapaWaaSbaaSqaa8qacaWGPbGa
+  amOAaaWdaeqaaOWdbiabg2da9maaceaapaqaauaabeqaceaaaeaape
+  WaaeWaa8aabaqbaeqabiqaaaqaa8qacaWG4baapaqaa8qacaWGPbGa
+  eyOeI0IaamOAaaaaaiaawIcacaGLPaaacaWG5bWdamaaCaaaleqaba
+  WdbiaadMgacqGHsislcaWGQbaaaaGcpaqaa8qacaaIWaaaaaGaay5E
+  aaGaaiilaiaadMgacqGHLjYScaWGQbGaai4oaaWdaeaapeGaaiikai
+  aadgfapaWaaSbaaSqaa8qacaWGUbaapaqabaGcpeGaai4waiaadIha
+  caGGSaGaamyEaiaac2facaGGPaWdamaaBaaaleaapeGaamyAaiaadQ
+  gaa8aabeaak8qacqGH9aqpdaGabaWdaeaafaqabeGabaaabaWdbmaa
+  amaapaqaauaabeqaceaaaeaapeGaamiEaaWdaeaapeGaamyAaiabgk
+  HiTiaadQgaaaaacaGLPmIaayPkJaGaamyEa8aadaahaaWcbeqaa8qa
+  caWGPbGaeyOeI0IaamOAaaaaaOWdaeaapeGaaGimaaaaaiaawUhaai
+  aacYcacaWGPbGaeyyzImRaamOAaiaac6caaaaaaa@7824@
+  </annotation>
+ </semantics>
+</math>
+
+
+<ul>
+<li><strong>定理3</strong></li>
+</ul>
+<p>$\forall x,y,z \in \mathbb{R}, m \in \mathbb{Z}$，有</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mtable columnalign="left">
+    <mtr columnalign="left">
+     <mtd columnalign="left">
+      <mrow>
+       <mrow><mo>{</mo> <mrow>
+        <mtable>
+         <mtr>
+          <mtd>
+           <mrow>
+            <msub>
+             <mi>P</mi>
+             <mi>n</mi>
+            </msub>
+            <mo stretchy="false">[</mo><mi>x</mi><mo>,</mo><mi>z</mi><mo stretchy="false">]</mo><msub>
+             <mi>P</mi>
+             <mi>n</mi>
+            </msub>
+            <mo stretchy="false">[</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">]</mo><mo>=</mo><msub>
+             <mi>P</mi>
+             <mi>n</mi>
+            </msub>
+            <mo stretchy="false">[</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">]</mo><mo>,</mo></mrow>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd>
+           <mrow>
+            <msub>
+             <mi>Q</mi>
+             <mi>n</mi>
+            </msub>
+            <mo stretchy="false">[</mo><mi>x</mi><mo>,</mo><mi>z</mi><mo stretchy="false">]</mo><msub>
+             <mi>Q</mi>
+             <mi>n</mi>
+            </msub>
+            <mo stretchy="false">[</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">]</mo><mo>=</mo><msub>
+             <mi>Q</mi>
+             <mi>n</mi>
+            </msub>
+            <mo stretchy="false">[</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">]</mo><mo>.</mo></mrow>
+          </mtd>
+         </mtr>
+
+        </mtable></mrow> </mrow></mrow>
+     </mtd>
+    </mtr>
+    <mtr columnalign="left">
+     <mtd columnalign="left">
+      <mrow>
+       <mrow><mo>{</mo> <mrow>
+        <mtable>
+         <mtr>
+          <mtd>
+           <mrow>
+            <msub>
+             <mi>P</mi>
+             <mi>n</mi>
+            </msub>
+            <msup>
+             <mrow>
+              <mo stretchy="false">[</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">]</mo></mrow>
+             <mi>m</mi>
+            </msup>
+            <mo>=</mo><msub>
+             <mi>P</mi>
+             <mi>n</mi>
+            </msub>
+            <mo stretchy="false">[</mo><mi>m</mi><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">]</mo><mo>,</mo></mrow>
+          </mtd>
+         </mtr>
+         <mtr>
+          <mtd>
+           <mrow>
+            <msub>
+             <mi>Q</mi>
+             <mi>n</mi>
+            </msub>
+            <msup>
+             <mrow>
+              <mo stretchy="false">[</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">]</mo></mrow>
+             <mi>m</mi>
+            </msup>
+            <mo>=</mo><msub>
+             <mi>Q</mi>
+             <mi>n</mi>
+            </msub>
+            <mo stretchy="false">[</mo><mi>m</mi><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">]</mo><mo>.</mo></mrow>
+          </mtd>
+         </mtr>
+
+        </mtable></mrow> </mrow></mrow>
+     </mtd>
+    </mtr>
+
+   </mtable></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaafaqaaeGabaaabaaeaaaaaaaaa8qadaGa
+  baWdaeaafaqabeGabaaabaWdbiaadcfapaWaaSbaaSqaa8qacaWGUb
+  aapaqabaGcpeGaai4waiaadIhacaGGSaGaamOEaiaac2facaWGqbWd
+  amaaBaaaleaapeGaamOBaaWdaeqaaOWdbiaacUfacaWG5bGaaiilai
+  aadQhacaGGDbGaeyypa0Jaamiua8aadaWgaaWcbaWdbiaad6gaa8aa
+  beaak8qacaGGBbGaamiEaiabgUcaRiaadMhacaGGSaGaamOEaiaac2
+  facaGGSaaapaqaa8qacaWGrbWdamaaBaaaleaapeGaamOBaaWdaeqa
+  aOWdbiaacUfacaWG4bGaaiilaiaadQhacaGGDbGaamyua8aadaWgaa
+  WcbaWdbiaad6gaa8aabeaak8qacaGGBbGaamyEaiaacYcacaWG6bGa
+  aiyxaiabg2da9iaadgfapaWaaSbaaSqaa8qacaWGUbaapaqabaGcpe
+  Gaai4waiaadIhacqGHRaWkcaWG5bGaaiilaiaadQhacaGGDbGaaiOl
+  aaaaaiaawUhaaaWdaeaapeWaaiqaa8aabaqbaeqabiqaaaqaa8qaca
+  WGqbWdamaaBaaaleaapeGaamOBaaWdaeqaaOWdbiaacUfacaWG4bGa
+  aiilaiaadMhacaGGDbWdamaaCaaaleqabaWdbiaad2gaaaGccqGH9a
+  qpcaWGqbWdamaaBaaaleaapeGaamOBaaWdaeqaaOWdbiaacUfacaWG
+  TbGaamiEaiaacYcacaWG5bGaaiyxaiaacYcaa8aabaWdbiaadgfapa
+  WaaSbaaSqaa8qacaWGUbaapaqabaGcpeGaai4waiaadIhacaGGSaGa
+  amyEaiaac2fapaWaaWbaaSqabeaapeGaamyBaaaakiabg2da9iaadg
+  fapaWaaSbaaSqaa8qacaWGUbaapaqabaGcpeGaai4waiaad2gacaWG
+  4bGaaiilaiaadMhacaGGDbGaaiOlaaaaaiaawUhaaaaaaaa@93D4@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>即</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mrow><mo>{</mo> <mrow>
+    <mtable>
+     <mtr>
+      <mtd>
+       <mrow>
+        <msub>
+         <mi>P</mi>
+         <mi>n</mi>
+        </msub>
+        <msup>
+         <mrow>
+          <mo stretchy="false">[</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">]</mo></mrow>
+         <mrow>
+          <mo>&#x2212;</mo><mn>1</mn></mrow>
+        </msup>
+        <mo>=</mo><msub>
+         <mi>P</mi>
+         <mi>n</mi>
+        </msub>
+        <mo stretchy="false">[</mo><mo>&#x2212;</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">]</mo><mo>,</mo><msub>
+         <mi>P</mi>
+         <mi>n</mi>
+        </msub>
+        <mo stretchy="false">[</mo><mi>x</mi><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo><mo>=</mo><msub>
+         <mi>P</mi>
+         <mi>n</mi>
+        </msub>
+        <mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">]</mo><mo>,</mo><msub>
+         <mi>P</mi>
+         <mi>n</mi>
+        </msub>
+        <mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo><mo>=</mo><msub>
+         <mi>I</mi>
+         <mrow>
+          <mi>n</mi><mo>+</mo><mn>1</mn></mrow>
+        </msub>
+        <mo>;</mo></mrow>
+      </mtd>
+     </mtr>
+     <mtr>
+      <mtd>
+       <mrow>
+        <msub>
+         <mi>Q</mi>
+         <mi>n</mi>
+        </msub>
+        <msup>
+         <mrow>
+          <mo stretchy="false">[</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">]</mo></mrow>
+         <mrow>
+          <mo>&#x2212;</mo><mn>1</mn></mrow>
+        </msup>
+        <mo>=</mo><msub>
+         <mi>Q</mi>
+         <mi>n</mi>
+        </msub>
+        <mo stretchy="false">[</mo><mo>&#x2212;</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">]</mo><mo>,</mo><msub>
+         <mi>Q</mi>
+         <mi>n</mi>
+        </msub>
+        <mo stretchy="false">[</mo><mi>x</mi><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo><mo>=</mo><msub>
+         <mi>Q</mi>
+         <mi>n</mi>
+        </msub>
+        <mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">]</mo><mo>,</mo><msub>
+         <mi>Q</mi>
+         <mi>n</mi>
+        </msub>
+        <mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo><mo>=</mo><msub>
+         <mi>I</mi>
+         <mrow>
+          <mi>n</mi><mo>+</mo><mn>1</mn></mrow>
+        </msub>
+        <mo>.</mo></mrow>
+      </mtd>
+     </mtr>
+
+    </mtable></mrow> </mrow></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaceaapaqaauaabeqa
+  ceaaaeaapeGaamiua8aadaWgaaWcbaWdbiaad6gaa8aabeaak8qaca
+  GGBbGaamiEaiaacYcacaWG5bGaaiyxa8aadaahaaWcbeqaa8qacqGH
+  sislcaaIXaaaaOGaeyypa0Jaamiua8aadaWgaaWcbaWdbiaad6gaa8
+  aabeaak8qacaGGBbGaeyOeI0IaamiEaiaacYcacaWG5bGaaiyxaiaa
+  cYcacaWGqbWdamaaBaaaleaapeGaamOBaaWdaeqaaOWdbiaacUfaca
+  WG4bGaaiilaiaaigdacaGGDbGaeyypa0Jaamiua8aadaWgaaWcbaWd
+  biaad6gaa8aabeaak8qacaGGBbGaamiEaiaac2facaGGSaGaamiua8
+  aadaWgaaWcbaWdbiaad6gaa8aabeaak8qacaGGBbGaaGimaiaacYca
+  caaIXaGaaiyxaiabg2da9iaadMeapaWaaSbaaSqaa8qacaWGUbGaey
+  4kaSIaaGymaaWdaeqaaOWdbiaacUdaa8aabaWdbiaadgfapaWaaSba
+  aSqaa8qacaWGUbaapaqabaGcpeGaai4waiaadIhacaGGSaGaamyEai
+  aac2fapaWaaWbaaSqabeaapeGaeyOeI0IaaGymaaaakiabg2da9iaa
+  dgfapaWaaSbaaSqaa8qacaWGUbaapaqabaGcpeGaai4waiabgkHiTi
+  aadIhacaGGSaGaamyEaiaac2facaGGSaGaamyua8aadaWgaaWcbaWd
+  biaad6gaa8aabeaak8qacaGGBbGaamiEaiaacYcacaaIXaGaaiyxai
+  abg2da9iaadgfapaWaaSbaaSqaa8qacaWGUbaapaqabaGcpeGaai4w
+  aiaadIhacaGGDbGaaiilaiaadgfapaWaaSbaaSqaa8qacaWGUbaapa
+  qabaGcpeGaai4waiaaicdacaGGSaGaaGymaiaac2facqGH9aqpcaWG
+  jbWdamaaBaaaleaapeGaamOBaiabgUcaRiaaigdaa8aabeaak8qaca
+  GGUaaaaaGaay5Eaaaaaa@960D@
+  </annotation>
+ </semantics>
+</math>
+
+
+
+
+<h3 id="反演开始！"><a href="#反演开始！" class="headerlink" title="反演开始！"></a>反演开始！</h3><p>还记得上面的推论吗？我们由它可以得到如下定理：</p>
+<ul>
+<li><strong>定理4</strong></li>
+</ul>
+<p>$\forall x,y \in \mathbb{R}​$，设$\{a_n\}_{n\geq 0}=\{a_n(x,y)\}_{n\geq 0}​$和$\{b_n\}_{n\geq 0}=\{b_n(x,y)\}_{n\geq 0}​$为两个函数序列</p>
+<p>那么我们有</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>a</mi>
+    <mi>n</mi>
+   </msub>
+   <mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>x</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mi>k</mi>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msub>
+    <mi>b</mi>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </msub>
+   <mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>&#x21D4;</mo><msub>
+    <mi>b</mi>
+    <mi>n</mi>
+   </msub>
+   <mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mo>&#x2212;</mo><mi>x</mi></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msub>
+    <mi>a</mi>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </msub>
+   <mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbiaadggapaWaaSbaaSqa
+  a8qacaWGUbaapaqabaGcpeGaaiikaiaadIhacaGGSaGaamyEaiaacM
+  cacqGH9aqpdaaeWbWdaeaapeWaaeWaa8aabaqbaeqabiqaaaqaa8qa
+  caWG4baapaqaa8qacaWGRbaaaaGaayjkaiaawMcaaaWcpaqaa8qaca
+  WGRbGaeyypa0JaaGimaaWdaeaapeGaamOBaaqdcqGHris5aOGaamOy
+  a8aadaWgaaWcbaWdbiaad6gacqGHsislcaWGRbaapaqabaGcpeGaai
+  ikaiaadIhacaGGSaGaamyEaiaacMcacqGHuhY2caWGIbWdamaaBaaa
+  leaapeGaamOBaaWdaeqaaOWdbiaacIcacaWG4bGaaiilaiaadMhaca
+  GGPaGaeyypa0ZaaabCa8aabaWdbmaabmaapaqaauaabeqaceaaaeaa
+  peGaeyOeI0IaamiEaaWdaeaapeGaamOBaiabgkHiTiaadUgaaaaaca
+  GLOaGaayzkaaaal8aabaWdbiaadUgacqGH9aqpcaaIWaaapaqaa8qa
+  caWGUbaaniabggHiLdGccaWGHbWdamaaBaaaleaapeGaamOBaiabgk
+  HiTiaadUgaa8aabeaak8qacaGGOaGaamiEaiaacYcacaWG5bGaaiyk
+  aaaa@778B@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>也就是</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>a</mi>
+    <mi>n</mi>
+   </msub>
+   <mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>x</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msub>
+    <mi>b</mi>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </msub>
+   <mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>&#x21D4;</mo><msub>
+    <mi>b</mi>
+    <mi>n</mi>
+   </msub>
+   <mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mo>&#x2212;</mo><mi>x</mi></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msub>
+    <mi>a</mi>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </msub>
+   <mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbiaadggapaWaaSbaaSqa
+  a8qacaWGUbaapaqabaGcpeGaaiikaiaadIhacaGGSaGaamyEaiaacM
+  cacqGH9aqpdaaeWbWdaeaapeWaaeWaa8aabaqbaeqabiqaaaqaa8qa
+  caWG4baapaqaa8qacaWGUbGaeyOeI0Iaam4AaaaaaiaawIcacaGLPa
+  aaaSWdaeaapeGaam4Aaiabg2da9iaaicdaa8aabaWdbiaad6gaa0Ga
+  eyyeIuoakiaadkgapaWaaSbaaSqaa8qacaWGUbGaeyOeI0Iaam4Aaa
+  WdaeqaaOWdbiaacIcacaWG4bGaaiilaiaadMhacaGGPaGaeyi1HSTa
+  amOya8aadaWgaaWcbaWdbiaad6gaa8aabeaak8qacaGGOaGaamiEai
+  aacYcacaWG5bGaaiykaiabg2da9maaqahapaqaa8qadaqadaWdaeaa
+  faqabeGabaaabaWdbiabgkHiTiaadIhaa8aabaWdbiaad6gacqGHsi
+  slcaWGRbaaaaGaayjkaiaawMcaaaWcpaqaa8qacaWGRbGaeyypa0Ja
+  aGimaaWdaeaapeGaamOBaaqdcqGHris5aOGaamyya8aadaWgaaWcba
+  Wdbiaad6gacqGHsislcaWGRbaapaqabaGcpeGaaiikaiaadIhacaGG
+  SaGaamyEaiaacMcaaaa@796B@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p><strong>证明</strong>：</p>
+<p>设$a = {({a_0},{a_1}, \cdots ,{a_n})^T},b = {({b_0},{b_1}, \cdots ,{b_n})^T}$，注意到$a = P_n[x] \Leftrightarrow b = P_n[ - x]$</p>
+<p>即</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>a</mi>
+    <mi>i</mi>
+   </msub>
+   <mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>j</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>i</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>x</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>i</mi><mo>&#x2212;</mo><mi>j</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msub>
+    <mi>b</mi>
+    <mi>j</mi>
+   </msub>
+   <mo>&#x21D4;</mo><msub>
+    <mi>b</mi>
+    <mi>i</mi>
+   </msub>
+   <mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>j</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>i</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mo>&#x2212;</mo><mi>x</mi></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>i</mi><mo>&#x2212;</mo><mi>j</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msub>
+    <mi>a</mi>
+    <mi>j</mi>
+   </msub>
+   </mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbiaadggapaWaaSbaaSqa
+  a8qacaWGPbaapaqabaGcpeGaeyypa0ZaaabCa8aabaWdbmaabmaapa
+  qaauaabeqaceaaaeaapeGaamiEaaWdaeaapeGaamyAaiabgkHiTiaa
+  dQgaaaaacaGLOaGaayzkaaaal8aabaWdbiaadQgacqGH9aqpcaaIWa
+  aapaqaa8qacaWGPbaaniabggHiLdGccaWGIbWdamaaBaaaleaapeGa
+  amOAaaWdaeqaaOWdbiabgsDiBlaadkgapaWaaSbaaSqaa8qacaWGPb
+  aapaqabaGcpeGaeyypa0ZaaabCa8aabaWdbmaabmaapaqaauaabeqa
+  ceaaaeaapeGaeyOeI0IaamiEaaWdaeaapeGaamyAaiabgkHiTiaadQ
+  gaaaaacaGLOaGaayzkaaaal8aabaWdbiaadQgacqGH9aqpcaaIWaaa
+  paqaa8qacaWGPbaaniabggHiLdGccaWGHbWdamaaBaaaleaapeGaam
+  OAaaWdaeqaaaaa@655D@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>我们的二项式反演公式也就很明白了：</p>
+<p>令${\{ {a_n}\} _{n \ge 0}}$和${\{ {b_n}\} _{n \ge 0}}$是两个数列，$s$为非负整数，$\forall  n \geq s$，有</p>
+<script type="math/tex; mode=display">{a_n} = \mathop \sum \limits_{k = s}^n \left( {\begin{array}{*{20}{c}}n\\k\end{array}} \right){b_k}</script><p>则有</p>
+<script type="math/tex; mode=display">{b_n} = \mathop \sum \limits_{k = s}^n {( - 1)^{n - k}}\left( {\begin{array}{*{20}{c}}n\\k\end{array}} \right){a_k}</script><p>好啦~ 反演到此为止，下面是娱乐环节！</p>
+<h2 id="一些神奇的恒等式变换"><a href="#一些神奇的恒等式变换" class="headerlink" title="一些神奇的恒等式变换"></a>一些神奇的恒等式变换</h2><ul>
+<li>如果你连基本恒等式都看不懂，说明你需要补习数学。</li>
+</ul>
+<h3 id="神奇变换1"><a href="#神奇变换1" class="headerlink" title="神奇变换1"></a>神奇变换1</h3><p>有恒等式</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>x</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mi>k</mi>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msup>
+    <mi>y</mi>
+    <mi>k</mi>
+   </msup>
+   <mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>n</mi><mo>&#x2212;</mo><mi>x</mi></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mi>k</mi>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msup>
+    <mrow>
+     <mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>y</mi><mo stretchy="false">)</mo></mrow>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </msup>
+   <msup>
+    <mrow>
+     <mo stretchy="false">(</mo><mo>&#x2212;</mo><mi>y</mi><mo stretchy="false">)</mo></mrow>
+    <mi>k</mi>
+   </msup>
+   </mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaqahapaqaa8qadaqa
+  daWdaeaafaqabeGabaaabaWdbiaadIhaa8aabaWdbiaadUgaaaaaca
+  GLOaGaayzkaaaal8aabaWdbiaadUgacqGH9aqpcaaIWaaapaqaa8qa
+  caWGUbaaniabggHiLdGccaWG5bWdamaaCaaaleqabaWdbiaadUgaaa
+  GccqGH9aqpdaaeWbWdaeaapeWaaeWaa8aabaqbaeqabiqaaaqaa8qa
+  caWGUbGaeyOeI0IaamiEaaWdaeaapeGaam4AaaaaaiaawIcacaGLPa
+  aaaSWdaeaapeGaam4Aaiabg2da9iaaicdaa8aabaWdbiaad6gaa0Ga
+  eyyeIuoakiaacIcacaaIXaGaey4kaSIaamyEaiaacMcapaWaaWbaaS
+  qabeaapeGaamOBaiabgkHiTiaadUgaaaGccaGGOaGaeyOeI0IaamyE
+  aiaacMcapaWaaWbaaSqabeaapeGaam4Aaaaaaaa@641A@
+  </annotation>
+ </semantics>
+</math>
+
+<p>作变换：</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>x</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mi>k</mi>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msup>
+    <mi>y</mi>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </msup>
+   <mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <msup>
+      <mrow>
+       <mo stretchy="false">(</mo><mo>&#x2212;</mo><mi>x</mi><mo stretchy="false">)</mo></mrow>
+      <mi>k</mi>
+     </msup>
+     </mrow>
+   </mstyle><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mi>n</mi><mo>&#x2212;</mo><mi>x</mi></mrow>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mi>k</mi>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow><msup>
+    <mrow>
+     <mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>y</mi><mo stretchy="false">)</mo></mrow>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </msup>
+   <mo>&#x22EF;</mo><mo>&#x22EF;</mo><mtext>Tip</mtext><mo>:</mo><mtext>replace&#x00A0;</mtext><mtext>&#x2009;</mtext><mi>y</mi><mtext>&#x2009;</mtext><mtext>with</mtext><mtext>&#x2009;</mtext><mfrac>
+    <mn>1</mn>
+    <mi>y</mi>
+   </mfrac>
+   </mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaqahapaqaa8qadaqa
+  daWdaeaafaqabeGabaaabaWdbiaadIhaa8aabaWdbiaadUgaaaaaca
+  GLOaGaayzkaaaal8aabaWdbiaadUgacqGH9aqpcaaIWaaapaqaa8qa
+  caWGUbaaniabggHiLdGccaWG5bWdamaaCaaaleqabaWdbiaad6gacq
+  GHsislcaWGRbaaaOGaeyypa0ZaaabCa8aabaWdbiaacIcacqGHsisl
+  caWG4bGaaiyka8aadaahaaWcbeqaa8qacaWGRbaaaaWdaeaapeGaam
+  4Aaiabg2da9iaaicdaa8aabaWdbiaad6gaa0GaeyyeIuoakmaabmaa
+  paqaauaabeqaceaaaeaapeGaamOBaiabgkHiTiaadIhaa8aabaWdbi
+  aadUgaaaaacaGLOaGaayzkaaGaaiikaiaaigdacqGHRaWkcaWG5bGa
+  aiyka8aadaahaaWcbeqaa8qacaWGUbGaeyOeI0Iaam4Aaaaakiabl+
+  Uimjabl+UimjaabsfacaqGPbGaaeiCaiaacQdacaqGYbGaaeyzaiaa
+  bchacaqGSbGaaeyyaiaabogacaqGLbGaaeiia8aacaaMe8+dbiaadM
+  hapaGaaGjbVlaabEhacaqGPbGaaeiDaiaabIgacaaMe8+dbmaalaaa
+  paqaa8qacaaIXaaapaqaa8qacaWG5baaaaaa@8004@
+  </annotation>
+ </semantics>
+</math>
+
+<p>令</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <msub>
+    <mi>b</mi>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </msub>
+   <mo>=</mo><msup>
+    <mi>y</mi>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </msup>
+   <mo>,</mo><msub>
+    <mi>a</mi>
+    <mi>n</mi>
+   </msub>
+   <mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <msup>
+      <mrow>
+       <mo stretchy="false">(</mo><mo>&#x2212;</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+      <mi>k</mi>
+     </msup>
+     </mrow>
+   </mstyle><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mi>n</mi><mo>&#x2212;</mo><mi>x</mi></mrow>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mi>k</mi>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow><msup>
+    <mrow>
+     <mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>y</mi><mo stretchy="false">)</mo></mrow>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </msup>
+   <mo>,</mo></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbiaadkgapaWaaSbaaSqa
+  a8qacaWGUbGaeyOeI0Iaam4AaaWdaeqaaOWdbiabg2da9iaadMhapa
+  WaaWbaaSqabeaapeGaamOBaiabgkHiTiaadUgaaaGccaGGSaGaamyy
+  a8aadaWgaaWcbaWdbiaad6gaa8aabeaak8qacqGH9aqpdaaeWbWdae
+  aapeGaaiikaiabgkHiTiaaigdacaGGPaWdamaaCaaaleqabaWdbiaa
+  dUgaaaaapaqaa8qacaWGRbGaeyypa0JaaGimaaWdaeaapeGaamOBaa
+  qdcqGHris5aOWaaeWaa8aabaqbaeqabiqaaaqaa8qacaWGUbGaeyOe
+  I0IaamiEaaWdaeaapeGaam4AaaaaaiaawIcacaGLPaaacaGGOaGaaG
+  ymaiabgUcaRiaadMhacaGGPaWdamaaCaaaleqabaWdbiaad6gacqGH
+  sislcaWGRbaaaOGaaiilaaaa@647D@
+  </annotation>
+ </semantics>
+</math>
+
+<p>则有</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mstyle displaystyle="true">
+      <munderover>
+       <mo>&#x2211;</mo>
+       <mrow>
+        <mi>i</mi><mo>=</mo><mn>0</mn></mrow>
+       <mrow>
+        <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+      </munderover>
+      <mrow>
+       <msup>
+        <mrow>
+         <mo stretchy="false">(</mo><mo>&#x2212;</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+        <mi>i</mi>
+       </msup>
+       </mrow>
+     </mstyle></mrow>
+   </mstyle><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mo>&#x2212;</mo><mi>x</mi></mrow>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mi>k</mi>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mi>n</mi><mo>&#x2212;</mo><mi>k</mi><mo>&#x2212;</mo><mi>x</mi></mrow>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mi>i</mi>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow><msup>
+    <mrow>
+     <mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>y</mi><mo stretchy="false">)</mo></mrow>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi><mo>&#x2212;</mo><mi>i</mi></mrow>
+   </msup>
+   <mo>=</mo><msup>
+    <mi>y</mi>
+    <mi>n</mi>
+   </msup>
+   <mo>&#x22EF;</mo><mo>&#x22EF;</mo><mtext>Tip</mtext><mo>:</mo><mtext>Use</mtext><mtext>&#x2009;</mtext><mtext>the&#x00A0;Inversion&#x00A0;Formula</mtext></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaqahapaqaa8qadaae
+  WbWdaeaapeGaaiikaiabgkHiTiaaigdacaGGPaWdamaaCaaaleqaba
+  WdbiaadMgaaaaapaqaa8qacaWGPbGaeyypa0JaaGimaaWdaeaapeGa
+  amOBaiabgkHiTiaadUgaa0GaeyyeIuoaaSWdaeaapeGaam4Aaiabg2
+  da9iaaicdaa8aabaWdbiaad6gaa0GaeyyeIuoakmaabmaapaqaauaa
+  beqaceaaaeaapeGaeyOeI0IaamiEaaWdaeaapeGaam4AaaaaaiaawI
+  cacaGLPaaadaqadaWdaeaafaqabeGabaaabaWdbiaad6gacqGHsisl
+  caWGRbGaeyOeI0IaamiEaaWdaeaapeGaamyAaaaaaiaawIcacaGLPa
+  aacaGGOaGaaGymaiabgUcaRiaadMhacaGGPaWdamaaCaaaleqabaWd
+  biaad6gacqGHsislcaWGRbGaeyOeI0IaamyAaaaakiabg2da9iaadM
+  hapaWaaWbaaSqabeaapeGaamOBaaaakiabl+Uimjabl+Uimjaabsfa
+  caqGPbGaaeiCaiaacQdacaqGvbGaae4CaiaabwgapaGaaGjbV=qaca
+  qG0bGaaeiAaiaabwgacaqGGaGaaeysaiaab6gacaqG2bGaaeyzaiaa
+  bkhacaqGZbGaaeyAaiaab+gacaqGUbGaaeiiaiaabAeacaqGVbGaae
+  OCaiaab2gacaqG1bGaaeiBaiaabggaaaa@88C6@
+  </annotation>
+ </semantics>
+</math>
+
+
+<h3 id="神奇变换2"><a href="#神奇变换2" class="headerlink" title="神奇变换2"></a>神奇变换2</h3><p>有恒等式</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <msup>
+      <mrow>
+       <mo stretchy="false">(</mo><mo>&#x2212;</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+      <mi>k</mi>
+     </msup>
+     </mrow>
+   </mstyle><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mi>n</mi><mo>+</mo><mi>x</mi></mrow>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mrow>
+         <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow><mfrac>
+    <mn>1</mn>
+    <mrow>
+     <mn>1</mn><mo>+</mo><mi>k</mi></mrow>
+   </mfrac>
+   <mo>=</mo><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mrow>
+         <msub>
+          <mi>B</mi>
+          <mi>n</mi>
+         </msub>
+         <mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>n</mi></mrow>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mi>n</mi>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaqahapaqaa8qacaGG
+  OaGaeyOeI0IaaGymaiaacMcapaWaaWbaaSqabeaapeGaam4Aaaaaa8
+  aabaWdbiaadUgacqGH9aqpcaaIWaaapaqaa8qacaWGUbaaniabggHi
+  LdGcdaqadaWdaeaafaqabeGabaaabaWdbiaad6gacqGHRaWkcaWG4b
+  aapaqaa8qacaWGUbGaeyOeI0Iaam4AaaaaaiaawIcacaGLPaaadaWc
+  aaWdaeaapeGaaGymaaWdaeaapeGaaGymaiabgUcaRiaadUgaaaGaey
+  ypa0ZaaeWaa8aabaqbaeqabiqaaaqaa8qacaWGcbWdamaaBaaaleaa
+  peGaamOBaaWdaeqaaOWdbiaacIcacaWG4bGaaiykaiabgUcaRiaad6
+  gaa8aabaWdbiaad6gaaaaacaGLOaGaayzkaaaaaa@5EEC@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>，其中$B_n(x)$是Bernouli多项式</p>
+<p>变形为：</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>x</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><mfrac>
+    <mrow>
+     <msup>
+      <mrow>
+       <mo stretchy="false">(</mo><mo>&#x2212;</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+      <mi>k</mi>
+     </msup>
+     </mrow>
+    <mrow>
+     <mn>1</mn><mo>+</mo><mi>k</mi></mrow>
+   </mfrac>
+   <mo>=</mo><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mrow>
+         <msub>
+          <mi>B</mi>
+          <mi>n</mi>
+         </msub>
+         <mo stretchy="false">(</mo><mi>x</mi><mo>&#x2212;</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mi>n</mi></mrow>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mi>n</mi>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow></mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaqahapaqaa8qadaqa
+  daWdaeaafaqabeGabaaabaWdbiaadIhaa8aabaWdbiaad6gacqGHsi
+  slcaWGRbaaaaGaayjkaiaawMcaaaWcpaqaa8qacaWGRbGaeyypa0Ja
+  aGimaaWdaeaapeGaamOBaaqdcqGHris5aOWaaSaaa8aabaWdbiaacI
+  cacqGHsislcaaIXaGaaiyka8aadaahaaWcbeqaa8qacaWGRbaaaaGc
+  paqaa8qacaaIXaGaey4kaSIaam4AaaaacqGH9aqpdaqadaWdaeaafa
+  qabeGabaaabaWdbiaadkeapaWaaSbaaSqaa8qacaWGUbaapaqabaGc
+  peGaaiikaiaadIhacqGHsislcaWGUbGaaiykaiabgUcaRiaad6gaa8
+  aabaWdbiaad6gaaaaacaGLOaGaayzkaaaaaa@5E51@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>令${b_k} = \dfrac{( - 1)^k}{1 + k},{a_n} = \left( {\begin{array}{*{20}{c}}{B_n(x - n) + n}\\n\end{array}} \right)$</p>
+<p>我们在反演公式2中进行变换</p>
+<p>有</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mo>&#x2212;</mo><mi>x</mi></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><mrow><mo>(</mo>
+    <mrow>
+     <mtable>
+      <mtr>
+       <mtd>
+        <mrow>
+         <msub>
+          <mi>B</mi>
+          <mi>k</mi>
+         </msub>
+         <mo stretchy="false">(</mo><mi>x</mi><mo>&#x2212;</mo><mi>k</mi><mo stretchy="false">)</mo><mo>+</mo><mi>k</mi></mrow>
+       </mtd>
+      </mtr>
+      <mtr>
+       <mtd>
+        <mi>k</mi>
+       </mtd>
+      </mtr>
+
+     </mtable></mrow>
+   <mo>)</mo></mrow><mo>=</mo><mfrac>
+    <mrow>
+     <msup>
+      <mrow>
+       <mo stretchy="false">(</mo><mo>&#x2212;</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+      <mi>n</mi>
+     </msup>
+     </mrow>
+    <mrow>
+     <mn>1</mn><mo>+</mo><mi>n</mi></mrow>
+   </mfrac>
+   </mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaqahapaqaa8qadaqa
+  daWdaeaafaqabeGabaaabaWdbiabgkHiTiaadIhaa8aabaWdbiaad6
+  gacqGHsislcaWGRbaaaaGaayjkaiaawMcaaaWcpaqaa8qacaWGRbGa
+  eyypa0JaaGimaaWdaeaapeGaamOBaaqdcqGHris5aOWaaeWaa8aaba
+  qbaeqabiqaaaqaa8qacaWGcbWdamaaBaaaleaapeGaam4AaaWdaeqa
+  aOWdbiaacIcacaWG4bGaeyOeI0Iaam4AaiaacMcacqGHRaWkcaWGRb
+  aapaqaa8qacaWGRbaaaaGaayjkaiaawMcaaiabg2da9maalaaapaqa
+  a8qacaGGOaGaeyOeI0IaaGymaiaacMcapaWaaWbaaSqabeaapeGaam
+  OBaaaaaOWdaeaapeGaaGymaiabgUcaRiaad6gaaaaaaa@5F38@
+  </annotation>
+ </semantics>
+</math>
+
+
+<h3 id="神奇变换3"><a href="#神奇变换3" class="headerlink" title="神奇变换3"></a>神奇变换3</h3><p>有恒等式</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mrow>
+      <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>z</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mi>k</mi>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msup>
+    <mi>x</mi>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+   </msup>
+   <mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>1</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>z</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><msup>
+    <mrow>
+     <mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+    <mrow>
+     <mi>k</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+   </msup>
+   </mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaqahapaqaa8qadaqa
+  daWdaeaafaqabeGabaaabaWdbiaadQhaa8aabaWdbiaadUgaaaaaca
+  GLOaGaayzkaaaal8aabaWdbiaadUgacqGH9aqpcaaIWaaapaqaa8qa
+  caWGUbGaeyOeI0IaaGymaaqdcqGHris5aOGaamiEa8aadaahaaWcbe
+  qaa8qacaWGUbGaeyOeI0Iaam4AaiabgkHiTiaaigdaaaGccqGH9aqp
+  daaeWbWdaeaapeWaaeWaa8aabaqbaeqabiqaaaqaa8qacaWG6bGaey
+  OeI0Iaam4AaaWdaeaapeGaamOBaiabgkHiTiaadUgaaaaacaGLOaGa
+  ayzkaaaal8aabaWdbiaadUgacqGH9aqpcaaIXaaapaqaa8qacaWGUb
+  aaniabggHiLdGccaGGOaGaamiEaiabgUcaRiaaigdacaGGPaWdamaa
+  CaaaleqabaWdbiaadUgacqGHsislcaaIXaaaaaaa@6668@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>通过反演，得出：</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mo>&#x2212;</mo><mi>x</mi></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mi>k</mi>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>i</mi><mo>=</mo><mn>0</mn></mrow>
+     <mrow>
+      <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>x</mi><mo>&#x2212;</mo><mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>n</mi><mo>&#x2212;</mo><mi>k</mi><mo>&#x2212;</mo><mi>i</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><mo stretchy="false">(</mo><mi>z</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>=</mo><msup>
+    <mi>z</mi>
+    <mi>n</mi>
+   </msup>
+   </mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaqahapaqaa8qadaqa
+  daWdaeaafaqabeGabaaabaWdbiabgkHiTiaadIhaa8aabaWdbiaadU
+  gaaaaacaGLOaGaayzkaaaal8aabaWdbiaadUgacqGH9aqpcaaIWaaa
+  paqaa8qacaWGUbaaniabggHiLdGcdaaeWbWdaeaapeWaaeWaa8aaba
+  qbaeqabiqaaaqaa8qacaWG4bGaeyOeI0IaamyAaiabgkHiTiaaigda
+  a8aabaWdbiaad6gacqGHsislcaWGRbGaeyOeI0IaamyAaaaaaiaawI
+  cacaGLPaaaaSWdaeaapeGaamyAaiabg2da9iaaicdaa8aabaWdbiaa
+  d6gacqGHsislcaWGRbaaniabggHiLdGccaGGOaGaamOEaiabgUcaRi
+  aaigdacaGGPaGaeyypa0JaamOEa8aadaahaaWcbeqaa8qacaWGUbaa
+  aaaa@6495@
+  </annotation>
+ </semantics>
+</math>
+
+
+<h3 id="神奇变换4"><a href="#神奇变换4" class="headerlink" title="神奇变换4"></a>神奇变换4</h3><p>有恒等式</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mrow>
+      <mi>n</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mi>z</mi>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mi>k</mi>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><mfrac>
+    <mrow>
+     <msup>
+      <mi>x</mi>
+      <mrow>
+       <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+     </msup>
+     </mrow>
+    <mrow>
+     <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+   </mfrac>
+   <mo>=</mo><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>1</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>z</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><mfrac>
+    <mrow>
+     <msup>
+      <mrow>
+       <mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+      <mi>k</mi>
+     </msup>
+     <mo>&#x2212;</mo><mn>1</mn></mrow>
+    <mi>k</mi>
+   </mfrac>
+   </mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaqahapaqaa8qadaqa
+  daWdaeaafaqabeGabaaabaWdbiaadQhaa8aabaWdbiaadUgaaaaaca
+  GLOaGaayzkaaaal8aabaWdbiaadUgacqGH9aqpcaaIWaaapaqaa8qa
+  caWGUbGaeyOeI0IaaGymaaqdcqGHris5aOWaaSaaa8aabaWdbiaadI
+  hapaWaaWbaaSqabeaapeGaamOBaiabgkHiTiaadUgaaaaak8aabaWd
+  biaad6gacqGHsislcaWGRbaaaiabg2da9maaqahapaqaa8qadaqada
+  WdaeaafaqabeGabaaabaWdbiaadQhacqGHsislcaWGRbaapaqaa8qa
+  caWGUbGaeyOeI0Iaam4AaaaaaiaawIcacaGLPaaaaSWdaeaapeGaam
+  4Aaiabg2da9iaaigdaa8aabaWdbiaad6gaa0GaeyyeIuoakmaalaaa
+  paqaa8qacaGGOaGaamiEaiabgUcaRiaaigdacaGGPaWdamaaCaaale
+  qabaWdbiaadUgaaaGccqGHsislcaaIXaaapaqaa8qacaWGRbaaaaaa
+  @6926@
+  </annotation>
+ </semantics>
+</math>
+
+
+<p>通过反演，得出</p>
+<math display="block">
+ <semantics>
+  <mrow>
+   <mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+     <mi>n</mi>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mo>&#x2212;</mo><mi>z</mi></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mi>k</mi>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><mstyle displaystyle="true">
+    <munderover>
+     <mo>&#x2211;</mo>
+     <mrow>
+      <mi>i</mi><mo>=</mo><mn>0</mn></mrow>
+     <mrow>
+      <mi>n</mi><mo>&#x2212;</mo><mi>k</mi></mrow>
+    </munderover>
+    <mrow>
+     <mrow><mo>(</mo>
+      <mrow>
+       <mtable>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>z</mi><mo>&#x2212;</mo><mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow>
+         </mtd>
+        </mtr>
+        <mtr>
+         <mtd>
+          <mrow>
+           <mi>n</mi><mo>&#x2212;</mo><mi>k</mi><mo>&#x2212;</mo><mi>i</mi></mrow>
+         </mtd>
+        </mtr>
+
+       </mtable></mrow>
+     <mo>)</mo></mrow></mrow>
+   </mstyle><mfrac>
+    <mrow>
+     <msup>
+      <mrow>
+       <mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow>
+      <mrow>
+       <mi>i</mi><mo>+</mo><mn>1</mn></mrow>
+     </msup>
+     <mo>&#x2212;</mo><mn>1</mn></mrow>
+    <mrow>
+     <mi>i</mi><mo>+</mo><mn>1</mn></mrow>
+   </mfrac>
+   <mo>=</mo><mfrac>
+    <mrow>
+     <msup>
+      <mi>x</mi>
+      <mrow>
+       <mi>n</mi><mo>+</mo><mn>1</mn></mrow>
+     </msup>
+     </mrow>
+    <mrow>
+     <mi>n</mi><mo>+</mo><mn>1</mn></mrow>
+   </mfrac>
+   </mrow>
+  <annotation encoding="MathType-MTEF">MathType@MTEF@5@5@+=
+  feaahiart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+  4rNCHbWexLMBbXgBd9gzLbvyNv2CaeHbl7mZLdGeaGqiVu0Je9sqqr
+  pepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9vqaqpepm0xbba9pwe9Q8fs
+  0=yqaqpepae9pg0FirpepeKkFr0xfr=xfr=xb9adbaqaaeGaciGaai
+  aabeqaamaabaabauaakeaaqaaaaaaaaaWdbmaaqahapaqaa8qadaqa
+  daWdaeaafaqabeGabaaabaWdbiabgkHiTiaadQhaa8aabaWdbiaadU
+  gaaaaacaGLOaGaayzkaaaal8aabaWdbiaadUgacqGH9aqpcaaIWaaa
+  paqaa8qacaWGUbaaniabggHiLdGcdaaeWbWdaeaapeWaaeWaa8aaba
+  qbaeqabiqaaaqaa8qacaWG6bGaeyOeI0IaamyAaiabgkHiTiaaigda
+  a8aabaWdbiaad6gacqGHsislcaWGRbGaeyOeI0IaamyAaaaaaiaawI
+  cacaGLPaaaaSWdaeaapeGaamyAaiabg2da9iaaicdaa8aabaWdbiaa
+  d6gacqGHsislcaWGRbaaniabggHiLdGcdaWcaaWdaeaapeGaaiikai
+  aadIhacqGHRaWkcaaIXaGaaiyka8aadaahaaWcbeqaa8qacaWGPbGa
+  ey4kaSIaaGymaaaakiabgkHiTiaaigdaa8aabaWdbiaadMgacqGHRa
+  WkcaaIXaaaaiabg2da9maalaaapaqaa8qacaWG4bWdamaaCaaaleqa
+  baWdbiaad6gacqGHRaWkcaaIXaaaaaGcpaqaa8qacaWGUbGaey4kaS
+  IaaGymaaaaaaa@707C@
+  </annotation>
+ </semantics>
+</math>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我们全文讨论了许多关于二项式系数的问题。二项式系数的恒等式可能远不止这些，还需要我们去发掘。</p>
+<p>我们可以看到在恒等式变换部分，许多式子最终的形式都是非常美妙简洁的。在OI中，可以帮助加速运算。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1], Wikipedia, <a href="https://zh.wikipedia.org/wiki/二项式定理" target="_blank" rel="noopener">二项式定理</a></p>
+<p>[2], Wikipedia, <a href="https://en.wikipedia.org/wiki/Binomial_theorem" target="_blank" rel="noopener">Binomial theorem</a></p>
+<p>[3], Miskcoo’s Space , <a href="http://blog.miskcoo.com/2015/12/inversion-magic-binomial-inversion" target="_blank" rel="noopener">反演魔术：反演原理及二项式反演</a></p>
+<p>[4], creatorx ,<a href="https://blog.csdn.net/creatorx/article/details/78155385" target="_blank" rel="noopener">二项式反演公式</a></p>
+<p>[5], Wolframmathworld, <a href="http://mathworld.wolfram.com/BinomialTheorem.html" target="_blank" rel="noopener">Binomial theorem</a></p>
+<p>[6], Peoplesju, <a href="http://people.sju.edu/~pklingsb/genbinom.pdf" target="_blank" rel="noopener">The Generalized Binomial Theorem</a></p>
+<p>[7], <em>Concrete Mathematics</em>, 二项式系数</p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束了哦<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Sky of war</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://skyofwar.xyz/2018/08/19/二项式系数及其反演/" title="二项式系数及其反演">https://skyofwar.xyz/2018/08/19/二项式系数及其反演/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
+          
+            <a href="/tags/高等数学/" rel="tag"><i class="fa fa-tag"></i> 高等数学</a>
+          
+            <a href="/tags/组合数学/" rel="tag"><i class="fa fa-tag"></i> 组合数学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/18/莫比乌斯反演/" rel="next" title="莫比乌斯反演">
+                <i class="fa fa-chevron-left"></i> 莫比乌斯反演
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/19/由一道神奇的题目引发的思考/" rel="prev" title="由一道神奇的题目引发的思考">
+                由一道神奇的题目引发的思考 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.jpg"
+                alt="Sky of war" />
+            
+              <p class="site-author-name" itemprop="name">Sky of war</p>
+              <p class="site-description motion-element" itemprop="description">Why I gotta fly? The boundlessness precipitates me to do so.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">62</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Leoleepz" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:Leoleepaytser@hotmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/116229514260659689818" target="_blank" title="Google"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/Rand_By_Rand" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/paytser.nigel.5" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.youtube.com/channel/UCoTTIUv013ld0CmpAlZPgDg" target="_blank" title="YouTube"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wuyudi.github.io/" title="几何大师wuyudi" target="_blank">几何大师wuyudi</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/JacaJava" title="OI巨佬ExtendedAsh" target="_blank">OI巨佬ExtendedAsh</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chenz01.github.io/" title="马上要碾压我的cz" target="_blank">马上要碾压我的cz</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.hh12.cn" title="galgame的神犇Highwind" target="_blank">galgame的神犇Highwind</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://judegao.com/" title="Waterloo的CS大佬Jude" target="_blank">Waterloo的CS大佬Jude</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/ywwyww/" title="yww%%%" target="_blank">yww%%%</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二项式系数及其反演"><span class="nav-number">1.</span> <span class="nav-text">二项式系数及其反演</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二项式系数-amp-二项式定理"><span class="nav-number">1.1.</span> <span class="nav-text">二项式系数&amp;二项式定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广义二项式定理"><span class="nav-number">1.2.</span> <span class="nav-text">广义二项式定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种证明"><span class="nav-number">1.2.1.</span> <span class="nav-text">第一种证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种证明"><span class="nav-number">1.2.2.</span> <span class="nav-text">第二种证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合证明"><span class="nav-number">1.2.3.</span> <span class="nav-text">组合证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二项式定理的一些小应用"><span class="nav-number">1.3.</span> <span class="nav-text">二项式定理的一些小应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二项式反演！"><span class="nav-number">1.4.</span> <span class="nav-text">二项式反演！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前置定义-amp-定理"><span class="nav-number">1.4.1.</span> <span class="nav-text">前置定义&amp;定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反演开始！"><span class="nav-number">1.4.2.</span> <span class="nav-text">反演开始！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些神奇的恒等式变换"><span class="nav-number">1.5.</span> <span class="nav-text">一些神奇的恒等式变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#神奇变换1"><span class="nav-number">1.5.1.</span> <span class="nav-text">神奇变换1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神奇变换2"><span class="nav-number">1.5.2.</span> <span class="nav-text">神奇变换2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神奇变换3"><span class="nav-number">1.5.3.</span> <span class="nav-text">神奇变换3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#神奇变换4"><span class="nav-number">1.5.4.</span> <span class="nav-text">神奇变换4</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">1.7.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sky of war</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共45.9k字</span>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+</body>
+</html>

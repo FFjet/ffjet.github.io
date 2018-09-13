@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpg?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/header.jpg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="窗函数实在是无聊（主要是因为llc神犇在上学期提过窗函数，然而我当时并看不懂，这次把坑填上…)…然后看了几篇关于窗函数的资料…本文就权当抛砖引玉吧  数字信号处理的主要数学工具是傅里叶变换，而傅里叶变换是研究整个时间域和频率域的关系，当运用计算机实现测试信号处理时，不可能对无限长的信号进行测量和运算，而是取其有限的时间片段进行分析。  从信号中截取一个时间片段，然后用截取的信号时间片段进行周期延拓">
+<meta name="keywords" content="数学,物理,信号学,FFT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="窗函数">
+<meta property="og:url" content="https://skyofwar.xyz/2018/09/01/窗函数/index.html">
+<meta property="og:site_name" content="Sky of war">
+<meta property="og:description" content="窗函数实在是无聊（主要是因为llc神犇在上学期提过窗函数，然而我当时并看不懂，这次把坑填上…)…然后看了几篇关于窗函数的资料…本文就权当抛砖引玉吧  数字信号处理的主要数学工具是傅里叶变换，而傅里叶变换是研究整个时间域和频率域的关系，当运用计算机实现测试信号处理时，不可能对无限长的信号进行测量和运算，而是取其有限的时间片段进行分析。  从信号中截取一个时间片段，然后用截取的信号时间片段进行周期延拓">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://skyofwar.xyz/images/windownotes1.jpg">
+<meta property="og:image" content="https://skyofwar.xyz/images/windownotes2.jpg">
+<meta property="og:image" content="https://skyofwar.xyz/images/windownotes3.jpg">
+<meta property="og:image" content="https://skyofwar.xyz/images/window1.jpg">
+<meta property="og:image" content="https://skyofwar.xyz/images/window2.png">
+<meta property="og:image" content="https://skyofwar.xyz/images/window3.png">
+<meta property="og:image" content="https://skyofwar.xyz/images/1535810012918.png">
+<meta property="og:image" content="https://skyofwar.xyz/images/w4.jpg">
+<meta property="og:image" content="https://skyofwar.xyz/images/1535810209279.png">
+<meta property="og:updated_time" content="2018-09-12T07:05:28.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="窗函数">
+<meta name="twitter:description" content="窗函数实在是无聊（主要是因为llc神犇在上学期提过窗函数，然而我当时并看不懂，这次把坑填上…)…然后看了几篇关于窗函数的资料…本文就权当抛砖引玉吧  数字信号处理的主要数学工具是傅里叶变换，而傅里叶变换是研究整个时间域和频率域的关系，当运用计算机实现测试信号处理时，不可能对无限长的信号进行测量和运算，而是取其有限的时间片段进行分析。  从信号中截取一个时间片段，然后用截取的信号时间片段进行周期延拓">
+<meta name="twitter:image" content="https://skyofwar.xyz/images/windownotes1.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Sky of war" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://skyofwar.xyz/2018/09/01/窗函数/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>窗函数 | Sky of war</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/Leoleepz"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sky of war</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Beyond the spectacle of the sky</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">78</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">6</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">62</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-game2048">
+    <a href="/2048/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-2048"></i> <br />Game2048</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/09/01/窗函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sky of war">
+      <meta itemprop="description" content="Why I gotta fly? The boundlessness precipitates me to do so.">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sky of war">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">窗函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-01 22:32:00" itemprop="dateCreated datePublished" datetime="2018-09-01T22:32:00+08:00">2018-09-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-12 15:05:28" itemprop="dateModified" datetime="2018-09-12T15:05:28+08:00">2018-09-12</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/讲解/" itemprop="url" rel="index"><span itemprop="name">讲解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="窗函数"><a href="#窗函数" class="headerlink" title="窗函数"></a>窗函数</h1><p>实在是无聊（主要是因为llc神犇在上学期提过窗函数，然而我当时并看不懂，这次把坑填上…)…然后看了几篇关于窗函数的资料…本文就权当抛砖引玉吧</p>
+<hr>
+<p>数字信号处理的主要数学工具是傅里叶变换，而傅里叶变换是研究<strong>整个</strong>时间域和频率域的关系，当运用计算机实现测试信号处理时，不可能对无限长的信号进行测量和运算，而是取其有限的时间片段进行分析。</p>
+<ul>
+<li>从信号中截取一个时间片段，<del>然后用截取的信号时间片段进行<strong>周期延拓</strong>处理，得到虚拟的无限长信号，再进行傅里叶变换和相关分析。</del>无限长信号被截断后，其频谱发生了<strong>畸变</strong>，我们称为频谱<strong>能量泄漏</strong>，为了减少<strong>频谱泄漏</strong>，可采用不同的截取函数对信号进行截断，截断函数称为<strong>窗函数</strong>，简称为窗。</li>
+</ul>
+<a id="more"></a>
+<p>据学信号学的大佬所说，杠掉的地方有些问题。所以这里展示一下大佬的笔记吧，就不重新表述了（公式太多QwQ）</p>
+<p><img src="/images/windownotes1.jpg" alt=""></p>
+<p><img src="/images/windownotes2.jpg" alt=""></p>
+<p><img src="/images/windownotes3.jpg" alt=""></p>
+<p>顺便膜一下dalao，看不懂的孩纸还是继续看下文吧</p>
+<h2 id="加窗的目的"><a href="#加窗的目的" class="headerlink" title="加窗的目的"></a>加窗的目的</h2><p>其实上文已经讲过了，计算机不可能对无限长的信号进行测量和运算。每次$\rm FFT$只能对有限长度的时域数据进行变换，因此需要对时域信号进行信号截断，<strong>即使是周期信号，如果截断的时间长度不是周期的整数倍(整周期截断)，那么截取后的信号也会存在频谱泄漏</strong>，为了将这个泄漏误差减少到最小程度(不是消除)，我们需要使用窗函数。加窗主要是为了使时域信号似乎更好的满足$\rm FFT$处理的周期性要求，减少泄漏。</p>
+<p><img src="/images/window1.jpg" alt="整周期截断、非整周期截断及加窗后的频谱"></p>
+<p>从上图我们得出，如果是整周期截断，则$\rm FFT$频谱为单一谱线。若为非整周期截断，则频谱出现拖尾，也就是说泄漏很严重。为了减少泄漏，给信号施加一个窗函数，原始截断后的信号与这个窗函数相乘之后得到的信号为最右侧的信号。可以看出，此时信号的起始时刻和结束时刻幅值都为$0$，也就是说在这个时间长度内，信号为周期信号，但是只有一个周期，对这个信号做$\rm FFT$，相比之前未加窗的频谱，泄漏已<strong>明显改善，但并未完全消除</strong>，因此窗函数只能<strong>减少泄漏，不能消除泄漏</strong>。</p>
+<h2 id="窗函数的形象描述"><a href="#窗函数的形象描述" class="headerlink" title="窗函数的形象描述"></a>窗函数的形象描述</h2><p>信号截断时，只能截取一定长度，哪怕原始信号是无限长，就好像是用一个<em>窗</em>(确切来说更像一个<em>框</em>)去做这样的截取。如下Pic.1所示，原始信号是周期信号，时间很长，截取时用红色的<em>窗</em>去截取这个周期信号，截取得到的信号如Pic.2所示。</p>
+<p><img src="/images/window2.png" alt="Pic.1 Origin Signal"></p>
+<p><img src="/images/window3.png" alt="Pic.2 Signal after Time Window Truncation"></p>
+<p>这个“窗”是一个单位权重的加权函数，成为<em>矩形窗</em>。这个<em>窗</em>外的信号是看不到的，就如同透过窗户看外面的世界，你只能看到在窗内的景色。这就是为什么这样的加权函数被成为窗函数的真正原因（其实还是很形象的）。</p>
+<p>　　Pic.2中用于截取信号的时域截取函数称为窗函数，它是一种<strong>加权函数</strong>，不同窗的<strong>加权</strong>是不一样的，也就是说，可以用不同的窗函数来做信号截断。常用的窗函数有矩形窗、汉宁窗、平顶窗和指数窗等。</p>
+<p>加窗在时域上表现的是<strong>点乘</strong>，因此在频域上则表现为<strong>卷积</strong>。卷积可以被看成是一个平滑的过程。这个平滑过程可以被看出是由一组具有特定函数形状的滤波器，因此，原始信号中在某一频率点上的能量会结合滤波器的形状表现出来，从而减小泄漏。基于这个原理，人们通常在时域上直接加窗。</p>
+<h2 id="窗函数的时频域特征"><a href="#窗函数的时频域特征" class="headerlink" title="窗函数的时频域特征"></a>窗函数的时频域特征</h2><p><img src="\images\1535810012918.png" alt="信号加窗"></p>
+<p><img src="/images/w4.jpg" alt="常用窗函数"> </p>
+<p>上面那幅图当中，较为平缓的曲线为<em>时域形状</em>，有若干个瓣是<em>频域特征</em></p>
+<p>窗函数的典型频谱特征如下图所示：</p>
+<p><img src="\images\1535810209279.png" alt="窗函数的典型频谱特征"></p>
+<h2 id="窗函数的选择"><a href="#窗函数的选择" class="headerlink" title="窗函数的选择"></a>窗函数的选择</h2><p>在上面的常用窗函数一图当中，矩形窗主瓣窄，旁瓣大，频率识别精度最高，幅值识别精度最低，如果仅要求精确读出主瓣频率，而不考虑幅值精度，则可选用矩形窗，例如测量物体的自振频率等；布莱克曼窗主瓣宽，旁瓣小，频率识别精度最低，但幅值识别精度最高；如果分析窄带信号，且有较强的干扰噪声，则应选用旁瓣幅度小的窗函数，如汉宁窗、三角窗等；对于随时间按指数衰减的函数，可采用指数窗来提高信噪比。  如果被测信号是随机或者未知的，或者是一般使用者对窗函数不大了解，要求也不是特别高时，可以选择汉宁窗，因为它的泄漏、波动都较小，并且选择性也较高。但在用于校准时选用平顶窗较好，因为它的通带波动非常小，幅度误差也较小。 </p>
+<p>看一下各种窗函数的对比（好吧其实我不是很懂这个地方，还是需要学习）：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>矩形窗</td>
+<td>${\displaystyle w(n)=1}$</td>
+</tr>
+<tr>
+<td>汉宁窗</td>
+<td>${\displaystyle w(n)=0.5\;\left(1-\cos \left({\frac {2\pi n}{N-1}}\right)\right)}$</td>
+</tr>
+<tr>
+<td>平顶窗</td>
+<td>${\displaystyle w(n)=a_{0}-a_{1}\cos \left({\frac {2\pi n}{N-1}}\right)+a_{2}\cos \left({\frac {4\pi n}{N-1}}\right)-a_{3}\cos \left({\frac {6\pi n}{N-1}}\right)+a_{4}\cos \left({\frac {8\pi n}{N-1}}\right)}\\a_{0}=1;\quad a_{1}=1.93;\quad a_{2}=1.29;\quad a_{3}=0.388;\quad a_{4}=0.028$</td>
+</tr>
+<tr>
+<td>海明窗</td>
+<td>${\displaystyle w(n)=0.53836-0.46164\;\cos \left({\frac {2\pi n}{N-1}}\right)}$</td>
+</tr>
+<tr>
+<td>Kaiser窗</td>
+<td>${\displaystyle w(n)={\frac {I_{0}{\Bigg (}\pi \alpha {\sqrt {1-( {\begin{matrix}{\frac {2n}{N-1} }\end{matrix} }-1)^{2} } }{\Bigg ) } }{I_{0}(\pi \alpha ) } } } $</td>
+</tr>
+<tr>
+<td>布莱克曼窗</td>
+<td>${\displaystyle w(n)=a_{0}-a_{1}\cos \left({\frac {2\pi n}{N-1}}\right)+a_{2}\cos \left({\frac {4\pi n}{N-1}}\right) } \\  a_{0}={\frac {1-\alpha }{2}};\quad a_{1}={\frac {1}{2}};\quad a_{2}={\frac {\alpha }{2} }$</td>
+</tr>
+<tr>
+<td>高斯窗</td>
+<td>${\displaystyle w(n)=e^{-{\frac {1}{2}}\left({\frac {n-(N-1)/2}{\sigma (N-1)/2}}\right)^{2}}}$</td>
+</tr>
+<tr>
+<td>三角窗</td>
+<td>$\displaystyle w(n)=1 -  \text{abs}\left ( {\frac{n-{\frac {N-1}{2} } }{\frac{L}{2} } } \right )$</td>
+</tr>
+<tr>
+<td>Chebyshev窗</td>
+<td>${\displaystyle {\begin{aligned} W_{0}(k)&amp;={\frac {\cos\{N\cos ^{-1}[\beta \cos({\frac {\pi k}{N} } ) ] \} } {\cosh[N\cosh ^{-1}(\beta ) ] } } \\\beta &amp;=\cosh[ {\frac {1}{N} }\cosh ^{-1}(10^{\alpha } ) ],\end{aligned} } }$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>特点</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>矩形窗</td>
+<td>矩形窗使用最多，习惯上不加窗就是使信号通过了矩形窗。这种窗的有点是主瓣集中，缺点是旁瓣比较高，并且有负旁瓣，导致变换中带进了<strong>高频干扰</strong>和泄露，甚至出现<strong>负谱现象</strong>。频率识别<strong>精度最高</strong>，幅值识别<strong>精度最低</strong>，所以矩形窗并不是非常理想</td>
+<td>仅要求精确读出主瓣频率，而不考虑幅值精度，则可以使用矩形窗，例如测量物体的自振频率和阶次分析</td>
+</tr>
+<tr>
+<td>汉宁窗</td>
+<td>又称升余弦窗，可以看作是$3$个矩形时间窗的频谱之和，或者说是$3$个$\text{sinc}(T)$型函数之和。汉宁窗主瓣加宽并降低，旁瓣则显著减小，从减小泄漏观点出发，汉宁窗优于矩形窗．但汉宁窗主瓣加宽，相当于分析带宽加宽，频率分辨力下降。</td>
+<td>如果测试信号有多个频率分量，频谱表现的十分复杂，且测试的目的更多关注频率点而并非能量的大小，需要选择汉宁窗。如果被测信号是随机的或者未知的也要选择汉宁窗</td>
+</tr>
+<tr>
+<td>平顶窗</td>
+<td>平顶窗在频域时的表现就像它的名称一样有非常小的通带波动</td>
+<td>由于在<strong>幅度</strong>上有较小的误差，这个窗可以用在<strong>校准</strong>上</td>
+</tr>
+<tr>
+<td>海明窗</td>
+<td>也是余弦窗，又称改进的升余弦窗，<strong>加权系数不同</strong>，使得旁瓣达到更小，但旁瓣衰减速度比汉宁窗更慢</td>
+<td>和汉宁窗类似</td>
+</tr>
+<tr>
+<td>Kaiser窗</td>
+<td>定义了一组可调的由零阶Bessel函数构成的窗函数，通过调整参数$\beta$，可以在主瓣宽度和旁瓣衰减之间自由选择它们的比重。对于某一长度的Kaiser窗，给定$\beta$，则旁瓣高度固定。</td>
+<td>最好的旁瓣抑制性能</td>
+</tr>
+<tr>
+<td>布莱克曼窗</td>
+<td>二阶升余弦窗，主瓣宽，旁瓣比较低，但等效噪声贷款比汉宁窗要大一些，波动却小一些。频率识别<strong>精度最低</strong>，值识别<strong>精度最高</strong>（和矩形窗刚好相反），有更好的选择性</td>
+<td>用来检测两个频率相近幅度不同的信号</td>
+</tr>
+<tr>
+<td>高斯窗</td>
+<td>是一种指数窗。高斯窗谱无负的旁瓣，第一旁瓣衰减达$-55\rm dB$。高斯富谱的主瓣较宽，所以频率分辨力低。</td>
+<td>截短一些非周期信号，如指数衰减信号等。</td>
+</tr>
+<tr>
+<td>三角窗</td>
+<td>是幂窗的一次方形式。与矩形窗比较，主瓣宽约等于矩形窗的两倍，但旁瓣小，而且没有负旁瓣。</td>
+<td>分析有较强干扰噪声的窄带信号（也可用汉宁窗）</td>
+</tr>
+<tr>
+<td>Chebyshev窗</td>
+<td>在给定旁瓣高度下，Chebyshev窗的主瓣宽度最小，具有等波动性，就是说其所有的旁瓣都有相等的高度</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Questions"><a href="#Questions" class="headerlink" title="Questions"></a>Questions</h2><h3 id="加窗是为了截取信号的某一截-如果采集了32K的点，点数不是已经有限了？"><a href="#加窗是为了截取信号的某一截-如果采集了32K的点，点数不是已经有限了？" class="headerlink" title="加窗是为了截取信号的某一截?如果采集了32K的点，点数不是已经有限了？"></a>加窗是为了截取信号的某一截?如果采集了32K的点，点数不是已经有限了？</h3><blockquote>
+<p>并不是。</p>
+<p>FFT算法基于你采样的信号是<strong>无限长的周期的</strong>信号，也就是你32k的数据会被认为是<strong>不断重复</strong>的，32k最后一个点之后又连到第一个点，这样不断重复，这样就有可能出现波形断开的情况，这个不连续会导致FFT结果出现频谱泄漏现象， 但是你的实际信号是连续的，所以加窗的目的就是让不太连续的地方（最后一个点和第一个的连接处）看上去平滑了，没有原来那么明显的突变了</p>
+</blockquote>
+<h3 id="原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？"><a href="#原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？" class="headerlink" title="原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？"></a>原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？</h3><blockquote>
+<p>这个问题其实非常的奇怪…</p>
+<p>窗函数加在时间域上，相当于和信号做乘法，所以频域上是卷积，这就是傅里叶变换的性质</p>
+<p>窗函数不是周期函数。它的频率可以看成无穷小，傅里叶变换从另一个角度也可以看成傅里叶级数当T趋于无穷的极限。</p>
+<p>加完窗到底能改进些什么？当然是减少能量泄露。因为不加窗无穷序列，计算机没法做FFT，加窗是迫不得已。有的时候你想了解某一段的频率特性，也需要加窗。加窗的影响就是那个卷积变换，自己要加入幅值修正。</p>
+</blockquote>
+<h2 id="Related"><a href="#Related" class="headerlink" title="Related"></a>Related</h2><p>[1] WIKIPEDIA, <a href="https://en.wikipedia.org/wiki/Window_function" target="_blank" rel="noopener">Window Function</a></p>
+<p>[2] VFE, <a href="https://www.vfe.cc/NewsDetail-2239.aspx" target="_blank" rel="noopener">通俗地理解窗函数</a></p>
+<p>[3] 雪韵凌枫, <a href="https://blog.csdn.net/u013360881/article/details/77714168" target="_blank" rel="noopener">数字信号分析——窗函数</a></p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束了哦<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Sky of war</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://skyofwar.xyz/2018/09/01/窗函数/" title="窗函数">https://skyofwar.xyz/2018/09/01/窗函数/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
+          
+            <a href="/tags/物理/" rel="tag"><i class="fa fa-tag"></i> 物理</a>
+          
+            <a href="/tags/信号学/" rel="tag"><i class="fa fa-tag"></i> 信号学</a>
+          
+            <a href="/tags/FFT/" rel="tag"><i class="fa fa-tag"></i> FFT</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/01/基础乐理与数学（二）/" rel="next" title="基础乐理与数学（二）">
+                <i class="fa fa-chevron-left"></i> 基础乐理与数学（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/02/『JZOJ-4669』【NOIP2016提高A组模拟7.19】弄提纲/" rel="prev" title="『JZOJ 4669』【NOIP2016提高A组模拟7.19】弄提纲">
+                『JZOJ 4669』【NOIP2016提高A组模拟7.19】弄提纲 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.jpg"
+                alt="Sky of war" />
+            
+              <p class="site-author-name" itemprop="name">Sky of war</p>
+              <p class="site-description motion-element" itemprop="description">Why I gotta fly? The boundlessness precipitates me to do so.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">62</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Leoleepz" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:Leoleepaytser@hotmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/116229514260659689818" target="_blank" title="Google"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/Rand_By_Rand" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/paytser.nigel.5" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.youtube.com/channel/UCoTTIUv013ld0CmpAlZPgDg" target="_blank" title="YouTube"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wuyudi.github.io/" title="几何大师wuyudi" target="_blank">几何大师wuyudi</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/JacaJava" title="OI巨佬ExtendedAsh" target="_blank">OI巨佬ExtendedAsh</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://chenz01.github.io/" title="马上要碾压我的cz" target="_blank">马上要碾压我的cz</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.hh12.cn" title="galgame的神犇Highwind" target="_blank">galgame的神犇Highwind</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://judegao.com/" title="Waterloo的CS大佬Jude" target="_blank">Waterloo的CS大佬Jude</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/ywwyww/" title="yww%%%" target="_blank">yww%%%</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#窗函数"><span class="nav-number">1.</span> <span class="nav-text">窗函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加窗的目的"><span class="nav-number">1.1.</span> <span class="nav-text">加窗的目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窗函数的形象描述"><span class="nav-number">1.2.</span> <span class="nav-text">窗函数的形象描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窗函数的时频域特征"><span class="nav-number">1.3.</span> <span class="nav-text">窗函数的时频域特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#窗函数的选择"><span class="nav-number">1.4.</span> <span class="nav-text">窗函数的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">1.5.</span> <span class="nav-text">Questions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#加窗是为了截取信号的某一截-如果采集了32K的点，点数不是已经有限了？"><span class="nav-number">1.5.1.</span> <span class="nav-text">加窗是为了截取信号的某一截?如果采集了32K的点，点数不是已经有限了？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？"><span class="nav-number">1.5.2.</span> <span class="nav-text">原始数据加窗之后，数据都变了，FFT后的频谱为什么还能作为参考？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related"><span class="nav-number">1.6.</span> <span class="nav-text">Related</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sky of war</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共45.9k字</span>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+</body>
+</html>
