@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-12T14:56:38.871Z</updated>
+  <updated>2018-09-13T05:15:17.665Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>『ARC 077E』guruguru - 咕噜噜~</title>
+    <link href="https://skyofwar.xyz/2018/09/13/%E3%80%8EARC%20077E%E3%80%8Fguruguru%20-%20%E5%92%95%E5%99%9C%E5%99%9C~/"/>
+    <id>https://skyofwar.xyz/2018/09/13/『ARC 077E』guruguru - 咕噜噜~/</id>
+    <published>2018-09-13T05:15:27.000Z</published>
+    <updated>2018-09-13T05:15:17.665Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『ARC-077E』guruguru-咕噜噜&quot;&gt;&lt;a href=&quot;#『ARC-077E』guruguru-咕噜噜&quot; class=&quot;headerlink&quot; title=&quot;『ARC 077E』guruguru - 咕噜噜~&quot;&gt;&lt;/a&gt;『ARC 077E』guruguru - 咕噜噜~&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
+&lt;p&gt;题意：&lt;/p&gt;
+&lt;p&gt;有$m$个点围成一个圈，按顺时针编号为$1$到$m$，一开始可以固定一个位置$x$，每次操作可以往顺时针方向走一步或直接走到$x$。现在给出$n$个位置$a_{1…n}$，初始时在$a_1$，第$i$次要从$a_i$走到$a_{i+1}$，在$x$可以任意选择的情况下使总步数最小&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arc077.contest.atcoder.jp/tasks/arc077_c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="前缀和" scheme="https://skyofwar.xyz/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>OI代码模板计划 - 动态树 - LCT</title>
@@ -92,31 +117,6 @@
       <category term="组合数学" scheme="https://skyofwar.xyz/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
     
       <category term="容斥" scheme="https://skyofwar.xyz/tags/%E5%AE%B9%E6%96%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>『ARC 077E』guruguru - 咕噜噜~</title>
-    <link href="https://skyofwar.xyz/2018/09/10/%E3%80%8EARC%20077E%E3%80%8Fguruguru%20-%20%E5%92%95%E5%99%9C%E5%99%9C~/"/>
-    <id>https://skyofwar.xyz/2018/09/10/『ARC 077E』guruguru - 咕噜噜~/</id>
-    <published>2018-09-10T15:04:27.000Z</published>
-    <updated>2018-09-13T05:02:20.521Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;『ARC-077E』guruguru-咕噜噜&quot;&gt;&lt;a href=&quot;#『ARC-077E』guruguru-咕噜噜&quot; class=&quot;headerlink&quot; title=&quot;『ARC 077E』guruguru - 咕噜噜~&quot;&gt;&lt;/a&gt;『ARC 077E』guruguru - 咕噜噜~&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
-&lt;p&gt;题意：&lt;/p&gt;
-&lt;p&gt;有$m$个点围成一个圈，按顺时针编号为$1$到$m$，一开始可以固定一个位置$x$，每次操作可以往顺时针方向走一步或直接走到$x$。现在给出$n$个位置$a_{1…n}$，初始时在$a_1$，第$i$次要从$a_i$走到$a_{i+1}$，在$x$可以任意选择的情况下使总步数最小&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://arc077.contest.atcoder.jp/tasks/arc077_c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
-      <category term="前缀和" scheme="https://skyofwar.xyz/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
   </entry>
   
@@ -358,9 +358,9 @@
       <category term="复习" scheme="https://skyofwar.xyz/categories/%E5%A4%8D%E4%B9%A0/"/>
     
     
-      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
       <category term="strings" scheme="https://skyofwar.xyz/tags/strings/"/>
+    
+      <category term="模板" scheme="https://skyofwar.xyz/tags/%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
