@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-13T05:15:17.665Z</updated>
+  <updated>2018-09-14T05:10:37.816Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>『ARC 098D』Xor Sum 2</title>
+    <link href="https://skyofwar.xyz/2018/09/14/%E3%80%8EARC%20098D%E3%80%8FXor%20Sum%202/"/>
+    <id>https://skyofwar.xyz/2018/09/14/『ARC 098D』Xor Sum 2/</id>
+    <published>2018-09-14T04:55:53.000Z</published>
+    <updated>2018-09-14T05:10:37.816Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;『ARC-098D』Xor-Sum-2&quot;&gt;&lt;a href=&quot;#『ARC-098D』Xor-Sum-2&quot; class=&quot;headerlink&quot; title=&quot;『ARC 098D』Xor Sum 2&quot;&gt;&lt;/a&gt;『ARC 098D』Xor Sum 2&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+&lt;p&gt;题意：&lt;/p&gt;
+&lt;p&gt;给定一个数组，求有多少个子序列满足$\displaystyle A_l \oplus A_{l+1} \oplus \dots\oplus A_r=\sum_{i=l}^{r} A_i$&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arc098.contest.atcoder.jp/tasks/arc098_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
+    
+      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
+    
+      <category term="位运算" scheme="https://skyofwar.xyz/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+      <category term="尺取法" scheme="https://skyofwar.xyz/tags/%E5%B0%BA%E5%8F%96%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>『ARC 077E』guruguru - 咕噜噜~</title>
@@ -171,9 +200,9 @@
     
       <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
     
-      <category term="二分" scheme="https://skyofwar.xyz/tags/%E4%BA%8C%E5%88%86/"/>
-    
       <category term="位运算" scheme="https://skyofwar.xyz/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+      <category term="二分" scheme="https://skyofwar.xyz/tags/%E4%BA%8C%E5%88%86/"/>
     
   </entry>
   
@@ -539,30 +568,6 @@
       <category term="Codeforces" scheme="https://skyofwar.xyz/tags/Codeforces/"/>
     
       <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>『AGC 012B』Splatter Painting</title>
-    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8EAGC%20012B%E3%80%8FSplatter%20Painting/"/>
-    <id>https://skyofwar.xyz/2018/08/30/『AGC 012B』Splatter Painting/</id>
-    <published>2018-08-30T12:58:33.000Z</published>
-    <updated>2018-08-30T13:06:33.649Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;『AGC-012B』Splatter-Painting&quot;&gt;&lt;a href=&quot;#『AGC-012B』Splatter-Painting&quot; class=&quot;headerlink&quot; title=&quot;『AGC 012B』Splatter Painting&quot;&gt;&lt;/a&gt;『AGC 012B』Splatter Painting&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://agc012.contest.atcoder.jp/tasks/agc012_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;题意简述：可以参考图，问你最后的染色情况&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
-    
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
     
   </entry>
   

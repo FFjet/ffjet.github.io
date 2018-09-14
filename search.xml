@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>『ARC 098D』Xor Sum 2</title>
+      <link href="/2018/09/14/%E3%80%8EARC%20098D%E3%80%8FXor%20Sum%202/"/>
+      <url>/2018/09/14/%E3%80%8EARC%20098D%E3%80%8FXor%20Sum%202/</url>
+      <content type="html"><![CDATA[<h1 id="『ARC-098D』Xor-Sum-2"><a href="#『ARC-098D』Xor-Sum-2" class="headerlink" title="『ARC 098D』Xor Sum 2"></a>『ARC 098D』Xor Sum 2</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Time limit : 2sec / Memory limit : 256MB</p><p>题意：</p><p>给定一个数组，求有多少个子序列满足$\displaystyle A_l \oplus A_{l+1} \oplus \dots\oplus A_r=\sum_{i=l}^{r} A_i$</p><p><a href="https://arc098.contest.atcoder.jp/tasks/arc098_b" target="_blank" rel="noopener">door♂</a></p><a id="more"></a><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>尺取法。</p><p>根据题意得到：</p><ul><li>对于一段连续子序列，如果在$a_i$这个数不符合公式的话，即之后的符合条件的对数中将不再需要这个元素</li><li><p>枚举元素来计算符合公式的对数</p></li><li><p>记$\text{sum}$为异或和，我们有$\text{sum}_r \oplus \text{sum}_{l-1}=\text{sum}_l \oplus \text{sum}_{l+1}………\oplus \text{sum}_r$</p></li></ul><p>Code:</p><div><div class="fold_hider"><div class="close hider_title">Click to show/hide the code</div></div><div class="fold"><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">200005</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> f[maxn], s[maxn];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"><span class="keyword">int</span> n, x;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">        f[i] = f[i<span class="number">-1</span>] + x;</span><br><span class="line">        s[i] = s[i<span class="number">-1</span>] ^ x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">1</span>;</span><br><span class="line">    ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> r = <span class="number">1</span>; r &lt;= n; r++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(; f[r] - f[l<span class="number">-1</span>] != (s[r] ^ s[l<span class="number">-1</span>]); l++);</span><br><span class="line">        ans += r - l + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><p>这个<code>ios::sync_with_stdio(false);</code>真的有毒，就因为最后一个<code>printf</code>没改成<code>cout</code>然后就一直WA…..mmp</p>]]></content>
+      
+      <categories>
+          
+          <category> 题解 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tricks </tag>
+            
+            <tag> Atcoder </tag>
+            
+            <tag> 位运算 </tag>
+            
+            <tag> 尺取法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>『ARC 077E』guruguru - 咕噜噜~</title>
       <link href="/2018/09/13/%E3%80%8EARC%20077E%E3%80%8Fguruguru/"/>
       <url>/2018/09/13/%E3%80%8EARC%20077E%E3%80%8Fguruguru/</url>
@@ -142,9 +169,9 @@
             
             <tag> Atcoder </tag>
             
-            <tag> 二分 </tag>
-            
             <tag> 位运算 </tag>
+            
+            <tag> 二分 </tag>
             
         </tags>
       

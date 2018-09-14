@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>https://skyofwar.xyz/2018/09/14/%E3%80%8EARC%20098D%E3%80%8FXor%20Sum%202/</loc>
+    <lastmod>2018-09-14T05:10:37.816Z</lastmod>
+    <data>
+        <display>
+        <title>『ARC 098D』Xor Sum 2</title>
+        <pubTime>2018-09-14T04:55:53.000Z</pubTime>
+        
+        <tag>Tricks</tag>
+         
+        <tag>Atcoder</tag>
+         
+        <tag>位运算</tag>
+         
+        <tag>尺取法</tag>
+         
+         
+           
+             
+              <breadCrumb title="题解" url="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://skyofwar.xyz/2018/09/13/%E3%80%8EARC%20077E%E3%80%8Fguruguru/</loc>
     <lastmod>2018-09-13T05:15:17.665Z</lastmod>
     <data>
@@ -481,9 +507,9 @@
          
         <tag>Atcoder</tag>
          
-        <tag>二分</tag>
-         
         <tag>位运算</tag>
+         
+        <tag>二分</tag>
          
          
            
