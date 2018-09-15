@@ -125,18 +125,18 @@
 
 
 
-  <meta name="description" content="『AGC 006F』BlackoutProblemTime limit : 2sec / Memory limit : 256MB 题意简述： 给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z \rightarrow x$。  重复该过程直到不能再添加，求最终图中有多少边。 door♂">
+  <meta name="description" content="ProblemTime limit : 2sec / Memory limit : 256MB 题意简述： 给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z \rightarrow x$。  重复该过程直到不能再添加，求最终图中有多少边。 door♂">
 <meta name="keywords" content="图论,二分图,染色">
 <meta property="og:type" content="article">
 <meta property="og:title" content="『AGC 006F』Blackout">
 <meta property="og:url" content="https://skyofwar.xyz/2018/09/07/『Atcoder AGC 006F』Blackout/index.html">
 <meta property="og:site_name" content="Sky of war">
-<meta property="og:description" content="『AGC 006F』BlackoutProblemTime limit : 2sec / Memory limit : 256MB 题意简述： 给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z \rightarrow x$。  重复该过程直到不能再添加，求最终图中有多少边。 door♂">
+<meta property="og:description" content="ProblemTime limit : 2sec / Memory limit : 256MB 题意简述： 给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z \rightarrow x$。  重复该过程直到不能再添加，求最终图中有多少边。 door♂">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-15T12:41:37.254Z">
+<meta property="og:updated_time" content="2018-09-15T13:08:06.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="『AGC 006F』Blackout">
-<meta name="twitter:description" content="『AGC 006F』BlackoutProblemTime limit : 2sec / Memory limit : 256MB 题意简述： 给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z \rightarrow x$。  重复该过程直到不能再添加，求最终图中有多少边。 door♂">
+<meta name="twitter:description" content="ProblemTime limit : 2sec / Memory limit : 256MB 题意简述： 给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z \rightarrow x$。  重复该过程直到不能再添加，求最终图中有多少边。 door♂">
 
 
 
@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-15 20:41:37" itemprop="dateModified" datetime="2018-09-15T20:41:37+08:00">2018-09-15</time>
+                <time title="修改时间：2018-09-15 21:08:06" itemprop="dateModified" datetime="2018-09-15T21:08:06+08:00">2018-09-15</time>
               
             
           </span>
@@ -485,12 +485,12 @@
       
 
       
-        <h1 id="『AGC-006F』Blackout"><a href="#『AGC-006F』Blackout" class="headerlink" title="『AGC 006F』Blackout"></a>『AGC 006F』Blackout</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Time limit : 2sec / Memory limit : 256MB</p>
+        <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>Time limit : 2sec / Memory limit : 256MB</p>
 <p>题意简述：</p>
 <p>给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z \rightarrow x$。  重复该过程直到不能再添加，求最终图中有多少边。</p>
 <p><a href="https://agc006.contest.atcoder.jp/tasks/agc006_f" target="_blank" rel="noopener">door♂</a></p>
 <a id="more"></a>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>把方格$(i,j)$想象为一条边$i \rightarrow j $。<br>那么对于输入，可以得到一张有向图。</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>把方格$(i,j)$想象为一条边$i \rightarrow j $。<br>那么对于输入，可以得到一张有向图。</p>
 <p>考虑用三种颜色给原图每个联通块染色。<br>令这三种颜色分别为$0,1,2$，且$0 \rightarrow 1 \rightarrow 2 \rightarrow 0$。</p>
 <p>可以发现题目中的染色方法便是这张图上，若某个$0\rightarrow 1$且$1\rightarrow2$，则产生$2\rightarrow 0$的边。<br>那么在染色后，分为三种情况：</p>
 <ul>
@@ -919,7 +919,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#『AGC-006F』Blackout"><span class="nav-number">1.</span> <span class="nav-text">『AGC 006F』Blackout</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
             
 
           </div>
@@ -970,7 +970,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共46.0k字</span>
+  <span class="post-count">博客全站共45.9k字</span>
 </div>
         
 <div class="busuanzi-count">

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-15T12:41:22.836Z</updated>
+  <updated>2018-09-15T13:09:58.866Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://skyofwar.xyz/2018/09/14/%E3%80%8EAtcoder%20ARC%20098D%E3%80%8FXor%20Sum%202/"/>
     <id>https://skyofwar.xyz/2018/09/14/『Atcoder ARC 098D』Xor Sum 2/</id>
     <published>2018-09-14T04:55:53.000Z</published>
-    <updated>2018-09-15T12:41:22.836Z</updated>
+    <updated>2018-09-15T13:09:58.866Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『ARC-098D』Xor-Sum-2&quot;&gt;&lt;a href=&quot;#『ARC-098D』Xor-Sum-2&quot; class=&quot;headerlink&quot; title=&quot;『ARC 098D』Xor Sum 2&quot;&gt;&lt;/a&gt;『ARC 098D』Xor Sum 2&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;题意：&lt;/p&gt;
 &lt;p&gt;给定一个数组，求有多少个子序列满足$\displaystyle A_l \oplus A_{l+1} \oplus \dots\oplus A_r=\sum_{i=l}^{r} A_i$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://arc098.contest.atcoder.jp/tasks/arc098_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
@@ -48,11 +48,11 @@
     <link href="https://skyofwar.xyz/2018/09/13/%E3%80%8EAtcoder%20ARC%20077E%E3%80%8Fguruguru/"/>
     <id>https://skyofwar.xyz/2018/09/13/『Atcoder ARC 077E』guruguru/</id>
     <published>2018-09-13T05:15:27.000Z</published>
-    <updated>2018-09-15T12:41:01.749Z</updated>
+    <updated>2018-09-15T13:09:11.924Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『ARC-077E』guruguru-咕噜噜&quot;&gt;&lt;a href=&quot;#『ARC-077E』guruguru-咕噜噜&quot; class=&quot;headerlink&quot; title=&quot;『ARC 077E』guruguru - 咕噜噜~&quot;&gt;&lt;/a&gt;『ARC 077E』guruguru - 咕噜噜~&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;题意：&lt;/p&gt;
 &lt;p&gt;有$m$个点围成一个圈，按顺时针编号为$1$到$m$，一开始可以固定一个位置$x$，每次操作可以往顺时针方向走一步或直接走到$x$。现在给出$n$个位置$a_{1…n}$，初始时在$a_1$，第$i$次要从$a_i$走到$a_{i+1}$，在$x$可以任意选择的情况下使总步数最小&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://arc077.contest.atcoder.jp/tasks/arc077_c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
@@ -121,11 +121,11 @@
     <link href="https://skyofwar.xyz/2018/09/10/%E3%80%8EAtcoder%20ARC%20077D%E3%80%8FD%20-%2011/"/>
     <id>https://skyofwar.xyz/2018/09/10/『Atcoder ARC 077D』D - 11/</id>
     <published>2018-09-10T15:04:27.000Z</published>
-    <updated>2018-09-15T12:40:43.158Z</updated>
+    <updated>2018-09-15T13:08:58.577Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『ARC-077D』D-11&quot;&gt;&lt;a href=&quot;#『ARC-077D』D-11&quot; class=&quot;headerlink&quot; title=&quot;『ARC 077D』D - 11&quot;&gt;&lt;/a&gt;『ARC 077D』D - 11&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;题意：&lt;/p&gt;
 &lt;p&gt;给出$n$个数，其中有一个数会出现两次，其余数只出现一次，问不同长度且不同的子串的数量。取模$10^9+7$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://arc077.contest.atcoder.jp/tasks/arc077_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
@@ -148,11 +148,11 @@
     <link href="https://skyofwar.xyz/2018/09/10/%E3%80%8EAtcoder%20ARC%20092F%E3%80%8FTwo%20Faced%20Edges/"/>
     <id>https://skyofwar.xyz/2018/09/10/『Atcoder ARC 092F』Two Faced Edges/</id>
     <published>2018-09-10T04:29:27.000Z</published>
-    <updated>2018-09-15T12:40:49.265Z</updated>
+    <updated>2018-09-15T13:09:49.308Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『ARC-092F』Two-Faced-Edges&quot;&gt;&lt;a href=&quot;#『ARC-092F』Two-Faced-Edges&quot; class=&quot;headerlink&quot; title=&quot;『ARC 092F』Two Faced Edges&quot;&gt;&lt;/a&gt;『ARC 092F』Two Faced Edges&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;题意：&lt;/p&gt;
 &lt;p&gt;给定一个有向图，然后询问每一条边将它反转之后整张图的强联通分量是否会发生变化&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://arc092.contest.atcoder.jp/tasks/arc092_d&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
@@ -173,11 +173,11 @@
     <link href="https://skyofwar.xyz/2018/09/09/%E3%80%8EAtcoder%20ARC%20092D%E3%80%8FTwo%20Sequences/"/>
     <id>https://skyofwar.xyz/2018/09/09/『Atcoder ARC 092D』Two Sequences/</id>
     <published>2018-09-09T14:49:27.000Z</published>
-    <updated>2018-09-15T12:41:12.494Z</updated>
+    <updated>2018-09-15T13:09:39.386Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『ARC-092D』Two-Sequences&quot;&gt;&lt;a href=&quot;#『ARC-092D』Two-Sequences&quot; class=&quot;headerlink&quot; title=&quot;『ARC 092D』Two Sequences&quot;&gt;&lt;/a&gt;『ARC 092D』Two Sequences&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 3sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;题意：&lt;/p&gt;
 &lt;p&gt;给定$n$个数的数组$A$和数组$B$，求所有$A_i+B_j$的异或和$(1\leq i,j \leq n)$。&lt;/p&gt;
 &lt;p&gt;$n \leq 200000$。&lt;/p&gt;
@@ -201,11 +201,11 @@
     <link href="https://skyofwar.xyz/2018/09/08/%E3%80%8EAtcoder%20ARC%20084D%E3%80%8FSmall%20Multiple/"/>
     <id>https://skyofwar.xyz/2018/09/08/『Atcoder ARC 084D』Small Multiple/</id>
     <published>2018-09-08T04:51:20.000Z</published>
-    <updated>2018-09-15T12:41:17.735Z</updated>
+    <updated>2018-09-15T13:09:28.262Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『ARC-084D』Small-Multiple&quot;&gt;&lt;a href=&quot;#『ARC-084D』Small-Multiple&quot; class=&quot;headerlink&quot; title=&quot;『ARC 084D』Small Multiple&quot;&gt;&lt;/a&gt;『ARC 084D』Small Multiple&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;求一个$k$的倍数使其数位和最小，输出数位和，$k \leqslant 10^5$。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://arc084.contest.atcoder.jp/tasks/arc084_b&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
     
@@ -225,11 +225,11 @@
     <link href="https://skyofwar.xyz/2018/09/07/%E3%80%8EAtcoder%20AGC%20006F%E3%80%8FBlackout/"/>
     <id>https://skyofwar.xyz/2018/09/07/『Atcoder AGC 006F』Blackout/</id>
     <published>2018-09-07T15:11:27.000Z</published>
-    <updated>2018-09-15T12:41:37.254Z</updated>
+    <updated>2018-09-15T13:08:06.089Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『AGC-006F』Blackout&quot;&gt;&lt;a href=&quot;#『AGC-006F』Blackout&quot; class=&quot;headerlink&quot; title=&quot;『AGC 006F』Blackout&quot;&gt;&lt;/a&gt;『AGC 006F』Blackout&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;题意简述：&lt;/p&gt;
 &lt;p&gt;给你一个有向图。  如果$x \rightarrow y, y \rightarrow z$,加上$z \rightarrow x$。  重复该过程直到不能再添加，求最终图中有多少边。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://agc006.contest.atcoder.jp/tasks/agc006_f&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
@@ -252,11 +252,11 @@
     <link href="https://skyofwar.xyz/2018/09/07/%E3%80%8EAtcoder%20ARC%20068F%E3%80%8FSolitaire/"/>
     <id>https://skyofwar.xyz/2018/09/07/『Atcoder ARC 068F』Solitaire/</id>
     <published>2018-09-07T04:54:20.000Z</published>
-    <updated>2018-09-15T12:40:37.354Z</updated>
+    <updated>2018-09-15T13:08:49.221Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『ARC-068F』Solitaire&quot;&gt;&lt;a href=&quot;#『ARC-068F』Solitaire&quot; class=&quot;headerlink&quot; title=&quot;『ARC 068F』Solitaire&quot;&gt;&lt;/a&gt;『ARC 068F』Solitaire&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;将$1-n$顺序加入双端队列（每次可加头可加尾），再删除（每次可删头可删尾），求有多少种删除序列，使得$1$是第$k$个被删的。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://arc068.contest.atcoder.jp/tasks/arc068_d&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;/p&gt;
     
@@ -274,11 +274,11 @@
     <link href="https://skyofwar.xyz/2018/09/06/%E3%80%8EAtcoder%20AGC%20023C%E3%80%8FPainting%20Machines/"/>
     <id>https://skyofwar.xyz/2018/09/06/『Atcoder AGC 023C』Painting Machines/</id>
     <published>2018-09-06T15:09:27.000Z</published>
-    <updated>2018-09-15T12:40:31.829Z</updated>
+    <updated>2018-09-15T13:08:33.381Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『AGC-023C』Painting-Machines&quot;&gt;&lt;a href=&quot;#『AGC-023C』Painting-Machines&quot; class=&quot;headerlink&quot; title=&quot;『AGC 023C』Painting Machines&quot;&gt;&lt;/a&gt;『AGC 023C』Painting Machines&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;题意简述：&lt;/p&gt;
 &lt;p&gt;有$n$个方块排成一行，从左到右编号为$1$到$n$。最初所有的方块都是白色的。我们还有$N-1$台涂漆机，编号为$1$至$N-1$。当操作时，第$i$号机器把第$i$和$i+1$号方块染黑。&lt;/p&gt;
 &lt;p&gt;Snuke将逐个操作这些机器。他操作它们的顺序是$(1,2,…,N-1)$的一个排列$P$,这意味着第$i$个操作的机器是机器$P_i$。&lt;/p&gt;
@@ -301,11 +301,11 @@
     <link href="https://skyofwar.xyz/2018/09/06/%E3%80%8EAtcoder%20AGC%20023F%E3%80%8F01%20on%20Tree/"/>
     <id>https://skyofwar.xyz/2018/09/06/『Atcoder AGC 023F』01 on Tree/</id>
     <published>2018-09-06T14:50:27.000Z</published>
-    <updated>2018-09-15T12:40:56.277Z</updated>
+    <updated>2018-09-15T13:08:40.320Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『AGC-023F』01-on-Tree&quot;&gt;&lt;a href=&quot;#『AGC-023F』01-on-Tree&quot; class=&quot;headerlink&quot; title=&quot;『AGC 023F』01 on Tree&quot;&gt;&lt;/a&gt;『AGC 023F』01 on Tree&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;题意简述：给你一棵由$0$和$1$组成的树（就是每个点的权值为$0$或者$1$），让你求该树的一种排列，使得每个节点的孩子都排在这个节点的后面，并且逆序对数量最小。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://agc023.contest.atcoder.jp/tasks/agc023_f&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
     
@@ -327,11 +327,11 @@
     <link href="https://skyofwar.xyz/2018/09/06/%E3%80%8EAtcoder%20AGC%20023A%E3%80%8FZero-Sum%20Ranges/"/>
     <id>https://skyofwar.xyz/2018/09/06/『Atcoder AGC 023A』Zero-Sum Ranges/</id>
     <published>2018-09-06T14:32:27.000Z</published>
-    <updated>2018-09-15T12:58:25.765Z</updated>
+    <updated>2018-09-15T13:08:24.767Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;『AGC-023A』Zero-Sum-Ranges&quot;&gt;&lt;a href=&quot;#『AGC-023A』Zero-Sum-Ranges&quot; class=&quot;headerlink&quot; title=&quot;『AGC 023A』Zero-Sum Ranges&quot;&gt;&lt;/a&gt;『AGC 023A』Zero-Sum Ranges&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
+      &lt;h1 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h1&gt;&lt;p&gt;Time limit : 2sec / Memory limit : 256MB&lt;/p&gt;
 &lt;p&gt;我们有一个整数序列$A$，其长度是$N$&lt;/p&gt;
 &lt;p&gt;请找出其总和为$0$的$A$的非空邻接子序列的数目。请注意，我们正在计算取出子序列的方法。也就是说，即使某些两个子序列的内容相同，如果它们取自不同的位置，则对它们进行单独计数。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://agc023.contest.atcoder.jp/tasks/agc023_a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;door♂&lt;/a&gt;&lt;/p&gt;
