@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-15T13:09:58.866Z</updated>
+  <updated>2018-09-15T15:26:45.302Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iframe教学</title>
+    <link href="https://skyofwar.xyz/2018/09/15/iframe/"/>
+    <id>https://skyofwar.xyz/2018/09/15/iframe/</id>
+    <published>2018-09-15T14:50:00.000Z</published>
+    <updated>2018-09-15T15:26:45.302Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;百度是个好东西，可惜有些人不会用…&lt;/p&gt;
+&lt;p&gt;wuyudi啥问题都有，今天又遇上了一个js问题又来问我2333333&lt;/p&gt;
+&lt;p&gt;我js也是辣鸡啊…怎么办…当然是百度啦！&lt;/p&gt;
+&lt;p&gt;效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;iframe
+        
+      
+    
+    </summary>
+    
+      <category term="教程" scheme="https://skyofwar.xyz/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="HTML" scheme="https://skyofwar.xyz/tags/HTML/"/>
+    
+  </entry>
   
   <entry>
     <title>『ARC 098D』Xor Sum 2</title>
@@ -515,33 +545,6 @@
     
     
       <category term="二分" scheme="https://skyofwar.xyz/tags/%E4%BA%8C%E5%88%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>『Codeforces 932E』Team Work</title>
-    <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8ECodeforces%20932E%E3%80%8FTeam%20Work/"/>
-    <id>https://skyofwar.xyz/2018/08/30/『Codeforces 932E』Team Work/</id>
-    <published>2018-08-30T14:38:27.000Z</published>
-    <updated>2018-09-15T12:37:21.267Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;『Codeforces-932E』Team-Work&quot;&gt;&lt;a href=&quot;#『Codeforces-932E』Team-Work&quot; class=&quot;headerlink&quot; title=&quot;『Codeforces 932E』Team Work&quot;&gt;&lt;/a&gt;『Codeforces 932E』Team Work&lt;/h1&gt;&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;time limit per test&lt;/p&gt;
-&lt;p&gt;2 seconds&lt;/p&gt;
-&lt;p&gt;memory limit per test&lt;/p&gt;
-&lt;p&gt;256 megabytes&lt;/p&gt;
-&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;You have a team of $N$ people. For a particular task, you can pick any non-empty subset of people. The cost of having $x$ people for the task is $x^k$.&lt;/p&gt;
-&lt;p&gt;Output the sum of costs over all non-empty subsets of people.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
   </entry>
   

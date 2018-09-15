@@ -260,7 +260,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">59</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">60</span></a>
   </li>
         
         
@@ -268,7 +268,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">6</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">7</span></a>
   </li>
         
         
@@ -276,7 +276,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">62</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">63</span></a>
   </li>
         
         
@@ -350,6 +350,187 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/03/18/『CodeVS 1369』xth砍树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sky of war">
+      <meta itemprop="description" content="Why I gotta fly? The boundlessness precipitates me to do so.">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sky of war">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/18/『CodeVS 1369』xth砍树/" itemprop="url">
+                  『CodeVS 1369』xth砍树
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-18 21:20:11" itemprop="dateCreated datePublished" datetime="2018-03-18T21:20:11+08:00">2018-03-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-15 20:54:44" itemprop="dateModified" datetime="2018-09-15T20:54:44+08:00">2018-09-15</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://codevs.cn/problem/1369/" target="_blank" rel="noopener">传送门</a></p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><strong>题目描述 Description</strong><br>在一个凉爽的夏夜，xth 和 rabbit 来到花园里砍树。为啥米要砍树呢？是这样滴，<br>小菜儿的儿子窄森要出生了。Xth这个做伯伯的自然要做点什么。于是他决定带着<br>rabbit 去收集一些木材，给窄森做一个婴儿车……（xth 早就梦想着要天天打菜儿<br>他儿窄森的小 pp，到时候在婴儿车里安装一个电子遥控手臂，轻轻一按，啪啪<br>啪……“乌卡卡——”xth 邪恶滴笑了，“不要告诉 rabbit，她会说我缺德的……”<br>xth 如是说）。<br>花园里共有$n$棵树。为了花园的整体形象，rabbit 要求 xth只能在$m$个区域砍伐，我<br>们可以将这$m$个区域看成$m$个区间，树的间距相等，都是$1$，我们将每个区间设为<br>$[x, y]$。那么长度为$k$的区间中就有$k$棵树。树木的高度不等。现在 xth 想测量一下，<br>每个区间树木砍伐后所得的木材量是多少，而且每次测量后他都会砍下标号为<br>$(x+y)/2$的那棵作为纪念。以方便他安排人手。(同一个区间的树木可以重复砍伐，我们认<br>为被砍过的树木高度为$0$)<br>每棵树的木材量=树的高度$* 3.14$（注意是$3.14$不是$\pi$）。</p>
+<p><strong>输入描述 Input Description</strong><br>第一行，一个整数$n$。<br>第二行，共$n$个整数，表示每棵树的高度。<br>第三行，一个整数$m$，表示共$m$个区间。<br>以下$m$行，每个区间$[x, y]$的左右端点$x, y$。</p>
+<p><strong>输出描述 Output Description</strong><br>共$m$行，每行一个数，表示每个区间的木材量。</p>
+<p>结果精确到小数点后两位。</p>
+<p><strong>样例输入 Sample Input</strong><br>5<br>1 2 3 4 5<br>2<br>1 4<br>2 4</p>
+<p><strong>样例输出 Sample Output</strong><br>31.40<br>21.98</p>
+<p><strong>数据范围及提示 Data Size &amp; Hint</strong><br>对于30%的数据，有n ≤ 5000,m ≤ 5000;<br>对于100%的数据，有n ≤ 200000,m ≤ 200000;</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>这是我见过的废话最多的题目之一。。。。<br>树状数组或线段树均可以过，反正都是单点修改区间查询即可<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 200000 + 5</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> N, M;</span><br><span class="line"><span class="keyword">int</span> a[MAXN], c[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x &amp; (-x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Modify</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = pos; i &lt;= N; i += lowbit(i)) c[i] += val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> pos)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = pos; i &gt;= <span class="number">1</span>; i -= lowbit(i)) ret += c[i];</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">		Modify(i, a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; M;</span><br><span class="line">	<span class="keyword">while</span> (M--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> l, r;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%.2lf\n"</span>,<span class="number">3.14</span> * (query(r) - query(l - <span class="number">1</span>)));</span><br><span class="line">		Modify((l + r) &gt;&gt; <span class="number">1</span>, -a[(l + r) &gt;&gt; <span class="number">1</span>]);</span><br><span class="line">		a[(l + r) &gt;&gt; <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+      
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1981,179 +2162,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://skyofwar.xyz/2018/02/27/『POJ 2159』 Ancient Cipher/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sky of war">
-      <meta itemprop="description" content="Why I gotta fly? The boundlessness precipitates me to do so.">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sky of war">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/27/『POJ 2159』 Ancient Cipher/" itemprop="url">
-                  『POJ 2159』 Ancient Cipher
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-27 22:28:07" itemprop="dateCreated datePublished" datetime="2018-02-27T22:28:07+08:00">2018-02-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-15 20:51:58" itemprop="dateModified" datetime="2018-09-15T20:51:58+08:00">2018-09-15</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这题简直太水了吧。。<br>只要对每个字母出现的次数统计并排序<br>然后分别对应的字母个数相等<br>就表明一定有转换方式。。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s1, s2;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">27</span>], b[<span class="number">27</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">	<span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span> a);</span><br><span class="line">	<span class="built_in">memset</span>(b, <span class="number">0</span>, <span class="keyword">sizeof</span> b);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s1.size(); ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		a[s1[i] - <span class="string">'A'</span>]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s2.size(); ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		b[s2[i] - <span class="string">'A'</span>]++; </span><br><span class="line">	&#125;</span><br><span class="line">	sort(a, a + <span class="number">26</span>);</span><br><span class="line">	sort(b, b + <span class="number">26</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (a[i] != b[i])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    <div>
-      
-    </div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2205,7 +2213,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">62</span>
+                    <span class="site-state-item-count">63</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2230,7 +2238,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2361,7 +2371,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">59</span>
+                      
+                    
+                    <span class="site-state-item-count">60</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2507,7 +2519,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共45.9k字</span>
+  <span class="post-count">博客全站共46.3k字</span>
 </div>
         
 <div class="busuanzi-count">
@@ -2995,11 +3007,11 @@
   
     
       
-    
-      
-    
-      
         
+      
+    
+      
+    
       
     
       
