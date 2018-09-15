@@ -169,9 +169,9 @@
             
             <tag> Atcoder </tag>
             
-            <tag> 位运算 </tag>
-            
             <tag> 二分 </tag>
+            
+            <tag> 位运算 </tag>
             
         </tags>
       
@@ -1428,11 +1428,11 @@
       
         <tags>
             
+            <tag> BZOJ </tag>
+            
             <tag> 匈牙利算法 </tag>
             
             <tag> 图论 </tag>
-            
-            <tag> BZOJ </tag>
             
             <tag> 二分图 </tag>
             

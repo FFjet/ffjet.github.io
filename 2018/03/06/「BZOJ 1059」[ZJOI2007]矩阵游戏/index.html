@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,6 +25,23 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2" rel="stylesheet">
+  <script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
 
@@ -58,19 +75,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpg?v=6.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/header.jpg?v=6.4.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpg?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/header.jpg?v=6.4.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpg?v=6.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/header.jpg?v=6.4.1">
 
 
-  <link rel="mask-icon" href="/images/header.jpg?v=6.4.0" color="#222">
+  <link rel="mask-icon" href="/images/header.jpg?v=6.4.1" color="#222">
 
 
 
@@ -84,14 +101,14 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    version: '6.4.0',
+    scheme: 'Gemini',
+    version: '6.4.1',
     sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":true,"async":false,"transition":{"post_block":"flipYIn","post_header":"perspectiveDownIn","post_body":"expandIn","coll_header":"bounceDownIn","sidebar":"slideLeftIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -109,7 +126,7 @@
 
 
   <meta name="description" content="BZOJ 1059 [ZJOI2007]矩阵游戏这题什么鬼。。第一反应：大暴力？(您的电脑怕不是128位量子计算机哦)原题传送门 题目描述Description　小Q是一个非常聪明的孩子，除了国际象棋，他还很喜欢玩一个电脑益智游戏——矩阵游戏。矩阵游戏在一个$N*N$黑白方阵进行（如同国际象棋一般，只是颜色是随意的）。每次可以对该矩阵进行两种操作：行交换操作：选择矩阵的任意两行，交换这两行（即交换">
-<meta name="keywords" content="匈牙利算法,图论,BZOJ,二分图">
+<meta name="keywords" content="BZOJ,匈牙利算法,图论,二分图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「BZOJ 1059」 [ZJOI2007]矩阵游戏">
 <meta property="og:url" content="https://skyofwar.xyz/2018/03/06/「BZOJ 1059」[ZJOI2007]矩阵游戏/index.html">
@@ -532,11 +549,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/BZOJ/" rel="tag"><i class="fa fa-tag"></i> BZOJ</a>
+          
             <a href="/tags/匈牙利算法/" rel="tag"><i class="fa fa-tag"></i> 匈牙利算法</a>
           
             <a href="/tags/图论/" rel="tag"><i class="fa fa-tag"></i> 图论</a>
-          
-            <a href="/tags/BZOJ/" rel="tag"><i class="fa fa-tag"></i> BZOJ</a>
           
             <a href="/tags/二分图/" rel="tag"><i class="fa fa-tag"></i> 二分图</a>
           
@@ -1089,32 +1106,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
 
 
 
