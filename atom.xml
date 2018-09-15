@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://skyofwar.xyz/"/>
-  <updated>2018-09-14T05:10:37.816Z</updated>
+  <updated>2018-09-15T12:41:22.836Z</updated>
   <id>https://skyofwar.xyz/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>『ARC 098D』Xor Sum 2</title>
-    <link href="https://skyofwar.xyz/2018/09/14/%E3%80%8EARC%20098D%E3%80%8FXor%20Sum%202/"/>
-    <id>https://skyofwar.xyz/2018/09/14/『ARC 098D』Xor Sum 2/</id>
+    <link href="https://skyofwar.xyz/2018/09/14/%E3%80%8EAtcoder%20ARC%20098D%E3%80%8FXor%20Sum%202/"/>
+    <id>https://skyofwar.xyz/2018/09/14/『Atcoder ARC 098D』Xor Sum 2/</id>
     <published>2018-09-14T04:55:53.000Z</published>
-    <updated>2018-09-14T05:10:37.816Z</updated>
+    <updated>2018-09-15T12:41:22.836Z</updated>
     
     <summary type="html">
     
@@ -37,8 +37,6 @@
     
       <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
       <category term="位运算" scheme="https://skyofwar.xyz/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     
       <category term="尺取法" scheme="https://skyofwar.xyz/tags/%E5%B0%BA%E5%8F%96%E6%B3%95/"/>
@@ -47,10 +45,10 @@
   
   <entry>
     <title>『ARC 077E』guruguru - 咕噜噜~</title>
-    <link href="https://skyofwar.xyz/2018/09/13/%E3%80%8EARC%20077E%E3%80%8Fguruguru/"/>
-    <id>https://skyofwar.xyz/2018/09/13/『ARC 077E』guruguru/</id>
+    <link href="https://skyofwar.xyz/2018/09/13/%E3%80%8EAtcoder%20ARC%20077E%E3%80%8Fguruguru/"/>
+    <id>https://skyofwar.xyz/2018/09/13/『Atcoder ARC 077E』guruguru/</id>
     <published>2018-09-13T05:15:27.000Z</published>
-    <updated>2018-09-13T05:15:17.665Z</updated>
+    <updated>2018-09-15T12:41:01.749Z</updated>
     
     <summary type="html">
     
@@ -63,8 +61,6 @@
     
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
-    
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
     
       <category term="前缀和" scheme="https://skyofwar.xyz/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
@@ -122,10 +118,10 @@
   
   <entry>
     <title>『ARC 077D』D - 11</title>
-    <link href="https://skyofwar.xyz/2018/09/10/%E3%80%8EARC%20077D%E3%80%8FD%20-%2011/"/>
-    <id>https://skyofwar.xyz/2018/09/10/『ARC 077D』D - 11/</id>
+    <link href="https://skyofwar.xyz/2018/09/10/%E3%80%8EAtcoder%20ARC%20077D%E3%80%8FD%20-%2011/"/>
+    <id>https://skyofwar.xyz/2018/09/10/『Atcoder ARC 077D』D - 11/</id>
     <published>2018-09-10T15:04:27.000Z</published>
-    <updated>2018-09-10T15:14:06.862Z</updated>
+    <updated>2018-09-15T12:40:43.158Z</updated>
     
     <summary type="html">
     
@@ -141,8 +137,6 @@
     
       <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
       <category term="组合数学" scheme="https://skyofwar.xyz/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
     
       <category term="容斥" scheme="https://skyofwar.xyz/tags/%E5%AE%B9%E6%96%A5/"/>
@@ -151,10 +145,10 @@
   
   <entry>
     <title>『ARC 092F』Two Faced Edges</title>
-    <link href="https://skyofwar.xyz/2018/09/10/%E3%80%8EARC%20092F%E3%80%8FTwo%20Faced%20Edges/"/>
-    <id>https://skyofwar.xyz/2018/09/10/『ARC 092F』Two Faced Edges/</id>
+    <link href="https://skyofwar.xyz/2018/09/10/%E3%80%8EAtcoder%20ARC%20092F%E3%80%8FTwo%20Faced%20Edges/"/>
+    <id>https://skyofwar.xyz/2018/09/10/『Atcoder ARC 092F』Two Faced Edges/</id>
     <published>2018-09-10T04:29:27.000Z</published>
-    <updated>2018-09-10T05:02:10.512Z</updated>
+    <updated>2018-09-15T12:40:49.265Z</updated>
     
     <summary type="html">
     
@@ -170,18 +164,16 @@
     
       <category term="图论" scheme="https://skyofwar.xyz/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
       <category term="DFS" scheme="https://skyofwar.xyz/tags/DFS/"/>
     
   </entry>
   
   <entry>
     <title>『ARC 092D』Two Sequences</title>
-    <link href="https://skyofwar.xyz/2018/09/09/%E3%80%8EARC%20092D%E3%80%8FTwo%20Sequences/"/>
-    <id>https://skyofwar.xyz/2018/09/09/『ARC 092D』Two Sequences/</id>
+    <link href="https://skyofwar.xyz/2018/09/09/%E3%80%8EAtcoder%20ARC%20092D%E3%80%8FTwo%20Sequences/"/>
+    <id>https://skyofwar.xyz/2018/09/09/『Atcoder ARC 092D』Two Sequences/</id>
     <published>2018-09-09T14:49:27.000Z</published>
-    <updated>2018-09-09T15:02:02.909Z</updated>
+    <updated>2018-09-15T12:41:12.494Z</updated>
     
     <summary type="html">
     
@@ -198,8 +190,6 @@
     
       <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
       <category term="二分" scheme="https://skyofwar.xyz/tags/%E4%BA%8C%E5%88%86/"/>
     
       <category term="位运算" scheme="https://skyofwar.xyz/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
@@ -208,10 +198,10 @@
   
   <entry>
     <title>『ARC 084D』Small Multiple</title>
-    <link href="https://skyofwar.xyz/2018/09/08/%E3%80%8EARC%20084D%E3%80%8FSmall%20Multiple/"/>
-    <id>https://skyofwar.xyz/2018/09/08/『ARC 084D』Small Multiple/</id>
+    <link href="https://skyofwar.xyz/2018/09/08/%E3%80%8EAtcoder%20ARC%20084D%E3%80%8FSmall%20Multiple/"/>
+    <id>https://skyofwar.xyz/2018/09/08/『Atcoder ARC 084D』Small Multiple/</id>
     <published>2018-09-08T04:51:20.000Z</published>
-    <updated>2018-09-08T10:51:59.913Z</updated>
+    <updated>2018-09-15T12:41:17.735Z</updated>
     
     <summary type="html">
     
@@ -226,18 +216,16 @@
     
       <category term="图论" scheme="https://skyofwar.xyz/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
       <category term="最短路" scheme="https://skyofwar.xyz/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title>『AGC 006F』Blackout</title>
-    <link href="https://skyofwar.xyz/2018/09/07/%E3%80%8EAGC%20006F%E3%80%8FBlackout/"/>
-    <id>https://skyofwar.xyz/2018/09/07/『AGC 006F』Blackout/</id>
+    <link href="https://skyofwar.xyz/2018/09/07/%E3%80%8EAtcoder%20AGC%20006F%E3%80%8FBlackout/"/>
+    <id>https://skyofwar.xyz/2018/09/07/『Atcoder AGC 006F』Blackout/</id>
     <published>2018-09-07T15:11:27.000Z</published>
-    <updated>2018-09-08T10:52:13.928Z</updated>
+    <updated>2018-09-15T12:41:37.254Z</updated>
     
     <summary type="html">
     
@@ -255,18 +243,16 @@
     
       <category term="二分图" scheme="https://skyofwar.xyz/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
     
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
       <category term="染色" scheme="https://skyofwar.xyz/tags/%E6%9F%93%E8%89%B2/"/>
     
   </entry>
   
   <entry>
     <title>『ARC 068F』Solitaire</title>
-    <link href="https://skyofwar.xyz/2018/09/07/%E3%80%8EARC%20068F%E3%80%8FSolitaire/"/>
-    <id>https://skyofwar.xyz/2018/09/07/『ARC 068F』Solitaire/</id>
+    <link href="https://skyofwar.xyz/2018/09/07/%E3%80%8EAtcoder%20ARC%20068F%E3%80%8FSolitaire/"/>
+    <id>https://skyofwar.xyz/2018/09/07/『Atcoder ARC 068F』Solitaire/</id>
     <published>2018-09-07T04:54:20.000Z</published>
-    <updated>2018-09-07T14:22:16.462Z</updated>
+    <updated>2018-09-15T12:40:37.354Z</updated>
     
     <summary type="html">
     
@@ -279,18 +265,16 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
-      <category term="dp" scheme="https://skyofwar.xyz/tags/dp/"/>
+      <category term="DP" scheme="https://skyofwar.xyz/tags/DP/"/>
     
   </entry>
   
   <entry>
     <title>『AGC 023C』Painting Machines</title>
-    <link href="https://skyofwar.xyz/2018/09/06/%E3%80%8EAGC%20023C%E3%80%8FPainting%20Machines/"/>
-    <id>https://skyofwar.xyz/2018/09/06/『AGC 023C』Painting Machines/</id>
+    <link href="https://skyofwar.xyz/2018/09/06/%E3%80%8EAtcoder%20AGC%20023C%E3%80%8FPainting%20Machines/"/>
+    <id>https://skyofwar.xyz/2018/09/06/『Atcoder AGC 023C』Painting Machines/</id>
     <published>2018-09-06T15:09:27.000Z</published>
-    <updated>2018-09-10T04:30:59.207Z</updated>
+    <updated>2018-09-15T12:40:31.829Z</updated>
     
     <summary type="html">
     
@@ -306,8 +290,6 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
       <category term="组合数学" scheme="https://skyofwar.xyz/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
     
       <category term="计数" scheme="https://skyofwar.xyz/tags/%E8%AE%A1%E6%95%B0/"/>
@@ -316,10 +298,10 @@
   
   <entry>
     <title>『AGC 023F』01 on Tree</title>
-    <link href="https://skyofwar.xyz/2018/09/06/%E3%80%8EAGC%20023F%E3%80%8F01%20on%20Tree/"/>
-    <id>https://skyofwar.xyz/2018/09/06/『AGC 023F』01 on Tree/</id>
+    <link href="https://skyofwar.xyz/2018/09/06/%E3%80%8EAtcoder%20AGC%20023F%E3%80%8F01%20on%20Tree/"/>
+    <id>https://skyofwar.xyz/2018/09/06/『Atcoder AGC 023F』01 on Tree/</id>
     <published>2018-09-06T14:50:27.000Z</published>
-    <updated>2018-09-07T04:36:26.166Z</updated>
+    <updated>2018-09-15T12:40:56.277Z</updated>
     
     <summary type="html">
     
@@ -332,8 +314,6 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
       <category term="Heap" scheme="https://skyofwar.xyz/tags/Heap/"/>
     
       <category term="并查集" scheme="https://skyofwar.xyz/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
@@ -344,10 +324,10 @@
   
   <entry>
     <title>『AGC 023A』Zero-Sum Ranges</title>
-    <link href="https://skyofwar.xyz/2018/09/06/%E3%80%8EAGC%20023A%E3%80%8FZero-Sum%20Ranges/"/>
-    <id>https://skyofwar.xyz/2018/09/06/『AGC 023A』Zero-Sum Ranges/</id>
+    <link href="https://skyofwar.xyz/2018/09/06/%E3%80%8EAtcoder%20AGC%20023A%E3%80%8FZero-Sum%20Ranges/"/>
+    <id>https://skyofwar.xyz/2018/09/06/『Atcoder AGC 023A』Zero-Sum Ranges/</id>
     <published>2018-09-06T14:32:27.000Z</published>
-    <updated>2018-09-06T14:33:04.713Z</updated>
+    <updated>2018-09-15T12:58:25.765Z</updated>
     
     <summary type="html">
     
@@ -363,9 +343,7 @@
     
       <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
-      <category term="Atcoder" scheme="https://skyofwar.xyz/tags/Atcoder/"/>
-    
-      <category term="map" scheme="https://skyofwar.xyz/tags/map/"/>
+      <category term="STL" scheme="https://skyofwar.xyz/tags/STL/"/>
     
   </entry>
   
@@ -519,7 +497,7 @@
     <link href="https://skyofwar.xyz/2018/08/31/%E3%80%8ECodeforces%20985D%E3%80%8FSand%20Fortress/"/>
     <id>https://skyofwar.xyz/2018/08/31/『Codeforces 985D』Sand Fortress/</id>
     <published>2018-08-31T04:50:27.000Z</published>
-    <updated>2018-08-31T04:58:29.189Z</updated>
+    <updated>2018-09-15T12:32:57.081Z</updated>
     
     <summary type="html">
     
@@ -536,9 +514,7 @@
       <category term="题解" scheme="https://skyofwar.xyz/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="Codeforces" scheme="https://skyofwar.xyz/tags/Codeforces/"/>
-    
-      <category term="二分答案" scheme="https://skyofwar.xyz/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"/>
+      <category term="二分" scheme="https://skyofwar.xyz/tags/%E4%BA%8C%E5%88%86/"/>
     
   </entry>
   
@@ -547,7 +523,7 @@
     <link href="https://skyofwar.xyz/2018/08/30/%E3%80%8ECodeforces%20932E%E3%80%8FTeam%20Work/"/>
     <id>https://skyofwar.xyz/2018/08/30/『Codeforces 932E』Team Work/</id>
     <published>2018-08-30T14:38:27.000Z</published>
-    <updated>2018-08-30T15:00:59.269Z</updated>
+    <updated>2018-09-15T12:37:21.267Z</updated>
     
     <summary type="html">
     
@@ -564,8 +540,6 @@
     
     
       <category term="数学" scheme="https://skyofwar.xyz/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="Codeforces" scheme="https://skyofwar.xyz/tags/Codeforces/"/>
     
       <category term="Tricks" scheme="https://skyofwar.xyz/tags/Tricks/"/>
     
